@@ -1,140 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>College4Less</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      background: #faf6f2;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      color: #222;
-      margin: 0;
-    }
+    body { background: #faf6f2; font-family: "Helvetica Neue", Arial, sans-serif; color: #222; margin: 0; }
     .hero {
-      background: #155fa0;
-      color: #fff;
-      border-radius: 16px;
-      margin: 24px auto 18px auto;
-      padding: 52px 24px 36px 24px;
-      text-align: center;
-      max-width: 96vw;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.035);
+      background: #155fa0; color: #fff; border-radius: 16px; margin: 24px auto 18px auto;
+      padding: 52px 24px 36px 24px; text-align: center; max-width: 96vw; box-shadow: 0 2px 8px rgba(0,0,0,0.035);
     }
-    .hero-title {
-      font-size: 3rem;
-      font-weight: 800;
-      margin: 0 0 12px 0;
-    }
-    .hero-sub {
-      font-size: 1.25rem;
-      margin-bottom: 2em;
-      font-weight: 400;
-    }
+    .hero-title { font-size: 3rem; font-weight: 800; letter-spacing: .5px; margin: 0 0 12px 0; }
+    .hero-sub { font-size: 1.25rem; margin-bottom: 2em; font-weight: 400; letter-spacing: .2px; }
     .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
+      display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 8px;
     }
     .hero-btn {
-      background: #2983e8;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 12px 29px;
-      font-size: 1.12em;
-      font-weight: 600;
-      cursor: pointer;
+      background: #2983e8; color: #fff; border: none; border-radius: 8px;
+      padding: 12px 29px; font-weight: 600; font-size: 1.12em; cursor: pointer;
     }
-    .info-text {
-      text-align: center;
-      font-size: 1.2rem;
-      margin: 30px 0 15px;
-    }
+    .info-text { text-align: center; font-size: 1.25rem; margin: 29px 0 15px 0; }
     .container {
-      background: #fff;
-      max-width: 96vw;
-      margin: 0 auto 18px auto;
-      border-radius: 11px;
-      box-shadow: 0 1px 6px rgba(74,90,115,0.05);
-      padding: 23px 0 16px 0;
+      background: #fff; max-width: 96vw; margin: 0 auto 18px auto; border-radius: 11px;
+      box-shadow: 0 1px 6px rgba(74,90,115,0.05); padding: 23px 0 16px 0;
     }
     .dropdown-section {
-      background: #f8f6f1;
-      border-radius: 10px;
-      padding: 8px;
-      margin: 13px 16px 15px 16px;
+      background: #f8f6f1; border-radius: 10px; padding: 8px; margin: 13px 16px 15px 16px;
       border: 1.5px solid #ebe7e3;
     }
     .dropdown-header {
-      font-size: 1.45rem;
-      font-weight: 700;
-      padding: 9px 0 9px 12px;
+      font-size: 1.45rem; font-weight: 700; padding: 9px 0 9px 12px;
+      display: flex; align-items: center; cursor: pointer; justify-content: space-between;
     }
     .subject-btn {
-      background: #f5f5f7;
-      border: 1.3px solid #e6e6e6;
-      padding: 15px 18px;
-      border-radius: 8px;
-      font-size: 1.24em;
-      font-weight: 500;
-      width: 96%;
-      margin: 9px auto;
-      text-align: left;
-      display: flex;
-      justify-content: space-between;
-      cursor: pointer;
+      background: #f5f5f7; border: 1.3px solid #e6e6e6; padding: 15px 18px;
+      border-radius: 8px; font-size: 1.24em; font-weight: 500; margin: 9px auto;
+      text-align: left; display: flex; justify-content: space-between; width: 98%;
     }
     .subject-list {
-      margin-left: 30px;
-      margin-bottom: 10px;
-      display: none;
-      flex-direction: column;
+      margin: 6px 0 10px 30px; display: none; flex-direction: column; gap: 5px;
     }
-    .subject-list.active {
-      display: flex;
-    }
+    .subject-list.active { display: flex; }
     .subject-link {
-      background: none;
-      border: none;
-      text-align: left;
-      font-size: 1.07rem;
-      color: #226cc2;
-      cursor: pointer;
-      padding: 4px 0;
-    }
-    .subject-link:hover {
-      text-decoration: underline;
+      background: none; border: none; font-size: 1.07rem; color: #226cc2;
+      text-align: left; cursor: pointer; padding: 4px 0;
     }
     .affiliate-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 34px;
-      align-items: center;
-      padding: 6px 0 16px 28px;
-      font-size: 1.24rem;
-      font-weight: 600;
-      color: #163d6e;
+      display: flex; flex-wrap: wrap; gap: 34px; align-items: center;
+      padding: 6px 0 16px 28px; font-size: 1.24rem; font-weight: 600; color: #163d6e;
     }
     .banner {
-      border: 2px solid #e3e3e3;
-      border-radius: 9px;
-      min-height: 39px;
-      margin: 0 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f6f6f8;
-      color: #667;
-      font-size: 1.18em;
+      border: 2px solid #e3e3e3; border-radius: 9px; min-height: 39px;
+      margin: 0 26px; display: flex; align-items: center; justify-content: center;
+      color: #667; font-size: 1.18em; background: #f6f6f8;
     }
-    .footer {
-      text-align: center;
-      font-size: 1.07em;
-      color: #989898;
-      margin: 32px 10px 23px 10px;
-    }
+    .footer { text-align: center; font-size: 1.07em; color: #989898; margin: 32px 10px 23px 10px; }
   </style>
 </head>
 <body>
@@ -149,6 +69,18 @@
   </div>
 
   <div class="info-text">Download our app on iOS & Android</div>
+
+  <!-- Search Bar -->
+  <div class="search-bar" style="max-width:400px;margin:0 auto 25px;display:flex;justify-content:center;">
+    <input type="text" placeholder="Search for a course..." style="padding:10px;font-size:1rem;width:100%;max-width:300px;border:1px solid #ccc;border-radius:6px 0 0 6px;">
+    <button style="padding:10px 18px;font-size:1rem;background:#226cc2;color:white;border:none;border-radius:0 6px 6px 0;cursor:pointer;">Search</button>
+  </div>
+
+  <!-- App Download Badges -->
+  <div class="app-badges" style="display:flex;justify-content:center;gap:16px;margin-bottom:30px;">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="40">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" height="40">
+  </div>
 
   <div class="container">
     <div class="dropdown-section">
@@ -222,4 +154,5 @@
   </script>
 </body>
 </html>
+
 
