@@ -22,13 +22,14 @@
   </nav>
 
   <header class="hero">
-    <h1>Save Time. Save Money. Learn Smarter.</h1>
-    <p>Helping high school students, college students, and adult learners get the most out of education.</p>
-    <div class="app-buttons">
-      <a href="#"><img src="app-store.svg" alt="Download on the App Store" /></a>
-      <a href="#"><img src="google-play.png" alt="Get it on Google Play" /></a>
-    </div>
-  </header>
+  <h1>Welcome to College4Less</h1>
+  <p>Save time. Save money. Learn smarter.</p>
+  <div class="button-group">
+    <a href="#" class="hero-btn">Take the Pretest</a>
+    <a href="#" class="hero-btn">Study Tips</a>
+    <a href="#" class="hero-btn">Explore Degrees</a>
+  </div>
+</header>
 
   <section class="ad-banner">
     <p>Ad Banner Placeholder</p>
@@ -39,9 +40,9 @@
     <div class="grid">
   <a href="courses/American Government.html" class="course">American Government</a>
   <a href="courses/U.S. History I.html" class="course">U.S. History I</a>
-  <div class="course">U.S. History II</div>
-  <div class="course">Human Growth and Development</div>
-  <div class="course">Educational Psychology</div>
+  <a href="courses/U.S. History II.html" class="course">U.S. History II</a>
+  <a href="courses/Human Growth and Development.html" class="course">Human Growth and Development</a>
+  <a href="courses/Educational Psychology.html" class="course">Educational Psychology</a>
   <div class="course">Introductory Psychology</div>
   <div class="course">Introductory Sociology</div>
   <div class="course">Macroeconomics</div>
@@ -73,11 +74,11 @@
 
   <section class="study-tips">
     <h2>Study Tips & College Hacks</h2>
-    <ul>
-      <li>10 Tips for Better Study Habits</li>
-      <li>How to Write a College Essay</li>
-      <li>Save Money on Textbooks</li>
-    </ul>
+    <div class="tips-grid">
+  <div class="tip-card">10 Tips for Better Study Habits</div>
+  <div class="tip-card">How to Write a College Essay</div>
+  <div class="tip-card">Save Money on Textbooks</div>
+</div>
   </section>
 
   <section class="resources">
@@ -91,13 +92,34 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 College4Less</p>
-    <p>Ad Banner Placeholder</p>
-  </footer>
+  <p>&copy; 2025 College4Less</p>
+  <p>Download our app on iOS & Android • Contact us at info@college4less.org</p>
+</footer>
 </body>
 </html>
 
 /* styles.css */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.hero-btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #1e40af;
+}
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
