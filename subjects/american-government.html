@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>American Government | College4Less</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { background: #faf6f2; font-family: "Helvetica Neue", Arial, sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero { background: #155fa0; color: #fff; padding: 36px 24px; text-align: center; font-size: 2.2rem; font-weight: 800; }
+    .ad-banner { background: #eaeaea; color: #555; text-align: center; padding: 12px; font-size: 1.2rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 14px; text-align: center; }
+    .search-bar {
+      width: 100%; padding: 10px; font-size: 1rem;
+      border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px;
+    }
+    .topic-list li { margin: 10px 0; }
+    .hidden-topics { display: none; }
+    .show-more { margin-top: 20px; text-align: center; }
+    .show-more button {
+      padding: 10px 18px; font-size: 1rem;
+      border: 2px solid #155fa0; background: white;
+      color: #155fa0; border-radius: 8px; cursor: pointer; font-weight: 600;
+    }
+    .app-badges {
+      display: flex; justify-content: center; gap: 14px; margin: 30px 0;
+    }
+    .affiliate-row {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 24px; font-size: 1.2rem; font-weight: 600; color: #163d6e; margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">American Government</div>
+  <div class="ad-banner">Ad Banner</div>
+
+  <div class="container">
+    <input type="text" id="topicSearch" class="search-bar" placeholder="Search topics..." onkeyup="filterTopics()" />
+
+    <div class="section-title">Topics Covered</div>
+    <ul class="topic-list" id="topicList">
+      <li>Structure and powers of the Presidency, Congress, and Federal Courts</li>
+      <li>The policy process in U.S. institutions: how policies are made and implemented</li>
+      <li>Interconnections among institutions, parties, interest groups, and media</li>
+      <li>The structure and function of the judicial system and the role of the Supreme Court</li>
+      <li>The Bill of Rights and incorporation doctrine</li>
+      <li>Development of civil rights and civil liberties through judicial interpretation</li>
+      <li>Equal protection and due process under the law</li>
+      <li>Functions and organization of political parties in the U.S.</li>
+
+      <div id="moreTopics" class="hidden-topics">
+        <li>Role and impact of interest groups on the political process</li>
+        <li>Elections and electoral processes in American democracy</li>
+        <li>How citizens acquire political beliefs (political socialization)</li>
+        <li>Forms and trends in political participation and voting behavior</li>
+        <li>The influence and measurement of public opinion</li>
+        <li>Beliefs and attitudes of citizens toward government and leadership</li>
+        <li>Political culture and sources of variation in political behavior</li>
+        <li>Theories and principles underpinning American democracy</li>
+        <li>Concepts of federalism and intergovernmental relations</li>
+        <li>Separation of powers and checks and balances in the Constitution</li>
+        <li>Majority rule vs. minority rights in democratic systems</li>
+        <li>The historical context and ideas behind the adoption of the U.S. Constitution</li>
+      </div>
+    </ul>
+
+    <div class="show-more">
+      <button onclick="toggleTopics()">Show More Topics</button>
+    </div>
+
+    <div class="app-badges">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" height="40">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="40">
+    </div>
+
+    <div class="section-title">Affiliate Resources</div>
+    <div class="affiliate-row">
+      <span>edX</span>
+      <span>coursera</span>
+      <span>Financial Aid</span>
+      <span>Online Tutoring</span>
+    </div>
+  </div>
+
+  <script>
+    function toggleTopics() {
+      const more = document.getElementById("moreTopics");
+      const btn = document.querySelector(".show-more button");
+      more.style.display = more.style.display === "block" ? "none" : "block";
+      btn.innerText = more.style.display === "block" ? "Show Less Topics" : "Show More Topics";
+    }
+
+    function filterTopics() {
+      const input = document.getElementById("topicSearch");
+      const filter = input.value.toLowerCase();
+      const items = document.querySelectorAll("#topicList li");
+      items.forEach(li => {
+        li.style.display = li.textContent.toLowerCase().includes(filter) ? "list-item" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
