@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>College4Less</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
       background: #faf6f2;
@@ -19,27 +19,23 @@
       padding: 52px 24px 36px 24px;
       text-align: center;
       max-width: 96vw;
-      width: 96vw;
       box-shadow: 0 2px 8px rgba(0,0,0,0.035);
     }
     .hero-title {
       font-size: 3rem;
       font-weight: 800;
-      letter-spacing: .5px;
       margin: 0 0 12px 0;
     }
     .hero-sub {
       font-size: 1.25rem;
       margin-bottom: 2em;
       font-weight: 400;
-      letter-spacing: .2px;
     }
     .btn-group {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      margin-bottom: 8px;
     }
     .hero-btn {
       background: #2983e8;
@@ -47,21 +43,18 @@
       border: none;
       border-radius: 8px;
       padding: 12px 29px;
-      font-weight: 600;
       font-size: 1.12em;
+      font-weight: 600;
       cursor: pointer;
-      transition: background 0.12s;
     }
-    .hero-btn:hover { background: #226cc2; }
     .info-text {
       text-align: center;
-      font-size: 1.25rem;
-      margin: 29px 0 15px 0;
+      font-size: 1.2rem;
+      margin: 30px 0 15px;
     }
     .container {
       background: #fff;
       max-width: 96vw;
-      width: 96vw;
       margin: 0 auto 18px auto;
       border-radius: 11px;
       box-shadow: 0 1px 6px rgba(74,90,115,0.05);
@@ -78,76 +71,42 @@
       font-size: 1.45rem;
       font-weight: 700;
       padding: 9px 0 9px 12px;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      user-select: none;
-      justify-content: space-between;
-    }
-    .dropdown {
-      margin: 11px 0 0 0;
     }
     .subject-btn {
       background: #f5f5f7;
-      color: #232b34;
       border: 1.3px solid #e6e6e6;
       padding: 15px 18px;
       border-radius: 8px;
       font-size: 1.24em;
       font-weight: 500;
-      width: 98%;
-      margin: 9px auto 9px auto;
+      width: 96%;
+      margin: 9px auto;
       text-align: left;
-      transition: background 0.1s;
-      cursor: pointer;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-    }
-    .subject-btn:hover {
-      background: #e3ecf5;
+      cursor: pointer;
     }
     .subject-list {
-      margin-top: 6px;
-      margin-bottom: 10px;
       margin-left: 30px;
+      margin-bottom: 10px;
       display: none;
       flex-direction: column;
-      gap: 5px;
     }
-    .subject-list.active { display: flex; }
+    .subject-list.active {
+      display: flex;
+    }
     .subject-link {
       background: none;
       border: none;
       text-align: left;
       font-size: 1.07rem;
       color: #226cc2;
-      margin: 3px 0;
       cursor: pointer;
       padding: 4px 0;
-      transition: text-decoration 0.12s;
     }
     .subject-link:hover {
       text-decoration: underline;
-      color: #1059a2;
     }
-    /* Study Tips Section */
-    .section-title {
-      font-size: 1.28rem;
-      font-weight: 700;
-      padding: 12px 0 7px 12px;
-      margin: 0;
-    }
-    .tips-list {
-      margin-left: 29px;
-      margin-bottom: 12px;
-    }
-    .tips-list li {
-      margin: 8px 0;
-      color: #205b93;
-      font-size: 1.05rem;
-    }
-    /* Affiliate Section */
     .affiliate-row {
       display: flex;
       flex-wrap: wrap;
@@ -162,27 +121,19 @@
       border: 2px solid #e3e3e3;
       border-radius: 9px;
       min-height: 39px;
-      margin: 0 26px 0 26px;
+      margin: 0 26px;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: #f6f6f8;
       color: #667;
       font-size: 1.18em;
-      background: #f6f6f8;
     }
     .footer {
       text-align: center;
       font-size: 1.07em;
       color: #989898;
       margin: 32px 10px 23px 10px;
-      font-weight: 400;
-    }
-    @media (max-width: 660px) {
-      .hero, .container { width: 98vw; margin: 8px auto; }
-      .dropdown-section { padding: 6px; margin-left: 4px; margin-right: 4px;}
-      .affiliate-row { gap: 15px; padding-left: 6px; font-size: 1em;}
-      .banner { font-size: 1em;}
-      .hero-title { font-size: 1.6rem;}
     }
   </style>
 </head>
@@ -196,14 +147,79 @@
       <button class="hero-btn">Explore Degrees</button>
     </div>
   </div>
-  <div class="info-text">
-    Download our app on iOS &amp; Android
-  </div>
+
+  <div class="info-text">Download our app on iOS & Android</div>
+
   <div class="container">
     <div class="dropdown-section">
-      <div class="dropdown-header" onclick="toggleDropdown('courses-dropdown')">
-        Explore Courses
-        <span id="courses-caret">▼</span>
+      <div class="dropdown-header">Explore Courses</div>
+
+      <button class="subject-btn" onclick="toggleSubject('history')">History and Social Sciences</button>
+      <div class="subject-list" id="history">
+        <button class="subject-link">American Government</button>
+        <button class="subject-link">U.S. History I</button>
+        <button class="subject-link">U.S. History II</button>
+        <button class="subject-link">Human Growth and Development</button>
+        <button class="subject-link">Introductory Educational Psychology</button>
+        <button class="subject-link">Introductory Psychology</button>
+        <button class="subject-link">Introductory Sociology</button>
+        <button class="subject-link">Principles of Macroeconomics</button>
+        <button class="subject-link">Principles of Microeconomics</button>
+        <button class="subject-link">Social Science & History</button>
+        <button class="subject-link">Western Civilization I</button>
+        <button class="subject-link">Western Civilization II</button>
       </div>
-      <div class="dropdown" id="courses-dropdown">
-        <button class="subject-btn" onclick="toggleSubject
+
+      <button class="subject-btn" onclick="toggleSubject('literature')">Composition and Literature</button>
+      <div class="subject-list" id="literature">
+        <button class="subject-link">American Literature</button>
+        <button class="subject-link">Analyzing and Interpreting Literature</button>
+        <button class="subject-link">College Composition</button>
+        <button class="subject-link">English Literature</button>
+        <button class="subject-link">Humanities</button>
+      </div>
+
+      <button class="subject-btn" onclick="toggleSubject('science')">Science and Math</button>
+      <div class="subject-list" id="science">
+        <button class="subject-link">Biology</button>
+        <button class="subject-link">Calculus</button>
+        <button class="subject-link">Chemistry</button>
+        <button class="subject-link">College Algebra</button>
+        <button class="subject-link">College Mathematics</button>
+        <button class="subject-link">Natural Sciences</button>
+        <button class="subject-link">Pre Calculus</button>
+      </div>
+
+      <button class="subject-btn" onclick="toggleSubject('business')">Business</button>
+      <div class="subject-list" id="business">
+        <button class="subject-link">Financial Accounting</button>
+        <button class="subject-link">Information Systems</button>
+        <button class="subject-link">Introductory Business Law</button>
+        <button class="subject-link">Principles of Management</button>
+        <button class="subject-link">Principles of Marketing</button>
+      </div>
+    </div>
+
+    <div class="dropdown-section">
+      <div class="dropdown-header">Affiliate Resources</div>
+      <div class="affiliate-row">
+        <span>edX</span>
+        <span>coursera</span>
+        <span>Financial Aid</span>
+        <span>Online Tutoring</span>
+      </div>
+      <div class="banner">Ad Banner Placeholder</div>
+    </div>
+  </div>
+
+  <div class="footer">Download our app on iOS & Android • Contact us at info@college4less.org</div>
+
+  <script>
+    function toggleSubject(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
+
