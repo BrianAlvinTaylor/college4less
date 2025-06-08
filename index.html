@@ -2,193 +2,208 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>College4Less</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>College4Less - Home</title>
   <style>
     body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
       background: #faf6f2;
-      margin: 0;
-      padding: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
       color: #222;
+      margin: 0;
     }
     .hero {
       background: #155fa0;
       color: #fff;
-      padding: 48px 24px 40px 24px;
-      text-align: center;
       border-radius: 16px;
-      margin: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      margin: 24px auto 18px auto;
+      padding: 52px 24px 36px 24px;
+      text-align: center;
+      max-width: 96vw;
+      width: 96vw;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.035);
     }
-    .hero h1 {
-      font-size: 2.3rem;
-      margin-bottom: 0.3em;
-      font-weight: 700;
-      letter-spacing: -1px;
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: .5px;
+      margin: 0 0 12px 0;
     }
-    .hero p {
-      font-size: 1.16rem;
+    .hero-sub {
+      font-size: 1.25rem;
       margin-bottom: 2em;
+      font-weight: 400;
+      letter-spacing: .2px;
     }
-    .hero .btn-group {
+    .btn-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 20px;
       justify-content: center;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
-    .hero button {
-      background: #2081e2;
+    .hero-btn {
+      background: #2983e8;
       color: #fff;
       border: none;
-      border-radius: 7px;
-      padding: 12px 28px;
-      font-size: 1.02em;
+      border-radius: 8px;
+      padding: 12px 29px;
       font-weight: 600;
+      font-size: 1.12em;
       cursor: pointer;
-      transition: background 0.15s;
+      transition: background 0.12s;
     }
-    .hero button:hover {
-      background: #1972c9;
+    .hero-btn:hover { background: #226cc2; }
+    .info-text {
+      text-align: center;
+      font-size: 1.25rem;
+      margin: 29px 0 15px 0;
     }
     .container {
       background: #fff;
-      margin: 20px 24px;
-      border-radius: 12px;
-      box-shadow: 0 1.5px 6px rgba(30,36,52,0.05);
-      padding: 26px 18px 18px 18px;
+      max-width: 96vw;
+      width: 96vw;
+      margin: 0 auto 18px auto;
+      border-radius: 11px;
+      box-shadow: 0 1px 6px rgba(74,90,115,0.05);
+      padding: 23px 0 16px 0;
     }
-    h2 {
-      font-size: 1.25rem;
-      margin: 0 0 8px 0;
+    .dropdown-section {
+      background: #f8f6f1;
+      border-radius: 10px;
+      padding: 8px;
+      margin: 13px 16px 15px 16px;
+      border: 1.5px solid #ebe7e3;
+    }
+    .dropdown-header {
+      font-size: 1.45rem;
       font-weight: 700;
-      color: #1d3351;
-    }
-    .course-tags, .tips-tags {
+      padding: 9px 0 9px 12px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 12px 0;
-    }
-    .tag {
-      padding: 8px 13px;
-      background: #f5f5f7;
-      border-radius: 8px;
-      font-size: 1em;
-      color: #2d384c;
-      font-weight: 500;
-      cursor: pointer;
-      border: 1px solid #ececec;
-      box-shadow: 0 0.5px 1.5px rgba(55,101,134,0.04);
-      transition: background 0.12s, box-shadow 0.15s;
-    }
-    .tag:hover {
-      background: #e6eef8;
-      box-shadow: 0 1.5px 6px rgba(35,76,133,0.08);
-    }
-    .affiliate {
-      margin: 16px 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 28px;
       align-items: center;
+      cursor: pointer;
+      user-select: none;
+      justify-content: space-between;
     }
-    .affiliate img,
-    .affiliate span {
-      height: 32px;
-      display: inline-block;
-      vertical-align: middle;
+    .dropdown {
+      margin: 11px 0 0 0;
     }
-    .affiliate span {
-      font-size: 1.16rem;
+    .subject-btn {
+      background: #f5f5f7;
+      color: #232b34;
+      border: 1.3px solid #e6e6e6;
+      padding: 15px 18px;
+      border-radius: 8px;
+      font-size: 1.24em;
+      font-weight: 500;
+      width: 98%;
+      margin: 9px auto 9px auto;
+      text-align: left;
+      transition: background 0.1s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .subject-btn:hover {
+      background: #e3ecf5;
+    }
+    .subject-list {
+      margin-top: 6px;
+      margin-bottom: 10px;
+      margin-left: 30px;
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .subject-list.active { display: flex; }
+    .subject-link {
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 1.07rem;
+      color: #226cc2;
+      margin: 3px 0;
+      cursor: pointer;
+      padding: 4px 0;
+      transition: text-decoration 0.12s;
+    }
+    .subject-link:hover {
+      text-decoration: underline;
+      color: #1059a2;
+    }
+    /* Study Tips Section */
+    .section-title {
+      font-size: 1.28rem;
+      font-weight: 700;
+      padding: 12px 0 7px 12px;
+      margin: 0;
+    }
+    .tips-list {
+      margin-left: 29px;
+      margin-bottom: 12px;
+    }
+    .tips-list li {
+      margin: 8px 0;
+      color: #205b93;
+      font-size: 1.05rem;
+    }
+    /* Affiliate Section */
+    .affiliate-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 34px;
+      align-items: center;
+      padding: 6px 0 16px 28px;
+      font-size: 1.24rem;
       font-weight: 600;
-      color: #153e6a;
+      color: #163d6e;
     }
     .banner {
-      border: 2px dashed #ccc;
-      border-radius: 10px;
-      min-height: 48px;
-      margin-top: 12px;
+      border: 2px solid #e3e3e3;
+      border-radius: 9px;
+      min-height: 39px;
+      margin: 0 26px 0 26px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #b1b1b1;
-      font-size: 1.1em;
-      background: #f8f9fa;
+      color: #667;
+      font-size: 1.18em;
+      background: #f6f6f8;
     }
     .footer {
       text-align: center;
+      font-size: 1.07em;
       color: #989898;
-      font-size: 0.98em;
-      margin: 32px 10px 20px 10px;
-      letter-spacing: .2px;
+      margin: 32px 10px 23px 10px;
+      font-weight: 400;
     }
-    @media (max-width: 600px) {
-      .hero, .container { margin: 10px; }
+    @media (max-width: 660px) {
+      .hero, .container { width: 98vw; margin: 8px auto; }
+      .dropdown-section { padding: 6px; margin-left: 4px; margin-right: 4px;}
+      .affiliate-row { gap: 15px; padding-left: 6px; font-size: 1em;}
       .banner { font-size: 1em;}
-      .hero h1 { font-size: 1.4rem;}
+      .hero-title { font-size: 1.6rem;}
     }
   </style>
 </head>
 <body>
   <div class="hero">
-    <h1>Welcome to College4Less</h1>
-    <p>Save time. Save money. Learn smarter.</p>
+    <div class="hero-title">College4Less</div>
+    <div class="hero-sub">Save time. Save money. Learn smarter.</div>
     <div class="btn-group">
-      <button>Take the Pretest</button>
-      <button>Study Tips</button>
-      <button>Explore Degrees</button>
+      <button class="hero-btn">Save Time, Save Money</button>
+      <button class="hero-btn">Study Tips</button>
+      <button class="hero-btn">Explore Degrees</button>
     </div>
+  </div>
+  <div class="info-text">
+    Download our app on iOS &amp; Android
   </div>
   <div class="container">
-    <h2>Explore Courses</h2>
-    <div class="course-tags">
-      <span class="tag">American Government</span>
-      <span class="tag">U.S. History I</span>
-      <span class="tag">U.S. History II</span>
-      <span class="tag">Human Growth and Development</span>
-      <span class="tag">Introductory Educational Psychology</span>
-      <span class="tag">Introductory</span>
-      <span class="tag">Introductory Psychology</span>
-      <span class="tag">Introductory Sociology</span>
-      <span class="tag">Principles of Macroeconomics</span>
-      <span class="tag">Social Science & History</span>
-      <span class="tag">Western Civilization I</span>
-      <span class="tag">Western Civilization II</span>
-      <span class="tag">American Literature</span>
-      <span class="tag">English</span>
-      <span class="tag">Analyzing and Interpreting Literature</span>
-      <span class="tag">College Composition</span>
-      <span class="tag">English Literature</span>
-      <span class="tag">Humanities</span>
-      <span class="tag">Biology</span>
-      <span class="tag">Calculus</span>
-      <span class="tag">Chemistry</span>
-      <span class="tag">Information Systems</span>
-    </div>
-  </div>
-  <div class="container">
-    <h2>Study Tips & College Hacks</h2>
-    <div class="tips-tags">
-      <span class="tag">10 Tips for Better Study Habits</span>
-      <span class="tag">How to Write a College Essay</span>
-      <span class="tag">Save Money on Textbooks</span>
-    </div>
-  </div>
-  <div class="container">
-    <h2>Affiliate Resources</h2>
-    <div class="affiliate">
-      <span style="font-family:serif;font-weight:bold;">edX</span>
-      <span style="font-family:sans-serif;font-weight:bold;">coursera</span>
-      <span>Financial Aid</span>
-      <span>Online Tutoring</span>
-    </div>
-    <div class="banner">Ad Banner Placeholder</div>
-  </div>
-  <div class="footer">
-    Download our app on iOS &amp; Android &nbsp;&bull;&nbsp; 
-    Contact us at <a href="mailto:info@college4less.org" style="color:#1972c9; text-decoration:none;">info@college4less.org</a>
-  </div>
-</body>
-</html>
+    <div class="dropdown-section">
+      <div class="dropdown-header" onclick="toggleDropdown('courses-dropdown')">
+        Explore Courses
+        <span id="courses-caret">▼</span>
+      </div>
+      <div class="dropdown" id="courses-dropdown">
+        <button class="subject-btn" onclick="toggleSubject
