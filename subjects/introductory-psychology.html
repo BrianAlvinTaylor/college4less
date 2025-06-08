@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Introductory Psychology | College4Less</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { background: #faf6f2; font-family: "Helvetica Neue", Arial, sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero { background: #155fa0; color: #fff; padding: 36px 24px; text-align: center; font-size: 2.2rem; font-weight: 800; }
+    .ad-banner { background: #eaeaea; color: #555; text-align: center; padding: 12px; font-size: 1.2rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 14px; text-align: center; }
+    .search-bar {
+      width: 100%; padding: 10px; font-size: 1rem;
+      border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px;
+    }
+    .topic-list li { margin: 10px 0; }
+    .hidden-topics { display: none; }
+    .show-more { margin-top: 20px; text-align: center; }
+    .show-more button {
+      padding: 10px 18px; font-size: 1rem;
+      border: 2px solid #155fa0; background: white;
+      color: #155fa0; border-radius: 8px; cursor: pointer; font-weight: 600;
+    }
+    .app-badges {
+      display: flex; justify-content: center; gap: 14px; margin: 30px 0;
+    }
+    .affiliate-row {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 24px; font-size: 1.2rem; font-weight: 600; color: #163d6e; margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">Introductory Psychology</div>
+  <div class="ad-banner">Ad Banner</div>
+
+  <div class="container">
+    <input type="text" id="topicSearch" class="search-bar" placeholder="Search topics..." onkeyup="filterTopics()" />
+
+    <div class="section-title">Topics Covered</div>
+    <ul class="topic-list" id="topicList">
+      <li>History of psychology and major theoretical approaches</li>
+      <li>Biological, cognitive, psychodynamic, behavioral, humanistic, and biopsychosocial models</li>
+      <li>Research methods: experimental, correlational, clinical, and ethical guidelines</li>
+      <li>Functional organization of the nervous system and neuroanatomy</li>
+      <li>Endocrine system, genetics, and physiological techniques</li>
+      <li>Sensation and perception including thresholds and sensory adaptation</li>
+      <li>Vision, audition, and other senses: olfaction, gustation, somesthesis, and vestibular</li>
+      <li>Sleep, dreaming, psychoactive drugs, hypnosis, and meditation</li>
+
+      <div id="moreTopics" class="hidden-topics">
+        <li>Classical and operant conditioning, reinforcement, observational learning</li>
+        <li>Cognition: memory, language, thinking, problem-solving, and creativity</li>
+        <li>Motivation and emotion: theories and biological bases</li>
+        <li>Social motivation, stress, anxiety, and self-determination theory</li>
+        <li>Developmental theories and lifespan development: cognitive, moral, social</li>
+        <li>Gender identity, sex roles, heredity-environment interaction</li>
+        <li>Personality: major theories, self-esteem, and assessment techniques</li>
+        <li>Psychological disorders: anxiety, depression, somatoform, dissociative, and personality disorders</li>
+        <li>Therapies: behavioral, cognitive, biological, insight, and preventive models</li>
+        <li>Social psychology: attitudes, attribution, prejudice, group behavior, and prosocial action</li>
+        <li>Statistics and testing: descriptive and inferential statistics, validity, and reliability</li>
+        <li>Testing norms, scales, types of assessments, and intelligence measurement</li>
+      </div>
+    </ul>
+
+    <div class="show-more">
+      <button onclick="toggleTopics()">Show More Topics</button>
+    </div>
+
+    <div class="app-badges">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" height="40">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="40">
+    </div>
+
+    <div class="section-title">Affiliate Resources</div>
+    <div class="affiliate-row">
+      <span>edX</span>
+      <span>coursera</span>
+      <span>Financial Aid</span>
+      <span>Online Tutoring</span>
+    </div>
+  </div>
+
+  <script>
+    function toggleTopics() {
+      const more = document.getElementById("moreTopics");
+      const btn = document.querySelector(".show-more button");
+      more.style.display = more.style.display === "block" ? "none" : "block";
+      btn.innerText = more.style.display === "block" ? "Show Less Topics" : "Show More Topics";
+    }
+
+    function filterTopics() {
+      const input = document.getElementById("topicSearch");
+      const filter = input.value.toLowerCase();
+      const items = document.querySelectorAll("#topicList li");
+      items.forEach(li => {
+        li.style.display = li.textContent.toLowerCase().includes(filter) ? "list-item" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
