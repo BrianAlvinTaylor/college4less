@@ -1,100 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>College4Less</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      background-color: #f9f9f9;
-      color: #222;
-    }
-
-    header {
-      background-color: #2a4365;
-      color: white;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
-    p.tagline {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-
-    .buttons {
-      margin: 30px 0;
-    }
-
-    .buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
-      background-color: #3182ce;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    .ad-banner {
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #ddd;
-      width: 90%;
-      max-width: 728px;
-      border: 2px dashed #aaa;
-    }
-
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      background-color: #e2e8f0;
-      font-size: 0.9em;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.8em;
-      }
-
-      .buttons a {
-        width: 80%;
-        display: block;
-        margin: 10px auto;
-      }
-    }
-  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <nav class="top-nav">
+    <div class="nav-container">
+      <span class="logo">College4Less</span>
+      <ul class="nav-links">
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Study Tips</a></li>
+        <li><a href="#">Degree Info</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<header>
-  <h1>Welcome to College4Less</h1>
-  <p class="tagline">Save time. Save money. Learn smarter.</p>
-</header>
+  <header class="hero">
+    <h1>Save Time. Save Money. Learn Smarter.</h1>
+    <p>Helping high school students, college students, and adult learners get the most out of education.</p>
+    <div class="app-buttons">
+      <a href="#"><img src="app-store.svg" alt="Download on the App Store" /></a>
+      <a href="#"><img src="google-play.png" alt="Get it on Google Play" /></a>
+    </div>
+  </header>
 
-<div class="buttons">
-  <a href="#">Take the Pretest</a>
-  <a href="#">Study Tips</a>
-  <a href="#">Explore Degrees</a>
+  <section class="ad-banner">
+    <p>Ad Banner Placeholder</p>
+  </section>
+
+  <section class="courses">
+    <h2>Explore Course Content</h2>
+    <div class="grid">
+  <div class="course">American Government</div>
+  <div class="course">U.S. History I</div>
+  <div class="course">U.S. History II</div>
+  <div class="course">Human Growth and Development</div>
+  <div class="course">Educational Psychology</div>
+  <div class="course">Introductory Psychology</div>
+  <div class="course">Introductory Sociology</div>
+  <div class="course">Macroeconomics</div>
+  <div class="course">Microeconomics</div>
+  <div class="course">Social Science & History</div>
+  <div class="course">Western Civilization I</div>
+  <div class="course">Western Civilization II</div>
+  <div class="course">American Literature</div>
+  <div class="course">Interpreting Literature</div>
+  <div class="course">College Composition</div>
+  <div class="course">English Literature</div>
+  <div class="course">Humanities</div>
+  <div class="course">Biology</div>
+  <div class="course">Calculus</div>
+  <div class="course">Chemistry</div>
+  <div class="course">College Algebra</div>
+  <div class="course">College Mathematics</div>
+  <div class="course">Natural Sciences</div>
+  <div class="course">Precalculus</div>
+  <div class="course">Financial Accounting</div>
+  <div class="course">Information Systems</div>
+  <div class="course">Business Law</div>
+  <div class="course">Principles of Management</div>
+  <div class="course">Principles of Marketing</div>
 </div>
+      <div class="course">U.S. History</div>
+      <div class="course">Math</div>
+      <div class="course">CLEP</div>
+      <div class="course">English Lit</div>
+      <div class="course">Chemistry</div>
+      <div class="course">Economics</div>
+      <div class="course">Sociology</div>
+    </div>
+  </section>
 
-<div class="ad-banner">
-  Ad Banner Placeholder (728x90) — Google AdMob Ready
-</div>
+  <section class="study-tips">
+    <h2>Study Tips & College Hacks</h2>
+    <ul>
+      <li>10 Tips for Better Study Habits</li>
+      <li>How to Write a College Essay</li>
+      <li>Save Money on Textbooks</li>
+    </ul>
+  </section>
 
-<footer>
-  📱 Download our app on iOS & Android • Contact us at info@college4less.org
-</footer>
+  <section class="resources">
+    <h2>Affiliate Resources</h2>
+    <div class="logos">
+      <img src="edx-logo.png" alt="edX" />
+      <img src="coursera-logo.png" alt="Coursera" />
+      <img src="aid-icon.png" alt="Financial Aid" />
+      <img src="tutor-icon.png" alt="Online Tutoring" />
+    </div>
+  </section>
 
+  <footer>
+    <p>&copy; 2025 College4Less</p>
+    <p>Ad Banner Placeholder</p>
+  </footer>
 </body>
 </html>
+
+/* styles.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+  text-align: center;
+}
+
+.top-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #1e3a8a;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background-color: #1e3a8a;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+  font-size: 2.75rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+.app-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.app-buttons img {
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+.app-buttons img:hover {
+  transform: scale(1.05);
+}
+
+.ad-banner {
+  background: #e2e8f0;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+}
+
+section {
+  padding: 60px 20px;
+  margin: 20px auto;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.course {
+  background: #edf2f7;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
+}
+
+.course:hover {
+  transform: translateY(-5px);
+}
+
+.study-tips ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+.study-tips li {
+  margin: 12px 0;
+}
+
+.resources .logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.resources .logos img {
+  height: 50px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.resources .logos img:hover {
+  filter: grayscale(0%);
+}
+
+footer {
+  background: #1e293b;
+  color: white;
+  padding: 40px;
+  text-align: center;
+  margin-top: 40px;
+}
