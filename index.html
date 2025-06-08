@@ -1,285 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>College4Less</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>College4Less - Home</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #faf6f2;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    .hero {
+      background: #155fa0;
+      color: #fff;
+      padding: 48px 24px 40px 24px;
+      text-align: center;
+      border-radius: 16px;
+      margin: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .hero h1 {
+      font-size: 2.3rem;
+      margin-bottom: 0.3em;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    .hero p {
+      font-size: 1.16rem;
+      margin-bottom: 2em;
+    }
+    .hero .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      margin-bottom: 6px;
+    }
+    .hero button {
+      background: #2081e2;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      padding: 12px 28px;
+      font-size: 1.02em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .hero button:hover {
+      background: #1972c9;
+    }
+    .container {
+      background: #fff;
+      margin: 20px 24px;
+      border-radius: 12px;
+      box-shadow: 0 1.5px 6px rgba(30,36,52,0.05);
+      padding: 26px 18px 18px 18px;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin: 0 0 8px 0;
+      font-weight: 700;
+      color: #1d3351;
+    }
+    .course-tags, .tips-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .tag {
+      padding: 8px 13px;
+      background: #f5f5f7;
+      border-radius: 8px;
+      font-size: 1em;
+      color: #2d384c;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid #ececec;
+      box-shadow: 0 0.5px 1.5px rgba(55,101,134,0.04);
+      transition: background 0.12s, box-shadow 0.15s;
+    }
+    .tag:hover {
+      background: #e6eef8;
+      box-shadow: 0 1.5px 6px rgba(35,76,133,0.08);
+    }
+    .affiliate {
+      margin: 16px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      align-items: center;
+    }
+    .affiliate img,
+    .affiliate span {
+      height: 32px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .affiliate span {
+      font-size: 1.16rem;
+      font-weight: 600;
+      color: #153e6a;
+    }
+    .banner {
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      min-height: 48px;
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b1b1b1;
+      font-size: 1.1em;
+      background: #f8f9fa;
+    }
+    .footer {
+      text-align: center;
+      color: #989898;
+      font-size: 0.98em;
+      margin: 32px 10px 20px 10px;
+      letter-spacing: .2px;
+    }
+    @media (max-width: 600px) {
+      .hero, .container { margin: 10px; }
+      .banner { font-size: 1em;}
+      .hero h1 { font-size: 1.4rem;}
+    }
+  </style>
 </head>
 <body>
-  <nav class="top-nav">
-    <div class="nav-container">
-      <span class="logo">College4Less</span>
-      <ul class="nav-links">
-        <li><a href="#">Courses</a></li>
-        <li><a href="#">Study Tips</a></li>
-        <li><a href="#">Degree Info</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
+  <div class="hero">
+    <h1>Welcome to College4Less</h1>
+    <p>Save time. Save money. Learn smarter.</p>
+    <div class="btn-group">
+      <button>Take the Pretest</button>
+      <button>Study Tips</button>
+      <button>Explore Degrees</button>
     </div>
-  </nav>
-
-  <header class="hero">
-  <h1>Welcome to College4Less</h1>
-  <p>Save time. Save money. Learn smarter.</p>
-  <div class="button-group">
-    <a href="#" class="hero-btn">Take the Pretest</a>
-    <a href="#" class="hero-btn">Study Tips</a>
-    <a href="#" class="hero-btn">Explore Degrees</a>
   </div>
-</header>
-
-  <section class="ad-banner">
-    <p>Ad Banner Placeholder</p>
-  </section>
-
-  <section class="courses">
-    <h2>Explore Course Content</h2>
-    <div class="grid">
-  <a href="courses/American Government.html" class="course">American Government</a>
-  <a href="courses/U.S. History I.html" class="course">U.S. History I</a>
-  <a href="courses/U.S. History II.html" class="course">U.S. History II</a>
-  <a href="courses/Human Growth and Development.html" class="course">Human Growth and Development</a>
-  <a href="courses/Educational Psychology.html" class="course">Educational Psychology</a>
-  <div class="course">Introductory Psychology</div>
-  <div class="course">Introductory Sociology</div>
-  <div class="course">Macroeconomics</div>
-  <div class="course">Microeconomics</div>
-  <div class="course">Social Science & History</div>
-  <div class="course">Western Civilization I</div>
-  <div class="course">Western Civilization II</div>
-  <div class="course">American Literature</div>
-  <div class="course">Interpreting Literature</div>
-  <div class="course">College Composition</div>
-  <div class="course">English Literature</div>
-  <div class="course">Humanities</div>
-  <div class="course">Biology</div>
-  <div class="course">Calculus</div>
-  <div class="course">Chemistry</div>
-  <div class="course">College Algebra</div>
-  <div class="course">College Mathematics</div>
-  <div class="course">Natural Sciences</div>
-  <div class="course">Precalculus</div>
-  <div class="course">Financial Accounting</div>
-  <div class="course">Information Systems</div>
-  <div class="course">Business Law</div>
-  <div class="course">Principles of Management</div>
-  <div class="course">Principles of Marketing</div>
-</div>
-      
+  <div class="container">
+    <h2>Explore Courses</h2>
+    <div class="course-tags">
+      <span class="tag">American Government</span>
+      <span class="tag">U.S. History I</span>
+      <span class="tag">U.S. History II</span>
+      <span class="tag">Human Growth and Development</span>
+      <span class="tag">Introductory Educational Psychology</span>
+      <span class="tag">Introductory</span>
+      <span class="tag">Introductory Psychology</span>
+      <span class="tag">Introductory Sociology</span>
+      <span class="tag">Principles of Macroeconomics</span>
+      <span class="tag">Social Science & History</span>
+      <span class="tag">Western Civilization I</span>
+      <span class="tag">Western Civilization II</span>
+      <span class="tag">American Literature</span>
+      <span class="tag">English</span>
+      <span class="tag">Analyzing and Interpreting Literature</span>
+      <span class="tag">College Composition</span>
+      <span class="tag">English Literature</span>
+      <span class="tag">Humanities</span>
+      <span class="tag">Biology</span>
+      <span class="tag">Calculus</span>
+      <span class="tag">Chemistry</span>
+      <span class="tag">Information Systems</span>
     </div>
-  </section>
-
-  <section class="study-tips">
+  </div>
+  <div class="container">
     <h2>Study Tips & College Hacks</h2>
-    <div class="tips-grid">
-  <div class="tip-card">10 Tips for Better Study Habits</div>
-  <div class="tip-card">How to Write a College Essay</div>
-  <div class="tip-card">Save Money on Textbooks</div>
-</div>
-  </section>
-
-  <section class="resources">
-    <h2>Affiliate Resources</h2>
-    <div class="logos">
-      <img src="edx-logo.png" alt="edX" />
-      <img src="coursera-logo.png" alt="Coursera" />
-      <img src="aid-icon.png" alt="Financial Aid" />
-      <img src="tutor-icon.png" alt="Online Tutoring" />
+    <div class="tips-tags">
+      <span class="tag">10 Tips for Better Study Habits</span>
+      <span class="tag">How to Write a College Essay</span>
+      <span class="tag">Save Money on Textbooks</span>
     </div>
-  </section>
-
-  <footer>
-  <p>&copy; 2025 College4Less</p>
-  <p>Download our app on iOS & Android • Contact us at info@college4less.org</p>
-</footer>
+  </div>
+  <div class="container">
+    <h2>Affiliate Resources</h2>
+    <div class="affiliate">
+      <span style="font-family:serif;font-weight:bold;">edX</span>
+      <span style="font-family:sans-serif;font-weight:bold;">coursera</span>
+      <span>Financial Aid</span>
+      <span>Online Tutoring</span>
+    </div>
+    <div class="banner">Ad Banner Placeholder</div>
+  </div>
+  <div class="footer">
+    Download our app on iOS &amp; Android &nbsp;&bull;&nbsp; 
+    Contact us at <a href="mailto:info@college4less.org" style="color:#1972c9; text-decoration:none;">info@college4less.org</a>
+  </div>
 </body>
 </html>
-
-/* styles.css */
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.hero-btn {
-  background-color: #2563eb;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
-}
-
-.hero-btn:hover {
-  background-color: #1e40af;
-}
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f5f5f5;
-  color: #333;
-}
-
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: 20px;
-  color: #1e3a8a;
-  text-align: center;
-}
-
-.top-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 15px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #1e3a8a;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #1e3a8a;
-  font-weight: 500;
-}
-
-.nav-links li a:hover {
-  text-decoration: underline;
-}
-
-.hero {
-  background-color: #1e3a8a;
-  color: #fff;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.hero h1 {
-  margin-bottom: 20px;
-  font-size: 2.75rem;
-  line-height: 1.2;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto 30px auto;
-}
-
-.app-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.app-buttons img {
-  height: 50px;
-  transition: transform 0.3s;
-}
-
-.app-buttons img:hover {
-  transform: scale(1.05);
-}
-
-.ad-banner {
-  background: #e2e8f0;
-  text-align: center;
-  padding: 20px;
-  font-weight: bold;
-}
-
-section {
-  padding: 60px 20px;
-  margin: 20px auto;
-  max-width: 1000px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.course {
-  background: #edf2f7;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 600;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  transition: transform 0.2s;
-}
-
-.course:hover {
-  transform: translateY(-5px);
-}
-
-.study-tips ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-  font-size: 1.05rem;
-}
-
-.study-tips li {
-  margin: 12px 0;
-}
-
-.resources .logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.resources .logos img {
-  height: 50px;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-.resources .logos img:hover {
-  filter: grayscale(0%);
-}
-
-footer {
-  background: #1e293b;
-  color: white;
-  padding: 40px;
-  text-align: center;
-  margin-top: 40px;
-}
