@@ -20,9 +20,15 @@
       padding: 12px 29px; font-weight: 600; font-size: 1.12em; cursor: pointer;
     }
     .info-text { text-align: center; font-size: 1.25rem; margin: 29px 0 15px 0; }
-    .container {
-      background: #fff; max-width: 96vw; margin: 0 auto 18px auto; border-radius: 11px;
-      box-shadow: 0 1px 6px rgba(74,90,115,0.05); padding: 23px 0 16px 0;
+    .highlight-section {
+      background: #fff; max-width: 90vw; margin: 24px auto; padding: 24px;
+      border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); text-align: center;
+    }
+    .highlight-section h2 {
+      color: #155fa0; font-size: 1.8rem; margin-bottom: 12px;
+    }
+    .highlight-section p {
+      font-size: 1.15rem; max-width: 700px; margin: 0 auto 16px;
     }
     .dropdown-section {
       background: #f8f6f1; border-radius: 10px; padding: 8px; margin: 13px 16px 15px 16px;
@@ -68,24 +74,17 @@
     </div>
   </div>
 
-  <div class="info-text">Download our app on iOS & Android</div>
-
-  <!-- Search Bar -->
-  <div class="search-bar" style="max-width:400px;margin:0 auto 25px;display:flex;justify-content:center;">
-    <input type="text" placeholder="Search for a course..." style="padding:10px;font-size:1rem;width:100%;max-width:300px;border:1px solid #ccc;border-radius:6px 0 0 6px;">
-    <button style="padding:10px 18px;font-size:1rem;background:#226cc2;color:white;border:none;border-radius:0 6px 6px 0;cursor:pointer;">Search</button>
-  </div>
-
-  <!-- App Download Badges -->
-  <div class="app-badges" style="display:flex;justify-content:center;gap:16px;margin-bottom:30px;">
-    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="40">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" height="40">
+  <div class="highlight-section">
+    <h2>Why Wait? Save Time and Money Starting Today.</h2>
+    <p>Every student wants to graduate faster—and with less debt. But most don’t realize how simple it can be. What if just <strong>30 minutes a day for 30 days</strong> could save you <strong>$1,500</strong> and <strong>135 hours</strong> of classroom and homework time?</p>
+    <p>Now imagine knocking out two, three, or five courses this way. That’s months of time saved and thousands of dollars you keep in your pocket.</p>
+    <p>Over <strong>120,000 CLEP exams</strong> are taken each year by students just like you—students who want to move forward, not fall behind.</p>
+    <button class="hero-btn" onclick="window.location.href='index.html';">Start Learning Smarter</button>
   </div>
 
   <div class="container">
     <div class="dropdown-section">
       <div class="dropdown-header">Explore Courses</div>
-
       <button class="subject-btn" onclick="toggleSubject('history')">History and Social Sciences</button>
       <div class="subject-list" id="history">
         <a class="subject-link" href="subjects/american-government.html">American Government</a>
@@ -144,6 +143,18 @@
     </div>
   </div>
 
+  <div class="info-text">Download our app on iOS & Android</div>
+
+  <div class="search-bar" style="max-width:400px;margin:0 auto 25px;display:flex;justify-content:center;">
+    <input type="text" placeholder="Search for a course..." style="padding:10px;font-size:1rem;width:100%;max-width:300px;border:1px solid #ccc;border-radius:6px 0 0 6px;">
+    <button style="padding:10px 18px;font-size:1rem;background:#226cc2;color:white;border:none;border-radius:0 6px 6px 0;cursor:pointer;">Search</button>
+  </div>
+
+  <div class="app-badges" style="display:flex;justify-content:center;gap:16px;margin-bottom:30px;">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="40">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" height="40">
+  </div>
+
   <div class="footer">Download our app on iOS & Android • Contact us at info@college4less.org</div>
 
   <script>
@@ -154,5 +165,3 @@
   </script>
 </body>
 </html>
-
-
