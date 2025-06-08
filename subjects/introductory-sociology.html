@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Introductory Sociology | College4Less</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { background: #faf6f2; font-family: "Helvetica Neue", Arial, sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero { background: #155fa0; color: #fff; padding: 36px 24px; text-align: center; font-size: 2.2rem; font-weight: 800; }
+    .ad-banner { background: #eaeaea; color: #555; text-align: center; padding: 12px; font-size: 1.2rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 14px; text-align: center; }
+    .search-bar {
+      width: 100%; padding: 10px; font-size: 1rem;
+      border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px;
+    }
+    .topic-list li { margin: 10px 0; }
+    .hidden-topics { display: none; }
+    .show-more { margin-top: 20px; text-align: center; }
+    .show-more button {
+      padding: 10px 18px; font-size: 1rem;
+      border: 2px solid #155fa0; background: white;
+      color: #155fa0; border-radius: 8px; cursor: pointer; font-weight: 600;
+    }
+    .app-badges {
+      display: flex; justify-content: center; gap: 14px; margin: 30px 0;
+    }
+    .affiliate-row {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 24px; font-size: 1.2rem; font-weight: 600; color: #163d6e; margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">Introductory Sociology</div>
+  <div class="ad-banner">Ad Banner</div>
+
+  <div class="container">
+    <input type="text" id="topicSearch" class="search-bar" placeholder="Search topics..." onkeyup="filterTopics()" />
+
+    <div class="section-title">Topics Covered</div>
+    <ul class="topic-list" id="topicList">
+      <li>Economic institutions and workplace structures</li>
+      <li>Educational institutions and systems of learning</li>
+      <li>Family institutions and kinship patterns</li>
+      <li>Medical and healthcare institutions in society</li>
+      <li>Political structures and power institutions</li>
+      <li>Religion as a social institution and cultural system</li>
+      <li>Community structures and urban/rural organization</li>
+      <li>Demography and patterns in population studies</li>
+
+      <div id="moreTopics" class="hidden-topics">
+        <li>Environmental sociology and human ecology</li>
+        <li>Collective behavior and dynamics of social movements</li>
+        <li>Cultural norms, values, and symbolic communication</li>
+        <li>Deviance, norms, and mechanisms of social control</li>
+        <li>Group structures, bureaucracies, and formal organizations</li>
+        <li>Social interaction in everyday life</li>
+        <li>Socialization processes and agents</li>
+        <li>Aging and the sociology of aging populations</li>
+        <li>Social class, mobility, and income inequality</li>
+        <li>Professions, occupations, and prestige systems</li>
+        <li>Power structures and stratification systems</li>
+        <li>Race and ethnic relations in historical and modern contexts</li>
+        <li>Sex, gender identity, and gender role socialization</li>
+        <li>Social theories and foundational thinkers in sociology</li>
+        <li>Quantitative and qualitative sociological research methods</li>
+        <li>Sociological theory and theoretical perspectives</li>
+        <li>Interpretation of tables, charts, and empirical data</li>
+      </div>
+    </ul>
+
+    <div class="show-more">
+      <button onclick="toggleTopics()">Show More Topics</button>
+    </div>
+
+    <div class="app-badges">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" height="40">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="40">
+    </div>
+
+    <div class="section-title">Affiliate Resources</div>
+    <div class="affiliate-row">
+      <span>edX</span>
+      <span>coursera</span>
+      <span>Financial Aid</span>
+      <span>Online Tutoring</span>
+    </div>
+  </div>
+
+  <script>
+    function toggleTopics() {
+      const more = document.getElementById("moreTopics");
+      const btn = document.querySelector(".show-more button");
+      more.style.display = more.style.display === "block" ? "none" : "block";
+      btn.innerText = more.style.display === "block" ? "Show Less Topics" : "Show More Topics";
+    }
+
+    function filterTopics() {
+      const input = document.getElementById("topicSearch");
+      const filter = input.value.toLowerCase();
+      const items = document.querySelectorAll("#topicList li");
+      items.forEach(li => {
+        li.style.display = li.textContent.toLowerCase().includes(filter) ? "list-item" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
