@@ -7,7 +7,6 @@
   <style>
     body { background: #faf6f2; font-family: "Helvetica Neue", Arial, sans-serif; color: #222; margin: 0; padding: 0; }
     .hero { background: #155fa0; color: #fff; padding: 36px 24px; text-align: center; font-size: 2.2rem; font-weight: 800; }
-    .ad-banner { background: #eaeaea; color: #555; text-align: center; padding: 12px; font-size: 1.2rem; }
     .container { max-width: 900px; margin: 0 auto; padding: 20px; }
     .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 14px; text-align: center; }
     .search-bar {
@@ -15,83 +14,83 @@
       border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px;
     }
     .topic-list li { margin: 10px 0; }
-    .hidden-topics { display: none; }
+    .topic-list a { color: #155fa0; font-weight: 600; text-decoration: none; }
+    .topic-list a:hover { text-decoration: underline; }
     .show-more { margin-top: 20px; text-align: center; }
     .show-more button {
       padding: 10px 18px; font-size: 1rem;
       border: 2px solid #155fa0; background: white;
       color: #155fa0; border-radius: 8px; cursor: pointer; font-weight: 600;
     }
-    .app-badges {
-      display: flex; justify-content: center; gap: 14px; margin: 30px 0;
+    .highlight-section {
+      background: #fff; max-width: 90vw; margin: 40px auto 20px; padding: 24px;
+      border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); text-align: center;
     }
-    .affiliate-row {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 24px; font-size: 1.2rem; font-weight: 600; color: #163d6e; margin-top: 16px;
-    }
+    .highlight-section h2 { color: #155fa0; font-size: 1.8rem; margin-bottom: 12px; }
+    .highlight-section ul { list-style-type: disc; text-align: left; padding-left: 20px; }
+    .highlight-section li { margin: 8px 0; font-size: 1rem; }
+    .highlight-section .recommended { font-weight: bold; color: #c23b22; }
+    .app-badges { display: flex; justify-content: center; gap: 14px; margin: 30px 0; }
   </style>
 </head>
 <body>
   <div class="hero">U.S. History I</div>
-  <div class="ad-banner">Ad Banner</div>
-
   <div class="container">
     <input type="text" id="topicSearch" class="search-bar" placeholder="Search topics..." onkeyup="filterTopics()" />
 
     <div class="section-title">Topics Covered</div>
-    <ul class="topic-list" id="topicList">
-      <li>The nature of indigenous societies in the Americas</li>
-      <li>The impact of European discovery and colonization upon indigenous societies</li>
-      <li>Spanish, French, Dutch, and British colonization and the Columbian Exchange</li>
-      <li>The origins and nature of slavery and resistance to it</li>
-      <li>Immigration and the history of ethnic minorities</li>
-      <li>The history of women, changing gender roles, and family structures</li>
-      <li>The development and character of colonial societies</li>
-      <li>British relations with the Atlantic colonies of North America</li>
-
-      <div id="moreTopics" class="hidden-topics">
-        <li>The changing role of religion in American society</li>
-        <li>The causes, events, and consequences of the American Revolution</li>
-        <li>The Constitution, amendments, and Supreme Court interpretations</li>
-        <li>The development and expansion of participatory democracy</li>
-        <li>The growth of and changes in political parties</li>
-        <li>The changing role of government in American life</li>
-        <li>The intellectual and political expressions of nationalism</li>
-        <li>Major movements and figures in American literature, art, and culture</li>
-        <li>Abolitionism and reform movements</li>
-        <li>Long-term demographic trends: immigration and internal migration</li>
-        <li>The motivations for and character of American expansionism</li>
-        <li>The process of economic growth and development</li>
-        <li>Conflicts with Native Americans, the Seven Years’ War, War of 1812, Mexican-American War, and the Civil War and Reconstruction</li>
-        <li>The role of the environment in United States history</li>
-      </div>
+    <ul class="topic-list" id="topicList" style="overflow: hidden; max-height: 800px; transition: max-height 0.3s ease;">
+      <li><a href="topics/indigenous-societies.html">The nature of indigenous societies in the Americas</a></li>
+      <li><a href="topics/european-colonization-impact.html">The impact of European discovery and colonization upon indigenous societies</a></li>
+      <li><a href="topics/columbian-exchange.html">Spanish, French, Dutch, and British colonization and the Columbian Exchange</a></li>
+      <li><a href="topics/slavery-and-resistance.html">The origins and nature of slavery and resistance to it</a></li>
+      <li><a href="topics/ethnic-immigration-history.html">Immigration and the history of ethnic minorities</a></li>
+      <li><a href="topics/women-gender-family.html">The history of women, changing gender roles, and family structures</a></li>
+      <li><a href="topics/colonial-societies.html">The development and character of colonial societies</a></li>
+      <li><a href="topics/british-colonial-relations.html">British relations with the Atlantic colonies of North America</a></li>
+      <li><a href="topics/religion-in-society.html">The changing role of religion in American society</a></li>
+      <li><a href="topics/american-revolution.html">The causes, events, and consequences of the American Revolution</a></li>
+      <li><a href="topics/constitution-and-courts.html">The Constitution, amendments, and Supreme Court interpretations</a></li>
+      <li><a href="topics/participatory-democracy.html">The development and expansion of participatory democracy</a></li>
+      <li><a href="topics/political-parties.html">The growth of and changes in political parties</a></li>
+      <li><a href="topics/government-role.html">The changing role of government in American life</a></li>
+      <li><a href="topics/nationalism-expressions.html">The intellectual and political expressions of nationalism</a></li>
+      <li><a href="topics/literature-and-culture.html">Major movements and figures in American literature, art, and culture</a></li>
+      <li><a href="topics/abolitionism-reform.html">Abolitionism and reform movements</a></li>
+      <li><a href="topics/demographic-trends.html">Long-term demographic trends: immigration and internal migration</a></li>
+      <li><a href="topics/expansionism.html">The motivations for and character of American expansionism</a></li>
+      <li><a href="topics/economic-development.html">The process of economic growth and development</a></li>
+      <li><a href="topics/conflicts-and-wars.html">Conflicts with Native Americans, the Seven Years’ War, War of 1812, Mexican-American War, and the Civil War and Reconstruction</a></li>
+      <li><a href="topics/environmental-history.html">The role of the environment in United States history</a></li>
     </ul>
 
-    <div class="show-more">
-      <button onclick="toggleTopics()">Show More Topics</button>
-    </div>
+    <div class="highlight-section">
+  <h2>College4Less Highly Recommended for U.S. History I</h2>
+  <ul>
+    <li class="recommended"><a href="https://www.amazon.com/dp/0743223136?tag=college4les0a-20" target="_blank">1776 by David McCullough</a></li>
+    <li><a href="https://www.amazon.com/dp/0375705244?tag=college4les0a-20" target="_blank">John Adams by David McCullough</a></li>
+        <li><a href="https://www.amazon.com/dp/0143111752?tag=college4les0a-20" target="_blank">Mayflower: A Story of Courage, Community, and War by Nathaniel Philbrick</a></li>
+    <li><a href="https://www.amazon.com/dp/0812970411?tag=college4les0a-20" target="_blank">The American Revolution: A History by Gordon S. Wood</a></li>
+  </ul>
+  <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 16px;">
+    As an Amazon Associate, College4Less earns from qualifying purchases.
+  </p>
+</div>
 
     <div class="app-badges">
       <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" height="40">
       <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="40">
     </div>
-
-    <div class="section-title">Affiliate Resources</div>
-    <div class="affiliate-row">
-      <span>edX</span>
-      <span>coursera</span>
-      <span>Financial Aid</span>
-      <span>Online Tutoring</span>
-    </div>
   </div>
 
   <script>
     function toggleTopics() {
-      const more = document.getElementById("moreTopics");
-      const btn = document.querySelector(".show-more button");
-      more.style.display = more.style.display === "block" ? "none" : "block";
-      btn.innerText = more.style.display === "block" ? "Show Less Topics" : "Show More Topics";
-    }
+  const list = document.getElementById("topicList");
+  const button = document.querySelector(".show-more button");
+  const expanded = list.classList.toggle("expanded");
+  button.textContent = expanded ? "Show Less Topics" : "Show More Topics";
+  list.style.maxHeight = expanded ? "none" : "800px";
+}
 
     function filterTopics() {
       const input = document.getElementById("topicSearch");
