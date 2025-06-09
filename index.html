@@ -36,12 +36,16 @@
     }
     .dropdown-header {
       font-size: 1.45rem; font-weight: 700; padding: 9px 0 9px 12px;
-      display: flex; align-items: center; cursor: pointer; justify-content: space-between;
+      display: flex; align-items: center;
     }
     .subject-btn {
       background: #f5f5f7; border: 1.3px solid #e6e6e6; padding: 15px 18px;
       border-radius: 8px; font-size: 1.24em; font-weight: 500; margin: 9px auto;
       text-align: left; display: flex; justify-content: space-between; width: 98%;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .subject-btn:hover {
+      background: #e2e8f0;
     }
     .subject-list {
       margin: 6px 0 10px 30px; display: none; flex-direction: column; gap: 5px;
@@ -52,13 +56,15 @@
       text-align: left; cursor: pointer; padding: 4px 0;
     }
     .affiliate-row {
-      display: flex; flex-wrap: wrap; gap: 34px; align-items: center;
-      padding: 6px 0 16px 28px; font-size: 1.24rem; font-weight: 600; color: #163d6e;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+      padding: 8px 0 20px 0; font-size: 1.07rem;
     }
-    .banner {
-      border: 2px solid #e3e3e3; border-radius: 9px; min-height: 39px;
-      margin: 0 26px; display: flex; align-items: center; justify-content: center;
-      color: #667; font-size: 1.18em; background: #f6f6f8;
+    .affiliate-row a {
+      background: #f0f4fa; padding: 8px 16px; border-radius: 6px; color: #155fa0;
+      text-decoration: none; font-weight: 600; border: 1px solid #d6e2f0;
+    }
+    .affiliate-row a:hover {
+      background: #dbeaff;
     }
     .footer { text-align: center; font-size: 1.07em; color: #989898; margin: 32px 10px 23px 10px; }
   </style>
@@ -71,7 +77,6 @@
       <button class="hero-btn" onclick="window.location.href='start-saving.html';">Start Saving</button>
       <button class="hero-btn" onclick="window.location.href='study-tips.html';">Get Study Tips</button>
       <button class="hero-btn" onclick="window.location.href='find-degree.html';">Find a Degree</button>
-
     </div>
   </div>
 
@@ -80,108 +85,89 @@
     <p>Every student wants to graduate faster—and with less debt. But most don’t realize how simple it can be. What if just <strong>30 minutes a day for 30 days</strong> could save you <strong>$1,500</strong> and <strong>135 hours</strong> of classroom and homework time?</p>
     <p>Now imagine knocking out two, three, or five courses this way. That’s months of time saved and thousands of dollars you keep in your pocket.</p>
     <p>Over <strong>120,000 CLEP exams</strong> are taken each year by students just like you—students who want to move forward, not fall behind.</p>
-<p style="font-size: 1.3rem; font-weight: bold; color: #155fa0; margin-top: 20px;">
-  Thousands are saving time and money every day. Ready to start your journey?
-</p>
+    <p style="font-size: 1.3rem; font-weight: bold; color: #155fa0; margin-top: 20px;">
+      Thousands are saving time and money every day. Ready to start your journey?
+    </p>
   </div>
 
-  <div class="container">
-    <div class="dropdown-section">
-      <div class="dropdown-header">Explore Courses</div>
-      <button class="subject-btn" onclick="toggleSubject('history')">History and Social Sciences</button>
-      <div class="subject-list" id="history">
-        <a class="subject-link" href="subjects/american-government.html">American Government</a>
-        <a class="subject-link" href="subjects/us-history-i.html">U.S. History I</a>
-        <a class="subject-link" href="subjects/us-history-ii.html">U.S. History II</a>
-        <a class="subject-link" href="subjects/human-growth-and-development.html">Human Growth and Development</a>
-        <a class="subject-link" href="subjects/introduction-to-educational-psychology.html">Introduction to Educational Psychology</a>
-        <a class="subject-link" href="subjects/introductory-psychology.html">Introductory Psychology</a>
-        <a class="subject-link" href="subjects/introductory-sociology.html">Introductory Sociology</a>
-        <a class="subject-link" href="subjects/principles-of-macroeconomics.html">Principles of Macroeconomics</a>
-        <a class="subject-link" href="subjects/principles-of-microeconomics.html">Principles of Microeconomics</a>
-        <a class="subject-link" href="subjects/social-sciences-and-history.html">Social Sciences and History</a>
-        <a class="subject-link" href="subjects/western-civilization-i.html">Western Civilization I</a>
-        <a class="subject-link" href="subjects/western-civilization-ii.html">Western Civilization II</a>
-      </div>
-
-      <button class="subject-btn" onclick="toggleSubject('literature')">Composition and Literature</button>
-      <div class="subject-list" id="literature">
-        <a class="subject-link" href="subjects/american-literature.html">American Literature</a>
-        <a class="subject-link" href="subjects/analyzing-and-interpreting-literature.html">Analyzing and Interpreting Literature</a>
-        <a class="subject-link" href="subjects/college-composition.html">College Composition</a>
-        <a class="subject-link" href="subjects/english-literature.html">English Literature</a>
-        <a class="subject-link" href="subjects/humanities.html">Humanities</a>
-      </div>
-
-      <button class="subject-btn" onclick="toggleSubject('science')">Science and Math</button>
-      <div class="subject-list" id="science">
-        <a class="subject-link" href="subjects/biology.html">Biology</a>
-        <a class="subject-link" href="subjects/calculus.html">Calculus</a>
-        <a class="subject-link" href="subjects/chemistry.html">Chemistry</a>
-        <a class="subject-link" href="subjects/college-algebra.html">College Algebra</a>
-        <a class="subject-link" href="subjects/college-mathematics.html">College Mathematics</a>
-        <a class="subject-link" href="subjects/natural-sciences.html">Natural Sciences</a>
-        <a class="subject-link" href="subjects/precalculus.html">Precalculus</a>
-      </div>
-
-      <button class="subject-btn" onclick="toggleSubject('business')">Business</button>
-      <div class="subject-list" id="business">
-        <a class="subject-link" href="subjects/financial-accounting.html">Financial Accounting</a>
-        <a class="subject-link" href="subjects/information-systems.html">Information Systems</a>
-        <a class="subject-link" href="subjects/introductory-business-law.html">Introductory Business Law</a>
-        <a class="subject-link" href="subjects/principles-of-management.html">Principles of Management</a>
-        <a class="subject-link" href="subjects/principles-of-marketing.html">Principles of Marketing</a>
-      </div>
-    </div>
-
-    <div class="dropdown-section">
-      <div class="dropdown-header">Affiliate Resources</div>
-      <div class="affiliate-row">
-        <span>edX</span>
-        <span>coursera</span>
-        <span>Financial Aid</span>
-        <span>Online Tutoring</span>
-      </div>
-      <div class="ad-banner">
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9262670824789698"
-          crossorigin="anonymous"></script>
-  <!-- Homebanner -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-9262670824789698"
-       data-ad-slot="8323774150"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+  <div class="dropdown-section">
+    <div class="dropdown-header">Explore Courses</div>
+    <button class="subject-btn" onclick="toggleSubject('history')">History and Social Sciences</button>
+<div class="subject-list" id="history">
+  <a class="subject-link" href="subjects/american-government.html">American Government</a>
+  <a class="subject-link" href="subjects/us-history-i.html">U.S. History I</a>
+  <a class="subject-link" href="subjects/us-history-ii.html">U.S. History II</a>
+  <a class="subject-link" href="subjects/human-growth-and-development.html">Human Growth and Development</a>
+  <a class="subject-link" href="subjects/introduction-to-educational-psychology.html">Introduction to Educational Psychology</a>
+  <a class="subject-link" href="subjects/introductory-psychology.html">Introductory Psychology</a>
+  <a class="subject-link" href="subjects/introductory-sociology.html">Introductory Sociology</a>
+  <a class="subject-link" href="subjects/principles-of-macroeconomics.html">Principles of Macroeconomics</a>
+  <a class="subject-link" href="subjects/principles-of-microeconomics.html">Principles of Microeconomics</a>
+  <a class="subject-link" href="subjects/social-sciences-and-history.html">Social Sciences and History</a>
+  <a class="subject-link" href="subjects/western-civilization-i.html">Western Civilization I</a>
+  <a class="subject-link" href="subjects/western-civilization-ii.html">Western Civilization II</a>
 </div>
 
+<button class="subject-btn" onclick="toggleSubject('literature')">Composition and Literature</button>
+<div class="subject-list" id="literature">
+  <a class="subject-link" href="subjects/american-literature.html">American Literature</a>
+  <a class="subject-link" href="subjects/analyzing-and-interpreting-literature.html">Analyzing and Interpreting Literature</a>
+  <a class="subject-link" href="subjects/college-composition.html">College Composition</a>
+  <a class="subject-link" href="subjects/english-literature.html">English Literature</a>
+  <a class="subject-link" href="subjects/humanities.html">Humanities</a>
+</div>
+
+<button class="subject-btn" onclick="toggleSubject('science')">Science and Math</button>
+<div class="subject-list" id="science">
+  <a class="subject-link" href="subjects/biology.html">Biology</a>
+  <a class="subject-link" href="subjects/calculus.html">Calculus</a>
+  <a class="subject-link" href="subjects/chemistry.html">Chemistry</a>
+  <a class="subject-link" href="subjects/college-algebra.html">College Algebra</a>
+  <a class="subject-link" href="subjects/college-mathematics.html">College Mathematics</a>
+  <a class="subject-link" href="subjects/natural-sciences.html">Natural Sciences</a>
+  <a class="subject-link" href="subjects/precalculus.html">Precalculus</a>
+</div>
+
+<button class="subject-btn" onclick="toggleSubject('business')">Business</button>
+<div class="subject-list" id="business">
+  <a class="subject-link" href="subjects/financial-accounting.html">Financial Accounting</a>
+  <a class="subject-link" href="subjects/information-systems.html">Information Systems</a>
+  <a class="subject-link" href="subjects/introductory-business-law.html">Introductory Business Law</a>
+  <a class="subject-link" href="subjects/principles-of-management.html">Principles of Management</a>
+  <a class="subject-link" href="subjects/principles-of-marketing.html">Principles of Marketing</a>
+</div>
+  </div>
+
+  <div class="dropdown-section">
+    <div class="dropdown-header">Affiliate Resources</div>
+    <div class="affiliate-row">
+      <a href="#">edX</a>
+      <a href="#">Coursera</a>
+      <a href="#">Financial Aid</a>
+      <a href="#">Online Tutoring</a>
     </div>
   </div>
 
-  <div class="info-text">Download our app on iOS & Android</div>
-
-  <div class="search-bar" style="max-width:400px;margin:0 auto 25px;display:flex;justify-content:center;">
-    <input type="text" placeholder="Search for a course..." style="padding:10px;font-size:1rem;width:100%;max-width:300px;border:1px solid #ccc;border-radius:6px 0 0 6px;">
-    <button style="padding:10px 18px;font-size:1rem;background:#226cc2;color:white;border:none;border-radius:0 6px 6px 0;cursor:pointer;">Search</button>
-  </div>
-
-  <div class="app-badges" style="display:flex;justify-content:center;gap:16px;margin-bottom:30px;">
-    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="40">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" height="40">
-  </div>
-<div class="highlight-section">
-  <h2>Recommended CLEP Study Tools</h2>
-  <ul style="list-style-type: disc; padding-left: 20px; text-align: left; max-width: 700px; margin: 0 auto;">
-    <li><a href="https://www.amazon.com/dp/B08H5QPX1G?tag=college4les0a-20" target="_blank">CLEP Official Study Guide 2023</a></li>
-    <li><a href="https://www.amazon.com/dp/B085ZHZ5WJ?tag=college4les0a-20" target="_blank">CLEP Prep Book Bundle with Practice Tests</a></li>
-    <li><a href="https://www.amazon.com/dp/B0892YWX6B?tag=college4les0a-20" target="_blank">CLEP Flashcards for Key Subjects</a></li>
+  <div class="highlight-section">
+  <h2>Top Picks for College Reference Books</h2>
+  <ul style="list-style-type: disc; padding-left: 20px; text-align: left; max-width: 700px; margin: 0 auto; font-size: 1rem;">
+    <li><a href="https://www.amazon.com/dp/0316017590?tag=college4les0a-20" target="_blank">Bartlett's Familiar Quotations by John Bartlett</a></li>
+    <li><a href="https://www.amazon.com/dp/0593517076?tag=college4les0a-20" target="_blank">Merriam-Webster's Collegiate Dictionary, 12th Edition</a></li>
+    <li><a href="https://www.amazon.com/dp/0593517041?tag=college4les0a-20" target="_blank">Roget's Thesaurus of English Words and Phrases</a></li>
+    <li><a href="https://www.amazon.com/dp/1510766537?tag=college4les0a-20" target="_blank">The World Almanac and Book of Facts 2024</a></li>
+    <li><a href="https://www.amazon.com/dp/0486814490?tag=college4les0a-20" target="_blank">Strunk and White's The Elements of Style</a></li>
   </ul>
+    <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 16px;">
+      As an Amazon Associate, College4Less earns from qualifying purchases.
+    </p>
+  </div>
+
+  <div class="app-badges" style="display:flex;justify-content:center;gap:16px;margin:24px auto 20px auto;">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="40">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" height="40">
 </div>
 
-  <div class="footer">Download our app on iOS & Android • Contact us at info@college4less.org</div>
+$1
 
   <script>
     function toggleSubject(id) {
