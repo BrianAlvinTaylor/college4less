@@ -9,17 +9,19 @@
     .hero { background: #155fa0; color: #fff; padding: 36px 24px; text-align: center; font-size: 2.2rem; font-weight: 800; }
     .ad-banner { background: #eaeaea; color: #555; text-align: center; padding: 12px; font-size: 1.2rem; }
     .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 14px; }
+    .section-title { font-size: 1.5rem; font-weight: 700; margin: 40px 0 14px 0; text-align: center; border-top: 1px solid #ccc; padding-top: 20px; }
     .search-bar { width: 100%; padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px; }
     .topic-list li { margin: 10px 0; }
     .hidden-topics { display: none; }
     .show-more { margin-top: 20px; text-align: center; }
     .show-more button { padding: 10px 18px; font-size: 1rem; border: 2px solid #155fa0; background: white; color: #155fa0; border-radius: 8px; cursor: pointer; font-weight: 600; }
     .app-badges { display: flex; justify-content: center; gap: 14px; margin: 30px 0; }
-    .affiliate-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; font-size: 1.2rem; font-weight: 600; color: #163d6e; margin-top: 16px; }
-    .book-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; margin-top: 40px; }
-    .book-row a img { max-height: 140px; border-radius: 6px; }
-    .book-row p { text-align: center; font-weight: 600; color: #155fa0; margin-top: 6px; }
+    .affiliate-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; font-size: 1rem; font-weight: 600; color: #163d6e; margin-top: 16px; }
+    .book-list { list-style-type: none; padding-left: 0; font-size: 1rem; line-height: 1.6; text-align: center; }
+    .book-list li { margin: 10px 0; }
+    .book-list a { color: #155fa0; text-decoration: none; font-weight: 600; }
+    .book-list a:hover { text-decoration: underline; }
+    .disclaimer { font-size: 0.85rem; color: #666; text-align: center; margin-top: 12px; font-style: italic; }
   </style>
 </head>
 <body>
@@ -56,29 +58,20 @@
       <button onclick="toggleTopics()">Show More Topics</button>
     </div>
 
-    <div class="section-title" style="text-align:center;">Recommended U.S. History II Books</div>
-    <div class="book-row">
-      <a href="https://www.amazon.com/dp/0062397346?tag=college4les0a-20" target="_blank">
-        <img src="https://m.media-amazon.com/images/I/71EwoNQypZL._SL1500_.jpg" alt="A People's History of the United States">
-        <p>A People's History of the United States</p>
-      </a>
-      <a href="https://www.amazon.com/dp/0393418226?tag=college4les0a-20" target="_blank">
-        <img src="https://m.media-amazon.com/images/I/81j8ux9cXBL._SL1500_.jpg" alt="Give Me Liberty!: An American History">
-        <p>Give Me Liberty!: An American History</p>
-      </a>
-      <a href="https://www.amazon.com/dp/0061960543?tag=college4les0a-20" target="_blank">
-        <img src="https://m.media-amazon.com/images/I/91RykmDJiCL._SL1500_.jpg" alt="Don't Know Much About History">
-        <p>Don't Know Much About History</p>
-      </a>
-    </div>
-    <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 16px;"><em>As an Amazon Associate, College4Less earns from qualifying purchases.</em></p>
+    <div class="section-title">Recommended U.S. History II Books</div>
+    <ul class="book-list">
+      <li><a href="https://www.amazon.com/dp/0062397346?tag=college4les0a-20" target="_blank">A People's History of the United States – Howard Zinn</a></li>
+      <li><a href="https://www.amazon.com/dp/0393418226?tag=college4les0a-20" target="_blank">Give Me Liberty!: An American History – Eric Foner</a></li>
+      <li><a href="https://www.amazon.com/dp/0061960543?tag=college4les0a-20" target="_blank">Don't Know Much About History – Kenneth C. Davis</a></li>
+    </ul>
+    <p class="disclaimer">As an Amazon Associate, College4Less earns from qualifying purchases.</p>
 
     <div class="app-badges">
       <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" height="40">
       <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="40">
     </div>
 
-    <div class="section-title" style="text-align:center;">Affiliate Resources</div>
+    <div class="section-title">Affiliate Resources</div>
     <div class="affiliate-row">
       <span>edX</span>
       <span>coursera</span>
