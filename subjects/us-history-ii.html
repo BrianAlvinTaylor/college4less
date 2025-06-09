@@ -5,82 +5,21 @@
   <title>U.S. History II | College4Less</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      background: #faf6f2;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
-    .hero {
-      background: #155fa0;
-      color: #fff;
-      padding: 36px 24px;
-      text-align: center;
-      font-size: 2.2rem;
-      font-weight: 800;
-    }
-    .ad-banner {
-      background: #eaeaea;
-      color: #555;
-      text-align: center;
-      padding: 12px;
-      font-size: 1.2rem;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-    .search-bar {
-      width: 100%;
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-    .topic-list li {
-      margin: 10px 0;
-    }
-    .hidden-topics {
-      display: none;
-    }
-    .show-more {
-      margin-top: 20px;
-      text-align: center;
-    }
-    .show-more button {
-      padding: 10px 18px;
-      font-size: 1rem;
-      border: 2px solid #155fa0;
-      background: white;
-      color: #155fa0;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .app-badges {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin: 30px 0;
-    }
-    .affiliate-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #163d6e;
-      margin-top: 16px;
-    }
+    body { background: #faf6f2; font-family: "Helvetica Neue", Arial, sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero { background: #155fa0; color: #fff; padding: 36px 24px; text-align: center; font-size: 2.2rem; font-weight: 800; }
+    .ad-banner { background: #eaeaea; color: #555; text-align: center; padding: 12px; font-size: 1.2rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 14px; }
+    .search-bar { width: 100%; padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px; }
+    .topic-list li { margin: 10px 0; }
+    .hidden-topics { display: none; }
+    .show-more { margin-top: 20px; text-align: center; }
+    .show-more button { padding: 10px 18px; font-size: 1rem; border: 2px solid #155fa0; background: white; color: #155fa0; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    .app-badges { display: flex; justify-content: center; gap: 14px; margin: 30px 0; }
+    .affiliate-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; font-size: 1.2rem; font-weight: 600; color: #163d6e; margin-top: 16px; }
+    .book-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; margin-top: 40px; }
+    .book-row a img { max-height: 140px; border-radius: 6px; }
+    .book-row p { text-align: center; font-weight: 600; color: #155fa0; margin-top: 6px; }
   </style>
 </head>
 <body>
@@ -92,31 +31,47 @@
 
     <div class="section-title">Topics Covered</div>
     <ul class="topic-list" id="topicList">
-     <li><a href="subjects/topics/civil-war-and-reconstruction-south.html">The impact of the Civil War and Reconstruction upon the South</a></li>
-<li><a href="subjects/topics/american-expansionism.html">American Expansionism & Imperialism</a></li>
-      <li>Legal history, including constitutional amendments and major Supreme Court cases</li>
-      <li>The role of the environment in United States history</li>
-      <li>The development of American political parties, movements, and realignments</li>
-      <li>The changing role of the federal government in the economy and American life</li>
-      <li>The intellectual and political expressions of liberalism and conservatism</li>
-      <li>Long-term demographic trends</li>
-
+      <li><a href="subjects/topics/civil-war-and-reconstruction-south.html">The impact of the Civil War and Reconstruction upon the South</a></li>
+      <li><a href="subjects/topics/american-expansionism.html">American Expansionism & Imperialism</a></li>
+      <li><a href="subjects/topics/legal-history-and-supreme-court-cases.html">Legal history, including constitutional amendments and major Supreme Court cases</a></li>
+      <li><a href="subjects/topics/environmental-history.html">The role of the environment in United States history</a></li>
+      <li><a href="subjects/topics/political-party-development.html">The development of American political parties, movements, and realignments</a></li>
+      <li><a href="subjects/topics/federal-government-role.html">The changing role of the federal government in the economy and American life</a></li>
+      <li><a href="subjects/topics/liberalism-and-conservatism.html">The intellectual and political expressions of liberalism and conservatism</a></li>
+      <li><a href="subjects/topics/demographic-trends.html">Long-term demographic trends</a></li>
       <div id="moreTopics" class="hidden-topics">
-        <li>The process of economic growth and development, including periods of depression and recession</li>
-        <li>The changing occupational structure, nature of work, and labor organization</li>
-        <li>Immigration and the history of racial and ethnic minorities</li>
-        <li>Urbanization and industrialization</li>
-        <li>The causes and effects of major wars and diplomacy and engagement with the world</li>
-        <li>Major movements and individual figures in the history of American arts and culture</li>
-        <li>Trends in the history of women and the family</li>
-        <li>Trends in education, science, and technology and their impact on United States society</li>
-        <li>Civil rights movements, the women’s rights movement, protest movements, and the expansion of individual rights and civil liberties</li>
+        <li><a href="subjects/topics/economic-growth-and-recessions.html">The process of economic growth and development, including periods of depression and recession</a></li>
+        <li><a href="subjects/topics/work-and-labor.html">The changing occupational structure, nature of work, and labor organization</a></li>
+        <li><a href="subjects/topics/immigration-and-ethnicity.html">Immigration and the history of racial and ethnic minorities</a></li>
+        <li><a href="subjects/topics/urbanization-and-industrialization.html">Urbanization and industrialization</a></li>
+        <li><a href="subjects/topics/war-and-diplomacy.html">The causes and effects of major wars and diplomacy and engagement with the world</a></li>
+        <li><a href="subjects/topics/arts-and-culture.html">Major movements and individual figures in the history of American arts and culture</a></li>
+        <li><a href="subjects/topics/women-and-family.html">Trends in the history of women and the family</a></li>
+        <li><a href="subjects/topics/education-and-technology.html">Trends in education, science, and technology and their impact on United States society</a></li>
+        <li><a href="subjects/topics/civil-rights-and-liberties.html">Civil rights movements, the women’s rights movement, protest movements, and the expansion of individual rights and civil liberties</a></li>
       </div>
     </ul>
 
     <div class="show-more">
       <button onclick="toggleTopics()">Show More Topics</button>
     </div>
+
+    <div class="section-title" style="text-align:center;">Recommended U.S. History II Books</div>
+    <div class="book-row">
+      <a href="https://www.amazon.com/dp/0062397346?tag=college4les0a-20" target="_blank">
+        <img src="https://m.media-amazon.com/images/I/71EwoNQypZL._SL1500_.jpg" alt="A People's History of the United States">
+        <p>A People's History of the United States</p>
+      </a>
+      <a href="https://www.amazon.com/dp/0393418226?tag=college4les0a-20" target="_blank">
+        <img src="https://m.media-amazon.com/images/I/81j8ux9cXBL._SL1500_.jpg" alt="Give Me Liberty!: An American History">
+        <p>Give Me Liberty!: An American History</p>
+      </a>
+      <a href="https://www.amazon.com/dp/0061960543?tag=college4les0a-20" target="_blank">
+        <img src="https://m.media-amazon.com/images/I/91RykmDJiCL._SL1500_.jpg" alt="Don't Know Much About History">
+        <p>Don't Know Much About History</p>
+      </a>
+    </div>
+    <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 16px;"><em>As an Amazon Associate, College4Less earns from qualifying purchases.</em></p>
 
     <div class="app-badges">
       <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" height="40">
