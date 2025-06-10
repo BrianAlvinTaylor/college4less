@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>American Government | College4Less</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      color: #1a1a1a;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 0.75rem;
+    }
+    a {
+      color: #0070f3;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .search-box {
+      margin: 1.5rem 0;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" style="text-decoration:none;"><h2>College4Less</h2></a>
+  </header>
+
+  <main>
+    <h1>American Government</h1>
+    <p>Master key topics in American Government and prepare to earn college credit with confidence. These 12 study topics are based on the CLEP exam framework and include essential knowledge about the Constitution, institutions, political processes, and civil liberties.</p>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search topics..." oninput="filterTopics(event)" />
+    </div>
+
+    <ul id="topic-list">
+      <li><a href="foundations-of-american-democracy.html">Foundations of American Democracy</a></li>
+      <li><a href="the-constitution-and-its-origins.html">The Constitution and Its Origins</a></li>
+      <li><a href="federalism-and-intergovernmental-relations.html">Federalism and Intergovernmental Relations</a></li>
+      <li><a href="congress-and-the-legislative-process.html">Congress and the Legislative Process</a></li>
+      <li><a href="the-presidency-and-executive-branch.html">The Presidency and Executive Branch</a></li>
+      <li><a href="the-bureaucracy.html">The Bureaucracy</a></li>
+      <li><a href="the-federal-courts-and-judicial-review.html">The Federal Courts and Judicial Review</a></li>
+      <li><a href="civil-liberties-and-civil-rights.html">Civil Liberties and Civil Rights</a></li>
+      <li><a href="political-beliefs-and-public-opinion.html">Political Beliefs and Public Opinion</a></li>
+      <li><a href="political-participation-and-voting-behavior.html">Political Participation and Voting Behavior</a></li>
+      <li><a href="political-parties-and-interest-groups.html">Political Parties and Interest Groups</a></li>
+      <li><a href="campaigns-elections-and-the-media.html">Campaigns, Elections, and the Media</a></li>
+    </ul>
+  </main>
+
+  <footer style="margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center;">
+    © 2025 College4Less
+  </footer>
+
+  <script>
+    function filterTopics(event) {
+      const query = event.target.value.toLowerCase();
+      const listItems = document.querySelectorAll("#topic-list li");
+      listItems.forEach(li => {
+        const text = li.textContent.toLowerCase();
+        li.style.display = text.includes(query) ? "list-item" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
