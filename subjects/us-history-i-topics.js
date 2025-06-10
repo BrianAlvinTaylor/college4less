@@ -1,88 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>U.S. History I Topic | College4Less</title>
-  <style>
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background: #faf6f2;
-      margin: 0;
-      padding: 0;
-      color: #222;
-    }
-    .header {
-      background: #155fa0;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 2em;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 850px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .section-title {
-      font-size: 1.6em;
-      color: #155fa0;
-      margin-bottom: 10px;
-    }
-    .section {
-      margin-bottom: 30px;
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 30px;
-      background: #155fa0;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .books-section ul {
-      padding-left: 20px;
-    }
-    .books-section li {
-      margin: 8px 0;
-    }
-    .recommended {
-      font-weight: bold;
-      color: #c23b22;
-    }
-  </style>
-  <script defer src="us-history-i-topics.js"></script>
-  <script defer src="load-topic.js"></script>
-</head>
-<body>
-  <div class="header" id="topic-title">Loading...</div>
+// us-history-i-topics.js
 
-  <div class="container">
-    <div class="section">
-      <div class="section-title">Overview</div>
-      <p id="overview"></p>
-    </div>
+const usHistoryITopics = [
+  {
+    title: "Colonial America (1500–1776)",
+    content: `
+      <div class="section">
+        <div class="section-title">Overview</div>
+        <p>Colonial America refers to the period from the early 1500s through 1776, during which European powers—especially the British—established settlements along the eastern coast of North America. These colonies developed distinct regional identities shaped by geography, economic systems, religion, and interactions with Native American societies. This era laid the foundations of American political and cultural life, culminating in calls for independence.</p>
+      </div>
 
-    <div class="section">
-      <div class="section-title">Key Themes and Events</div>
-      <ul id="themes"></ul>
-    </div>
+      <div class="section">
+        <div class="section-title">Key Events and Concepts</div>
 
-    <div class="section">
-      <div class="section-title">Quick Tip</div>
-      <p id="tip"></p>
-    </div>
+        <h3>Settlement Patterns and Regional Differences</h3>
+        <p>New England colonies emphasized religious communities and self-governance; the Middle Colonies developed around trade and cultural diversity; and the Southern Colonies relied heavily on plantation agriculture and enslaved labor. These patterns defined early political and economic systems in the Americas.</p>
 
-    <div class="section">
-      <div class="section-title">Recommended Books</div>
-      <ul id="books"></ul>
-      <p style="font-size: 0.9em; color: #555;"><em>As an Amazon Associate, College4Less earns from qualifying purchases.</em></p>
-    </div>
+        <h3>Relations with Native Americans</h3>
+        <p>Colonists often formed alliances or engaged in conflict with Native tribes. Over time, pressure on land and resources led to increasing tension, dispossession, and violence.</p>
 
-    <a href="us-history-i.html" class="back-link">&larr; Back to U.S. History I Topics</a>
-  </div>
-</body>
-</html>
+        <h3>Colonial Government and Self-Rule</h3>
+        <p>While still subject to British authority, many colonies developed elected assemblies and local institutions, fostering a tradition of participatory government that influenced the revolutionary period.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Quick Tip</div>
+        <p>Understand how geography, economy, and religion shaped the development of regional colonial identities and their future political alignments.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Recommended Books</div>
+        <ul>
+          <li><a href="https://www.amazon.com/dp/0809016326?tag=college4les0a-20" target="_blank">A People’s History of the American Revolution by Ray Raphael</a></li>
+          <li><a href="https://www.amazon.com/dp/0679728747?tag=college4les0a-20" target="_blank">Albion’s Seed: Four British Folkways in America by David Hackett Fischer</a></li>
+        </ul>
+        <p style="font-size: 0.9em; color: #555;"><em>As an Amazon Associate, College4Less earns from qualifying purchases.</em></p>
+      </div>
+    `
+  }
+];
+
+function generateTopicList(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  usHistoryITopics.forEach((topic) => {
+    const section = document.createElement("section");
+    section.innerHTML = topic.content;
+    container.appendChild(section);
+  });
+}
+
+// Usage: Call this function in your HTML file with the appropriate container ID
+// Example: generateTopicList("us-history-i-topic-container");
