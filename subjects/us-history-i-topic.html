@@ -4,34 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>U.S. History I Topic | College4Less</title>
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #faf6f2;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    .header {
+      background: #155fa0;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 2em;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .section-title {
+      font-size: 1.6em;
+      color: #155fa0;
+      margin-bottom: 10px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      background: #155fa0;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
   <script defer src="us-history-i-topics.js"></script>
-  <script defer src="load-topic.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      generateTopicList("us-history-i-topic-container");
+    });
+  </script>
 </head>
 <body>
+  <div class="header">U.S. History I Topic</div>
+  <div class="container" id="us-history-i-topic-container">
+    <!-- Content will be injected here by JS -->
+  </div>
   <div class="container">
-    <h1 id="topic-title">Topic Title</h1>
-
-    <h2>Overview</h2>
-    <p id="overview"></p>
-
-    <h2>Key Themes and Events</h2>
-    <ul id="themes"></ul>
-
-    <h2>Quick Tip</h2>
-    <p id="tip"></p>
-
-    <div class="books-section">
-      <h2>Recommended Reading</h2>
-      <ul id="books"></ul>
-      <p style="font-size: 0.9em; color: #555; margin-top: 12px; text-align: center;">
-        As an Amazon Associate, College4Less earns from qualifying purchases.
-      </p>
-    </div>
-
-    <div style="text-align: center; margin-top: 40px;">
-      <a href="us-history-i.html" style="background-color: #155fa0; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem; display: inline-block;">&larr; Back to U.S. History I Topics</a>
-    </div>
+    <a href="us-history-i.html" class="back-link">&larr; Back to U.S. History I Topics</a>
   </div>
 </body>
 </html>
