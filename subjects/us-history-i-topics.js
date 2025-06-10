@@ -495,15 +495,121 @@ const usHistoryITopics = [
   }
 ];
 
-function generateTopicList(containerId) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
+// us-history-i-topics.js with slugs
 
-  usHistoryITopics.forEach((topic) => {
-    const section = document.createElement("section");
-    section.innerHTML = topic.content;
-    container.appendChild(section);
-  });
+const usHistoryITopics = [
+  {
+    slug: "colonial-america",
+    title: "Colonial America (1500–1776)",
+    content: `...`
+  },
+  {
+    slug: "european-exploration",
+    title: "European Exploration & Contact (1492–1607)",
+    content: `...`
+  },
+  {
+    slug: "british-colonies",
+    title: "Development of British Colonies (1607–1754)",
+    content: `...`
+  },
+  {
+    slug: "colonial-economy",
+    title: "Colonial Economies & Slavery (1600s–1750s)",
+    content: `...`
+  },
+  {
+    slug: "religious-intellectual",
+    title: "Religious & Intellectual Life in the Colonies",
+    content: `...`
+  },
+  {
+    slug: "american-revolution-causes",
+    title: "Causes of the American Revolution (1754–1776)",
+    content: `...`
+  },
+  {
+    slug: "revolutionary-war",
+    title: "Revolutionary War & Treaty of Paris (1775–1783)",
+    content: `...`
+  },
+  {
+    slug: "articles-confederation",
+    title: "Articles of Confederation and the Critical Period (1781–1789)",
+    content: `...`
+  },
+  {
+    slug: "constitution-bill-rights",
+    title: "The Constitution & Bill of Rights (1787–1791)",
+    content: `...`
+  },
+  {
+    slug: "early-national-politics",
+    title: "Early National Politics (1789–1824)",
+    content: `...`
+  },
+  {
+    slug: "jacksonian-democracy",
+    title: "Jacksonian Democracy (1824–1840)",
+    content: `...`
+  },
+  {
+    slug: "westward-expansion",
+    title: "Westward Expansion & Indian Removal (1800–1850)",
+    content: `...`
+  },
+  {
+    slug: "slavery-abolitionism",
+    title: "Slavery and Abolitionism (1776–1865)",
+    content: `...`
+  },
+  {
+    slug: "reform-movements",
+    title: "Reform Movements (1800s)",
+    content: `...`
+  },
+  {
+    slug: "women-rights",
+    title: "Women’s Roles & Rights",
+    content: `...`
+  },
+  {
+    slug: "immigration-nativism",
+    title: "Immigration and Nativism",
+    content: `...`
+  },
+  {
+    slug: "market-revolution",
+    title: "Market Revolution & Transportation",
+    content: `...`
+  },
+  {
+    slug: "sectional-conflict",
+    title: "Sectional Conflict (1820–1860)",
+    content: `...`
+  },
+  {
+    slug: "civil-war",
+    title: "Civil War (1861–1865)",
+    content: `...`
+  },
+  {
+    slug: "reconstruction",
+    title: "Emancipation and Reconstruction (1865–1877)",
+    content: `...`
+  },
+  {
+    slug: "black-experience",
+    title: "African American Experience Post-War",
+    content: `...`
+  },
+  {
+    slug: "reconstruction-legacy",
+    title: "Legacy of Reconstruction",
+    content: `...`
+  }
+];
+
 }
 
 // Usage: Call this function in your HTML file with the appropriate container ID
