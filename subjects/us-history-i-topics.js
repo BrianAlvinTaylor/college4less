@@ -2,7 +2,8 @@
 
 const usHistoryITopics = [
   {
-    title: "Slavery and Abolitionism (1776–1865)",
+    slug: "colonial-america",
+    title: "Slavery and Abolitionism (1776â€“1865)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
@@ -13,10 +14,10 @@ const usHistoryITopics = [
         <div class="section-title">Key Events and Concepts</div>
 
         <h3>The Growth of Slavery</h3>
-        <p>After the Revolution, slavery expanded across the South, especially with the invention of the cotton gin in 1793. Laws reinforced the racial hierarchy and enslaved people’s lack of rights.</p>
+        <p>After the Revolution, slavery expanded across the South, especially with the invention of the cotton gin in 1793. Laws reinforced the racial hierarchy and enslaved peopleâ€™s lack of rights.</p>
 
         <h3>Resistance and Rebellion</h3>
-        <p>Enslaved people resisted through escape, sabotage, and uprisings. Nat Turner’s 1831 rebellion shocked the South and led to harsher laws. The Underground Railroad helped many escape to freedom.</p>
+        <p>Enslaved people resisted through escape, sabotage, and uprisings. Nat Turnerâ€™s 1831 rebellion shocked the South and led to harsher laws. The Underground Railroad helped many escape to freedom.</p>
 
         <h3>Abolitionist Voices</h3>
         <p>Leaders like Frederick Douglass, Sojourner Truth, William Lloyd Garrison, and Harriet Beecher Stowe used speeches, publications, and literature to denounce slavery and galvanize support for abolition.</p>
@@ -38,7 +39,8 @@ const usHistoryITopics = [
     `
   },
   {
-    title: "Westward Expansion & Indian Removal (1800–1850)",
+    slug: "european-exploration",
+    title: "Westward Expansion & Indian Removal (1800â€“1850)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
@@ -63,7 +65,7 @@ const usHistoryITopics = [
 
       <div class="section">
         <div class="section-title">Quick Tip</div>
-        <p>Understand how westward expansion affected Native American sovereignty, sectional tensions, and debates over slavery’s extension into new territories.</p>
+        <p>Understand how westward expansion affected Native American sovereignty, sectional tensions, and debates over slaveryâ€™s extension into new territories.</p>
       </div>
 
       <div class="section">
@@ -77,18 +79,19 @@ const usHistoryITopics = [
     `
   },
   {
-    title: "Jacksonian Democracy (1824–1840)",
+    slug: "british-colonies",
+    title: "Jacksonian Democracy (1824â€“1840)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
-        <p>Jacksonian Democracy marked the expansion of political participation and a shift toward populist ideals in the United States. Andrew Jackson’s presidency symbolized a broader democratic movement, especially for white male citizens, while raising important issues around federal power, Native American removal, and economic policy.</p>
+        <p>Jacksonian Democracy marked the expansion of political participation and a shift toward populist ideals in the United States. Andrew Jacksonâ€™s presidency symbolized a broader democratic movement, especially for white male citizens, while raising important issues around federal power, Native American removal, and economic policy.</p>
       </div>
 
       <div class="section">
         <div class="section-title">Key Events and Concepts</div>
 
         <h3>Expanded Suffrage and the Rise of the Common Man</h3>
-        <p>Property requirements for voting were reduced in many states, leading to greater voter turnout and the rise of Jackson as a symbol of the average citizen’s political voice.</p>
+        <p>Property requirements for voting were reduced in many states, leading to greater voter turnout and the rise of Jackson as a symbol of the average citizenâ€™s political voice.</p>
 
         <h3>Indian Removal Act (1830)</h3>
         <p>Jackson supported policies that forcibly relocated Native Americans west of the Mississippi River. The Trail of Tears, especially for the Cherokee Nation, exemplified the human cost of these policies.</p>
@@ -102,21 +105,22 @@ const usHistoryITopics = [
 
       <div class="section">
         <div class="section-title">Quick Tip</div>
-        <p>Know how Jacksonian Democracy expanded political access for some while reinforcing limitations for others. Analyze how Jackson’s policies strengthened executive power but also deepened sectional divides.</p>
+        <p>Know how Jacksonian Democracy expanded political access for some while reinforcing limitations for others. Analyze how Jacksonâ€™s policies strengthened executive power but also deepened sectional divides.</p>
       </div>
 
       <div class="section">
         <div class="section-title">Recommended Books</div>
         <ul>
           <li><a href="https://www.amazon.com/dp/0143035282?tag=college4les0a-20" target="_blank">American Lion: Andrew Jackson in the White House by Jon Meacham</a></li>
-          <li><a href="https://www.amazon.com/dp/0679768653?tag=college4les0a-20" target="_blank">What Hath God Wrought: The Transformation of America, 1815–1848 by Daniel Walker Howe</a></li>
+          <li><a href="https://www.amazon.com/dp/0679768653?tag=college4les0a-20" target="_blank">What Hath God Wrought: The Transformation of America, 1815â€“1848 by Daniel Walker Howe</a></li>
         </ul>
         <p style="font-size: 0.9em; color: #555;"><em>As an Amazon Associate, College4Less earns from qualifying purchases.</em></p>
       </div>
     `
   },
   {
-    title: "Early National Politics (1789–1824)",
+    slug: "colonial-economy",
+    title: "Early National Politics (1789â€“1824)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
@@ -127,7 +131,7 @@ const usHistoryITopics = [
         <div class="section-title">Key Events and Concepts</div>
 
         <h3>Washington's Presidency</h3>
-        <p>Set many precedents including the two-term limit, neutrality in foreign affairs, and the creation of a presidential cabinet. Supported Alexander Hamilton’s financial plan and issued the Farewell Address.</p>
+        <p>Set many precedents including the two-term limit, neutrality in foreign affairs, and the creation of a presidential cabinet. Supported Alexander Hamiltonâ€™s financial plan and issued the Farewell Address.</p>
 
         <h3>Rise of Political Parties</h3>
         <p>Disagreements between Federalists and Democratic-Republicans shaped early political discourse. Key divisions included foreign alliances, the economy, and federal versus state authority.</p>
@@ -158,7 +162,8 @@ const usHistoryITopics = [
     `
   },
   {
-    title: "The Constitution & Bill of Rights (1787–1791)",
+    slug: "religious-intellectual",
+    title: "The Constitution & Bill of Rights (1787â€“1791)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
@@ -194,7 +199,8 @@ const usHistoryITopics = [
     `
   },
   {
-    title: "Articles of Confederation and the Critical Period (1781–1789)",
+    slug: "american-revolution-causes",
+    title: "Articles of Confederation and the Critical Period (1781â€“1789)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
@@ -208,9 +214,9 @@ const usHistoryITopics = [
         <p>Under the Articles, Congress lacked the power to tax, regulate commerce, or enforce laws. Each state had one vote, and amendments required unanimous consent, which made national action difficult.</p>
 
         <h3>Economic and Foreign Policy Issues</h3>
-        <p>Post-war debt, interstate tariffs, and British occupation of western forts revealed the Confederation’s inability to address national problems effectively.</p>
+        <p>Post-war debt, interstate tariffs, and British occupation of western forts revealed the Confederationâ€™s inability to address national problems effectively.</p>
 
-        <h3>Shays’ Rebellion</h3>
+        <h3>Shaysâ€™ Rebellion</h3>
         <p>This 1786 uprising of farmers in Massachusetts over taxes and debt highlighted the weakness of the federal government and prompted calls for a stronger national framework.</p>
 
         <h3>Philadelphia Convention</h3>
@@ -233,11 +239,12 @@ const usHistoryITopics = [
     `
   },
   {
-    title: "Revolutionary War & Treaty of Paris (1775–1783)",
+    slug: "revolutionary-war",
+    title: "Revolutionary War & Treaty of Paris (1775â€“1783)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
-        <p>This topic covers the military conflict between the American colonies and Great Britain, leading to the colonies’ independence. It explores major battles, leadership figures, wartime diplomacy, and the peace treaty that ended the war and defined new national boundaries.</p>
+        <p>This topic covers the military conflict between the American colonies and Great Britain, leading to the coloniesâ€™ independence. It explores major battles, leadership figures, wartime diplomacy, and the peace treaty that ended the war and defined new national boundaries.</p>
       </div>
 
       <div class="section">
@@ -253,7 +260,7 @@ const usHistoryITopics = [
         <p>The American victory at Saratoga in 1777 convinced France to formally ally with the U.S., providing critical military and financial support that helped turn the tide of war.</p>
 
         <h3>Victory at Yorktown and Treaty of Paris</h3>
-        <p>General Cornwallis’s surrender at Yorktown in 1781 effectively ended the fighting. The Treaty of Paris (1783) recognized U.S. independence and granted it territory east of the Mississippi River.</p>
+        <p>General Cornwallisâ€™s surrender at Yorktown in 1781 effectively ended the fighting. The Treaty of Paris (1783) recognized U.S. independence and granted it territory east of the Mississippi River.</p>
       </div>
 
       <div class="section">
@@ -264,7 +271,7 @@ const usHistoryITopics = [
       <div class="section">
         <div class="section-title">Recommended Books</div>
         <ul>
-          <li><a href="https://www.amazon.com/dp/0143114964?tag=college4les0a-20" target="_blank">Washington’s Crossing by David Hackett Fischer</a></li>
+          <li><a href="https://www.amazon.com/dp/0143114964?tag=college4les0a-20" target="_blank">Washingtonâ€™s Crossing by David Hackett Fischer</a></li>
           <li><a href="https://www.amazon.com/dp/0061339207?tag=college4les0a-20" target="_blank">Almost a Miracle: The American Victory in the War of Independence by John Ferling</a></li>
         </ul>
         <p style="font-size: 0.9em; color: #555;"><em>As an Amazon Associate, College4Less earns from qualifying purchases.</em></p>
@@ -272,7 +279,8 @@ const usHistoryITopics = [
     `
   },
   {
-    title: "Causes of the American Revolution (1754–1776)",
+    slug: "articles-confederation",
+    title: "Causes of the American Revolution (1754â€“1776)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
@@ -303,7 +311,7 @@ const usHistoryITopics = [
       <div class="section">
         <div class="section-title">Recommended Books</div>
         <ul>
-          <li><a href="https://www.amazon.com/dp/0195176079?tag=college4les0a-20" target="_blank">The Glorious Cause: The American Revolution, 1763–1789 by Robert Middlekauff</a></li>
+          <li><a href="https://www.amazon.com/dp/0195176079?tag=college4les0a-20" target="_blank">The Glorious Cause: The American Revolution, 1763â€“1789 by Robert Middlekauff</a></li>
           <li><a href="https://www.amazon.com/dp/0679773380?tag=college4les0a-20" target="_blank">The Radicalism of the American Revolution by Gordon S. Wood</a></li>
         </ul>
         <p style="font-size: 0.9em; color: #555;"><em>As an Amazon Associate, College4Less earns from qualifying purchases.</em></p>
@@ -311,6 +319,7 @@ const usHistoryITopics = [
     `
   },
   {
+    slug: "constitution-bill-rights",
     title: "Religious & Intellectual Life in the Colonies",
     content: `
       <div class="section">
@@ -325,7 +334,7 @@ const usHistoryITopics = [
         <p>In New England, Puritan values shaped public life, governance, and education. The Massachusetts Bay Colony became a theocratic society promoting moral discipline and collective responsibility.</p>
 
         <h3>The First Great Awakening</h3>
-        <p>This religious revival movement swept through the colonies in the 1730s–1740s, emphasizing personal conversion, emotional preaching, and challenges to traditional church authority. Key figures included Jonathan Edwards and George Whitefield.</p>
+        <p>This religious revival movement swept through the colonies in the 1730sâ€“1740s, emphasizing personal conversion, emotional preaching, and challenges to traditional church authority. Key figures included Jonathan Edwards and George Whitefield.</p>
 
         <h3>The Enlightenment</h3>
         <p>Colonial elites engaged with Enlightenment principles of reason, science, and natural rights. Thinkers like John Locke influenced political thought and contributed to revolutionary ideals.</p>
@@ -347,7 +356,8 @@ const usHistoryITopics = [
     `
   },
   {
-    title: "Colonial Economies & Slavery (1600s–1750s)",
+    slug: "early-national-politics",
+    title: "Colonial Economies & Slavery (1600sâ€“1750s)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
@@ -383,7 +393,8 @@ const usHistoryITopics = [
     `
   },
   {
-    title: "Development of British Colonies (1607–1754)",
+    slug: "jacksonian-democracy",
+    title: "Development of British Colonies (1607â€“1754)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
@@ -422,7 +433,8 @@ const usHistoryITopics = [
     `
   },
   {
-    title: "European Exploration & Contact (1492–1607)",
+    slug: "westward-expansion",
+    title: "European Exploration & Contact (1492â€“1607)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
@@ -433,10 +445,10 @@ const usHistoryITopics = [
         <div class="section-title">Key Events and Concepts</div>
 
         <h3>Christopher Columbus and the Spanish Empire</h3>
-        <p>Columbus’s 1492 voyage opened the door to Spanish dominance in the New World. The encomienda system and conquests by Cortés and Pizarro reshaped the Americas, especially Central and South America.</p>
+        <p>Columbusâ€™s 1492 voyage opened the door to Spanish dominance in the New World. The encomienda system and conquests by CortÃ©s and Pizarro reshaped the Americas, especially Central and South America.</p>
 
         <h3>Columbian Exchange</h3>
-        <p>The global transfer of crops, animals, technology, and disease between Europe, Africa, and the Americas had long-term biological and cultural consequences—especially devastating to Native populations due to smallpox and other diseases.</p>
+        <p>The global transfer of crops, animals, technology, and disease between Europe, Africa, and the Americas had long-term biological and cultural consequencesâ€”especially devastating to Native populations due to smallpox and other diseases.</p>
 
         <h3>French, Dutch, and English Exploration</h3>
         <p>French efforts centered on fur trading and alliances with Native peoples; Dutch settlements emphasized commerce and tolerance; and English ambitions began with failed colonies like Roanoke and culminated with Jamestown.</p>
@@ -458,11 +470,12 @@ const usHistoryITopics = [
     `
   },
   {
-    title: "Colonial America (1500–1776)",
+    slug: "slavery-abolitionism",
+    title: "Colonial America (1500â€“1776)",
     content: `
       <div class="section">
         <div class="section-title">Overview</div>
-        <p>Colonial America refers to the period from the early 1500s through 1776, during which European powers—especially the British—established settlements along the eastern coast of North America. These colonies developed distinct regional identities shaped by geography, economic systems, religion, and interactions with Native American societies. This era laid the foundations of American political and cultural life, culminating in calls for independence.</p>
+        <p>Colonial America refers to the period from the early 1500s through 1776, during which European powersâ€”especially the Britishâ€”established settlements along the eastern coast of North America. These colonies developed distinct regional identities shaped by geography, economic systems, religion, and interactions with Native American societies. This era laid the foundations of American political and cultural life, culminating in calls for independence.</p>
       </div>
 
       <div class="section">
@@ -486,8 +499,8 @@ const usHistoryITopics = [
       <div class="section">
         <div class="section-title">Recommended Books</div>
         <ul>
-          <li><a href="https://www.amazon.com/dp/0809016326?tag=college4les0a-20" target="_blank">A People’s History of the American Revolution by Ray Raphael</a></li>
-          <li><a href="https://www.amazon.com/dp/0679728747?tag=college4les0a-20" target="_blank">Albion’s Seed: Four British Folkways in America by David Hackett Fischer</a></li>
+          <li><a href="https://www.amazon.com/dp/0809016326?tag=college4les0a-20" target="_blank">A Peopleâ€™s History of the American Revolution by Ray Raphael</a></li>
+          <li><a href="https://www.amazon.com/dp/0679728747?tag=college4les0a-20" target="_blank">Albionâ€™s Seed: Four British Folkways in America by David Hackett Fischer</a></li>
         </ul>
         <p style="font-size: 0.9em; color: #555;"><em>As an Amazon Associate, College4Less earns from qualifying purchases.</em></p>
       </div>
@@ -495,121 +508,15 @@ const usHistoryITopics = [
   }
 ];
 
-// us-history-i-topics.js with slugs
+function generateTopicList(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
 
-const usHistoryITopics = [
-  {
-    slug: "colonial-america",
-    title: "Colonial America (1500–1776)",
-    content: `...`
-  },
-  {
-    slug: "european-exploration",
-    title: "European Exploration & Contact (1492–1607)",
-    content: `...`
-  },
-  {
-    slug: "british-colonies",
-    title: "Development of British Colonies (1607–1754)",
-    content: `...`
-  },
-  {
-    slug: "colonial-economy",
-    title: "Colonial Economies & Slavery (1600s–1750s)",
-    content: `...`
-  },
-  {
-    slug: "religious-intellectual",
-    title: "Religious & Intellectual Life in the Colonies",
-    content: `...`
-  },
-  {
-    slug: "american-revolution-causes",
-    title: "Causes of the American Revolution (1754–1776)",
-    content: `...`
-  },
-  {
-    slug: "revolutionary-war",
-    title: "Revolutionary War & Treaty of Paris (1775–1783)",
-    content: `...`
-  },
-  {
-    slug: "articles-confederation",
-    title: "Articles of Confederation and the Critical Period (1781–1789)",
-    content: `...`
-  },
-  {
-    slug: "constitution-bill-rights",
-    title: "The Constitution & Bill of Rights (1787–1791)",
-    content: `...`
-  },
-  {
-    slug: "early-national-politics",
-    title: "Early National Politics (1789–1824)",
-    content: `...`
-  },
-  {
-    slug: "jacksonian-democracy",
-    title: "Jacksonian Democracy (1824–1840)",
-    content: `...`
-  },
-  {
-    slug: "westward-expansion",
-    title: "Westward Expansion & Indian Removal (1800–1850)",
-    content: `...`
-  },
-  {
-    slug: "slavery-abolitionism",
-    title: "Slavery and Abolitionism (1776–1865)",
-    content: `...`
-  },
-  {
-    slug: "reform-movements",
-    title: "Reform Movements (1800s)",
-    content: `...`
-  },
-  {
-    slug: "women-rights",
-    title: "Women’s Roles & Rights",
-    content: `...`
-  },
-  {
-    slug: "immigration-nativism",
-    title: "Immigration and Nativism",
-    content: `...`
-  },
-  {
-    slug: "market-revolution",
-    title: "Market Revolution & Transportation",
-    content: `...`
-  },
-  {
-    slug: "sectional-conflict",
-    title: "Sectional Conflict (1820–1860)",
-    content: `...`
-  },
-  {
-    slug: "civil-war",
-    title: "Civil War (1861–1865)",
-    content: `...`
-  },
-  {
-    slug: "reconstruction",
-    title: "Emancipation and Reconstruction (1865–1877)",
-    content: `...`
-  },
-  {
-    slug: "black-experience",
-    title: "African American Experience Post-War",
-    content: `...`
-  },
-  {
-    slug: "reconstruction-legacy",
-    title: "Legacy of Reconstruction",
-    content: `...`
-  }
-];
-
+  usHistoryITopics.forEach((topic) => {
+    const section = document.createElement("section");
+    section.innerHTML = topic.content;
+    container.appendChild(section);
+  });
 }
 
 // Usage: Call this function in your HTML file with the appropriate container ID
