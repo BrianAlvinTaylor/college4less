@@ -35,7 +35,7 @@
 
   <script type="module">
     import { americanGovernmentTopics } from './american-government-topics.js';
-    const slug = window.location.pathname.split('/').filter(Boolean).pop();
+    const slug = window.location.pathname.split('/').filter(Boolean).pop().replace('.html', '');
     const topic = americanGovernmentTopics.find(t => t.slug === slug);
     if (topic) {
       document.title = `College4Less | ${topic.title}`;
