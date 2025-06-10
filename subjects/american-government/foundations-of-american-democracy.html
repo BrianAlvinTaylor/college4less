@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>College4Less | Foundations of American Democracy</title>
   <link rel="stylesheet" href="/styles.css" />
-  <script type="module" src="./american-government-topics.js"></script>
   <style>
     body { font-family: 'Helvetica Neue', sans-serif; padding: 2rem; max-width: 900px; margin: auto; }
     h1 { font-size: 2rem; color: #1a1a1a; margin-bottom: 1rem; }
@@ -39,7 +38,7 @@
     const slug = window.location.pathname.split('/').filter(Boolean).pop();
     const topic = americanGovernmentTopics.find(t => t.slug === slug);
     if (topic) {
-      document.title = \`College4Less | \${topic.title}\`;
+      document.title = `College4Less | ${topic.title}`;
       document.getElementById('topic-title').textContent = topic.title;
       document.getElementById('topic-content').innerHTML = topic.content;
     } else {
@@ -49,3 +48,4 @@
   </script>
 </body>
 </html>
+
