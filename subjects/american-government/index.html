@@ -6,77 +6,44 @@
   <title>American Government | College4Less</title>
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      color: #1a1a1a;
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px; margin: 24px auto 18px auto;
+      padding: 52px 24px 36px 24px; text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.035);
     }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    h2 {
-      color: #003366;
-      margin-top: 2rem;
-    }
-    p {
-      margin-bottom: 1.5rem;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    li {
-      margin-bottom: 0.75rem;
-    }
-    a {
-      color: #0070f3;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .search-box {
-      margin: 1.5rem 0;
-    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; letter-spacing: .5px; margin: 0 0 8px 0; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; letter-spacing: .2px; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+    li { margin-bottom: 0.75rem; }
+    a { color: #0070f3; text-decoration: none; }
+    a:hover { text-decoration: underline; }
     input[type="text"] {
-      width: 100%;
-      padding: 0.5rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      width: 100%; padding: 0.5rem; font-size: 1rem;
+      border: 1px solid #ccc; border-radius: 4px;
     }
+    .search-box { margin: 1.5rem 0; }
     .resources {
-      margin-top: 3rem;
-      padding: 1.5rem;
-      background-color: #f3f3f3;
-      border-radius: 8px;
+      margin-top: 3rem; padding: 1.5rem; background-color: #f3f3f3; border-radius: 8px;
     }
-    .resources ul {
-      list-style: disc;
-      padding-left: 1.25rem;
-    }
-    .resources a {
-      color: #0070f3;
-    }
+    .resources ul { list-style: disc; padding-left: 1.25rem; }
+    .resources a { color: #0070f3; }
     footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #777;
-      text-align: center;
+      margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center;
     }
   </style>
 </head>
 <body>
-  <header>
-    <a href="/" style="text-decoration:none;"><h2>College4Less</h2></a>
-  </header>
+  <div class="hero">
+    <div class="hero-title">American Government</div>
+    <div class="hero-sub">Explore 12 Key CLEP-Aligned Topics</div>
+  </div>
 
-  <main>
-    <h1>American Government</h1>
-    <p>Master key topics in American Government and prepare to earn college credit with confidence. These 12 study topics are based on the CLEP exam framework and include essential knowledge about the Constitution, institutions, political processes, and civil liberties.</p>
+  <div class="container">
+    <p>Master essential concepts in American Government and prepare to earn college credit through CLEP. These 12 topics are structured to mirror exam content and give you confidence in the Constitution, institutions, civil liberties, political processes, and more.</p>
 
     <div class="search-box">
       <input type="text" placeholder="Search topics..." oninput="filterTopics(event)" />
@@ -99,14 +66,16 @@
 
     <section class="resources">
       <h2>Recommended Resources</h2>
-      <p>Looking for extra prep? These top-rated resources align with CLEP American Government content and support your study goals:</p>
-      <ul>
-        <li><a href="https://www.amazon.com/dp/0768945520?tag=college4less-20" target="_blank">CLEP American Government Study Guide by Peterson's</a></li>
-        <li><a href="https://www.amazon.com/dp/1542479990?tag=college4less-20" target="_blank">The U.S. Constitution: A Reader</a></li>
-        <li><a href="https://www.amazon.com/dp/0738612320?tag=college4less-20" target="_blank">CLEP American Government Flashcards by REA</a></li>
-      </ul>
+      <!--
+        Add Amazon affiliate links once verified.
+        Example:
+        <ul>
+          <li><a href="https://www.amazon.com/dp/XXXXXX?tag=college4less-20" target="_blank">CLEP American Government Study Guide</a></li>
+        </ul>
+      -->
+      <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 16px;"><em>As an Amazon Associate, College4Less earns from qualifying purchases.</em></p>
     </section>
-  </main>
+  </div>
 
   <footer>
     © 2025 College4Less
