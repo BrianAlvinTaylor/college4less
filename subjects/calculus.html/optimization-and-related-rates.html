@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus | Optimization and Related Rates</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.5rem; color: #155fa0; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.6; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Calculus</div>
+    <div class="hero-sub">Optimization and Related Rates</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>This topic applies derivatives to real-world problems: finding maximum or minimum values in optimization, and solving problems where two or more quantities change over time using related rates. Both require modeling with functions and applying differentiation systematically.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Optimization:</strong>
+          <ul>
+            <li>Find a quantity to maximize or minimize (e.g., area, cost, profit)</li>
+            <li>Write an equation for the quantity to optimize (objective function)</li>
+            <li>Use constraints to reduce to a single-variable function</li>
+            <li>Take derivative, find critical points, test for max/min</li>
+          </ul>
+        </li>
+        <li><strong>Related Rates:</strong>
+          <ul>
+            <li>Two or more variables change over time (usually with respect to <code>t</code>)</li>
+            <li>Differentiate both sides of an equation using the chain rule: <code>\frac{d}{dt}</code></li>
+            <li>Plug in known values and solve for the unknown rate</li>
+          </ul>
+        </li>
+        <li><strong>Common Shapes:</strong> Area of rectangle <code>A = lw</code>, volume of cone <code>V = (1/3)\pi r^2h</code>, Pythagorean Theorem <code>a^2 + b^2 = c^2</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        For optimization, always double-check that your answer makes sense in the problem’s context. For related rates, draw and label a diagram — it helps visualize what's changing.
+      </div>
+    </section>
+
+    <section>
+      <h2>Practice Problems</h2>
+      <ol>
+        <li>
+          A rectangle has a perimeter of 20 units. What is the maximum possible area?
+          <details>
+            <summary>Show Solution</summary>
+            <p><strong>Step 1:</strong> Let width = <code>w</code>, length = <code>l</code>. Perimeter: <code>2l + 2w = 20</code></p>
+            <p>Simplify: <code>l = 10 - w</code></p>
+            <p>Area: <code>A = lw = w(10 - w)</code></p>
+            <p>Take derivative: <code>A' = 10 - 2w</code>. Set <code>A' = 0</code> → <code>w = 5</code></p>
+            <p><strong>Final Answer:</strong> Maximum area is at <code>w = l = 5</code> → <code>A = 25</code></p>
+          </details>
+        </li>
+        <li>
+          A balloon rises at 4 ft/sec. A person stands 10 ft away. How fast is the distance from the person to the balloon changing when the balloon is 24 ft high?
+          <details>
+            <summary>Show Solution</summary>
+            <p><strong>Step 1:</strong> Use Pythagorean Theorem: <code>z^2 = x^2 + y^2</code>, where <code>z</code> is the distance</p>
+            <p><code>x = 10</code> (constant), <code>y = height</code>, <code>\frac{dy}{dt} = 4</code></p>
+            <p>Differentiating: <code>2z \cdot \frac{dz}{dt} = 2y \cdot \frac{dy}{dt}</code></p>
+            <p>At <code>y = 24</code>: <code>z = \sqrt{10^2 + 24^2} = 26</code></p>
+            <p>Solve: <code>2(26) \cdot \frac{dz}{dt} = 2(24)(4)</code> → <code>\frac{dz}{dt} = \frac{192}{52} = \frac{48}{13}</code></p>
+            <p><strong>Final Answer:</strong> Distance increasing at <code>\frac{48}{13}</code> ft/sec</p>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
