@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus | L’Hospital’s Rule and Higher-Order Derivatives</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.5rem; color: #155fa0; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.6; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Calculus</div>
+    <div class="hero-sub">L’Hospital’s Rule and Higher-Order Derivatives</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>This topic covers how to resolve indeterminate forms using L’Hospital’s Rule and introduces higher-order derivatives, which appear in motion problems, Taylor series, and curvature analysis. Both expand your calculus toolkit beyond the basics.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>L’Hospital’s Rule:</strong> If <code>\lim_{x \to a} \frac{f(x)}{g(x)}</code> gives <code>0/0</code> or <code>∞/∞</code>, then<br><code>\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}</code> (if the latter limit exists)</li>
+        <li><strong>When to Use:</strong>
+          <ul>
+            <li>Only with <code>0/0</code> or <code>∞/∞</code> indeterminate forms</li>
+            <li>Must differentiate numerator and denominator separately</li>
+          </ul>
+        </li>
+        <li><strong>Common Forms:</strong> <code>\ln(x)/x</code>, <code>\sin(x)/x</code>, <code>e^x/x^n</code></li>
+        <li><strong>Higher-Order Derivatives:</strong>
+          <ul>
+            <li><code>f''(x)</code> is the second derivative — rate of change of <code>f'(x)</code></li>
+            <li><code>f^{(n)}(x)</code> denotes the <code>n</code>th derivative</li>
+            <li>Second derivative is used in acceleration and concavity</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Before applying L’Hospital’s Rule, always check that your limit really gives an indeterminate form. If not, use algebra, factoring, or rationalization instead.
+      </div>
+    </section>
+
+    <section>
+      <h2>Practice Problems</h2>
+      <ol>
+        <li>
+          Evaluate: <code>\lim_{x \to 0} \frac{\sin x}{x}</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p><strong>Step 1:</strong> Direct substitution gives <code>0/0</code></p>
+            <p><strong>Step 2:</strong> Apply L’Hospital’s Rule: derivative of top is <code>\cos x</code>, of bottom is <code>1</code></p>
+            <p><strong>Step 3:</strong> Limit becomes <code>\lim_{x \to 0} \cos x = 1</code></p>
+            <p><strong>Final Answer:</strong> <code>1</code></p>
+          </details>
+        </li>
+        <li>
+          Find the third derivative of <code>f(x) = x^4</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p><code>f'(x) = 4x^3</code></p>
+            <p><code>f''(x) = 12x^2</code></p>
+            <p><code>f^{(3)}(x) = 24x</code></p>
+            <p><strong>Final Answer:</strong> <code>f^{(3)}(x) = 24x</code></p>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
