@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Precalculus | Functions: Concepts and Operations</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Precalculus</div>
+    <div class="hero-sub">Functions: Concepts and Operations</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>This topic introduces the definition of a function, domain and range, function notation, and operations with functions including evaluation, composition, and inverses. A strong grasp of these concepts is essential for advanced topics in precalculus and calculus.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Terms</h2>
+      <ul>
+        <li><strong>Function:</strong> A relation where each input has exactly one output. Often written as <code>f(x)</code>.</li>
+        <li><strong>Domain:</strong> The set of all possible input values (x-values).</li>
+        <li><strong>Range:</strong> The set of all possible output values (f(x)-values).</li>
+        <li><strong>Function Notation:</strong> <code>f(x)</code> means the value of function <code>f</code> at input <code>x</code>.</li>
+        <li><strong>Evaluating Functions:</strong> Substitute the input value into the function and simplify.</li>
+        <li><strong>Operations:</strong> You can add, subtract, multiply, and divide functions: 
+          <ul>
+            <li><code>(f + g)(x) = f(x) + g(x)</code></li>
+            <li><code>(f \cdot g)(x) = f(x) \cdot g(x)</code></li>
+          </ul>
+        </li>
+        <li><strong>Composition of Functions:</strong> <code>(f \circ g)(x) = f(g(x))</code>, plug one function into another.</li>
+        <li><strong>Inverse Functions:</strong> A function that "reverses" another: <code>f(f^{-1}(x)) = x</code>. Found by solving <code>y = f(x)</code> for <code>x</code> and switching variables.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step-by-Step Example</h2>
+      <p><strong>Problem:</strong> Given <code>f(x) = 2x + 3</code> and <code>g(x) = x^2</code>, find <code>(f \circ g)(2)</code></p>
+
+      <p><strong>Step 1:</strong> Compute <code>g(2)</code>:<br>
+      <code>g(2) = 2^2 = 4</code></p>
+
+      <p><strong>Step 2:</strong> Plug that into <code>f</code>:<br>
+      <code>f(4) = 2(4) + 3 = 11</code></p>
+
+      <p><strong>Answer:</strong> <code>(f \circ g)(2) = 11</code></p>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Function composition is like nested parentheses — work from the inside out: evaluate <code>g(x)</code> first, then apply <code>f</code>.
+      </div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
