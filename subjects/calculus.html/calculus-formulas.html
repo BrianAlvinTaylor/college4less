@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus | Core Calculus Formulas and Concepts</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.5rem; color: #155fa0; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.6; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Calculus</div>
+    <div class="hero-sub">Core Calculus Formulas and Concepts</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>This foundational topic introduces essential calculus formulas and rules used throughout the subject. Whether you're evaluating limits, computing derivatives, or applying integrals, these core concepts form the building blocks for understanding and mastering calculus.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Formulas</h2>
+      <ul>
+        <li><strong>Algebra and Trigonometry Refresher:</strong>
+          <ul>
+            <li><code>(a + b)^2 = a^2 + 2ab + b^2</code>; <code>(a - b)^2 = a^2 - 2ab + b^2</code></li>
+            <li><code>a^2 - b^2 = (a - b)(a + b)</code></li>
+            <li><code>sin^2 x + cos^2 x = 1</code>; <code>tan^2 x + 1 = sec^2 x</code></li>
+            <li><code>ln(ab) = ln a + ln b</code>; <code>ln(a^n) = n ln a</code></li>
+          </ul>
+        </li>
+        <li><strong>Limits:</strong>
+          <ul>
+            <li><code>\lim_{x \to a} c = c</code>; <code>\lim_{x \to a} x = a</code></li>
+            <li>Use properties to simplify: sums, products, quotients</li>
+            <li>Know indeterminate forms: <code>0/0</code>, <code>∞/∞</code></li>
+          </ul>
+        </li>
+        <li><strong>Basic Derivative Rules:</strong>
+          <ul>
+            <li><code>\frac{d}{dx}(x^n) = nx^{n-1}</code></li>
+            <li><code>\frac{d}{dx}(\sin x) = \cos x</code>; <code>\frac{d}{dx}(\cos x) = -\sin x</code></li>
+            <li><code>\frac{d}{dx}(e^x) = e^x</code>; <code>\frac{d}{dx}(\ln x) = 1/x</code></li>
+            <li>Product rule: <code>(fg)' = f'g + fg'</code></li>
+            <li>Quotient rule: <code>(f/g)' = (f'g - fg') / g^2</code></li>
+            <li>Chain rule: <code>\frac{d}{dx} f(g(x)) = f'(g(x))g'(x)</code></li>
+          </ul>
+        </li>
+        <li><strong>Antiderivatives and Integration:</strong>
+          <ul>
+            <li><code>\int x^n dx = \frac{x^{n+1}}{n+1} + C</code></li>
+            <li><code>\int \frac{1}{x} dx = \ln|x| + C</code></li>
+            <li><code>\int e^x dx = e^x + C</code>; <code>\int \sin x dx = -\cos x + C</code></li>
+            <li>Use <code>u</code>-substitution to reverse chain rule patterns</li>
+          </ul>
+        </li>
+        <li><strong>The Fundamental Theorem of Calculus:</strong>
+          <ul>
+            <li>Part 1: <code>\int_a^b f'(x) dx = f(b) - f(a)</code></li>
+            <li>Part 2: <code>\frac{d}{dx} \int_a^x f(t) dt = f(x)</code></li>
+          </ul>
+        </li>
+        <li><strong>Essential Integrals and Applications:</strong>
+          <ul>
+            <li>Average value: <code>\frac{1}{b-a} \int_a^b f(x) dx</code></li>
+            <li>Area between curves: <code>\int_a^b [f(x) - g(x)] dx</code></li>
+            <li>Displacement and total distance from velocity: integrate |v(t)|</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Focus on recognizing patterns: If you know how to differentiate <code>x^n</code>, <code>sin x</code>, and <code>e^x</code>, you'll spot their integrals more easily. Build fluency through repetition.
+      </div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
