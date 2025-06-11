@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Algebra | Exponential and Logarithmic Functions</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">College Algebra</div>
+    <div class="hero-sub">Exponential and Logarithmic Functions</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>This topic focuses on exponential and logarithmic functions, their properties, graphs, and how to solve equations involving them. You’ll explore the relationship between logarithms and exponents, and learn techniques for solving growth, decay, and compound interest problems.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Exponential Functions:</strong> Have the form <code>f(x) = a^x</code> where <code>a &gt; 0</code> and <code>a ≠ 1</code>. Graphs increase or decrease rapidly.</li>
+        <li><strong>Logarithmic Functions:</strong> Inverse of exponential functions. <code>log_b(x)</code> means the exponent you raise <code>b</code> to in order to get <code>x</code>.</li>
+        <li><strong>Basic Rules:</strong>
+          <ul>
+            <li><code>log_b(b^x) = x</code></li>
+            <li><code>b^{log_b(x)} = x</code></li>
+            <li><code>log_b(xy) = log_b(x) + log_b(y)</code></li>
+            <li><code>log_b(x/y) = log_b(x) - log_b(y)</code></li>
+            <li><code>log_b(x^r) = r log_b(x)</code></li>
+          </ul>
+        </li>
+        <li><strong>Natural Logarithm:</strong> <code>ln(x)</code> is log base <code>e</code> (Euler’s number ≈ 2.718).</li>
+        <li><strong>Change of Base Formula:</strong> <code>log_b(x) = log_c(x) / log_c(b)</code> (commonly use base 10 or base <code>e</code>)</li>
+        <li><strong>Solving Exponential Equations:</strong> Isolate base, then take log of both sides.</li>
+        <li><strong>Solving Logarithmic Equations:</strong> Combine logs, rewrite in exponential form, and solve.</li>
+        <li><strong>Applications:</strong> Compound interest, population growth, radioactive decay.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step-by-Step Example</h2>
+      <p><strong>Problem:</strong> Solve <code>2^x = 16</code></p>
+      <p><strong>Step 1:</strong> Rewrite 16 as a power of 2:<br>
+        <code>16 = 2^4</code></p>
+      <p><strong>Step 2:</strong> Set exponents equal:<br>
+        <code>2^x = 2^4</code> → <code>x = 4</code></p>
+      <p><strong>Final Answer:</strong> <code>x = 4</code></p>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        To solve exponential equations, rewrite both sides with the same base when possible. If not, apply logarithms and use properties to isolate variables.
+      </div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
