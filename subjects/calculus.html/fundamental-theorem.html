@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus | The Definite Integral and Fundamental Theorem</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.5rem; color: #155fa0; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.6; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Calculus</div>
+    <div class="hero-sub">The Definite Integral and Fundamental Theorem</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>The definite integral calculates the accumulated area under a curve over an interval. This topic introduces the concept using Riemann sums, then applies the Fundamental Theorem of Calculus to evaluate integrals exactly using antiderivatives.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Definite Integral:</strong> <code>\int_a^b f(x) dx</code> gives the net area between <code>f(x)</code> and the x-axis from <code>x = a</code> to <code>x = b</code></li>
+        <li><strong>Riemann Sums:</strong> Approximate the integral using rectangles:</li>
+        <ul>
+          <li>Left endpoint, right endpoint, midpoint rules</li>
+        </ul>
+        <li><strong>Fundamental Theorem of Calculus (Part 1):</strong>
+          <ul>
+            <li>If <code>F</code> is an antiderivative of <code>f</code>, then <code>\int_a^b f(x) dx = F(b) - F(a)</code></li>
+          </ul>
+        </li>
+        <li><strong>Fundamental Theorem (Part 2):</strong>
+          <ul>
+            <li><code>\frac{d}{dx} \int_a^x f(t) dt = f(x)</code></li>
+          </ul>
+        </li>
+        <li><strong>Properties of Definite Integrals:</strong>
+          <ul>
+            <li><code>\int_a^a f(x) dx = 0</code></li>
+            <li><code>\int_a^b f(x) dx = -\int_b^a f(x) dx</code></li>
+            <li><code>\int_a^b [f(x) + g(x)] dx = \int_a^b f(x) dx + \int_a^b g(x) dx</code></li>
+          </ul>
+        </li>
+        <li><strong>Units:</strong> The result of a definite integral has units of (y-units) × (x-units), such as ft·sec</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Always evaluate antiderivatives first, then apply limits in the correct order: <code>F(b) - F(a)</code>. Don't forget parentheses when substituting!
+      </div>
+    </section>
+
+    <section>
+      <h2>Practice Problems</h2>
+      <ol>
+        <li>
+          Evaluate <code>\int_1^4 (2x + 1) dx</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p>Antiderivative of <code>2x + 1</code> is <code>x^2 + x</code></p>
+            <p><code>F(4) = 16 + 4 = 20</code>; <code>F(1) = 1 + 1 = 2</code></p>
+            <p><strong>Final Answer:</strong> <code>20 - 2 = 18</code></p>
+          </details>
+        </li>
+        <li>
+          Let <code>F(x) = \int_0^x \cos(t) dt</code>. Find <code>F'(\pi/3)</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p>By the Fundamental Theorem Part 2: <code>F'(x) = \cos(x)</code></p>
+            <p><strong>Final Answer:</strong> <code>\cos(\pi/3) = 1/2</code></p>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
