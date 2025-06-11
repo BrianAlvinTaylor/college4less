@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Financial Accounting | Receivables and Bad Debts</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Financial Accounting</div>
+    <div class="hero-sub">Receivables and Bad Debts</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>This topic covers how businesses account for amounts owed by customers (receivables), including how to recognize, value, and write off bad debts. Understanding how to estimate uncollectible accounts is essential to maintaining accurate financial records.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Methods</h2>
+      <ul>
+        <li><strong>Accounts Receivable:</strong> Amounts due from customers for credit sales; reported as a current asset.</li>
+        <li><strong>Notes Receivable:</strong> Formal, written promises to pay a fixed amount with interest by a specific date.</li>
+        <li><strong>Bad Debts:</strong> Customer balances that are no longer expected to be collected.</li>
+        <li><strong>Direct Write-Off Method:</strong> Recognize bad debts only when they become uncollectible (not GAAP-compliant for large companies).</li>
+        <li><strong>Allowance Method:</strong> Estimate uncollectible amounts in the same period as the sale; required by GAAP.</li>
+        <li><strong>Allowance for Doubtful Accounts:</strong> Contra-asset account used to reduce accounts receivable to net realizable value.</li>
+        <li><strong>Net Realizable Value (NRV):</strong> <code>Accounts Receivable - Allowance for Doubtful Accounts</code></li>
+        <li><strong>Estimating Bad Debts:</strong>
+          <ul>
+            <li>Percentage of Sales Method</li>
+            <li>Aging of Receivables Method</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step-by-Step Example</h2>
+      <p><strong>Problem:</strong> A company has $50,000 in accounts receivable. It estimates that 4% will be uncollectible. What is the adjusting entry?</p>
+
+      <p><strong>Step 1:</strong> Calculate the estimated bad debts:<br>
+      <code>$50,000 × 4% = $2,000</code></p>
+
+      <p><strong>Step 2:</strong> Record the adjusting entry:</p>
+      <pre>
+  Date        Account                        Debit     Credit
+  Dec 31      Bad Debt Expense               2,000
+              Allowance for Doubtful Accts             2,000
+      </pre>
+
+      <p><strong>Result:</strong> Net realizable value = <code>$50,000 - $2,000 = $48,000</code></p>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        The allowance method improves accuracy by matching bad debt expense to the same period as the related sales—keeping income statements realistic.
+      </div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
