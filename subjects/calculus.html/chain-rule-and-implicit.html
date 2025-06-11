@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus | Chain Rule and Implicit Differentiation</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.5rem; color: #155fa0; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.6; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Calculus</div>
+    <div class="hero-sub">Chain Rule and Implicit Differentiation</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>The chain rule allows you to differentiate composite functions — functions within functions. Implicit differentiation is a powerful technique for finding derivatives when a function is not solved explicitly for one variable. Both are essential for solving real-world calculus problems.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Chain Rule:</strong> <code>\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)</code></li>
+        <li><strong>Recognizing Composite Functions:</strong> For example, <code>\sin(x^2)</code> is <code>f(g(x))</code> with <code>f(u) = \sin(u)</code>, <code>g(x) = x^2</code></li>
+        <li><strong>Step-by-Step Chain Rule:</strong>
+          <ul>
+            <li>Differentiate the outer function</li>
+            <li>Multiply by the derivative of the inner function</li>
+          </ul>
+        </li>
+        <li><strong>Implicit Differentiation:</strong> When <code>y</code> is mixed with <code>x</code>, treat <code>y</code> as a function of <code>x</code> and use the chain rule: <code>\frac{d}{dx}(y^n) = n y^{n-1} \cdot \frac{dy}{dx}</code></li>
+        <li><strong>Example:</strong> If <code>x^2 + y^2 = 25</code>, then <code>\frac{d}{dx}(x^2 + y^2) = 2x + 2y\frac{dy}{dx}</code></li>
+        <li><strong>Solve for <code>\frac{dy}{dx}</code></strong> after differentiating both sides</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        For implicit problems, differentiate first — then isolate <code>\frac{dy}{dx}</code>. Remember to apply the chain rule when differentiating any term with <code>y</code>.
+      </div>
+    </section>
+
+    <section>
+      <h2>Practice Problems</h2>
+      <ol>
+        <li>
+          Use the chain rule to find <code>\frac{d}{dx}(\cos(x^2))</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p><strong>Step 1:</strong> Let <code>f(u) = \cos(u)</code> and <code>u = x^2</code></p>
+            <p><strong>Step 2:</strong> <code>f'(u) = -\sin(u)</code> and <code>du/dx = 2x</code></p>
+            <p><strong>Final Answer:</strong> <code>\frac{d}{dx}(\cos(x^2)) = -\sin(x^2) \cdot 2x</code></p>
+          </details>
+        </li>
+        <li>
+          Use implicit differentiation to find <code>\frac{dy}{dx}</code> if <code>x^2 + y^2 = 25</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p><strong>Step 1:</strong> Differentiate both sides with respect to <code>x</code>:</p>
+            <ul>
+              <li><code>\frac{d}{dx}(x^2) = 2x</code></li>
+              <li><code>\frac{d}{dx}(y^2) = 2y \cdot \frac{dy}{dx}</code></li>
+            </ul>
+            <p>So: <code>2x + 2y \cdot \frac{dy}{dx} = 0</code></p>
+            <p><strong>Step 2:</strong> Solve for <code>\frac{dy}{dx}</code>:</p>
+            <p><code>2y \cdot \frac{dy}{dx} = -2x</code> → <code>\frac{dy}{dx} = -x/y</code></p>
+            <p><strong>Final Answer:</strong> <code>\frac{dy}{dx} = -x/y</code></p>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
