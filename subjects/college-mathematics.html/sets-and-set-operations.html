@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Mathematics | Sets and Set Operations</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">College Mathematics</div>
+    <div class="hero-sub">Sets and Set Operations</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>This topic introduces the language of sets and how to perform operations involving union, intersection, complements, and subsets. You'll learn how to use Venn diagrams to represent relationships, identify disjoint and overlapping sets, and solve problems involving set membership and classification.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Set:</strong> A collection of distinct elements. Example: <code>A = {1, 2, 3}</code></li>
+        <li><strong>Element:</strong> A member of a set. Written as <code>x ∈ A</code></li>
+        <li><strong>Subset:</strong> All elements of set A are also in B: <code>A ⊆ B</code></li>
+        <li><strong>Proper Subset:</strong> <code>A ⊂ B</code> and <code>A ≠ B</code></li>
+        <li><strong>Union:</strong> Elements in either set: <code>A ∪ B</code></li>
+        <li><strong>Intersection:</strong> Elements in both sets: <code>A ∩ B</code></li>
+        <li><strong>Complement:</strong> Elements not in the set: <code>A'</code> or <code>U - A</code> (relative to universal set)</li>
+        <li><strong>Disjoint Sets:</strong> No elements in common. <code>A ∩ B = ∅</code></li>
+        <li><strong>Equal Sets:</strong> Every element is shared between both: <code>A = B</code></li>
+        <li><strong>Venn Diagrams:</strong> Visual tool to represent sets and their relationships</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step-by-Step Example</h2>
+      <p><strong>Problem:</strong> Given <code>A = {1, 2, 3, 4}</code> and <code>B = {3, 4, 5, 6}</code>, find:</p>
+
+      <p><strong>Step 1:</strong> Union:<br>
+        <code>A ∪ B = {1, 2, 3, 4, 5, 6}</code></p>
+
+      <p><strong>Step 2:</strong> Intersection:<br>
+        <code>A ∩ B = {3, 4}</code></p>
+
+      <p><strong>Step 3:</strong> Complement (assuming universal set U = {1–6}):<br>
+        <code>A' = {5, 6}</code></p>
+
+      <p><strong>Final Answer:</strong><br>
+        <code>A ∪ B = {1, 2, 3, 4, 5, 6}</code><br>
+        <code>A ∩ B = {3, 4}</code><br>
+        <code>A' = {5, 6}</code></p>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Always label your universal set when working with complements, and use Venn diagrams to visually confirm your results when combining or comparing sets.
+      </div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
