@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Precalculus | Exponential and Logarithmic Functions</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Precalculus</div>
+    <div class="hero-sub">Exponential and Logarithmic Functions</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>This topic focuses on exponential and logarithmic functions, their properties, graphs, and applications. These functions are used to model growth, decay, and real-world situations involving repeated multiplication or inverse relationships.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Properties</h2>
+      <ul>
+        <li><strong>Exponential Function:</strong> Has the form <code>f(x) = a^x</code>, where <code>a > 0</code> and <code>a \ne 1</code>.</li>
+        <li><strong>Logarithmic Function:</strong> Inverse of exponential functions. <code>y = \log_b(x)</code> is equivalent to <code>b^y = x</code>.</li>
+        <li><strong>Properties of Logs:</strong>
+          <ul>
+            <li><code>\log_b(xy) = \log_b(x) + \log_b(y)</code></li>
+            <li><code>\log_b(x/y) = \log_b(x) - \log_b(y)</code></li>
+            <li><code>\log_b(x^r) = r\log_b(x)</code></li>
+          </ul>
+        </li>
+        <li><strong>Common and Natural Logs:</strong> Common log: <code>\log(x)</code>, base 10; Natural log: <code>\ln(x)</code>, base <code>e</code>.</li>
+        <li><strong>Graphing:</strong> Exponential graphs show rapid growth/decay; logarithmic graphs increase slowly and pass through (1, 0).</li>
+        <li><strong>Domain and Range:</strong> Exponential: Domain = all real numbers, Range = <code>(0, \infty)</code>; Logarithmic: Domain = <code>(0, \infty)</code>, Range = all real numbers.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step-by-Step Example</h2>
+      <p><strong>Problem:</strong> Solve for <code>x</code>: <code>2^{x + 1} = 16</code></p>
+
+      <p><strong>Step 1:</strong> Rewrite 16 as a power of 2:<br>
+      <code>2^{x + 1} = 2^4</code></p>
+
+      <p><strong>Step 2:</strong> Since the bases are equal, set the exponents equal:<br>
+      <code>x + 1 = 4</code></p>
+
+      <p><strong>Step 3:</strong> Solve for <code>x</code>:<br>
+      <code>x = 3</code></p>
+
+      <p><strong>Answer:</strong> <code>x = 3</code></p>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Logarithms are just exponents in disguise — if you're stuck, try rewriting the expression in exponential form!
+      </div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
