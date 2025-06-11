@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Mathematics | Financial Mathematics</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">College Mathematics</div>
+    <div class="hero-sub">Financial Mathematics</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>This topic introduces mathematical tools used in personal finance, including interest, percent change, markups, discounts, and future value. You'll learn to solve problems involving loans, savings, taxes, and investment growth using simple and compound interest formulas.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Percent and Percent Change:</strong> 
+          <ul>
+            <li>Percent = part / whole × 100%</li>
+            <li>Percent change = (new - old) / old × 100%</li>
+          </ul>
+        </li>
+        <li><strong>Markup and Discount:</strong> 
+          <ul>
+            <li>Markup = cost × (1 + % markup)</li>
+            <li>Discount = price × (1 - % discount)</li>
+          </ul>
+        </li>
+        <li><strong>Simple Interest:</strong> <code>I = Prt</code>
+          <ul>
+            <li><code>P</code> = principal</li>
+            <li><code>r</code> = rate (decimal)</li>
+            <li><code>t</code> = time in years</li>
+          </ul>
+        </li>
+        <li><strong>Compound Interest:</strong> <code>A = P(1 + r/n)^{nt}</code>
+          <ul>
+            <li><code>A</code> = amount after interest</li>
+            <li><code>n</code> = number of times compounded per year</li>
+          </ul>
+        </li>
+        <li><strong>Continuous Compounding:</strong> <code>A = Pe^{rt}</code></li>
+        <li><strong>Future Value:</strong> How much an investment will be worth later.</li>
+        <li><strong>Present Value:</strong> How much needs to be invested now to reach a future amount.</li>
+        <li><strong>Effective Annual Rate (EAR):</strong> Actual annual return based on compounding. <code>EAR = (1 + r/n)^n - 1</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step-by-Step Example</h2>
+      <p><strong>Problem:</strong> Find the amount after 5 years if $1,000 is invested at 6% annual interest compounded monthly.</p>
+
+      <p><strong>Step 1:</strong> Use compound interest formula:<br>
+        <code>A = P(1 + r/n)^{nt}</code></p>
+
+      <p><strong>Step 2:</strong> Identify values:<br>
+        <code>P = 1000</code>, <code>r = 0.06</code>, <code>n = 12</code>, <code>t = 5</code></p>
+
+      <p><strong>Step 3:</strong> Plug in values:<br>
+        <code>A = 1000(1 + 0.06/12)^{12×5} = 1000(1.005)^60 ≈ 1348.85</code></p>
+
+      <p><strong>Final Answer:</strong> <code>$1,348.85</code></p>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Always convert percent to decimal and match time units with compounding frequency when using interest formulas.
+      </div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
