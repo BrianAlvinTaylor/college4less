@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Algebra | Quadratic Equations and Inequalities</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">College Algebra</div>
+    <div class="hero-sub">Quadratic Equations and Inequalities</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>This topic focuses on quadratic equations and inequalities, exploring how to solve, factor, graph, and analyze parabolas. You'll learn how to complete the square, use the quadratic formula, and determine the nature of roots based on the discriminant. These concepts are foundational for understanding quadratic functions and their real-world applications.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Standard Form:</strong> A quadratic equation is written as <code>ax^2 + bx + c = 0</code>, where <code>a ≠ 0</code>.</li>
+        <li><strong>Factoring:</strong> When possible, express the quadratic as <code>(x - r)(x - s) = 0</code> and solve for roots.</li>
+        <li><strong>Completing the Square:</strong> Rearranging to make a perfect square trinomial. Used when factoring is not straightforward.</li>
+        <li><strong>Quadratic Formula:</strong> 
+          <code>x = [-b ± √(b² - 4ac)] / (2a)</code>. Works for all quadratics.
+        </li>
+        <li><strong>Discriminant:</strong> Part of the quadratic formula: <code>D = b² - 4ac</code>
+          <ul>
+            <li><code>D &gt; 0</code>: Two real roots</li>
+            <li><code>D = 0</code>: One real root</li>
+            <li><code>D &lt; 0</code>: Two complex roots</li>
+          </ul>
+        </li>
+        <li><strong>Vertex Form:</strong> <code>y = a(x - h)^2 + k</code>, where (h, k) is the vertex of the parabola.</li>
+        <li><strong>Graphing:</strong> Identify direction (opens up or down), axis of symmetry (<code>x = -b/2a</code>), and vertex.</li>
+        <li><strong>Quadratic Inequalities:</strong> Solve <code>ax^2 + bx + c &lt; 0</code> or <code>&gt; 0</code> by finding x-intercepts and analyzing intervals.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step-by-Step Example</h2>
+      <p><strong>Problem:</strong> Solve the equation <code>2x^2 - 4x - 6 = 0</code> using the quadratic formula.</p>
+
+      <p><strong>Step 1:</strong> Identify <code>a = 2</code>, <code>b = -4</code>, <code>c = -6</code></p>
+
+      <p><strong>Step 2:</strong> Plug into the formula:<br>
+      <code>x = [-(-4) ± √((-4)^2 - 4(2)(-6))] / (2 * 2)</code><br>
+      <code>x = [4 ± √(16 + 48)] / 4 = [4 ± √64] / 4</code></p>
+
+      <p><strong>Step 3:</strong> Simplify:<br>
+      <code>x = [4 ± 8] / 4</code></p>
+
+      <p><strong>Step 4:</strong> Find both roots:<br>
+      <code>x = (4 + 8)/4 = 3</code>, <code>x = (4 - 8)/4 = -1</code></p>
+
+      <p><strong>Final Answer:</strong> <code>x = 3</code> and <code>x = -1</code></p>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Always try factoring first—it's fastest. Use the quadratic formula when factoring isn’t easy, and remember to check the discriminant before solving.
+      </div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
