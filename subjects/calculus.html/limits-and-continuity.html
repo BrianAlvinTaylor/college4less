@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus | Limits and Continuity</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.5rem; color: #155fa0; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.6; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Calculus</div>
+    <div class="hero-sub">Limits and Continuity</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>Limits are the foundation of calculus. This topic introduces how to evaluate the behavior of a function as it approaches a particular point and how limits help define continuity, derivatives, and integrals. Understanding limits is crucial for all later topics.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Definition of a Limit:</strong> <code>\lim_{x \to a} f(x) = L</code> means that as <code>x</code> approaches <code>a</code>, <code>f(x)</code> approaches <code>L</code>.</li>
+        <li><strong>Limit Laws:</strong> You can add, subtract, multiply, and divide limits (as long as denominators aren’t zero).</li>
+        <li><strong>One-sided Limits:</strong> Left-hand limit <code>\lim_{x \to a^-}</code> and right-hand limit <code>\lim_{x \to a^+}</code> must match for the full limit to exist.</li>
+        <li><strong>Limits at Infinity:</strong> What happens to <code>f(x)</code> as <code>x</code> becomes very large or very small. Rational functions approach horizontal asymptotes.</li>
+        <li><strong>Indeterminate Forms:</strong> Limits that result in <code>0/0</code> or <code>∞/∞</code> require algebraic simplification or L’Hôpital’s Rule (covered later).</li>
+        <li><strong>Continuity:</strong> A function is continuous at a point <code>x = a</code> if:
+          <ul>
+            <li><code>f(a)</code> is defined</li>
+            <li><code>\lim_{x \to a} f(x)</code> exists</li>
+            <li><code>\lim_{x \to a} f(x) = f(a)</code></li>
+          </ul>
+        </li>
+        <li><strong>Common Discontinuities:</strong> Jumps, holes (removable), and vertical asymptotes (infinite).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Always check the limit from both sides. If <code>\lim_{x \to a^-} ≠ \lim_{x \to a^+}</code>, then the overall limit does not exist.
+      </div>
+    </section>
+
+    <section>
+      <h2>Practice Problems</h2>
+      <ol>
+        <li>
+          Evaluate the limit: <code>\lim_{x \to 2} (x^2 - 4)/(x - 2)</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p><strong>Step 1:</strong> Plug in <code>x = 2</code> → <code>(4 - 4)/(2 - 2) = 0/0</code> → indeterminate form.</p>
+            <p><strong>Step 2:</strong> Factor the numerator: <code>(x^2 - 4) = (x - 2)(x + 2)</code></p>
+            <p><strong>Step 3:</strong> Cancel common factors: <code>(x - 2)/(x - 2) → 1</code></p>
+            <p><strong>Step 4:</strong> Now evaluate the simplified expression <code>x + 2</code> at <code>x = 2</code></p>
+            <p><strong>Final Answer:</strong> <code>4</code></p>
+          </details>
+        </li>
+        <li>
+          Determine whether <code>f(x)</code> is continuous at <code>x = 3</code> where:
+          <br /><code>f(x) = { x^2, if x ≠ 3; 9, if x = 3 }</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p><strong>Step 1:</strong> <code>f(3) = 9</code></p>
+            <p><strong>Step 2:</strong> <code>\lim_{x \to 3} x^2 = 9</code></p>
+            <p><strong>Step 3:</strong> Since limit and function value both exist and match → <code>f</code> is continuous at <code>x = 3</code></p>
+            <p><strong>Final Answer:</strong> Yes, <code>f(x)</code> is continuous at <code>x = 3</code></p>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
