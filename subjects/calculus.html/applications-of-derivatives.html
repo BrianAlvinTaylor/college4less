@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus | Applications of the Derivative</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.5rem; color: #155fa0; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.6; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Calculus</div>
+    <div class="hero-sub">Applications of the Derivative</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>Derivatives don’t just compute rates — they help analyze functions, optimize systems, and describe motion. This topic covers how to use derivatives to understand behavior such as increasing/decreasing intervals, extrema, concavity, inflection points, and more.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Critical Points:</strong> Occur where <code>f'(x) = 0</code> or <code>f'(x)</code> is undefined.</li>
+        <li><strong>Increasing/Decreasing:</strong> If <code>f'(x) > 0</code>, the function is increasing; if <code>f'(x) < 0</code>, it is decreasing.</li>
+        <li><strong>Local Maxima and Minima:</strong> Use the First Derivative Test:
+          <ul>
+            <li>If <code>f'</code> changes from positive to negative → local max</li>
+            <li>If <code>f'</code> changes from negative to positive → local min</li>
+          </ul>
+        </li>
+        <li><strong>Concavity:</strong> Determined by the second derivative <code>f''(x)</code>
+          <ul>
+            <li>If <code>f''(x) > 0</code>, the graph is concave up</li>
+            <li>If <code>f''(x) < 0</code>, the graph is concave down</li>
+          </ul>
+        </li>
+        <li><strong>Inflection Points:</strong> Points where concavity changes (where <code>f''(x) = 0</code> and sign changes)</li>
+        <li><strong>Tangent Line:</strong> The derivative gives the slope of the tangent line at a point</li>
+        <li><strong>Linear Approximation:</strong> <code>L(x) = f(a) + f'(a)(x - a)</code></li>
+        <li><strong>Mean Value Theorem (MVT):</strong> If <code>f</code> is continuous on [a, b] and differentiable on (a, b), then <code>f'(c) = \frac{f(b) - f(a)}{b - a}</code> for some <code>c</code> in (a, b)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        When sketching a graph, use critical points and inflection points to plot structure. Combine info from <code>f'</code> and <code>f''</code> to determine shape.
+      </div>
+    </section>
+
+    <section>
+      <h2>Practice Problems</h2>
+      <ol>
+        <li>
+          Find intervals where <code>f(x) = x^3 - 3x</code> is increasing or decreasing.
+          <details>
+            <summary>Show Solution</summary>
+            <p><strong>Step 1:</strong> Find <code>f'(x) = 3x^2 - 3</code></p>
+            <p><strong>Step 2:</strong> Set <code>f'(x) = 0</code> → <code>3x^2 - 3 = 0 → x = ±1</code></p>
+            <p><strong>Step 3:</strong> Test sign of <code>f'</code> in intervals:</p>
+            <ul>
+              <li>On (−∞, −1): <code>f'(x) > 0</code> → increasing</li>
+              <li>On (−1, 1): <code>f'(x) < 0</code> → decreasing</li>
+              <li>On (1, ∞): <code>f'(x) > 0</code> → increasing</li>
+            </ul>
+            <p><strong>Final Answer:</strong> Increasing on (−∞, −1) ∪ (1, ∞); Decreasing on (−1, 1)</p>
+          </details>
+        </li>
+        <li>
+          Find points of inflection for <code>f(x) = x^4 - 4x^2</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p><strong>Step 1:</strong> Find <code>f''(x) = 12x^2 - 8</code></p>
+            <p><strong>Step 2:</strong> Set <code>f''(x) = 0</code> → <code>12x^2 - 8 = 0</code> → <code>x = ±√(2/3)</code></p>
+            <p><strong>Step 3:</strong> Test concavity changes around those points</p>
+            <p><strong>Final Answer:</strong> Inflection points at <code>x = ±√(2/3)</code></p>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
