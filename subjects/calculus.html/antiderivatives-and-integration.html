@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus | Antiderivatives and Basic Integration</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.5rem; color: #155fa0; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.6; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Calculus</div>
+    <div class="hero-sub">Antiderivatives and Basic Integration</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>Integration is the reverse process of differentiation. Antiderivatives allow you to recover an original function from its derivative, and are key to calculating area under curves, motion from acceleration, and accumulated change.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Antiderivative:</strong> A function <code>F(x)</code> such that <code>F'(x) = f(x)</code></li>
+        <li><strong>Indefinite Integral:</strong> <code>\int f(x) dx = F(x) + C</code>, where <code>C</code> is the constant of integration</li>
+        <li><strong>Basic Integration Rules:</strong>
+          <ul>
+            <li><code>\int x^n dx = \frac{x^{n+1}}{n+1} + C</code> (for <code>n ≠ -1</code>)</li>
+            <li><code>\int \frac{1}{x} dx = \ln|x| + C</code></li>
+            <li><code>\int e^x dx = e^x + C</code>; <code>\int a^x dx = \frac{a^x}{\ln a} + C</code></li>
+            <li><code>\int \sin x dx = -\cos x + C</code>; <code>\int \cos x dx = \sin x + C</code></li>
+          </ul>
+        </li>
+        <li><strong>u-Substitution:</strong> Use when an integral matches a chain rule pattern. Let <code>u = g(x)</code> so <code>du = g'(x) dx</code>.</li>
+        <li><strong>Common Applications:</strong> Recover velocity from acceleration, find position from velocity, and calculate accumulated quantities.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Always double-check your result by differentiating it. If <code>\frac{d}{dx}[\int f(x) dx] = f(x)</code>, you’re correct!
+      </div>
+    </section>
+
+    <section>
+      <h2>Practice Problems</h2>
+      <ol>
+        <li>
+          Find the general antiderivative of <code>f(x) = 6x^2</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p><code>\int 6x^2 dx = 6 \cdot \int x^2 dx = 6 \cdot \frac{x^3}{3} + C = 2x^3 + C</code></p>
+            <p><strong>Final Answer:</strong> <code>2x^3 + C</code></p>
+          </details>
+        </li>
+        <li>
+          Evaluate <code>\int (2x)(x^2 + 1)^5 dx</code> using substitution
+          <details>
+            <summary>Show Solution</summary>
+            <p>Let <code>u = x^2 + 1</code> → <code>du = 2x dx</code></p>
+            <p>So the integral becomes <code>\int u^5 du = \frac{u^6}{6} + C</code></p>
+            <p>Substitute back: <code>\frac{(x^2 + 1)^6}{6} + C</code></p>
+            <p><strong>Final Answer:</strong> <code>\frac{(x^2 + 1)^6}{6} + C</code></p>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
