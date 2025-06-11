@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus | The Derivative: Definitions and Basic Rules</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.5rem; color: #155fa0; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.6; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Calculus</div>
+    <div class="hero-sub">The Derivative: Definitions and Basic Rules</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>The derivative measures how a function changes — it's the slope of a curve at any point. This topic introduces what a derivative is, how it’s defined, and the fundamental rules that allow you to compute derivatives of common functions.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Definition of Derivative:</strong> <code>f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}</code></li>
+        <li><strong>Notation:</strong> <code>f'(x)</code>, <code>dy/dx</code>, <code>D[f(x)]</code></li>
+        <li><strong>Power Rule:</strong> <code>\frac{d}{dx}(x^n) = nx^{n-1}</code></li>
+        <li><strong>Constant Rule:</strong> <code>\frac{d}{dx}(c) = 0</code></li>
+        <li><strong>Constant Multiple Rule:</strong> <code>\frac{d}{dx}(c \cdot f(x)) = c \cdot f'(x)</code></li>
+        <li><strong>Sum and Difference Rule:</strong> <code>\frac{d}{dx}(f \pm g) = f' \pm g'</code></li>
+        <li><strong>Basic Derivatives:</strong>
+          <ul>
+            <li><code>\frac{d}{dx}(x^n) = nx^{n-1}</code></li>
+            <li><code>\frac{d}{dx}(\sin x) = \cos x</code>; <code>\frac{d}{dx}(\cos x) = -\sin x</code></li>
+            <li><code>\frac{d}{dx}(e^x) = e^x</code>; <code>\frac{d}{dx}(\ln x) = 1/x</code></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Know your rules cold: the power rule, trig rules, and exponential/log rules come up constantly. Practice until they’re second nature.
+      </div>
+    </section>
+
+    <section>
+      <h2>Practice Problems</h2>
+      <ol>
+        <li>
+          Find the derivative of <code>f(x) = 5x^3 - 2x + 7</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p><strong>Step 1:</strong> Use the power rule: <code>nx^{n-1}</code></p>
+            <ul>
+              <li><code>\frac{d}{dx}(5x^3) = 15x^2</code></li>
+              <li><code>\frac{d}{dx}(-2x) = -2</code></li>
+              <li><code>\frac{d}{dx}(7) = 0</code></li>
+            </ul>
+            <p><strong>Final Answer:</strong> <code>f'(x) = 15x^2 - 2</code></p>
+          </details>
+        </li>
+        <li>
+          Use the limit definition to find the derivative of <code>f(x) = x^2</code>
+          <details>
+            <summary>Show Solution</summary>
+            <p><strong>Step 1:</strong> Use the formula: <code>f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}</code></p>
+            <p><strong>Step 2:</strong> Compute <code>f(x+h) = (x + h)^2 = x^2 + 2xh + h^2</code></p>
+            <p><strong>Step 3:</strong> <code>f(x+h) - f(x) = x^2 + 2xh + h^2 - x^2 = 2xh + h^2</code></p>
+            <p><strong>Step 4:</strong> Divide by <code>h</code>: <code>\frac{2xh + h^2}{h} = 2x + h</code></p>
+            <p><strong>Step 5:</strong> Take the limit as <code>h → 0</code>: <code>2x</code></p>
+            <p><strong>Final Answer:</strong> <code>f'(x) = 2x</code></p>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
