@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Information Systems | Systems Development Life Cycle Phases</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Information Systems</div>
+    <div class="hero-sub">Systems Development Life Cycle Phases</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>The Systems Development Life Cycle (SDLC) breaks large information-system projects into manageable phases. CLEP defines five discrete stages: <strong>Planning, Analysis, Design, Implementation,</strong> and <strong>Maintenance</strong>. Mastering these stages helps ensure systems are delivered on time, on budget, and aligned with business goals.</p>
+    </section>
+
+    <section>
+      <h2>Key Phases and Deliverables</h2>
+      <ul>
+        <li><strong>Planning:</strong> Define scope, objectives, stakeholders, and feasibility. Output: Project Charter, High‑Level Schedule.</li>
+        <li><strong>Analysis:</strong> Gather requirements via interviews, surveys, and observation. Output: Requirements Specification, Use‑Case Diagrams.</li>
+        <li><strong>Design:</strong> Translate requirements into architecture—data models, UI mock‑ups, and technical stack decisions. Output: ERD, Wireframes, Technical Specs.</li>
+        <li><strong>Implementation:</strong> Code, test, and deploy. Also includes data conversion, training, and change‑management activities.</li>
+        <li><strong>Maintenance:</strong> Ongoing bug fixes, enhancements, performance tuning, and user support. Metrics: Mean Time to Repair (MTTR), Release Frequency.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step-by-Step Example</h2>
+      <p><strong>Scenario:</strong> A human‑resources department needs an online self‑service portal for employees to update personal information and view pay stubs.</p>
+      <p><strong>Step 1 – Planning:</strong> Draft project charter, estimate cost, and obtain executive sponsorship.</p>
+      <p><strong>Step 2 – Analysis:</strong> Interview HR reps and employees; document functional requirements (profile edit, pay‑stub PDF download) and non‑functional needs (99.9 % uptime, GDPR compliance).</p>
+      <p><strong>Step 3 – Design:</strong> Build an ERD linking <code>Employees</code>, <code>PayStubs</code>, and <code>AuditLogs</code>. Create responsive UI mock‑ups.</p>
+      <p><strong>Step 4 – Implementation:</strong> Develop with a three‑tier architecture (React + Node.js + PostgreSQL), run unit & integration tests, and pilot with the finance team.</p>
+      <p><strong>Step 5 – Maintenance:</strong> Monitor with dashboards, apply quarterly security patches, and add new features like direct‑deposit changes based on user feedback.</p>
+      <p><strong>Final Answer:</strong> Following each SDLC phase ensures clear requirements, sound design, smooth deployment, and long‑term system health.</p>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Treat <em>maintenance</em> as a formal phase—allocate 15‑20 % of the original project budget for post‑go‑live support to avoid resource crunches later.</div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
