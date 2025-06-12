@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Information Systems | Programming Logic and Methodologies</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    pre { background:#eee; padding:8px 12px; border-radius:6px; overflow-x:auto; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Information Systems</div>
+    <div class="hero-sub">Programming Logic and Methodologies</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>Programming logic is the systematic sequence of instructions that solves a problem. Whether using Python, SQL, or Java, developers rely on core constructs—variables, conditionals, loops, and functions—to create maintainable code. This topic covers structured and object‑oriented approaches, algorithm design, and common debugging practices.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Constructs</h2>
+      <ul>
+        <li><strong>Data Types:</strong> Integer, float, Boolean, string, date/time, NULL.</li>
+        <li><strong>Operators:</strong> Arithmetic (<code>+ - * / %</code>), relational (<code>&lt; &gt; ==</code>), logical (<code>AND OR NOT</code>).</li>
+        <li><strong>Control Structures:</strong> Sequence, selection (<code>if</code>/<code>else</code>), iteration (for/while loops).</li>
+        <li><strong>Functions & Procedures:</strong> Reusable code blocks with parameters and return values.</li>
+        <li><strong>Algorithm Design:</strong> Pseudocode, flowcharts, Big‑O complexity basics.</li>
+        <li><strong>Methodologies:</strong> Structured (top‑down), object‑oriented (classes, inheritance, polymorphism), and event‑driven paradigms.</li>
+        <li><strong>SQL Fundamentals:</strong> <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, joins, and Boolean filtering.</li>
+        <li><strong>Debugging & Testing:</strong> Breakpoints, unit tests, integration tests, version control (Git).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step-by-Step Example</h2>
+      <p><strong>Problem:</strong> Write pseudocode to calculate the average test score from an array and print whether each student passed (≥ 70) or failed.</p>
+
+      <pre>
+START
+  scores ← [85, 72, 68, 90, 77]
+  total ← 0
+  FOR each score IN scores DO
+      total ← total + score
+      IF score >= 70 THEN
+          PRINT "Pass: " + score
+      ELSE
+          PRINT "Fail: " + score
+      ENDIF
+  ENDFOR
+  average ← total / length(scores)
+  PRINT "Class Average = " + average
+END
+      </pre>
+
+      <p><strong>Explanation:</strong></p>
+      <ul>
+        <li><em>Sequence</em> – variable initialization</li>
+        <li><em>Iteration</em> – <code>FOR</code> loop over the array</li>
+        <li><em>Selection</em> – <code>IF</code> statement for pass/fail logic</li>
+        <li><em>Computation</em> – total accumulation and average calculation</li>
+      </ul>
+
+      <p><strong>Answer:</strong> The algorithm outputs individual results and the class average in O(<em>n</em>) time.</p>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Before coding, draft your algorithm in **pseudocode**—it forces clear thinking and reduces logic errors once you switch to actual syntax.</div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
