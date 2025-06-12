@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Information Systems | Security Fundamentals</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Information Systems</div>
+    <div class="hero-sub">Security Fundamentals</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>Security is the practice of protecting information assets from unauthorized access, disruption, or destruction. This topic introduces common threats such as malware and social engineering, along with core safeguards—including authentication, encryption, and disaster‑recovery planning—that businesses of any size should implement.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Controls</h2>
+      <ul>
+        <li><strong>Malware Types:</strong> Viruses, worms, Trojans, ransomware, spyware, adware, and denial‑of‑service (DoS) attacks.</li>
+        <li><strong>Privacy Concerns:</strong> Data collection, identity theft, and regulatory compliance (GDPR, HIPAA, CCPA).</li>
+        <li><strong>Management & Controls:</strong> Authentication (MFA), authorization (RBAC), firewalls, IDS/IPS, endpoint security, database encryption.</li>
+        <li><strong>Secure Transactions:</strong> HTTPS/TLS, digital certificates, secure payment gateways, tokenization.</li>
+        <li><strong>Remote Access Security:</strong> VPNs, zero‑trust network access (ZTNA), mobile device management (MDM).</li>
+        <li><strong>Disaster Recovery:</strong> Backup strategies (full, incremental), RTO/RPO objectives, business‑continuity planning.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step-by-Step Example</h2>
+      <p><strong>Scenario:</strong> A small e‑commerce startup stores customer data on a cloud VM. They recently experienced a phishing attack that compromised an employee account. Outline a layered security plan.</p>
+
+      <p><strong>Step 1:</strong> <em>Authentication</em> – Enable multi‑factor authentication (MFA) for all cloud logins to reduce credential‑stuffing risk.</p>
+      <p><strong>Step 2:</strong> <em>Network Security</em> – Deploy a cloud firewall and restrict SSH/RDP to specific IP ranges; enable IDS alerts.</p>
+      <p><strong>Step 3:</strong> <em>Data Protection</em> – Encrypt databases at rest with AES‑256 and force TLS 1.3 for data in transit.</p>
+      <p><strong>Step 4:</strong> <em>Endpoint & Email</em> – Implement spam filtering and mandatory security‑awareness training to mitigate phishing.</p>
+      <p><strong>Step 5:</strong> <em>Backup & Recovery</em> – Schedule nightly incremental and weekly full backups to an off‑site region; test restores quarterly.</p>
+
+      <p><strong>Final Answer:</strong> A defense‑in‑depth approach—MFA, network segmentation, encryption, user training, and tested backups—will dramatically reduce attack surface and speed recovery if an incident occurs.</p>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Apply the <strong>principle of least privilege</strong>: give users the minimum access necessary to perform their jobs. This single practice mitigates many internal and external threats.
+      </div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
