@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Information Systems | Data Management and Database Concepts</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { background: #faf6f2; font-family: 'Helvetica Neue', sans-serif; color: #222; margin: 0; padding: 0; }
+    .hero {
+      background: #155fa0; color: #fff; border-radius: 16px;
+      margin: 24px auto 18px auto; padding: 52px 24px 36px 24px;
+      text-align: center; max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+    }
+    .hero-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .hero-sub { font-size: 1.25rem; font-weight: 500; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h2 { font-size: 1.6rem; color: #155fa0; font-weight: bold; margin-top: 2rem; }
+    p, li { font-size: 1.1rem; line-height: 1.65; }
+    ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .tip { background: #e6f4ff; padding: 1rem; border-left: 4px solid #155fa0; margin: 2rem 0; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    footer { margin-top: 4rem; font-size: 0.9rem; color: #777; text-align: center; padding-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-title">Information Systems</div>
+    <div class="hero-sub">Data Management and Database Concepts</div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>Effective data management turns raw facts into strategic insight. This topic covers core database principles—data types, file organization, relational models—and modern practices such as data warehousing, big‑data analytics, and cloud storage lifecycle policies.</p>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Structures</h2>
+      <ul>
+        <li><strong>Data Hierarchy:</strong> Bit → Byte → Field → Record → File → Database → Data Warehouse.</li>
+        <li><strong>File Organization:</strong> Sequential, indexed‑sequential, direct (hash), and the role of memory management.</li>
+        <li><strong>DBMS Models:</strong> Relational (SQL), hierarchical, network, NoSQL (document, key‑value, wide‑column), and object‑oriented.</li>
+        <li><strong>Relational Concepts:</strong> Tables, primary keys, foreign keys, normalization (1NF–3NF) to reduce redundancy.</li>
+        <li><strong>Data Warehousing & BI:</strong> ETL processes, star/snowflake schemas, OLAP cubes, and dashboards.</li>
+        <li><strong>Big Data & Storage:</strong> Hadoop, distributed file systems, cloud object storage (S3), and lifecycle rules for cost optimization.</li>
+        <li><strong>Data Governance:</strong> Validation, migration, privacy regulations, and retention/obsolescence policies.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step-by-Step Example</h2>
+      <p><strong>Problem:</strong> A retail chain stores sales data in multiple spreadsheets. They need consolidated reporting and faster queries for regional managers. Outline a database solution.</p>
+
+      <p><strong>Step 1:</strong> Import spreadsheets into a <strong>relational DBMS</strong> (e.g., MySQL) with separate tables for <code>Stores</code>, <code>Products</code>, and <code>Sales</code>.</p>
+      <p><strong>Step 2:</strong> Define <code>store_id</code> and <code>product_id</code> as primary keys; reference them as foreign keys in <code>Sales</code> for referential integrity.</p>
+      <p><strong>Step 3:</strong> Normalize to 3NF to eliminate duplicate store or product details.</p>
+      <p><strong>Step 4:</strong> Build a nightly <strong>ETL</strong> job that loads aggregated data into a star‑schema data mart for quick OLAP queries.</p>
+
+      <p><strong>Final Answer:</strong> Migrating to a normalized relational database with a downstream star‑schema warehouse provides single‑source accuracy and sub‑second regional sales queries.</p>
+    </section>
+
+    <section>
+      <h2>Quick Tip</h2>
+      <div class="tip">
+        Always separate <strong>transactional</strong> databases (OLTP) from <strong>analytical</strong> workloads (OLAP) to avoid locking contention and keep reports fast.</div>
+    </section>
+
+    <footer>
+      © 2025 College4Less
+    </footer>
+  </div>
+</body>
+</html>
