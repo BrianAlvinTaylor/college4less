@@ -15,6 +15,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.college4less.org/" />
 
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="College4Less — Save Money. Earn Credit. Graduate Faster." />
+<meta name="twitter:description" content="Prep for CLEP® with clear, focused tools. Thousands of colleges accept CLEP credits." />
+<meta name="twitter:image" content="assets/logo.png" />
+
 <!-- JSON-LD -->
 <script type="application/ld+json">
 {
@@ -23,7 +29,10 @@
   "name":"College4Less",
   "url":"https://www.college4less.org/",
   "logo":"https://www.college4less.org/assets/logo.png",
-  "sameAs":["https://www.instagram.com/college4less","https://www.linkedin.com/company/college4less"],
+  "sameAs":[
+    "https://www.instagram.com/college4less",
+    "https://www.linkedin.com/company/college4less"
+  ],
   "contactPoint":[{"@type":"ContactPoint","email":"info@college4less.org","contactType":"customer support","areaServed":"US"}]
 }
 </script>
@@ -38,13 +47,13 @@
     --bg-alt:#f7f9fc;
     --radius:14px;
     --shadow:0 8px 24px rgba(18,34,62,.08);
-    --max:1040px;         /* narrower for desktop symmetry */
-    --space:24px;         /* 8pt system base = 24 for desktop blocks */
+    --max:1040px;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif}
   a{color:var(--brand);text-decoration:none}
   a:hover{text-decoration:underline}
+  img{max-width:100%;height:auto}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
 
   /* Header — simplified */
@@ -61,14 +70,15 @@
   .btn.ghost{background:#fff;color:var(--brand)}
   .cta{display:flex;gap:10px}
 
-  /* Hero — centered, single column */
+  /* Hero — centered */
   .hero{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#f8fbff 0%,#fff 100%)}
   .hero-inner{padding:56px 0;text-align:center}
   .hero h1{margin:0 0 12px 0;font-size:42px;line-height:1.1}
   .hero p{margin:0 auto 18px;max-width:720px;color:#394b6b;font-size:18px}
-  .hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+  .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+  .actions img{display:block;height:50px}
 
-  /* KPI row — clean 3-up */
+  /* KPIs — clean 3-up */
   .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:28px 0}
   .kpi{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px;text-align:center}
   .kpi b{display:block;font-size:26px;margin-bottom:4px}
@@ -80,26 +90,21 @@
   .section-title h2{margin:0 0 8px 0;font-size:28px}
   .section-title p{margin:0 auto;max-width:680px;color:#41506d}
 
-  /* 3-up cards (How it works / Value) */
+  /* Cards */
   .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .cards-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:18px;box-shadow:var(--shadow);min-height:180px;display:flex;flex-direction:column;justify-content:flex-start}
   .card h3{margin:0 0 6px 0;font-size:18px}
   .card p{margin:0 0 6px 0;color:#364a6b}
-  .card ul{margin:8px 0 0 18px;color:#455675}
   .muted{color:var(--muted);font-size:14px}
 
-  /* Audience sub-nav strip */
+  /* Audience strip */
   .audience-strip{background:var(--bg-alt);padding:18px 0}
   .audiences{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
   .audiences a{display:block;text-align:center;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:700;color:#1c3e7a}
   .audiences a:hover{background:#eef5ff}
 
-  /* Testimonials — 2-up for symmetry */
-  .cards-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  blockquote{margin:0}
-  .quote{font-style:italic}
-
-  /* FAQ — 1 column for cleaner edges */
+  /* FAQ */
   details{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff}
   details+details{margin-top:10px}
   summary{cursor:pointer;font-weight:700}
@@ -108,6 +113,11 @@
   .newsletter{border:1px solid var(--line);border-radius:14px;background:#fff;padding:18px;text-align:center}
   form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px}
   input[type="email"]{padding:12px;border:1px solid #ccd7ea;border-radius:10px;min-width:260px}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  /* Instagram */
+  .social{border:1px solid var(--line);border-radius:14px;background:#fff;padding:18px;text-align:center}
+  .ig-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px}
 
   /* Footer — 3 columns */
   footer{background:#0e1b34;color:#c7d3ee}
@@ -118,9 +128,6 @@
   .brand-mini{display:flex;align-items:center;gap:10px}
   .brand-mini img{width:32px;height:32px;border-radius:8px}
   .legal{border-top:1px solid #2a385a;margin-top:16px;padding:14px 0;color:#a9b8db;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-
-  /* Accessibility helper */
-  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
   /* Responsive */
   @media (max-width: 980px){
@@ -157,23 +164,22 @@
   </div>
 </header>
 
-<!-- Hero (centered, single focus) -->
+<!-- Hero -->
 <section class="hero">
   <div class="wrap hero-inner">
     <h1>Save money. Earn credit. Graduate faster.</h1>
     <p>Prep for CLEP® with clear, focused tools. Thousands of colleges accept CLEP credits. Start free, learn fast, and pass with confidence.</p>
     <div class="actions" id="download" role="group" aria-label="App download">
-      <a class="btn primary" href="#">App Store</a>
-      <a class="btn ghost" href="#">Google Play</a>
+      <a href="#"><img src="assets/appstore-badge.svg" alt="Download on the App Store" /></a>
+      <a href="#"><img src="assets/googleplay-badge.png" alt="Get it on Google Play" /></a>
     </div>
 
-    <!-- Clean KPI row -->
+    <!-- KPIs -->
     <div class="kpis">
-      <div class="kpi"><b>$1,500+</b><span>Avg. tuition saved per exam*</span></div>
-      <div class="kpi"><b>3 credits</b><span>Typical CLEP award</span></div>
-      <div class="kpi"><b>Thousands</b><span>Colleges accept CLEP</span></div>
+      <div class="kpi"><b>$1,500+</b><span>Typical tuition saved per exam</span></div>
+      <div class="kpi"><b>3 credits</b><span>Per exam at many schools</span></div>
+      <div class="kpi"><b>Thousands</b><span>Of colleges accept CLEP</span></div>
     </div>
-    <p class="muted" style="margin:0">*Estimate based on common per-credit tuition.</p>
   </div>
 </section>
 
@@ -191,11 +197,7 @@
       </div>
       <div class="card">
         <h3>2) Master key concepts</h3>
-        <p>Slides, summaries, notecards, and quizzes organized to boost recall.</p>
-        <ul>
-          <li>Missed-question review</li>
-          <li>Progress tracking by topic</li>
-        </ul>
+        <p>Short lessons, notecards, quizzes. Misses are saved and recycled until mastered.</p>
       </div>
       <div class="card">
         <h3>3) Test & earn credits</h3>
@@ -205,31 +207,31 @@
   </div>
 </section>
 
-<!-- Value props -->
+<!-- Value Props (refined) -->
 <section>
   <div class="wrap">
     <div class="section-title">
-      <h2>Built for students. Trusted by parents & educators.</h2>
-      <p>Clear content and a review system that captures every miss—so preparation compounds.</p>
+      <h2>Clear. Smart. Motivating.</h2>
+      <p>Tools designed for real students, trusted by parents and educators nationwide.</p>
     </div>
     <div class="cards-3">
       <div class="card">
-        <h3>Clarity over jargon</h3>
-        <p>Short sentences, visual cues, and simple actions. Always know the next step.</p>
+        <h3>Clarity that sticks</h3>
+        <p>Plain language and simple visuals. You always know the next step.</p>
       </div>
       <div class="card">
-        <h3>Smart review</h3>
-        <p>Every miss is saved globally and by topic for targeted practice until mastered.</p>
+        <h3>Review that works</h3>
+        <p>Every miss is tracked globally and by topic for targeted practice — no wasted effort.</p>
       </div>
       <div class="card">
-        <h3>Progress that motivates</h3>
-        <p>Pretest + Final Exam roll into clean dashboards that show improvement.</p>
+        <h3>Progress you can see</h3>
+        <p>Pretest + Final Exam results roll into dashboards that show real improvement.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Audience strip (secondary nav) -->
+<!-- Audience strip -->
 <section class="audience-strip" aria-labelledby="audience">
   <div class="wrap">
     <div class="section-title" style="margin-bottom:14px">
@@ -246,7 +248,7 @@
   </div>
 </section>
 
-<!-- Testimonials (2-up) -->
+<!-- Testimonials -->
 <section>
   <div class="wrap">
     <div class="section-title">
@@ -256,41 +258,56 @@
     <div class="cards-2">
       <div class="card">
         <h3>“CLEP shaved a semester off.”</h3>
-        <p class="quote">“I passed two CLEP exams with College4Less and saved over $3,000.”</p>
-        <p class="muted">— A. Ramirez</p>
+        <p class="muted">“I passed two CLEP exams with College4Less and saved over $3,000.” — A. Ramirez</p>
       </div>
       <div class="card">
         <h3>“Confidence booster.”</h3>
-        <p class="quote">“The notecards + missed question review made the difference.”</p>
-        <p class="muted">— J. Lee</p>
+        <p class="muted">“The notecards + missed question review made the difference.” — J. Lee</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ (single column) -->
+<!-- FAQ (refined) -->
 <section>
   <div class="wrap">
     <div class="section-title">
       <h2>Common questions</h2>
-      <p>Quick answers to get you started.</p>
+      <p>Quick answers to help you decide if CLEP is right for you.</p>
     </div>
     <details>
       <summary>Do colleges really accept CLEP credits?</summary>
-      <div>Thousands of accredited colleges accept CLEP. Always check your target school’s policy.</div>
+      <div>Yes. Thousands of accredited colleges nationwide accept CLEP credits. Always confirm with your school.</div>
     </details>
     <details>
       <summary>Is CLEP only for “top students”?</summary>
-      <div>No. With focused prep and practice, most motivated students can pass and earn credit.</div>
+      <div>No. With focused prep and practice, motivated students at all levels can pass and earn credit.</div>
     </details>
     <details>
       <summary>How much can I save?</summary>
-      <div>Many exams award ~3 credits. At typical tuition rates, savings often exceed $1,500 per exam.</div>
+      <div>Each exam typically counts for 3 credits — often around $1,500 in tuition savings.</div>
     </details>
     <details>
       <summary>Which apps are free vs. paid?</summary>
-      <div>Five iOS apps are free (US History I, US History II, Principles of Marketing, Natural Sciences, Humanities). Biology is a premium app.</div>
+      <div>Five iOS apps are free: US History I & II, Marketing, Natural Sciences, Humanities. Biology is premium.</div>
     </details>
+  </div>
+</section>
+
+<!-- Follow & Share (Instagram) -->
+<section>
+  <div class="wrap">
+    <div class="social">
+      <div class="section-title" style="margin-bottom:10px">
+        <h2>Follow us & share your success</h2>
+        <p>Tag <a href="https://www.instagram.com/college4less" target="_blank" rel="noopener">@College4Less</a> and use <b>#College4LessWins</b> to be featured.</p>
+      </div>
+      <div class="ig-actions">
+        <a class="btn primary" href="https://www.instagram.com/college4less" target="_blank" rel="noopener">Follow on Instagram</a>
+        <a class="btn ghost" href="#download">Start prepping now</a>
+      </div>
+      <p class="muted" style="margin-top:10px">Students, parents, and educators — we’d love to highlight your wins.</p>
+    </div>
   </div>
 </section>
 
