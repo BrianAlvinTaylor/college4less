@@ -1,183 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google AdSense Verification -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9262670824789698"
-  crossorigin="anonymous"></script>
-  <meta charset="UTF-8">
-  <title>College4Less</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>College4Less — Save Money. Earn Credit. Graduate Faster.</title>
+  <meta name="description" content="College4Less helps students earn affordable college credit through CLEP® preparation. Free and paid study apps, trusted by students, parents, and educators." />
+  <meta name="theme-color" content="#1565D8" />
+  <link rel="icon" href="assets/logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="College4Less — Save Money. Earn Credit. Graduate Faster." />
+  <meta property="og:description" content="Prep for CLEP® with trusted tools. Thousands of colleges accept CLEP credits." />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.college4less.org/" />
+
+  <!-- JSON-LD Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "College4Less",
+    "url": "https://www.college4less.org/",
+    "logo": "https://www.college4less.org/assets/logo.png",
+    "sameAs": [
+      "https://www.instagram.com/college4less",
+      "https://www.linkedin.com/company/college4less"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "email": "info@college4less.org",
+      "contactType": "customer support",
+      "areaServed": "US"
+    }]
+  }
+  </script>
+
   <style>
-    body { background: #faf6f2; font-family: "Helvetica Neue", Arial, sans-serif; color: #222; margin: 0; }
-    .hero {
-      background: #155fa0; color: #fff; border-radius: 16px; margin: 24px auto 18px auto;
-      padding: 52px 24px 36px 24px; text-align: center; max-width: 96vw; box-shadow: 0 2px 8px rgba(0,0,0,0.035);
+    :root{
+      --brand:#1565D8;         /* College4Less blue */
+      --brand-ink:#0E3E8A;     /* darker text accent */
+      --ink:#1a1f36;           /* body text */
+      --muted:#5b6475;         /* secondary text */
+      --bg:#ffffff;
+      --bg-alt:#f6f8fb;
+      --card:#ffffff;
+      --ok:#1a9f5a;
+      --warn:#c9342f;
+      --radius:14px;
+      --shadow:0 10px 25px rgba(16,40,80,.08);
     }
-    .hero-title { font-size: 3rem; font-weight: 800; letter-spacing: .5px; margin: 0 0 12px 0; }
-    .hero-sub { font-size: 1.25rem; margin-bottom: 2em; font-weight: 400; letter-spacing: .2px; }
-    .btn-group {
-      display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 8px;
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.45}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header / Nav */
+    .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e9eef6;z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:36px;height:36px;border-radius:8px}
+    .brand b{font-size:1.15rem;color:var(--brand-ink)}
+    .tabs{display:flex;gap:18px;flex-wrap:wrap}
+    .tabs a{padding:8px 12px;border-radius:999px;background:transparent;font-weight:600;color:#31466a}
+    .tabs a:hover{background:var(--bg-alt)}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid transparent;font-weight:700}
+    .btn.primary{background:var(--brand);color:#fff}
+    .btn.outline{border-color:#d7dfec;color:#284b7e;background:#fff}
+    .btn.small{padding:8px 12px;font-weight:600;border-radius:9px}
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg, #f7fbff 0%, #fff 100%);border-bottom:1px solid #eaf0f8}
+    .hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:48px 0}
+    .hero h1{font-size:2.2rem;line-height:1.15;margin:0 0 14px 0;color:#0f2a5a}
+    .hero p{font-size:1.05rem;color:#3b4a67;margin:0 0 18px 0}
+    .badges{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 8px}
+    .badge{background:#eaf2ff;color:#184491;border:1px solid #d6e4ff;border-radius:999px;padding:6px 10px;font-size:.85rem;font-weight:700}
+    .store{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .store a{display:inline-flex;gap:8px;align-items:center;border:1px solid #d9e3f2;border-radius:12px;padding:10px 14px;background:#fff;box-shadow:var(--shadow)}
+    .store img{width:22px;height:22px}
+
+    .hero-card{background:var(--card);border:1px solid #e5ecf6;border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+    .hero-card h3{margin:.25rem 0 .5rem;color:#0f2a5a}
+    .row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
+    .kpi{background:var(--bg-alt);border:1px solid #e5ecf6;border-radius:12px;padding:14px;text-align:center}
+    .kpi b{display:block;font-size:1.35rem;color:#0f2a5a}
+    .kpi span{color:var(--muted);font-size:.9rem}
+
+    /* Sections */
+    section{padding:42px 0}
+    .section-title{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:18px}
+    h2{margin:0;color:#0f2a5a;font-size:1.6rem}
+    .sub{color:var(--muted);max-width:720px}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid #e5ecf6;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:.25rem 0 .25rem;color:#0f2a5a}
+    .card p{margin:.25rem 0 .5rem;color:#3b4a67}
+    .chip{display:inline-block;background:#eef6ee;color:#0d6639;border:1px solid #d5ead7;border-radius:999px;padding:6px 10px;font-size:.8rem;font-weight:700}
+    .card .list{margin:10px 0 0 0;padding-left:18px;color:#3b4a67}
+
+    /* Audience quick links */
+    .audiences{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .audiences a{display:block;text-align:center;background:#f2f6fc;border:1px solid #e1e8f5;border-radius:12px;padding:14px;font-weight:700;color:#1d3e7a}
+    .audiences a:hover{background:#e8f0ff}
+
+    /* FAQ */
+    details{border:1px solid #e5ecf6;border-radius:12px;padding:12px 16px;background:#fff}
+    summary{cursor:pointer;font-weight:700;color:#0f2a5a}
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+    /* Newsletter */
+    .newsletter{background:var(--bg-alt);border:1px solid #e5ecf6;border-radius:16px;padding:18px}
+    .newsletter form{display:flex;gap:10px;flex-wrap:wrap}
+    input[type="email"]{flex:1;padding:12px 12px;border:1px solid #ccd7ea;border-radius:10px;font-size:1rem}
+    .notice{font-size:.85rem;color:var(--muted);margin-top:6px}
+
+    /* Visually hidden but accessible (used for labels) */
+    .sr-only{
+      position:absolute !important;
+      width:1px;height:1px;
+      padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
     }
-    .hero-btn {
-      background: #2983e8; color: #fff; border: none; border-radius: 8px;
-      padding: 12px 29px; font-weight: 600; font-size: 1.12em; cursor: pointer;
+
+    /* Footer */
+    footer{background:#0e1b34;color:#b7c3dc;margin-top:42px}
+    .foot{padding:28px 0}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:22px}
+    footer h4{margin:0 0 10px 0;color:#e3ecff}
+    footer a{color:#cfe0ff}
+    .legal{border-top:1px solid #2a385a;margin-top:18px;padding:14px 0;color:#95a6c7;font-size:.9rem;display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+    .foot .brand-mini{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .foot .brand-mini img{width:32px;height:32px;border-radius:8px}
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero .grid{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr 1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .faq{grid-template-columns:1fr}
+      .audiences{grid-template-columns:1fr 1fr}
+      .foot-grid{grid-template-columns:1fr 1fr}
     }
-    .info-text { text-align: center; font-size: 1.25rem; margin: 29px 0 15px 0; }
-    .highlight-section {
-      background: #fff; max-width: 90vw; margin: 24px auto; padding: 24px;
-      border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); text-align: center;
+    @media (max-width: 560px){
+      .row{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .audiences{grid-template-columns:1fr}
     }
-    .highlight-section h2 {
-      color: #155fa0; font-size: 1.8rem; margin-bottom: 12px;
-    }
-    .highlight-section p {
-      font-size: 1.15rem; max-width: 700px; margin: 0 auto 16px;
-    }
-    .dropdown-section {
-      background: #f8f6f1; border-radius: 10px; padding: 8px; margin: 13px 16px 15px 16px;
-      border: 1.5px solid #ebe7e3;
-    }
-    .dropdown-header {
-      font-size: 1.45rem; font-weight: 700; padding: 9px 0 9px 12px;
-      display: flex; align-items: center;
-    }
-    .subject-btn {
-      background: #f5f5f7; border: 1.3px solid #e6e6e6; padding: 15px 18px;
-      border-radius: 8px; font-size: 1.24em; font-weight: 500; margin: 9px auto;
-      text-align: left; display: flex; justify-content: space-between; width: 98%;
-      cursor: pointer; transition: background 0.2s;
-    }
-    .subject-btn:hover {
-      background: #e2e8f0;
-    }
-    .subject-list {
-      margin: 6px 0 10px 30px; display: none; flex-direction: column; gap: 5px;
-    }
-    .subject-list.active { display: flex; }
-    .subject-link {
-      background: none; border: none; font-size: 1.07rem; color: #226cc2;
-      text-align: left; cursor: pointer; padding: 4px 0;
-    }
-    .affiliate-row {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
-      padding: 8px 0 20px 0; font-size: 1.07rem;
-    }
-    .affiliate-row a {
-      background: #f0f4fa; padding: 8px 16px; border-radius: 6px; color: #155fa0;
-      text-decoration: none; font-weight: 600; border: 1px solid #d6e2f0;
-    }
-    .affiliate-row a:hover {
-      background: #dbeaff;
-    }
-    .footer { text-align: center; font-size: 1.07em; color: #989898; margin: 32px 10px 23px 10px; }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="hero-title">College4Less</div>
-    <div class="hero-sub">Save time. Save money. Learn smarter.</div>
-    <div class="btn-group">
-      <button class="hero-btn" onclick="window.location.href='start-saving.html';">Start Saving</button>
-      <button class="hero-btn" onclick="window.location.href='study-tips.html';">Get Study Tips</button>
-      <button class="hero-btn" onclick="window.location.href='find-degree.html';">Find a Degree</button>
+
+  <!-- Header -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <img src="assets/logo.png" alt="College4Less logo" />
+        <b>College4Less</b>
+      </div>
+      <nav class="tabs" aria-label="Primary">
+        <a href="students.html">Students</a>
+        <a href="parents.html">Parents</a>
+        <a href="educators.html">Educators</a>
+        <a href="press.html">Media/Press</a>
+        <a href="investors.html">Investors</a>
+      </nav>
+      <div class="cta">
+        <a class="btn outline small" href="#how-it-works">How it works</a>
+        <a class="btn primary small" href="#download">Get the app</a>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <div class="highlight-section">
-    <h2>Why Wait? Save Time and Money Starting Today.</h2>
-    <p>Every student wants to graduate faster—and with less debt. But most don’t realize how simple it can be. What if just <strong>30 minutes a day for 30 days</strong> could save you <strong>$1,500</strong> and <strong>135 hours</strong> of classroom and homework time?</p>
-    <p>Now imagine knocking out two, three, or five courses this way. That’s months of time saved and thousands of dollars you keep in your pocket.</p>
-    <p>Over <strong>120,000 CLEP exams</strong> are taken each year by students just like you—students who want to move forward, not fall behind.</p>
-    <p style="font-size: 1.3rem; font-weight: bold; color: #155fa0; margin-top: 20px;">
-      Thousands are saving time and money every day. Ready to start your journey?
-    </p>
-  </div>
-
-  <div class="dropdown-section">
-    <div class="dropdown-header">Explore Courses</div>
-    <button class="subject-btn" onclick="toggleSubject('history')">History and Social Sciences</button>
-<div class="subject-list" id="history">
-  <a class="subject-link" href="subjects/american-government/">American Government</a>
-<a class="subject-link" href="subjects/us-history-i/">U.S. History I</a>
-<a class="subject-link" href="subjects/us-history-ii/">U.S. History II</a>
-<a class="subject-link" href="subjects/human-growth-and-development/">Human Growth and Development</a>
-<a class="subject-link" href="subjects/introduction-to-educational-psychology/">Introduction to Educational Psychology</a>
-<a class="subject-link" href="subjects/introductory-psychology/">Introductory Psychology</a>
-<a class="subject-link" href="subjects/introductory-sociology/">Introductory Sociology</a>
-<a class="subject-link" href="subjects/principles-of-macroeconomics/">Principles of Macroeconomics</a>
-<a class="subject-link" href="subjects/principles-of-microeconomics/">Principles of Microeconomics</a>
-<a class="subject-link" href="subjects/social-sciences-and-history/">Social Sciences and History</a>
-<a class="subject-link" href="subjects/western-civilization-i/">Western Civilization I</a>
-<a class="subject-link" href="subjects/western-civilization-ii/">Western Civilization II</a>
-
-</div>
-
-<button class="subject-btn" onclick="toggleSubject('literature')">Composition and Literature</button>
-<div class="subject-list" id="literature">
-  <a class="subject-link" href="subjects/american-literature.html">American Literature</a>
-  <a class="subject-link" href="subjects/analyzing-and-interpreting-literature.html">Analyzing and Interpreting Literature</a>
-  <a class="subject-link" href="subjects/college-composition.html">College Composition</a>
-  <a class="subject-link" href="subjects/english-literature.html">English Literature</a>
-  <a class="subject-link" href="subjects/humanities.html">Humanities</a>
-</div>
-
-<button class="subject-btn" onclick="toggleSubject('science')">Science and Math</button>
-<div class="subject-list" id="science">
-  <a class="subject-link" href="subjects/biology.html">Biology</a>
-  <a class="subject-link" href="subjects/calculus.html">Calculus</a>
-  <a class="subject-link" href="subjects/chemistry.html">Chemistry</a>
-  <a class="subject-link" href="subjects/college-algebra.html">College Algebra</a>
-  <a class="subject-link" href="subjects/college-mathematics.html">College Mathematics</a>
-  <a class="subject-link" href="subjects/natural-sciences.html">Natural Sciences</a>
-  <a class="subject-link" href="subjects/precalculus.html">Precalculus</a>
-</div>
-
-<button class="subject-btn" onclick="toggleSubject('business')">Business</button>
-<div class="subject-list" id="business">
-  <a class="subject-link" href="subjects/financial-accounting.html">Financial Accounting</a>
-  <a class="subject-link" href="subjects/information-systems.html">Information Systems</a>
-  <a class="subject-link" href="subjects/introductory-business-law.html">Introductory Business Law</a>
-  <a class="subject-link" href="subjects/principles-of-management.html">Principles of Management</a>
-  <a class="subject-link" href="subjects/principles-of-marketing.html">Principles of Marketing</a>
-</div>
-  </div>
-
-  <div class="dropdown-section">
-    <div class="dropdown-header">Affiliate Resources</div>
-    <div class="affiliate-row">
-      <a href="#">edX</a>
-      <a href="#">Coursera</a>
-      <a href="#">Financial Aid</a>
-      <a href="#">Online Tutoring</a>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap grid">
+      <div class="grid">
+        <div>
+          <h1>Save money. Earn credit. <br/>Graduate faster.</h1>
+          <p>Prep for CLEP® with clear, no-fluff tools. Thousands of colleges accept CLEP credits. Start with our free apps—built to help you pass.</p>
+          <div class="badges">
+            <span class="badge">CLEP aligned</span>
+            <span class="badge">5 free iOS apps</span>
+            <span class="badge">Biology premium</span>
+          </div>
+          <div id="download" class="store" role="group" aria-label="App download">
+            <a href="#" aria-label="Download on the App Store">
+              <img src="assets/apple.svg" alt="" />
+              <span><b>App Store</b></span>
+            </a>
+            <a href="#" aria-label="Get it on Google Play">
+              <img src="assets/googleplay.svg" alt="" />
+              <span><b>Google Play</b></span>
+            </a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Proof points">
+          <h3>Why College4Less?</h3>
+          <div class="row">
+            <div class="kpi"><b>$1,500+</b><span>Avg. tuition saved per exam*</span></div>
+            <div class="kpi"><b>3 Credits</b><span>Typical CLEP award</span></div>
+            <div class="kpi"><b>Thousands</b><span>Colleges accept CLEP</span></div>
+          </div>
+          <p class="notice" style="margin-top:10px">*Estimate based on common per-credit tuition rates.</p>
+        </aside>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="highlight-section">
-  <h2>Top Picks for College Reference Books</h2>
-  <ul style="list-style-type: disc; padding-left: 20px; text-align: left; max-width: 700px; margin: 0 auto; font-size: 1rem;">
-    <li><a href="https://www.amazon.com/dp/0316017590?tag=college4les0a-20" target="_blank">Bartlett's Familiar Quotations by John Bartlett</a></li>
-    <li><a href="https://www.amazon.com/dp/0593517076?tag=college4les0a-20" target="_blank">Merriam-Webster's Collegiate Dictionary, 12th Edition</a></li>
-    <li><a href="https://www.amazon.com/dp/0593517041?tag=college4les0a-20" target="_blank">Roget's Thesaurus of English Words and Phrases</a></li>
-    <li><a href="https://www.amazon.com/dp/1510766537?tag=college4les0a-20" target="_blank">The World Almanac and Book of Facts 2024</a></li>
-    <li><a href="https://www.amazon.com/dp/0486814490?tag=college4les0a-20" target="_blank">Strunk and White's The Elements of Style</a></li>
-  </ul>
-    <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 16px;">
-      As an Amazon Associate, College4Less earns from qualifying purchases.
-    </p>
-  </div>
+  <!-- How it works -->
+  <section id="how-it-works">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>How CLEP + College4Less works</h2>
+        <p class="sub">Plain language steps (Todd Rogers style): Learn the essentials → Practice → Take CLEP → Send scores → Get credits at participating colleges.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="chip">Step 1</span>
+          <h3>Choose your exam</h3>
+          <p>Pick from Natural Sciences, U.S. History I & II, Principles of Marketing, Humanities, Biology (premium), and more.</p>
+          <ul class="list">
+            <li>Built to the official CLEP outline</li>
+            <li>Myth-busting overview included</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="chip">Step 2</span>
+          <h3>Master key concepts</h3>
+          <p>Slides, summaries, notecards, and quizzes—organized to reduce overwhelm and boost recall.</p>
+          <ul class="list">
+            <li>Smart review of missed questions</li>
+            <li>Progress tracking across topics</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="chip">Step 3</span>
+          <h3>Test & earn credits</h3>
+          <p>Schedule your CLEP exam, pass, and receive college credits at schools that accept CLEP.</p>
+          <ul class="list">
+            <li>Thousands of colleges accept CLEP</li>
+            <li>Typical exam = 3 credits</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="app-badges" style="display:flex;justify-content:center;gap:16px;margin:24px auto 20px auto;">
-  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="40">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" height="40">
-</div>
+  <!-- Value props -->
+  <section>
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Built for students. Trusted by parents & educators.</h2>
+        <p class="sub">Clear content, data-driven practice, and a review system that captures every miss—so preparation compounds, not repeats mistakes.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Clarity over jargon</h3>
+          <p>Short sentences, visual cues, and simple actions—so you always know the next step.</p>
+        </div>
+        <div class="card">
+          <h3>Missed-question review</h3>
+          <p>Every miss is saved globally and by topic for targeted review until mastered.</p>
+        </div>
+        <div class="card">
+          <h3>Progress that motivates</h3>
+          <p>Pretest + Final Exam scores roll up to dashboards that make improvement obvious.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Audience Quick Links -->
+  <section aria-labelledby="audience-title">
+    <div class="wrap">
+      <div class="section-title">
+        <h2 id="audience-title">I’m here as a…</h2>
+        <p class="sub">Find the info tailored to your goals.</p>
+      </div>
+      <div class="audiences">
+        <a href="students.html" aria-label="Students landing page">Student</a>
+        <a href="parents.html" aria-label="Parents landing page">Parent</a>
+        <a href="educators.html" aria-label="Educators landing page">Educator</a>
+        <a href="press.html" aria-label="Media and Press page">Media / Press</a>
+        <a href="investors.html" aria-label="Investors page">Investor</a>
+      </div>
+    </div>
+  </section>
 
+  <!-- Social proof / Testimonials -->
+  <section>
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Results that matter</h2>
+        <p class="sub">Real students, real savings.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>“CLEP shaved a semester off.”</h3>
+          <p>“I passed two CLEP exams with College4Less and saved over $3,000.” — A. Ramirez</p>
+        </div>
+        <div class="card">
+          <h3>“Confidence booster.”</h3>
+          <p>“The notecards + missed question review made the difference.” — J. Lee</p>
+        </div>
+        <div class="card">
+          <h3>“Clear plan for parents.”</h3>
+          <p>“We finally understood the steps and savings.” — The Patel Family</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Common questions</h2>
+        <p class="sub">Quick answers to help you get started.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Do colleges really accept CLEP credits?</summary>
+          <div>Thousands of accredited colleges accept CLEP. Always check your target school’s CLEP policy.</div>
+        </details>
+        <details>
+          <summary>Is CLEP only for “top students”?</summary>
+          <div>No. With focused prep and practice, most motivated students can pass and earn credit.</div>
+        </details>
+        <details>
+          <summary>How much can I save?</summary>
+          <div>Many exams award ~3 credits. At typical tuition rates, that can exceed $1,500 per exam.</div>
+        </details>
+        <details>
+          <summary>Which apps are free vs. paid?</summary>
+          <div>Five iOS apps are free (US History I, US History II, Principles of Marketing, Natural Sciences, Humanities). Biology is a premium app.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section>
+    <div class="wrap">
+      <div class="newsletter">
+        <div class="section-title" style="margin-bottom:8px">
+          <h2>Get new tips & app updates</h2>
+          <p class="sub">One quick email a month—study strategies, CLEP updates, and savings ideas.</p>
+        </div>
+        <form action="https://example.com/newsletter" method="post">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com" required />
+          <button class="btn primary" type="submit">Subscribe</button>
+        </form>
+        <p class="notice">We respect your privacy. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="wrap foot">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-mini">
+            <img src="assets/logo.png" alt="College4Less logo" />
+            <b>College4Less</b>
+          </div>
+          <p style="margin:6px 0 12px">Helping students save time and money on college with clear, CLEP-aligned prep.</p>
+          <div class="store">
+            <a href="#" aria-label="App Store (footer)"><img src="assets/apple.svg" alt="" /><span><b>App Store</b></span></a>
+            <a href="#" aria-label="Google Play (footer)"><img src="assets/googleplay.svg" alt="" /><span><b>Google Play</b></span></a>
+          </div>
+        </div>
+        <div>
+          <h4>For You</h4>
+          <ul style="list-style:none;padding:0;margin:0">
+            <li><a href="students.html">Students</a></li>
+            <li><a href="parents.html">Parents</a></li>
+            <li><a href="educators.html">Educators</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul style="list-style:none;padding:0;margin:0">
+            <li><a href="press.html">Media / Press</a></li>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="mailto:info@college4less.org">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul style="list-style:none;padding:0;margin:0">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="legal">
+        <span>© 2025 College4Less. All rights reserved.</span>
+        <span>College4Less is independent and not affiliated with the College Board. CLEP® is a registered trademark of the College Board.</span>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    function toggleSubject(id) {
-      const el = document.getElementById(id);
-      el.classList.toggle('active');
-    }
+    // Simple smooth-scroll for in-page links.
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+      });
+    });
   </script>
 </body>
 </html>
