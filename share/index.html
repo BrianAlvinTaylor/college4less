@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google AdSense Verification -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9262670824789698" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <title>Share Your CLEP Success • College4Less</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,7 +63,9 @@
       border: 1px solid #c9d1d9;
       border-radius: 10px;
       font-size: 15px;
+      background: #fff;
     }
+    select { padding-right: 36px; }
     textarea { min-height: 80px; }
     .btn {
       width: 100%;
@@ -82,8 +82,9 @@
       background: #0e4373;
     }
     .hint {
-      font-size: .85rem;
+      font-size: .9rem;
       color: #5b6a79;
+      margin-top: -6px;
     }
     .footer-note {
       font-size: .85rem;
@@ -98,6 +99,33 @@
       font-weight: 600;
       border-bottom: 1px solid #cfe0f6;
     }
+    /* Larger, opt-out style for permissions */
+    .optout-note {
+      font-size: .95rem;
+      color: #3b4b5b;
+      background: #f3f7fc;
+      border: 1px solid #cfe0f6;
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .optout {
+      display: grid;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .optout label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .optout input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #155fa0; /* modern browsers */
+      transform: scale(1.15); /* slightly larger */
+    }
   </style>
 </head>
 <body>
@@ -105,8 +133,7 @@
   <!-- Hero -->
   <div class="hero">
     <div class="hero-title">Share Your CLEP Success 🎓</div>
-    <div class="hero-sub">Passed your CLEP exam — or made progress toward your next one?  
-      Tell us about it so we can celebrate your win and inspire other students.</div>
+    <div class="hero-sub">Passed your CLEP exam — or made progress toward your next one? Tell us about it so we can celebrate your win and inspire other students.</div>
   </div>
 
   <!-- Why Share -->
@@ -125,6 +152,7 @@
     <h2>Tell Us About Your Exam</h2>
     <p class="hint">Takes less than a minute. We’ll only share your story if you give permission.</p>
 
+    <!-- Sends directly to your inbox via FormSubmit -->
     <form action="https://formsubmit.co/briantaylor@college4less.org" method="POST">
 
       <label for="name">First Name (optional)</label>
@@ -137,12 +165,48 @@
       <label for="exam">Which CLEP exam did you take?</label>
       <select id="exam" name="exam" required>
         <option value="" disabled selected>Select an exam</option>
-        <option>Biology</option>
-        <option>Natural Sciences</option>
-        <option>U.S. History I</option>
-        <option>U.S. History II</option>
-        <option>Principles of Marketing</option>
-        <option>Humanities</option>
+
+        <optgroup label="History and Social Sciences">
+          <option>American Government</option>
+          <option>U.S. History I</option>
+          <option>U.S. History II</option>
+          <option>Human Growth and Development</option>
+          <option>Introduction to Educational Psychology</option>
+          <option>Introductory Psychology</option>
+          <option>Introductory Sociology</option>
+          <option>Principles of Macroeconomics</option>
+          <option>Principles of Microeconomics</option>
+          <option>Social Sciences and History</option>
+          <option>Western Civilization I</option>
+          <option>Western Civilization II</option>
+        </optgroup>
+
+        <optgroup label="Composition and Literature">
+          <option>American Literature</option>
+          <option>Analyzing and Interpreting Literature</option>
+          <option>College Composition</option>
+          <option>English Literature</option>
+          <option>Humanities</option>
+        </optgroup>
+
+        <optgroup label="Science and Math">
+          <option>Biology</option>
+          <option>Calculus</option>
+          <option>Chemistry</option>
+          <option>College Algebra</option>
+          <option>College Mathematics</option>
+          <option>Natural Sciences</option>
+          <option>Precalculus</option>
+        </optgroup>
+
+        <optgroup label="Business">
+          <option>Financial Accounting</option>
+          <option>Information Systems</option>
+          <option>Introductory Business Law</option>
+          <option>Principles of Management</option>
+          <option>Principles of Marketing</option>
+        </optgroup>
+
         <option>Other</option>
       </select>
 
@@ -162,14 +226,26 @@
       <label for="story">Tell us anything you'd like to share (optional)</label>
       <textarea id="story" name="story" placeholder="How did you prepare? What helped most?"></textarea>
 
-      <label><input type="checkbox" name="share_anon"> You may share my story anonymously on College4Less channels</label>
-      <label><input type="checkbox" name="share_named"> You may contact me about featuring my story by name</label>
+      <!-- Opt-out model: pre-checked permissions with clear statement -->
+      <div class="optout-note">
+        These permissions are checked by default. Uncheck to opt out.
+      </div>
+      <div class="optout">
+        <label>
+          <input type="checkbox" name="share_anon" checked>
+          You may share my story anonymously on College4Less channels
+        </label>
+        <label>
+          <input type="checkbox" name="share_named" checked>
+          You may contact me about featuring my story by name
+        </label>
+      </div>
 
       <!-- Hidden fields -->
-      <input type="hidden" name="_subject" value="New CLEP Success submission">
-      <input type="hidden" name="_next" value="https://www.college4less.org/share/thanks.html">
+      <input type="hidden" name="_subject"  value="New CLEP Success submission">
       <input type="hidden" name="_template" value="table">
-      <input type="text" name="_honey" style="display:none"> <!-- spam trap -->
+      <input type="hidden" name="_next"     value="https://www.college4less.org/share/thanks.html">
+      <input type="text"   name="_honey"    style="display:none"> <!-- spam trap -->
 
       <button type="submit" class="btn">Share My Success</button>
       <p class="footer-note">By submitting, you agree we may store your submission. We’ll only share it if you gave permission.</p>
