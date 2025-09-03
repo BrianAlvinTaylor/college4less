@@ -1,170 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google AdSense Verification (optional, matches homepage) -->
+  <!-- Google AdSense Verification -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9262670824789698" crossorigin="anonymous"></script>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Share Your CLEP Success • College4Less</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="Passed your CLEP exam—or made progress toward your next one? Share your success so we can celebrate and inspire others.">
-  <link rel="icon" href="/favicon.ico">
+
   <style>
-    :root{
-      --blue:#155FA0; --blue-soft:#e8f0fb; --bg:#faf6f2; --text:#222; --muted:#3b4b5b;
-      --card:#fff; --stroke:#ebe7e3; --shadow:0 2px 8px rgba(0,0,0,.06);
-      --radius:16px; --radius-sm:12px;
+    body {
+      background: #faf6f2;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #222;
+      margin: 0;
     }
-    *{box-sizing:border-box}
-    body{background:var(--bg);font-family:"Helvetica Neue",Arial,sans-serif;color:var(--text);margin:0}
-    .wrap{max-width:980px;margin:0 auto;padding:20px}
-    /* hero */
-    .hero{
-      background:var(--blue);color:#fff;border-radius:var(--radius);margin:24px 0 18px 0;
-      padding:42px 24px 30px 24px;text-align:center;box-shadow:var(--shadow)
+    .hero {
+      background: #155fa0;
+      color: #fff;
+      border-radius: 16px;
+      margin: 24px auto 18px auto;
+      padding: 36px 24px 28px 24px;
+      text-align: center;
+      max-width: 96vw;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.035);
     }
-    .hero h1{margin:0 0 10px 0;font-size:2.2rem;font-weight:800;letter-spacing:.3px}
-    .hero p{margin:0 auto;font-size:1.05rem;opacity:.95;max-width:720px}
-    /* card */
-    .card{background:var(--card);border-radius:var(--radius-sm);box-shadow:var(--shadow);padding:22px}
-    .grid{display:grid;grid-template-columns:1fr;gap:18px}
-    .lead{color:var(--muted);margin:2px 0 14px 0}
-    /* form */
-    form{display:grid;gap:14px}
-    label{font-size:.95rem;font-weight:600}
-    .hint{font-size:.85rem;color:#5b6a79;margin-top:4px}
-    input[type="text"],input[type="email"],select,textarea{
-      width:100%;padding:12px;border:1px solid #c9d1d9;border-radius:10px;font-size:16px;background:#fff
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0 0 8px 0;
     }
-    textarea{min-height:88px}
-    .row{display:grid;gap:14px}
-    @media(min-width:720px){ .row.two{grid-template-columns:1fr 1fr} }
-    .checkrow{display:flex;flex-direction:column;gap:8px}
-    .checkrow label{font-weight:500}
-    .btn{
-      width:100%;padding:12px 16px;border:0;border-radius:12px;background:var(--blue);
-      color:#fff;font-weight:700;font-size:16px;cursor:pointer
+    .hero-sub {
+      font-size: 1.1rem;
+      font-weight: 400;
+      opacity: .95;
     }
-    .btn:disabled{opacity:.6;cursor:not-allowed}
-    .footer-note{font-size:.9rem;color:#5b6a79;text-align:center;margin-top:18px}
-    .bar{height:2px;background:linear-gradient(90deg,var(--blue),#2983e8);opacity:.15;margin:10px 0 18px}
-    .center{text-align:center}
-    .badge{display:inline-block;background:var(--blue-soft);color:var(--blue);font-weight:700;
-           border-radius:999px;padding:6px 10px;font-size:.8rem;margin-top:8px}
+    .section {
+      background: #fff;
+      max-width: 720px;
+      margin: 24px auto;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .section h2 {
+      color: #155fa0;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+    .section p {
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    form {
+      display: grid;
+      gap: 14px;
+    }
+    label {
+      font-weight: 600;
+      font-size: .95rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #c9d1d9;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+    textarea { min-height: 80px; }
+    .btn {
+      width: 100%;
+      padding: 12px 16px;
+      border: 0;
+      border-radius: 12px;
+      background: #155fa0;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #0e4373;
+    }
+    .hint {
+      font-size: .85rem;
+      color: #5b6a79;
+    }
+    .footer-note {
+      font-size: .85rem;
+      color: #666;
+      text-align: center;
+      margin-top: 12px;
+    }
+    .center { text-align: center; }
+    .link-back {
+      color: #155fa0;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid #cfe0f6;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
 
-    <!-- Hero -->
-    <section class="hero">
-      <h1>Share Your CLEP Success 🎓</h1>
-      <p>Passed your CLEP exam—or made progress toward your next one? Tell us about it so we can celebrate your win and inspire other students.</p>
-      <div class="badge">Takes less than a minute</div>
-    </section>
-
-    <!-- Why it matters (brief, Brain Trust aligned) -->
-    <section class="grid">
-      <div class="card">
-        <h2 style="color:var(--blue);margin:0 0 6px 0;">Why share?</h2>
-        <p class="lead">Your story builds confidence for the next student and helps schools see the value of CLEP.</p>
-        <div class="bar"></div>
-        <ul style="margin:0 0 0 18px;line-height:1.55">
-          <li><strong>Encourage others:</strong> Real wins beat marketing.</li>
-          <li><strong>Improve the app:</strong> Your results guide what we build next.</li>
-          <li><strong>Celebrate progress:</strong> Every credit earned saves time and money.</li>
-        </ul>
-      </div>
-
-      <!-- Form Card -->
-      <div class="card">
-        <h2 style="color:var(--blue);margin:0 0 6px 0;">Tell us about your exam</h2>
-        <p class="lead">We’ll only share your story if you give permission.</p>
-        <div class="bar"></div>
-
-        <!-- Replace YOUR_FORMSPREE_ENDPOINT with your Formspree URL -->
-        <form action="YOUR_FORMSPREE_ENDPOINT" method="POST">
-          <!-- Name / Email (optional) -->
-          <div class="row two">
-            <div>
-              <label for="name">First name (optional)</label>
-              <input id="name" name="name" type="text" placeholder="Maria">
-            </div>
-            <div>
-              <label for="email">Email (optional)</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com">
-              <div class="hint">Only if you'd like us to follow up.</div>
-            </div>
-          </div>
-
-          <!-- Exam + Result -->
-          <div class="row two">
-            <div>
-              <label for="exam">Which CLEP exam did you take?</label>
-              <select id="exam" name="exam" required>
-                <option value="" disabled selected>Select an exam</option>
-                <option>Biology</option>
-                <option>Natural Sciences</option>
-                <option>U.S. History I</option>
-                <option>U.S. History II</option>
-                <option>Principles of Marketing</option>
-                <option>Humanities</option>
-                <!-- Add more as you expand -->
-              </select>
-            </div>
-            <div>
-              <label for="result">Result</label>
-              <select id="result" name="result" required>
-                <option value="" disabled selected>Select result</option>
-                <option>Passed</option>
-                <option>Not yet</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Optional score + school -->
-          <div class="row two">
-            <div>
-              <label for="score">Score (optional)</label>
-              <input id="score" name="score" type="text" placeholder="e.g., 56">
-            </div>
-            <div>
-              <label for="school">School / State (optional)</label>
-              <input id="school" name="school" type="text" placeholder="e.g., Lone Star College, TX">
-            </div>
-          </div>
-
-          <!-- Optional story -->
-          <div>
-            <label for="story">Tell us anything you'd like to share (optional)</label>
-            <textarea id="story" name="story" placeholder="How did you prepare? What helped most?"></textarea>
-          </div>
-
-          <!-- Permissions -->
-          <div class="checkrow">
-            <label><input type="checkbox" name="share_anon"> You may share my story anonymously on College4Less channels</label>
-            <label><input type="checkbox" name="share_named"> You may contact me about featuring my story by name</label>
-          </div>
-
-          <!-- Redirect on success -->
-          <input type="hidden" name="_subject" value="New CLEP result shared">
-          <input type="hidden" name="_redirect" value="https://www.college4less.org/share/thanks.html">
-
-          <button class="btn" type="submit">Share My Success</button>
-          <p class="footer-note">By submitting, you agree we may store your submission. We’ll only share it if you gave permission.</p>
-        </form>
-      </div>
-    </section>
-
-    <!-- Light CTA back to the app/site -->
-    <section class="card" style="margin:18px 0 26px 0">
-      <h2 style="color:var(--blue);margin:0 0 6px 0;" class="center">Keep the momentum</h2>
-      <p class="lead center">Explore more CLEP subjects, track your streak, and keep saving time and money.</p>
-      <div class="center" style="margin-top:10px">
-        <a href="/" style="color:var(--blue);font-weight:700;text-decoration:none;border-bottom:1px solid #cfe0f6">Return to College4Less.org</a>
-      </div>
-    </section>
-
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-title">Share Your CLEP Success 🎓</div>
+    <div class="hero-sub">Passed your CLEP exam — or made progress toward your next one?  
+      Tell us about it so we can celebrate your win and inspire other students.</div>
   </div>
+
+  <!-- Why Share -->
+  <div class="section">
+    <h2>Why Share?</h2>
+    <p>Your story builds confidence for the next student and helps schools see the value of CLEP.</p>
+    <ul style="line-height:1.6; margin-left: 18px;">
+      <li><strong>Encourage others:</strong> Real wins beat marketing.</li>
+      <li><strong>Improve the app:</strong> Your results guide what we build next.</li>
+      <li><strong>Celebrate progress:</strong> Every credit earned saves time and money.</li>
+    </ul>
+  </div>
+
+  <!-- Form -->
+  <div class="section">
+    <h2>Tell Us About Your Exam</h2>
+    <p class="hint">Takes less than a minute. We’ll only share your story if you give permission.</p>
+
+    <form action="https://formsubmit.co/briantaylor@college4less.org" method="POST">
+
+      <label for="name">First Name (optional)</label>
+      <input type="text" id="name" name="name" placeholder="Maria">
+
+      <label for="email">Email (optional)</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com">
+      <p class="hint">Only if you'd like us to follow up.</p>
+
+      <label for="exam">Which CLEP exam did you take?</label>
+      <select id="exam" name="exam" required>
+        <option value="" disabled selected>Select an exam</option>
+        <option>Biology</option>
+        <option>Natural Sciences</option>
+        <option>U.S. History I</option>
+        <option>U.S. History II</option>
+        <option>Principles of Marketing</option>
+        <option>Humanities</option>
+        <option>Other</option>
+      </select>
+
+      <label for="result">Result</label>
+      <select id="result" name="result" required>
+        <option value="" disabled selected>Select result</option>
+        <option>Passed</option>
+        <option>Not yet</option>
+      </select>
+
+      <label for="score">Score (optional)</label>
+      <input type="text" id="score" name="score" placeholder="e.g., 56">
+
+      <label for="school">School / State (optional)</label>
+      <input type="text" id="school" name="school" placeholder="e.g., Lone Star College, TX">
+
+      <label for="story">Tell us anything you'd like to share (optional)</label>
+      <textarea id="story" name="story" placeholder="How did you prepare? What helped most?"></textarea>
+
+      <label><input type="checkbox" name="share_anon"> You may share my story anonymously on College4Less channels</label>
+      <label><input type="checkbox" name="share_named"> You may contact me about featuring my story by name</label>
+
+      <!-- Hidden fields -->
+      <input type="hidden" name="_subject" value="New CLEP Success submission">
+      <input type="hidden" name="_next" value="https://www.college4less.org/share/thanks.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none"> <!-- spam trap -->
+
+      <button type="submit" class="btn">Share My Success</button>
+      <p class="footer-note">By submitting, you agree we may store your submission. We’ll only share it if you gave permission.</p>
+    </form>
+  </div>
+
+  <!-- CTA -->
+  <div class="section center">
+    <h2 style="color:#155fa0;">Keep the Momentum</h2>
+    <p>Explore more CLEP subjects, track your streak, and keep saving time and money.</p>
+    <p><a href="https://www.college4less.org" class="link-back">Return to College4Less.org</a></p>
+  </div>
+
 </body>
 </html>
