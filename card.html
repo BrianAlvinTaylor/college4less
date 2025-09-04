@@ -2,60 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>College4Less | Start Here</title>
+  <title>College4Less — You’re in the right place</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Fast start: pick your path in one tap. Free CLEP prep apps help students save $1,200+ per exam and earn 3–6 credits at 2,900+ colleges." />
+  <link rel="icon" href="assets/logo.png" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 30px;
-      background: #f9f9f9;
+    :root{
+      --brand:#155fa0; --ink:#1f2a44; --muted:#66748e; --bg:#faf6f2;
+      --line:#e6ecf0; --max:760px; --radius:14px; --shadow:0 8px 24px rgba(17,36,68,.06);
+      --ok:#0aa56b; --chip:#f2f6ff;
     }
-    h1 {
-      color: #0a3b7e;
-      font-size: 24px;
-    }
-    .button-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-      max-width: 400px;
-      margin: 30px auto;
-    }
-    .button-grid a {
-      display: block;
-      padding: 15px;
-      background-color: #0a3b7e;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-    .button-grid a:hover {
-      background-color: #062854;
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #888;
-    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Helvetica Neue", Arial, sans-serif;line-height:1.45}
+    a{color:#226cc2;text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;height:auto}
+    .wrap{max-width:var(--max);margin:0 auto;padding:20px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:18px}
+    .hero{background:#155fa0;color:#fff;border-radius:16px;margin:18px 0;border:1px solid #0f4a7c}
+    .hero-inner{padding:28px 16px;text-align:center}
+    h1{margin:6px 0 10px 0;font-size:26px;line-height:1.2}
+    p{margin:8px 0}
+    .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+    .chip{background:var(--chip);color:#14345e;border:1px solid #dfe8ff;border-radius:999px;padding:6px 10px;font-weight:700;font-size:13px}
+    .grid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
+    .btn{display:block;text-align:center;padding:14px;border-radius:12px;border:1px solid var(--brand);font-weight:800}
+    .btn.primary{background:var(--brand);color:#fff;border-color:transparent}
+    .btn.ghost{background:#fff;color:var(--brand)}
+    .btn.small{padding:10px;font-size:14px;border-radius:10px}
+    .pill{display:inline-block;padding:6px 10px;border:1px solid #c8d6ea;border-radius:999px;font-size:12px;color:#3a4a6a;margin:6px 4px 0 0}
+    .mute{color:var(--muted);font-size:14px}
+    .role{display:flex;gap:10px;align-items:center}
+    .role b{font-size:16px}
+    .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .foot{color:#9aaad0;text-align:center;font-size:13px;margin:18px 0}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .tag{font-size:12px;color:#55627a}
+    @media (min-width:520px){ .grid{grid-template-columns:1fr 1fr} }
   </style>
 </head>
 <body>
-  <h1>Welcome to College4Less</h1>
-  <p>Helping students earn college credit—faster, cheaper, and with confidence.</p>
+  <div class="wrap">
 
-  <div class="button-grid">
-    <a href="https://www.college4less.org/start-saving.html">📚 For Parents</a>
-    <a href="https://www.college4less.org/study-tips.html">🧑‍🏫 For Educators</a>
-    <a href="https://www.college4less.org/find-degree.html">🤝 For Partners</a>
-    <a href="https://www.college4less.org/press">🗞️ For Media</a>
-    <a href="https://apps.apple.com/">📱 Download for iOS</a>
-    <a href="https://play.google.com/">📱 Download for Android</a>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <img src="assets/logo.png" alt="College4Less" width="60" height="60" style="border-radius:12px" />
+        <h1>Start here — pick your path</h1>
+        <p style="color:#e7f0ff">Free CLEP® prep apps help students save <b>$1,200+</b> per exam and earn <b>3–6 credits</b> at <b>2,900+ colleges</b>.</p>
+        <div class="chips" aria-label="Fast facts">
+          <span class="chip">$1,200+ saved</span>
+          <span class="chip">3–6 credits</span>
+          <span class="chip">2,900+ colleges</span>
+          <span class="chip">50+ years</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Router (audience tiles) -->
+    <section class="card">
+      <div class="grid" aria-label="Choose your path">
+        <a id="tile-students" class="btn primary" href="students.html?utm_source=qr&utm_medium=card&utm_campaign=meet&utm_owner=unknown">🎓 I’m a Student — Get the free apps</a>
+        <a id="tile-parents" class="btn ghost" href="parents.html?utm_source=qr&utm_medium=card&utm_campaign=meet&utm_owner=unknown">👪 I’m a Parent — How to help right now</a>
+        <a id="tile-educators" class="btn ghost" href="educators.html?utm_source=qr&utm_medium=card&utm_campaign=meet&utm_owner=unknown">🏫 I’m an Educator — Counselor resources</a>
+        <a id="tile-partners" class="btn ghost" href="educators.html#resources?utm_source=qr&utm_medium=card&utm_campaign=meet&utm_owner=unknown">🤝 Partnerships — Pilot at my school</a>
+        <a id="tile-media" class="btn ghost" href="press.html?utm_source=qr&utm_medium=card&utm_campaign=meet&utm_owner=unknown">🗞️ Media — Press kit & releases</a>
+        <a id="tile-invest" class="btn ghost" href="investors.html?utm_source=qr&utm_medium=card&utm_campaign=meet&utm_owner=unknown">💼 Investors — Request the brief</a>
+        <a id="tile-sponsor" class="btn ghost" href="#sponsor">🎁 Sponsor a student’s CLEP exam</a>
+        <a id="tile-contact" class="btn ghost" href="#contact">✉️ Contact the team</a>
+      </div>
+      <p class="mute" style="margin-top:10px">“No fluff, just results.” Study in minutes. Earn credits that count.</p>
+    </section>
+
+    <!-- Quick Actions (fast follow) -->
+    <section class="card" id="quick">
+      <h2 style="margin:0 0 8px">Quick actions</h2>
+      <div class="cta-grid">
+        <a id="qa-ios" class="btn ghost small" href="https://apps.apple.com/us/developer/brian-taylor/id1820957437?utm_source=qr&utm_medium=card&utm_campaign=meet&utm_owner=unknown" target="_blank" rel="noopener">📱 Download on iOS</a>
+        <a id="qa-android" class="btn ghost small" href="#" target="_blank" rel="noopener" aria-label="Google Play">📱 Android (coming)</a>
+        <a id="qa-media" class="btn ghost small" href="press.html#assets?utm_source=qr&utm_medium=card&utm_campaign=meet&utm_owner=unknown">🧰 Download media kit</a>
+        <a id="qa-brief" class="btn ghost small" href="investors.html#brief?utm_source=qr&utm_medium=card&utm_campaign=meet&utm_owner=unknown">📄 Request investor brief</a>
+      </div>
+      <p class="tag">Tip: Share this page with a colleague — it routes by role in one tap.</p>
+    </section>
+
+    <!-- Sponsor a Student -->
+    <section class="card" id="sponsor">
+      <div class="role"><b>🎁 Sponsor a student’s CLEP exam</b></div>
+      <p>Want to underwrite a first attempt for a local student? We’ll connect your gift to a school counselor.</p>
+      <form action="https://formsubmit.co/BrianTaylor@college4less.org" method="POST" aria-label="Sponsor a student">
+        <input type="hidden" name="_subject" value="Sponsor a Student (QR page)">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://college4less.org/thanks.html">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <input name="Name" type="text" placeholder="Your name" required style="padding:12px;border:1px solid #cbd6e2;border-radius:10px">
+          <input name="Email" type="email" placeholder="you@business.org" required style="padding:12px;border:1px solid #cbd6e2;border-radius:10px">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+          <input name="Organization" type="text" placeholder="Company / Organization" style="padding:12px;border:1px solid #cbd6e2;border-radius:10px">
+          <input id="ownerField" name="Card Owner" type="text" placeholder="Met via (Brian or Lynne)" style="padding:12px;border:1px solid #cbd6e2;border-radius:10px">
+        </div>
+        <textarea name="Notes" rows="3" placeholder="City/School focus, # of students you’d like to sponsor…" style="width:100%;margin-top:10px;padding:12px;border:1px solid #cbd6e2;border-radius:10px"></textarea>
+        <button class="btn primary" type="submit" style="margin-top:10px">I want to sponsor</button>
+      </form>
+      <p class="mute">We coordinate with counselors; funds cover official exam fees where permitted.</p>
+    </section>
+
+    <!-- Direct Contact (personalized) -->
+    <section class="card" id="contact">
+      <h2 style="margin:0 0 8px">Contact</h2>
+      <div class="contact">
+        <div id="brian">
+          <b>Brian Taylor</b><br/>
+          <span class="tag">Founder — Vision & Media</span>
+          <div class="grid" style="grid-template-columns:1fr;gap:8px;margin-top:8px">
+            <a id="mail-brian" class="btn ghost small" href="mailto:BrianTaylor@College4Less.org?subject=Hello%20from%20your%20QR%20card">✉️ Email Brian</a>
+            <a id="meet-brian" class="btn ghost small" href="press.html?utm_source=qr&utm_medium=card&utm_campaign=meet&utm_owner=brian#contact">🗞️ Media contact</a>
+          </div>
+        </div>
+        <div id="lynne">
+          <b>Lynne Logue</b><br/>
+          <span class="tag">VP Strategic Partnerships & Marketing</span>
+          <div class="grid" style="grid-template-columns:1fr;gap:8px;margin-top:8px">
+            <a id="mail-lynne" class="btn ghost small" href="mailto:LynneMarie@College4Less.org?subject=Hello%20from%20your%20QR%20card">✉️ Email Lynne</a>
+            <a id="partner-lynne" class="btn ghost small" href="educators.html?utm_source=qr&utm_medium=card&utm_campaign=meet&utm_owner=lynne#resources">🤝 Partner resources</a>
+          </div>
+        </div>
+      </div>
+      <p class="mute" style="margin-top:8px">Editor’s note: College4Less is independent and not affiliated with the College Board. Credit policies vary by institution.</p>
+    </section>
+
+    <p class="foot">© 2025 College4Less • college4less.org • “No fluff, just results.”</p>
   </div>
 
-  <footer>
-    College4Less • www.college4less.org
-  </footer>
+  <script>
+    // Personalize by card owner: ?card=brian or ?card=lynne
+    const q = new URLSearchParams(location.search);
+    const owner = (q.get('card') || '').toLowerCase();
+    const utmOwner = owner === 'brian' || owner === 'lynne' ? owner : 'unknown';
+
+    // Update all links with utm_owner
+    document.querySelectorAll('a[href]').forEach(a=>{
+      try{
+        const url = new URL(a.href, location.origin);
+        if(url.protocol.startsWith('http')){
+          if(!url.searchParams.get('utm_source')) url.searchParams.set('utm_source','qr');
+          if(!url.searchParams.get('utm_medium')) url.searchParams.set('utm_medium','card');
+          if(!url.searchParams.get('utm_campaign')) url.searchParams.set('utm_campaign','meet');
+          url.searchParams.set('utm_owner', utmOwner);
+          a.href = url.toString();
+        }
+      }catch(e){}
+    });
+
+    // Prefill owner field and emphasize the right contact block
+    const ownerField = document.getElementById('ownerField');
+    if(ownerField && (utmOwner==='brian' || utmOwner==='lynne')){
+      ownerField.value = utmOwner === 'brian' ? 'Brian' : 'Lynne';
+    }
+    if(utmOwner==='brian'){
+      document.getElementById('brian').style.border='2px solid #155fa0';
+      document.getElementById('brian').style.borderRadius='10px';
+      document.getElementById('brian').style.padding='8px';
+    }
+    if(utmOwner==='lynne'){
+      document.getElementById('lynne').style.border='2px solid #155fa0';
+      document.getElementById('lynne').style.borderRadius='10px';
+      document.getElementById('lynne').style.padding='8px';
+    }
+  </script>
 </body>
 </html>
