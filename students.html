@@ -72,9 +72,10 @@
     .hero-inner{padding:46px 18px;text-align:center}
     .hero h1{margin:0 0 12px;font-size:38px;line-height:1.12}
     .hero p{margin:0 auto 16px;max-width:760px;font-size:18px;color:#e7f0ff}
+    .hero small{display:block;color:#e7f0ff;opacity:.9;margin-top:4px}
     .hero .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0 6px}
     .chip{background:var(--chip);color:#14345e;border:1px solid #dfe8ff;border-radius:999px;padding:6px 10px;font-weight:700;font-size:14px}
-    .actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
     .store-badge{height:56px;display:block}
 
     /* Cards */
@@ -129,7 +130,7 @@
 </head>
 <body>
 
-  <!-- Header (same as homepage) -->
+  <!-- Header -->
   <header>
     <div class="wrap nav">
       <a class="brand" href="/" aria-label="College4Less home">
@@ -146,7 +147,7 @@
         <a href="influencers.html">Influencers</a>
       </nav>
       <div class="cta">
-        <a class="btn ghost" href="#faq">FAQ</a>
+        <a class="btn ghost" href="#how">How it works</a>
         <a class="btn primary" href="#download">Get the Apps</a>
       </div>
 
@@ -175,7 +176,7 @@
         <a href="influencers.html">Influencers</a>
       </div>
       <div class="mobile-ctas">
-        <a class="btn ghost" href="#faq">FAQ</a>
+        <a class="btn ghost" href="#how">How it works</a>
         <a class="btn primary" href="#download">Get the Apps</a>
       </div>
     </nav>
@@ -186,6 +187,7 @@
     <div class="wrap hero-inner">
       <h1>Students: Earn college credits before graduation</h1>
       <p>Study in short, focused sessions. Pass CLEP® exams. Save about <b>$1,500 per exam</b> and graduate sooner with real credits that count.</p>
+      <small>Take control of your future—one exam at a time.</small>
 
       <!-- trust chips shown immediately -->
       <div class="chips" aria-label="Quick proof">
@@ -194,14 +196,18 @@
         <span class="chip">Save ~$1,500 per exam</span>
       </div>
 
-      <!-- primary actions -->
+      <!-- primary actions (dual CTA as recommended) -->
       <div class="actions" id="download" role="group" aria-label="App download">
-        <a href="https://apps.apple.com/us/developer/brian-taylor/id1820957437" target="_blank" rel="noopener">
+        <a href="https://apps.apple.com/us/developer/brian-taylor/id1820957437" target="_blank" rel="noopener" aria-label="Download iOS apps on the App Store">
           <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
         </a>
-        <a href="#" target="_blank" rel="noopener">
+        <a href="#" target="_blank" rel="noopener" aria-label="Get the Android apps on Google Play">
           <img class="store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
         </a>
+      </div>
+      <small>Join 1,000+ students already saving with CLEP and College4Less.</small>
+      <div class="actions" style="margin-top:8px">
+        <a class="btn ghost" href="#how">Learn how it works</a>
       </div>
     </div>
   </section>
@@ -236,8 +242,8 @@
       <div class="cards-2">
         <div class="card">
           <h3>Real results</h3>
-          <p><em>“I used College4Less for Natural Science and US History. Passed both and saved a whole semester.”</em></p>
-          <p>— High school senior, now a first-year biology major</p>
+          <p><em>“I never thought I’d graduate early. College4Less made it real.”</em></p>
+          <p>— Maya, Class of 2025</p>
         </div>
         <div class="card">
           <h3>Fast facts</h3>
@@ -252,7 +258,7 @@
   </section>
 
   <!-- How it works for Students -->
-  <section>
+  <section id="how">
     <div class="wrap">
       <div class="section-title">
         <h2>How it works for students</h2>
@@ -286,7 +292,7 @@
     </div>
   </div>
 
-  <!-- Newsletter: subscribe + latest + archive -->
+  <!-- Newsletter: subscribe (emails to BrianTaylor@college4less.org) + latest + archive -->
   <section>
     <div class="wrap">
       <div class="section-title">
@@ -296,8 +302,15 @@
       <div class="newsletter">
         <div class="nl-grid">
           <div class="nl-form">
-            <form action="#" method="post" aria-label="Subscribe to newsletter">
+            <!-- FormSubmit forwards to your inbox; first submission triggers a one-time verify email -->
+            <form action="https://formsubmit.co/BrianTaylor@college4less.org" method="POST" aria-label="Subscribe to newsletter">
               <input type="email" name="email" placeholder="you@example.com" required />
+              <!-- optional meta -->
+              <input type="hidden" name="_subject" value="New newsletter subscriber (Students page)">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <!-- After submit, send them to a simple thank-you page (create thanks.html) -->
+              <input type="hidden" name="_next" value="https://college4less.org/thanks.html">
               <button class="btn primary" type="submit">Subscribe</button>
             </form>
             <p style="color:var(--muted);font-size:14px;margin-top:8px;">No spam. Unsubscribe anytime.</p>
@@ -347,7 +360,7 @@
     </div>
   </section>
 
-  <!-- Footer (same as homepage) -->
+  <!-- Footer -->
   <footer role="contentinfo">
     <div class="wrap foot">
       <div class="foot-grid">
