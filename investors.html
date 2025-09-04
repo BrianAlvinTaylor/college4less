@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9262670824789698" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Investors — Thesis, Traction & Brief Request | College4Less</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Investor hub: thesis, differentiation, traction snapshot, roadmap, team readiness, and low-friction brief request. College4Less is a CLEP-specific, mobile-first platform helping students save $1,200+ per exam and earn 3–6 credits." />
+  <link rel="icon" href="assets/logo.png" />
+
+  <!-- Social -->
+  <meta property="og:title" content="Investors — Thesis, Traction & Brief Request | College4Less" />
+  <meta property="og:description" content="Request our investor brief and book an intro. CLEP-specific, mobile-first platform serving schools and students; $1.5B tuition & 45M hours saved vision." />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Schema.org Organization (basic) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"College4Less",
+    "url":"https://college4less.org/",
+    "logo":"https://college4less.org/assets/logo.png"
+  }
+  </script>
+
+  <style>
+    :root{
+      --brand:#155fa0; --ink:#1f2a44; --muted:#66748e; --bg:#faf6f2;
+      --line:#e6ecf0; --max:1040px; --radius:14px; --shadow:0 8px 24px rgba(17,36,68,.06);
+      --ok:#0aa56b; --chip:#f2f6ff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Helvetica Neue", Arial, sans-serif;line-height:1.45}
+    a{color:#226cc2;text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;height:auto}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* Buttons */
+    .btn{display:inline-block;padding:12px 16px;border-radius:10px;border:1px solid var(--brand);font-weight:700}
+    .btn.primary{background:var(--brand);color:#fff;border-color:transparent}
+    .btn.ghost{background:#fff;color:var(--brand)}
+    .btn.small{padding:10px 12px;font-size:14px;border-radius:8px}
+    .btn[aria-disabled="true"]{opacity:.6;pointer-events:none}
+
+    /* Header */
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:30}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand img{width:56px;height:56px;border-radius:8px}
+    .brand b{display:none}
+    .tabs{display:flex;gap:16px;flex-wrap:wrap}
+    .tabs a{color:#2a406a;font-weight:600;padding:8px 10px;border-radius:8px}
+    .tabs a:hover{background:#f3f6fb}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* Mobile hamburger */
+    .hamburger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:8px;background:#fff;position:relative;}
+    .hamburger span{display:block;width:20px;height:2px;background:#1f2a44;position:relative}
+    .hamburger span::before,.hamburger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:#1f2a44}
+    .hamburger span::before{top:-6px} .hamburger span::after{top:6px}
+    .hamburger::after{content:"▼";position:absolute;right:-18px;top:12px;font-size:14px;color:#1f2a44}
+
+    /* Mobile menu overlay */
+    .mobile-menu{position:fixed;inset:0;display:none;z-index:40;background:rgba(0,0,0,.35);}
+    .mobile-sheet{position:absolute;right:0;top:0;height:100%;width:min(92vw,360px);background:#fff;border-left:1px solid var(--line);box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:10px}
+    .mobile-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+    .mobile-close{width:40px;height:40px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:20px}
+    .mobile-links a{display:block;padding:14px 10px;border-radius:10px;border:1px solid var(--line);color:#1c315d;font-weight:700}
+    .mobile-links a:active{background:#f3f6fb}
+    .mobile-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+
+    /* Sections */
+    section{padding:36px 0}
+    .section-title{text-align:center;margin-bottom:18px}
+    .section-title h2{margin:0 0 8px 0;font-size:26px}
+    .section-title p{margin:0 auto;max-width:700px;color:var(--muted)}
+
+    /* Hero */
+    .hero{background:#155fa0;color:#fff;border-radius:16px;margin:20px auto;border:1px solid #0f4a7c}
+    .hero-inner{padding:46px 18px;text-align:center}
+    .hero h1{margin:0 0 12px;font-size:38px;line-height:1.12}
+    .hero p{margin:0 auto 16px;max-width:860px;font-size:18px;color:#e7f0ff}
+    .hero small{display:block;color:#e7f0ff;opacity:.95;margin-top:4px}
+    .hero .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0 6px}
+    .chip{background:var(--chip);color:#14345e;border:1px solid #dfe8ff;border-radius:999px;padding:6px 10px;font-weight:700;font-size:14px}
+    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+    .store-badge{height:56px;display:block}
+
+    /* Cards / grids */
+    .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .cards-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .cards-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px 0}
+
+    .muted{color:var(--muted)}
+    .check{color:var(--ok);font-weight:900;margin-right:6px}
+
+    /* Footer */
+    footer{background:#0e1b34;color:#c7d3ee;margin-top:24px}
+    footer .wrap{padding-left:24px;padding-right:24px}
+    .foot{padding:24px 0}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px;align-items:start}
+    footer h4{margin:0 0 10px 0;color:#e7efff}
+    footer a{color:#d6e5ff}
+    .brand-mini{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .brand-mini img{width:32px;height:32px;border-radius:8px}
+    .intro{margin:0 0 14px 0;max-width:360px}
+    .store-cta{display:flex;gap:10px;flex-wrap:wrap}
+    .legal{border-top:1px solid #2a385a;margin-top:14px;padding:12px 0;color:#a9b8db;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .cards-3{grid-template-columns:1fr 1fr}
+      .cards-4{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:800px){ .tabs,.cta{display:none} .hamburger{display:flex} }
+    @media (max-width:640px){
+      .cards-3,.cards-2{grid-template-columns:1fr}
+      .hero h1{font-size:32px}
+      .brand img{width:52px;height:52px}
+    }
+    body.menu-open{overflow:hidden}
+    .mobile-menu[aria-hidden="false"]{display:block}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="College4Less home">
+        <img src="assets/logo.png" alt="College4Less logo" />
+        <b>College4Less</b>
+      </a>
+
+      <nav class="tabs" aria-label="Primary">
+        <a href="students.html">Students</a>
+        <a href="parents.html">Parents</a>
+        <a href="educators.html">Educators</a>
+        <a href="press.html">Media / Press</a>
+        <a href="investors.html" aria-current="page">Investors</a>
+        <a href="influencers.html">Influencers</a>
+      </nav>
+      <div class="cta">
+        <a class="btn ghost" href="#brief">Request brief</a>
+        <a class="btn primary" href="#contact">Book 15-min intro</a>
+      </div>
+
+      <button class="hamburger" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-sheet" aria-label="Mobile">
+      <div class="mobile-top">
+        <div class="brand" style="gap:8px">
+          <img src="assets/logo.png" alt="" aria-hidden="true" width="40" height="40" />
+          <strong>Menu</strong>
+        </div>
+        <button class="mobile-close" id="menuClose" aria-label="Close menu">×</button>
+      </div>
+      <div class="mobile-links">
+        <a href="students.html">Students</a>
+        <a href="parents.html">Parents</a>
+        <a href="educators.html">Educators</a>
+        <a href="press.html">Media / Press</a>
+        <a href="investors.html" aria-current="page">Investors</a>
+        <a href="influencers.html">Influencers</a>
+      </div>
+      <div class="mobile-ctas">
+        <a class="btn ghost" href="#brief">Request brief</a>
+        <a class="btn primary" href="#contact">Book 15-min intro</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- HERO (Investors) -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1>Invest in accelerated college credit — at mobile scale</h1>
+      <p>College4Less is a <b>CLEP-specific, mobile-first</b> platform built for students and schools. Each CLEP pass typically saves <b>$1,200+</b> and earns <b>3–6 credits</b> at <b>2,900+ colleges</b> — a 50+ year pathway hiding in plain sight.</p>
+      <small>Mission: save students time, money, and belief. 5-year vision: <b>$1.5B tuition</b> and <b>45M hours</b> saved.</small>
+
+      <div class="chips" aria-label="Quick proof">
+        <span class="chip">$1,200+ saved per exam</span>
+        <span class="chip">3–6 credits per pass</span>
+        <span class="chip">2,900+ colleges • 50+ years</span>
+      </div>
+
+      <div class="actions" role="group" aria-label="Primary investor actions">
+        <a class="btn primary" href="#brief">Request the Investor Brief</a>
+        <a class="btn ghost" href="#thesis">Read the thesis</a>
+        <a class="btn ghost" href="#traction">See traction & KPIs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thesis & Differentiation -->
+  <section id="thesis">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Thesis: credit without the class — or the debt</h2>
+        <p>We are purpose-built for CLEP: apps + books + school partnerships, expanding to 29 subjects with a disciplined KPI cadence.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card">
+          <h3><span class="check">✓</span>CLEP-specific & mobile-first</h3>
+          <p>Dedicated to CLEP’s 29 subjects with short-form, no-login study that meets students where they are.</p>
+          <p class="muted">Why it matters: focused product ≠ generalist test prep. </p>
+        </div>
+        <div class="card">
+          <h3><span class="check">✓</span>School-integrated GTM</h3>
+          <p>Distribution via counselors, pilots, and resource kits — built to fit advisory, study hall, and summer bridge.</p>
+          <p class="muted">Why it matters: durable adoption and equity alignment.</p>
+        </div>
+        <div class="card">
+          <h3><span class="check">✓</span>Roadmap & moats</h3>
+          <p>Scale to 29 apps + condensed course books; content alignment, school partnerships, and brand trust reinforce defensibility.</p>
+          <p class="muted">Why it matters: repeatable content engine + channel advantage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traction & KPI Snapshot -->
+  <section id="traction">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Traction & KPI snapshot</h2>
+        <p>Public snapshot below; deeper metrics and cohorts are available in the investor brief.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card">
+          <h3>Product</h3>
+          <p>No-login, mobile apps aligned to CLEP; iOS live, Android in rollout. QA discipline and crash-rate targets enforced.</p>
+        </div>
+        <div class="card">
+          <h3>Content</h3>
+          <p>Flashcards, quizzes, practice/final exams per subject; condensed course books in production with accuracy gates.</p>
+        </div>
+        <div class="card">
+          <h3>Partnerships</h3>
+          <p>School outreach and pilots; counselor resources and launch kits designed for immediate use.</p>
+        </div>
+      </div>
+      <div class="cards-3" style="margin-top:12px">
+        <div class="card">
+          <h3>Marketing</h3>
+          <p>Press/Media engine, newsletter cadence, app-store optimization, affiliates/influencers ready to scale.</p>
+        </div>
+        <div class="card">
+          <h3>Impact</h3>
+          <p>North-star: credits earned and tuition saved. 5-year vision: $1.5B saved, 45M hours freed.</p>
+        </div>
+        <div class="card">
+          <h3>Cadence</h3>
+          <p>KPI framework across product, content, design, marketing, partnerships, CS, analytics, ops with weekly/quarterly reviews.</p>
+        </div>
+      </div>
+      <p class="wrap muted" style="margin-top:8px">Note: We don’t publish unit economics on this page. The brief includes cohorts, retention, conversion, and channel CAC analysis.</p>
+    </div>
+  </section>
+
+  <!-- Roadmap & Use of Funds -->
+  <section id="roadmap">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Roadmap & focus areas</h2>
+        <p>Execution plan aligned to KPI gates and school-ready use cases.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card">
+          <h3>Apps: 29 subjects</h3>
+          <p>Complete iOS/Android coverage; feature improvements driven by learner data and educator feedback.</p>
+        </div>
+        <div class="card">
+          <h3>Books: 29 condensed courses</h3>
+          <p>Digital/print, tightly aligned to test frameworks; supports students without reliable device time.</p>
+        </div>
+        <div class="card">
+          <h3>Distribution & partnerships</h3>
+          <p>Scale pilots → districts; deepen counselor tooling; strengthen App Store/Play visibility.</p>
+        </div>
+      </div>
+      <div class="cards-3" style="margin-top:12px">
+        <div class="card">
+          <h3>Data & analytics</h3>
+          <p>Deeper cohort tracking, retention loops, and referral measurement; expand A/B testing.</p>
+        </div>
+        <div class="card">
+          <h3>Operations</h3>
+          <p>Hiring in product, content, growth, and analytics; privacy/compliance and infrastructure maturity.</p>
+        </div>
+        <div class="card">
+          <h3>Use of funds</h3>
+          <p>Fuel product/content velocity, GTM scale, analytics instrumentation, and school partnerships. (Deal terms via brief.)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team & Org Readiness -->
+  <section id="team">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Team & organizational readiness</h2>
+        <p>Roles and processes aligned to ship quality, at pace.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card">
+          <h3>Product & App Dev</h3>
+          <p>Build, test, and maintain iOS/Android; roadmap adherence and QA standards are tracked.</p>
+        </div>
+        <div class="card">
+          <h3>Content & Learning</h3>
+          <p>CLEP-aligned materials; accuracy thresholds; student outcomes first.</p>
+        </div>
+        <div class="card">
+          <h3>Design & UX</h3>
+          <p>Mobile-first flows; brand consistency; accessibility and usability benchmarks.</p>
+        </div>
+      </div>
+      <div class="cards-3" style="margin-top:12px">
+        <div class="card">
+          <h3>Marketing & Brand Growth</h3>
+          <p>Multi-channel campaigns; SEO; affiliates; conversion optimization; measurement cadence.</p>
+        </div>
+        <div class="card">
+          <h3>Partnerships</h3>
+          <p>School outreach, pilots, and partner enablement; platform liaisons for app stores.</p>
+        </div>
+        <div class="card">
+          <h3>Analytics & Ops</h3>
+          <p>Weekly dashboards; performance reporting; finance/legal/people processes for scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder & Why Now -->
+  <section id="founder">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Founder & why now</h2>
+        <p>Veteran-founded; mission forged by lived barriers to higher ed. The moment is ripe: mobile study, affordability crisis, and a proven credit pathway.</p>
+      </div>
+      <div class="cards-2">
+        <div class="card">
+          <h3>Founder’s perspective</h3>
+          <p>“Earn college credit without the class — or the debt.” We build tools that reclaim belief, time, and tuition for students who need it most.</p>
+          <p class="muted">Editor’s note: College4Less is independent and not affiliated with the College Board; credit policies vary by institution.</p>
+        </div>
+        <div class="card">
+          <h3>Impact thesis</h3>
+          <p>Every CLEP pass removes a tuition bill and accelerates graduation. Our 5-year vision: $1.5B saved and 45M hours freed — measured with an explicit KPI cadence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Request Investor Brief (Primary CTA) -->
+  <section id="brief">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Request the investor brief</h2>
+        <p>Get cohorts, retention, channel performance, roadmap detail, and use-of-funds priorities.</p>
+      </div>
+      <div class="card">
+        <form action="https://formsubmit.co/BrianTaylor@college4less.org" method="POST" aria-label="Request investor brief">
+          <div class="cards-3">
+            <div>
+              <label class="sr-only" for="inv-name">Name</label>
+              <input id="inv-name" name="Name" type="text" placeholder="Your name" required style="width:100%;padding:12px;border:1px solid #cbd6e2;border-radius:10px;margin-bottom:10px">
+            </div>
+            <div>
+              <label class="sr-only" for="inv-email">Email</label>
+              <input id="inv-email" name="Email" type="email" placeholder="you@firm.com" required style="width:100%;padding:12px;border:1px solid #cbd6e2;border-radius:10px;margin-bottom:10px">
+            </div>
+            <div>
+              <label class="sr-only" for="inv-firm">Firm / Role</label>
+              <input id="inv-firm" name="Firm/Role" type="text" placeholder="Firm / Role" style="width:100%;padding:12px;border:1px solid #cbd6e2;border-radius:10px;margin-bottom:10px">
+            </div>
+          </div>
+          <label class="sr-only" for="inv-notes">Notes</label>
+          <textarea id="inv-notes" name="Notes" rows="3" placeholder="Anything specific you’d like us to cover?" style="width:100%;padding:12px;border:1px solid #cbd6e2;border-radius:10px;margin:10px 0"></textarea>
+          <input type="hidden" name="_subject" value="Investor brief request (Investors page)">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://college4less.org/thanks.html">
+          <button class="btn primary" type="submit">Send me the brief</button>
+          <span class="muted" style="margin-left:8px">We’ll also offer a 15-min intro slot.</span>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investor Updates (Secondary CTA) -->
+  <section id="updates">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Subscribe to investor updates</h2>
+        <p>Quarterly progress — key wins, KPIs, and milestones.</p>
+      </div>
+      <div class="card">
+        <form action="https://formsubmit.co/BrianTaylor@college4less.org" method="POST" aria-label="Subscribe to investor updates">
+          <div class="cards-2">
+            <div>
+              <label class="sr-only" for="upd-email">Email</label>
+              <input id="upd-email" name="Email" type="email" placeholder="you@firm.com" required style="width:100%;padding:12px;border:1px solid #cbd6e2;border-radius:10px;margin-bottom:10px">
+            </div>
+            <div>
+              <label class="sr-only" for="upd-name">Name (optional)</label>
+              <input id="upd-name" name="Name" type="text" placeholder="Your name (optional)" style="width:100%;padding:12px;border:1px solid #cbd6e2;border-radius:10px;margin-bottom:10px">
+            </div>
+          </div>
+          <input type="hidden" name="_subject" value="New investor updates subscriber (Investors page)">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://college4less.org/thanks.html">
+          <button class="btn primary" type="submit">Subscribe</button>
+          <span class="muted" style="margin-left:8px">No spam. Unsubscribe anytime.</span>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Intro Scheduling -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Contact & 15-minute intro</h2>
+        <p>We prioritize values-aligned, education-focused investors and operators.</p>
+      </div>
+      <div class="card" style="text-align:center">
+        <div class="actions" style="justify-content:center;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="mailto:BrianTaylor@college4less.org?subject=Investor%20inquiry%20via%20Investors%20page">Email: BrianTaylor@College4Less.org</a>
+          <a class="btn ghost" href="#" aria-disabled="true">Book a 15-min intro</a>
+          <button class="btn small primary" id="copyLinkBtn" type="button">Copy this page link</button>
+        </div>
+        <p class="muted" style="margin-top:10px">Editor’s note: CLEP is developed by the College Board. College4Less is not affiliated with or endorsed by the College Board. Policies vary by institution.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="wrap foot">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-mini">
+            <img src="assets/logo.png" alt="College4Less logo" />
+            <b>College4Less</b>
+          </div>
+          <p class="intro">Helping students save time and money with clear, CLEP-aligned prep.</p>
+          <div class="store-cta">
+            <a class="btn primary" href="https://apps.apple.com/us/developer/brian-taylor/id1820957437" target="_blank" rel="noopener">App Store</a>
+            <a class="btn ghost" href="#" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+        <div>
+          <h4>For you</h4>
+          <div><a href="students.html">Students</a></div>
+          <div><a href="parents.html">Parents</a></div>
+          <div><a href="educators.html">Educators</a></div>
+          <div><a href="influencers.html">Influencers</a></div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <div><a href="press.html">Media / Press</a></div>
+          <div><a href="investors.html" aria-current="page">Investors</a></div>
+          <div><a href="mailto:info@college4less.org">Contact</a></div>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2025 College4Less. All rights reserved.</span>
+        <span>Not affiliated with the College Board. CLEP® is a registered trademark of the College Board.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu controls
+    const btn = document.getElementById('menuBtn');
+    const overlay = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('menuClose');
+    function openMenu(){ document.body.classList.add('menu-open'); overlay.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); closeBtn?.focus(); }
+    function closeMenu(){ document.body.classList.remove('menu-open'); overlay.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); btn.focus(); }
+    btn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeMenu(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
+
+    // Copy link
+    const copyBtn = document.getElementById('copyLinkBtn');
+    copyBtn?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyBtn.textContent = 'Link copied!';
+        setTimeout(()=> copyBtn.textContent = 'Copy this page link', 2000);
+      } catch(e){
+        copyBtn.textContent = 'Copy failed';
+        setTimeout(()=> copyBtn.textContent = 'Copy this page link', 2000);
+      }
+    });
+  </script>
+</body>
+</html>
