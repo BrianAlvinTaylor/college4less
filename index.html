@@ -18,15 +18,13 @@
 
   <style>
     :root{
-      --brand:#155fa0;        /* your blue */
-      --ink:#1f2a44;          /* body text */
-      --muted:#66748e;        /* secondary text */
-      --bg:#faf6f2;           /* parchment bg */
-      --card:#ffffff;
+      --brand:#155fa0;
+      --ink:#1f2a44;
+      --muted:#66748e;
+      --bg:#faf6f2;
       --line:#e6ecf0;
+      --max:1040px;
       --radius:14px;
-      --shadow:0 8px 24px rgba(17,36,68,.06);
-      --max:1040px;           /* calm desktop width */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Helvetica Neue", Arial, sans-serif;line-height:1.45}
@@ -34,7 +32,6 @@
     a:hover{text-decoration:underline}
     img{max-width:100%;height:auto}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
     /* Header */
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:10}
@@ -52,36 +49,39 @@
 
     /* Hero */
     .hero{background:#155fa0;color:#fff;border-radius:16px;margin:20px auto;border:1px solid #0f4a7c}
-    .hero-inner{padding:44px 18px;text-align:center}
+    .hero-inner{padding:46px 18px;text-align:center}
     .hero h1{margin:0 0 12px 0;font-size:40px;line-height:1.1}
-    .hero p{margin:0 auto 16px;max-width:720px;font-size:18px;color:#e7f0ff}
-    .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:10px}
-    /* Force identical visual height for both badges */
-    .actions img{height:52px;display:block}
-    .helper-links{margin-top:12px;font-size:1.1rem;font-weight:650}
+    .hero p{margin:0 auto 18px;max-width:720px;font-size:18px;color:#e7f0ff}
+
+    /* Store badges — identical height for perfect alignment */
+    .actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+    .store-badge{display:block;height:56px} /* force same size */
+
+    /* Helper links — larger, more tappable, extra spacing */
+    .helper-links{margin-top:16px;font-size:1.18rem;font-weight:700;letter-spacing:.2px}
     .helper-links a{color:#d9ecff}
 
-    /* KPI strip (moved BELOW hero on light bg for contrast) */
-    .kpi-strip{background:#f4efe9;border-top:1px solid #eadfce;border-bottom:1px solid #eadfce}
-    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:18px 0}
-    .kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;box-shadow:var(--shadow)}
-    .kpi b{display:block;font-size:22px;margin-bottom:2px;color:#0f2a5a}
-    .kpi span{color:var(--muted);font-size:14px}
+    /* STATS strip (NOT buttons) */
+    .stats{background:#f4efe9;border-top:1px solid #eadfce;border-bottom:1px solid #eadfce}
+    .stats .row{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+    .stat{padding:18px 10px;text-align:center}
+    .stat:not(:last-child){border-right:1px solid #e8e0d2}
+    .stat b{display:block;font-size:22px;line-height:1.1;color:#0f2a5a;margin-bottom:2px}
+    .stat span{display:block;color:#55627a;font-size:14px}
 
     /* Sections */
     section{padding:36px 0}
     .section-title{text-align:center;margin-bottom:18px}
     .section-title h2{margin:0 0 8px 0;font-size:26px}
-    .section-title p{margin:0 auto;max-width:700px;color:var(--muted)}
+    .section-title p{margin:0 auto;max-width:700px;color:#66748e}
 
-    /* Grids / cards */
+    /* Grids */
     .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .cards-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 8px 24px rgba(17,36,68,.06)}
     .card h3{margin:0 0 6px 0}
     .aud-card a{display:block;text-align:center;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff;font-weight:700;color:#1c3e7a}
     .aud-card a:hover{background:#eef5ff}
-    .muted{color:var(--muted);font-size:14px}
 
     /* Accordions */
     details{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff}
@@ -90,7 +90,7 @@
     .course-list{margin:10px 0 0 18px;line-height:1.6}
 
     /* Social */
-    .social{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;box-shadow:var(--shadow)}
+    .social{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;box-shadow:0 8px 24px rgba(17,36,68,.06)}
     .ig-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px}
 
     /* Footer */
@@ -101,23 +101,20 @@
     footer a{color:#d6e5ff}
     .brand-mini{display:flex;align-items:center;gap:10px;margin-bottom:8px}
     .brand-mini img{width:32px;height:32px;border-radius:8px}
-    /* Align the left column aesthetically */
-    .foot .intro{margin:0 0 14px 0;max-width:360px}
-    .foot .store-cta{display:flex;gap:10px;flex-wrap:wrap}
+    .intro{margin:0 0 14px 0;max-width:360px}
+    .store-cta{display:flex;gap:10px;flex-wrap:wrap}
     .legal{border-top:1px solid #2a385a;margin-top:14px;padding:12px 0;color:#a9b8db;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
     /* Responsive */
     @media (max-width: 980px){
       .cards-3{grid-template-columns:1fr 1fr}
       .cards-5{grid-template-columns:1fr 1fr 1fr}
-      .kpis{grid-template-columns:1fr 1fr 1fr}
+      .stats .row{grid-template-columns:1fr 1fr 1fr}
     }
     @media (max-width: 640px){
-      .kpis{grid-template-columns:1fr}
       .cards-3{grid-template-columns:1fr}
       .cards-5{grid-template-columns:1fr 1fr}
       .hero h1{font-size:32px}
-      .helper-links{font-size:1.05rem}
     }
   </style>
 </head>
@@ -136,6 +133,7 @@
         <a href="educators.html">Educators</a>
         <a href="press.html">Media / Press</a>
         <a href="investors.html">Investors</a>
+        <a href="influencers.html">Influencers</a>
       </nav>
       <div class="cta">
         <a class="btn ghost" href="#how">How it works</a>
@@ -150,17 +148,17 @@
       <h1>Save time. Save money. Learn smarter.</h1>
       <p>Busy day? Take one small step right now. Each focused minute moves you closer to real college credit and real savings.</p>
 
-      <!-- Official badges (forced equal height) -->
+      <!-- Official badges, perfectly aligned -->
       <div class="actions" id="download" role="group" aria-label="App download">
         <a href="#" target="_blank" rel="noopener">
-          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
+          <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
         </a>
         <a href="#" target="_blank" rel="noopener">
-          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+          <img class="store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
         </a>
       </div>
 
-      <!-- Bigger helper links for quick nav -->
+      <!-- Larger helper links with extra spacing -->
       <p class="helper-links">
         <a href="start-saving.html">Start saving</a> &middot;
         <a href="study-tips.html">Get study tips</a> &middot;
@@ -169,13 +167,13 @@
     </div>
   </section>
 
-  <!-- KPI strip (now visible & balanced) -->
-  <div class="kpi-strip">
+  <!-- STATS (minimal, not button-like) -->
+  <div class="stats">
     <div class="wrap">
-      <div class="kpis">
-        <div class="kpi"><b>$1,500+</b><span>Typical tuition saved per exam</span></div>
-        <div class="kpi"><b>3 credits</b><span>Per exam at many schools</span></div>
-        <div class="kpi"><b>Thousands</b><span>Of colleges accept CLEP</span></div>
+      <div class="row">
+        <div class="stat"><b>$1,500+</b><span>Typical tuition saved per exam</span></div>
+        <div class="stat"><b>3 credits</b><span>Per exam at many schools</span></div>
+        <div class="stat"><b>Thousands</b><span>Of colleges accept CLEP</span></div>
       </div>
     </div>
   </div>
@@ -277,7 +275,7 @@
     </div>
   </section>
 
-  <!-- Value props tied to the APP -->
+  <!-- Value props -->
   <section>
     <div class="wrap">
       <div class="section-title">
@@ -304,7 +302,7 @@
     </div>
   </section>
 
-  <!-- Audience quick links -->
+  <!-- Audience quick links (includes Influencers) -->
   <section aria-labelledby="audience-title">
     <div class="wrap">
       <div class="section-title">
@@ -317,6 +315,11 @@
         <div class="aud-card"><a href="educators.html">Educator</a></div>
         <div class="aud-card"><a href="press.html">Media / Press</a></div>
         <div class="aud-card"><a href="investors.html">Investor</a></div>
+      </div>
+      <div class="cards-5" style="margin-top:12px">
+        <div class="aud-card" style="grid-column:1/-1;max-width:240px;margin:0 auto;">
+          <a href="influencers.html">Influencers</a>
+        </div>
       </div>
     </div>
   </section>
@@ -357,6 +360,7 @@
           <div><a href="students.html">Students</a></div>
           <div><a href="parents.html">Parents</a></div>
           <div><a href="educators.html">Educators</a></div>
+          <div><a href="influencers.html">Influencers</a></div>
         </div>
         <div>
           <h4>Company</h4>
