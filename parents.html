@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9262670824789698" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Parents — Save on College with CLEP | College4Less</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Parents: help your student earn real college credits in high school with CLEP and College4Less. Save ~$1,500 per exam, build confidence, and graduate sooner." />
+  <link rel="icon" href="assets/logo.png" />
+
+  <!-- Social -->
+  <meta property="og:title" content="Parents — Save on College with CLEP | College4Less" />
+  <meta property="og:description" content="Help your child save time, money, and stress with CLEP. Five free apps for grades 9–12. Real credits that count." />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --brand:#155fa0; --ink:#1f2a44; --muted:#66748e; --bg:#faf6f2;
+      --line:#e6ecf0; --max:1040px; --radius:14px; --shadow:0 8px 24px rgba(17,36,68,.06);
+      --ok:#0aa56b; --chip:#f2f6ff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Helvetica Neue", Arial, sans-serif;line-height:1.45}
+    a{color:#226cc2;text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;height:auto}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* Header */
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:30}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand img{width:56px;height:56px;border-radius:8px}
+    .brand b{display:none}
+
+    .tabs{display:flex;gap:16px;flex-wrap:wrap}
+    .tabs a{color:#2a406a;font-weight:600;padding:8px 10px;border-radius:8px}
+    .tabs a:hover{background:#f3f6fb}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 16px;border-radius:10px;border:1px solid var(--brand);font-weight:700}
+    .btn.primary{background:var(--brand);color:#fff;border-color:transparent}
+    .btn.ghost{background:#fff;color:var(--brand)}
+
+    /* Mobile hamburger */
+    .hamburger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:8px;background:#fff;position:relative;}
+    .hamburger span{display:block;width:20px;height:2px;background:#1f2a44;position:relative}
+    .hamburger span::before,.hamburger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:#1f2a44}
+    .hamburger span::before{top:-6px} .hamburger span::after{top:6px}
+    .hamburger::after{content:"▼";position:absolute;right:-18px;top:12px;font-size:14px;color:#1f2a44}
+
+    /* Mobile menu overlay */
+    .mobile-menu{position:fixed;inset:0;display:none;z-index:40;background:rgba(0,0,0,.35);}
+    .mobile-sheet{position:absolute;right:0;top:0;height:100%;width:min(92vw,360px);background:#fff;border-left:1px solid var(--line);box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:10px}
+    .mobile-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+    .mobile-close{width:40px;height:40px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:20px}
+    .mobile-links a{display:block;padding:14px 10px;border-radius:10px;border:1px solid var(--line);color:#1c315d;font-weight:700}
+    .mobile-links a:active{background:#f3f6fb}
+    .mobile-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+
+    /* Sections */
+    section{padding:36px 0}
+    .section-title{text-align:center;margin-bottom:18px}
+    .section-title h2{margin:0 0 8px 0;font-size:26px}
+    .section-title p{margin:0 auto;max-width:700px;color:var(--muted)}
+
+    /* Hero */
+    .hero{background:#155fa0;color:#fff;border-radius:16px;margin:20px auto;border:1px solid #0f4a7c}
+    .hero-inner{padding:46px 18px;text-align:center}
+    .hero h1{margin:0 0 12px;font-size:38px;line-height:1.12}
+    .hero p{margin:0 auto 16px;max-width:760px;font-size:18px;color:#e7f0ff}
+    .hero small{display:block;color:#e7f0ff;opacity:.95;margin-top:4px}
+    .hero .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0 6px}
+    .chip{background:var(--chip);color:#14345e;border:1px solid #dfe8ff;border-radius:999px;padding:6px 10px;font-weight:700;font-size:14px}
+    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+    .store-badge{height:56px;display:block}
+
+    /* Cards */
+    .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .cards-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px 0}
+    .check{color:var(--ok);font-weight:900;margin-right:6px}
+
+    /* Progression */
+    .progress{background:#f4efe9;border-top:1px solid #eadfce;border-bottom:1px solid #eadfce}
+    .progress .row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;align-items:center}
+    .step{padding:18px 12px;text-align:center;position:relative}
+    .step a{color:#0f2a5a;text-decoration:none;font-weight:800}
+    .step a:hover{text-decoration:underline}
+    .step:not(:last-child)::after{content:"→"; position:absolute; right:-2px; top:50%; transform:translateY(-50%); color:#9aa5b6; font-weight:800; font-size:18px;}
+    .step span{display:block;color:#55627a;font-size:14px;margin-top:2px}
+
+    /* Newsletter */
+    .newsletter{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .nl-grid{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+    .nl-form input[type="email"]{width:100%;padding:12px;border:1px solid #cbd6e2;border-radius:10px;margin-bottom:10px}
+    .nl-form button{width:100%}
+    .nl-issue{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fbfcff}
+    .nl-archive a{display:block;margin:6px 0}
+
+    /* Advocacy (share) */
+    .share{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .btn.small{padding:10px 12px;font-size:14px;border-radius:8px}
+
+    /* Footer */
+    footer{background:#0e1b34;color:#c7d3ee;margin-top:24px}
+    footer .wrap{padding-left:24px;padding-right:24px}
+    .foot{padding:24px 0}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px;align-items:start}
+    footer h4{margin:0 0 10px 0;color:#e7efff}
+    footer a{color:#d6e5ff}
+    .brand-mini{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .brand-mini img{width:32px;height:32px;border-radius:8px}
+    .intro{margin:0 0 14px 0;max-width:360px}
+    .store-cta{display:flex;gap:10px;flex-wrap:wrap}
+    .legal{border-top:1px solid #2a385a;margin-top:14px;padding:12px 0;color:#a9b8db;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+    /* Responsive */
+    @media (max-width:980px){ .cards-3{grid-template-columns:1fr 1fr} .progress .row{grid-template-columns:1fr} .step:not(:last-child)::after{display:none} .nl-grid{grid-template-columns:1fr} }
+    @media (max-width:800px){ .tabs,.cta{display:none} .hamburger{display:flex} }
+    @media (max-width:640px){ .cards-3,.cards-2{grid-template-columns:1fr} .hero h1{font-size:32px} .brand img{width:52px;height:52px} }
+    body.menu-open{overflow:hidden}
+    .mobile-menu[aria-hidden="false"]{display:block}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="College4Less home">
+        <img src="assets/logo.png" alt="College4Less logo" />
+        <b>College4Less</b>
+      </a>
+
+      <nav class="tabs" aria-label="Primary">
+        <a href="students.html">Students</a>
+        <a href="parents.html" aria-current="page">Parents</a>
+        <a href="educators.html">Educators</a>
+        <a href="press.html">Media / Press</a>
+        <a href="investors.html">Investors</a>
+        <a href="influencers.html">Influencers</a>
+      </nav>
+      <div class="cta">
+        <a class="btn ghost" href="#how">How it works</a>
+        <a class="btn primary" href="#download">Get the Apps</a>
+      </div>
+
+      <button class="hamburger" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-sheet" aria-label="Mobile">
+      <div class="mobile-top">
+        <div class="brand" style="gap:8px">
+          <img src="assets/logo.png" alt="" aria-hidden="true" width="40" height="40" />
+          <strong>Menu</strong>
+        </div>
+        <button class="mobile-close" id="menuClose" aria-label="Close menu">×</button>
+      </div>
+      <div class="mobile-links">
+        <a href="students.html">Students</a>
+        <a href="parents.html" aria-current="page">Parents</a>
+        <a href="educators.html">Educators</a>
+        <a href="press.html">Media / Press</a>
+        <a href="investors.html">Investors</a>
+        <a href="influencers.html">Influencers</a>
+      </div>
+      <div class="mobile-ctas">
+        <a class="btn ghost" href="#how">How it works</a>
+        <a class="btn primary" href="#download">Get the Apps</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- HERO (Parents) -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1>Parents: Help your child save time, money, and stress</h1>
+      <p>With CLEP® and College4Less, your student can earn <b>real college credits</b> in high school — saving about <b>$1,500 per exam</b> and building confidence for the future.</p>
+      <small>Protect them from unnecessary debt. Build momentum—one exam at a time.</small>
+
+      <div class="chips" aria-label="Quick proof">
+        <span class="chip">Accepted at 2,900+ colleges</span>
+        <span class="chip">5 free apps for grades 9–12</span>
+        <span class="chip">1 exam = 3 credits</span>
+      </div>
+
+      <!-- primary actions -->
+      <div class="actions" id="download" role="group" aria-label="App download">
+        <a href="https://apps.apple.com/us/developer/brian-taylor/id1820957437" target="_blank" rel="noopener" aria-label="Download iOS apps on the App Store">
+          <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Get the Android apps on Google Play">
+          <img class="store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+        </a>
+      </div>
+      <small>Join 1,000+ families already using CLEP and College4Less.</small>
+      <div class="actions" style="margin-top:8px">
+        <a class="btn ghost" href="#how">Learn how it works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Parents choose College4Less -->
+  <section>
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Why parents choose College4Less</h2>
+        <p>Give your child a safe, proven head start—without sacrificing high school experiences.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card">
+          <h3><span class="check">✓</span>Save thousands on tuition</h3>
+          <p>Each CLEP can replace a 3–4 credit class at many colleges, often saving around <b>$1,500</b> per exam.</p>
+        </div>
+        <div class="card">
+          <h3><span class="check">✓</span>Confidence that grows</h3>
+          <p>Small daily wins add up. Pretests, quizzes, and dashboards show progress to keep motivation high.</p>
+        </div>
+        <div class="card">
+          <h3><span class="check">✓</span>Five free apps to start now</h3>
+          <p>Built for grades 9–12. Try a subject your student likes and build momentum before moving to the next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof: parent testimonial + fast facts -->
+  <section>
+    <div class="wrap">
+      <div class="cards-2">
+        <div class="card">
+          <h3>From a parent</h3>
+          <p><em>“Watching our son pass his first CLEP changed everything. He’s earned 12 credits and we’ve saved thousands.”</em></p>
+          <p>— Andrea M., parent of Class of 2024 student</p>
+        </div>
+        <div class="card">
+          <h3>Fast facts</h3>
+          <ul>
+            <li><b>2,900+</b> colleges accept CLEP</li>
+            <li><b>3 credits</b> per exam at many schools</li>
+            <li><b>~$1,500</b> typical tuition saved per exam</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works for Parents -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>How it works for your family</h2>
+        <p>Simple steps, real results—designed to fit busy schedules.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card"><h3>1) Download a free app</h3><p>Pick a subject that fits your student’s interests or degree goals. Starting is free and takes minutes.</p></div>
+        <div class="card"><h3>2) Encourage 30 minutes/day</h3><p>Short lessons, notecards, and quizzes recycle missed questions until mastered—steady, stress-light progress.</p></div>
+        <div class="card"><h3>3) Earn credits that count</h3><p>Schedule the CLEP exam, send scores, and apply credits where accepted. Repeat to multiply savings.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progression (clickable) -->
+  <div class="progress" aria-label="CLEP benefits progression">
+    <div class="wrap">
+      <div class="row">
+        <div class="step">
+          <a href="subjects/"><b>1 CLEP → 3 credits</b></a>
+          <span>One class your student never has to take.</span>
+        </div>
+        <div class="step">
+          <a href="start-saving.html"><b>2 CLEPs → ≈ $3,000 saved</b></a>
+          <span>Savings vary by school and course.</span>
+        </div>
+        <div class="step">
+          <a href="find-degree.html"><b>4 CLEPs → a semester sooner</b></a>
+          <span>~12 credits at many schools.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter for Parents -->
+  <section>
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Parent Guide newsletter</h2>
+        <p>1–2 emails/month with money-saving tips, timelines, and conversation guides for counselors.</p>
+      </div>
+      <div class="newsletter">
+        <div class="nl-grid">
+          <div class="nl-form">
+            <form action="https://formsubmit.co/BrianTaylor@college4less.org" method="POST" aria-label="Subscribe to Parent Guide">
+              <input type="email" name="email" placeholder="you@example.com" required />
+              <input type="hidden" name="_subject" value="New newsletter subscriber (Parents page)">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://college4less.org/thanks.html">
+              <button class="btn primary" type="submit">Subscribe</button>
+            </form>
+            <p style="color:var(--muted);font-size:14px;margin-top:8px;">No spam. Unsubscribe anytime.</p>
+          </div>
+          <div>
+            <div class="nl-issue">
+              <h3 style="margin:0 0 6px;">Latest issue — Sep 2025</h3>
+              <p style="margin:0 0 8px;"><b>How to help your student pick the first CLEP</b></p>
+              <p style="margin:0 0 10px;color:var(--muted)">Simple decision tree, realistic timelines, and what to ask the school counselor.</p>
+              <a class="btn ghost" href="newsletter-2025-09-parents.html">Read now</a>
+            </div>
+            <div class="nl-archive" style="margin-top:12px">
+              <strong>Previous:</strong>
+              <a href="newsletter-2025-08.html">CLEP vs AP: What parents should know</a>
+              <a href="newsletter-2025-07.html">Summer study plan (30 min/day)</a>
+              <a href="newsletter-2025-06.html">Talking to your counselor about CLEP</a>
+              <a href="newsletter.html">See all issues →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advocacy: Spread the word -->
+  <section>
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Help another family save</h2>
+        <p>Parents trust other parents. Share College4Less with your circle and your student’s school.</p>
+      </div>
+      <div class="card" style="text-align:center">
+        <div class="share" aria-label="Share actions">
+          <a class="btn small ghost" href="mailto:?subject=College4Less%20%7C%20Earn%20college%20credits%20with%20CLEP&body=Thought%20you%E2%80%99d%20like%20this%3A%20https%3A%2F%2Fcollege4less.org%2Fparents.html">Email this page</a>
+          <button class="btn small primary" id="copyLinkBtn" type="button">Copy page link</button>
+          <a class="btn small ghost" href="mailto:counselor@school.edu?subject=CLEP%20option%20for%20our%20students&body=Could%20we%20share%20College4Less%20with%20families%3F%20https%3A%2F%2Fcollege4less.org%2Fparents.html">Tell your counselor</a>
+        </div>
+        <p style="color:var(--muted);margin-top:10px;font-size:14px">Your voice can open doors—thank you for spreading the word.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section>
+    <div class="wrap">
+      <div class="card" style="text-align:center">
+        <h3>Ready to help your student earn their first 3 credits?</h3>
+        <p>Start with one free app, encourage 30 minutes a day, and turn effort into real college credit.</p>
+        <a class="btn primary" href="#download">Download the free apps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="wrap foot">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-mini">
+            <img src="assets/logo.png" alt="College4Less logo" />
+            <b>College4Less</b>
+          </div>
+          <p class="intro">Helping students save time and money with clear, CLEP-aligned prep.</p>
+          <div class="store-cta">
+            <a class="btn primary" href="https://apps.apple.com/us/developer/brian-taylor/id1820957437" target="_blank" rel="noopener">App Store</a>
+            <a class="btn ghost" href="#" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+        <div>
+          <h4>For you</h4>
+          <div><a href="students.html">Students</a></div>
+          <div><a href="parents.html" aria-current="page">Parents</a></div>
+          <div><a href="educators.html">Educators</a></div>
+          <div><a href="influencers.html">Influencers</a></div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <div><a href="press.html">Media / Press</a></div>
+          <div><a href="investors.html">Investors</a></div>
+          <div><a href="mailto:info@college4less.org">Contact</a></div>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2025 College4Less. All rights reserved.</span>
+        <span>Not affiliated with the College Board. CLEP® is a registered trademark of the College Board.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu controls
+    const btn = document.getElementById('menuBtn');
+    const overlay = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('menuClose');
+    function openMenu(){ document.body.classList.add('menu-open'); overlay.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); closeBtn?.focus(); }
+    function closeMenu(){ document.body.classList.remove('menu-open'); overlay.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); btn.focus(); }
+    btn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeMenu(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
+
+    // Copy link button
+    const copyBtn = document.getElementById('copyLinkBtn');
+    copyBtn?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyBtn.textContent = 'Link copied!';
+        setTimeout(()=> copyBtn.textContent = 'Copy page link', 2000);
+      } catch(e){
+        copyBtn.textContent = 'Copy failed';
+        setTimeout(()=> copyBtn.textContent = 'Copy page link', 2000);
+      }
+    });
+  </script>
+</body>
+</html>
