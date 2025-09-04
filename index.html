@@ -40,7 +40,7 @@
     .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
     .brand{display:flex;gap:10px;align-items:center}
     .brand img{width:56px;height:56px;border-radius:8px}
-    .brand b{display:none} /* remove duplicate text */
+    .brand b{display:none}
 
     /* Desktop nav */
     .tabs{display:flex;gap:16px;flex-wrap:wrap}
@@ -64,28 +64,14 @@
     }
     .hamburger span::before{top:-6px}
     .hamburger span::after{top:6px}
-    /* subtle arrow cue */
-    .hamburger::after{
-      content:"▼";position:absolute;right:-18px;top:12px;font-size:14px;color:#1f2a44;
-    }
+    .hamburger::after{content:"▼";position:absolute;right:-18px;top:12px;font-size:14px;color:#1f2a44;}
 
     /* Mobile menu (overlay) */
-    .mobile-menu{
-      position:fixed;inset:0;display:none;z-index:40;background:rgba(0,0,0,.35);
-    }
-    .mobile-sheet{
-      position:absolute;right:0;top:0;height:100%;width:min(92vw,360px);
-      background:#fff;border-left:1px solid var(--line);box-shadow:var(--shadow);
-      padding:18px;display:flex;flex-direction:column;gap:10px
-    }
+    .mobile-menu{position:fixed;inset:0;display:none;z-index:40;background:rgba(0,0,0,.35);}
+    .mobile-sheet{position:absolute;right:0;top:0;height:100%;width:min(92vw,360px);background:#fff;border-left:1px solid var(--line);box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:10px}
     .mobile-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-    .mobile-close{
-      width:40px;height:40px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:20px
-    }
-    .mobile-links a{
-      display:block;padding:14px 10px;border-radius:10px;border:1px solid var(--line);
-      color:#1c315d;font-weight:700;text-decoration:none
-    }
+    .mobile-close{width:40px;height:40px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:20px}
+    .mobile-links a{display:block;padding:14px 10px;border-radius:10px;border:1px solid var(--line);color:#1c315d;font-weight:700;text-decoration:none}
     .mobile-links a:active{background:#f3f6fb}
     .mobile-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
 
@@ -96,27 +82,19 @@
     .hero p{margin:0 auto 16px;max-width:720px;font-size:18px;color:#e7f0ff}
 
     .actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:12px}
-    /* Force matching store-badge heights on mobile & desktop */
     .store-badge{height:56px;display:block}
     .actions a{line-height:0}
 
     /* Helper links as pill buttons at bottom of hero */
     .helper-links{margin-top:20px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-    .helper-links a{
-      background:#fff;color:#155fa0;padding:10px 18px;border-radius:24px;
-      font-size:1.1rem;font-weight:650;border:2px solid #fff;text-decoration:none;
-      transition:background .2s,color .2s
-    }
+    .helper-links a{background:#fff;color:#155fa0;padding:10px 18px;border-radius:24px;font-size:1.1rem;font-weight:650;border:2px solid #fff;text-decoration:none;transition:background .2s,color .2s}
     .helper-links a:hover{background:#dbeaff;color:#0d3666}
 
     /* Progression strip */
     .progress{background:#f4efe9;border-top:1px solid #eadfce;border-bottom:1px solid #eadfce}
     .progress .row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;align-items:center}
     .step{padding:18px 12px;text-align:center;position:relative}
-    .step:not(:last-child)::after{
-      content:"→"; position:absolute; right:-2px; top:50%; transform:translateY(-50%);
-      color:#9aa5b6; font-weight:800; font-size:18px;
-    }
+    .step:not(:last-child)::after{content:"→"; position:absolute; right:-2px; top:50%; transform:translateY(-50%); color:#9aa5b6; font-weight:800; font-size:18px;}
     .step b{display:block;font-size:22px;line-height:1.1;color:#0f2a5a;margin-bottom:2px}
     .step span{display:block;color:#55627a;font-size:14px}
 
@@ -126,13 +104,18 @@
     .section-title h2{margin:0 0 8px 0;font-size:26px}
     .section-title p{margin:0 auto;max-width:700px;color:#66748e}
 
-    /* Grids */
+    /* Cards: general */
     .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .cards-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
     .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
     .card h3{margin:0 0 6px 0}
     .aud-card a{display:block;text-align:center;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff;font-weight:700;color:#1c3e7a}
     .aud-card a:hover{background:#eef5ff}
+
+    /* NEW: 6-up audience grid (fixes Influencers alignment) */
+    .cards-6{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (min-width:720px){.cards-6{grid-template-columns:repeat(3,1fr)}}
+    @media (min-width:1024px){.cards-6{grid-template-columns:repeat(6,1fr)}}
 
     /* Accordions */
     details{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff}
@@ -156,23 +139,26 @@
     .store-cta{display:flex;gap:10px;flex-wrap:wrap}
     .legal{border-top:1px solid #2a385a;margin-top:14px;padding:12px 0;color:#a9b8db;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
+    /* Footer edge-padding fix */
+    footer .wrap{padding-left:24px;padding-right:24px}
+    @media (min-width:980px){footer .wrap{padding-left:32px;padding-right:32px}}
+
     /* Responsive */
-    @media (max-width: 980px){
+    @media (max-width:980px){
       .cards-3{grid-template-columns:1fr 1fr}
       .cards-5{grid-template-columns:1fr 1fr 1fr}
       .progress .row{grid-template-columns:1fr;gap:6px}
       .step:not(:last-child)::after{display:none}
     }
-    @media (max-width: 800px){
-      /* collapse header */
-      .tabs, .cta{display:none}
+    @media (max-width:800px){
+      .tabs,.cta{display:none}
       .hamburger{display:flex}
     }
-    @media (max-width: 640px){
+    @media (max-width:640px){
       .cards-3{grid-template-columns:1fr}
       .cards-5{grid-template-columns:1fr 1fr}
       .hero h1{font-size:32px}
-      .brand img{width:52px;height:52px} /* slightly smaller to avoid crowding */
+      .brand img{width:52px;height:52px}
     }
 
     /* Utility when menu is open */
@@ -190,7 +176,6 @@
         <b>College4Less</b>
       </a>
 
-      <!-- Desktop nav -->
       <nav class="tabs" aria-label="Primary">
         <a href="students.html">Students</a>
         <a href="parents.html">Parents</a>
@@ -204,14 +189,13 @@
         <a class="btn primary" href="#download">Start now</a>
       </div>
 
-      <!-- Mobile trigger -->
       <button class="hamburger" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu">
         <span></span>
       </button>
     </div>
   </header>
 
-  <!-- Mobile menu (overlay sheet) -->
+  <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <nav class="mobile-sheet" aria-label="Mobile">
       <div class="mobile-top">
@@ -245,11 +229,9 @@
       <p>Busy day? Take one small step right now. Each focused minute moves you closer to real college credit and real savings.</p>
 
       <div class="actions" id="download" role="group" aria-label="App download">
-        <!-- Apple: developer page (locked-in) -->
         <a href="https://apps.apple.com/us/developer/brian-taylor/id1820957437" target="_blank" rel="noopener">
           <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
         </a>
-        <!-- Google Play: kept (placeholder link for now, replace when Play dev page goes live) -->
         <a href="#" target="_blank" rel="noopener">
           <img class="store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
         </a>
@@ -317,114 +299,20 @@
     </div>
   </section>
 
-  <!-- Choose your exam -->
-  <section aria-labelledby="courses-title">
-    <div class="wrap">
-      <div class="section-title">
-        <h2 id="courses-title">1) Choose your exam</h2>
-        <p>Open a category to jump straight to your subject.</p>
-      </div>
-
-      <details>
-        <summary>History and Social Sciences</summary>
-        <ul class="course-list">
-          <li><a href="subjects/american-government/">American Government</a></li>
-          <li><a href="subjects/us-history-i/">U.S. History I</a></li>
-          <li><a href="subjects/us-history-ii/">U.S. History II</a></li>
-          <li><a href="subjects/human-growth-and-development/">Human Growth and Development</a></li>
-          <li><a href="subjects/introduction-to-educational-psychology/">Introduction to Educational Psychology</a></li>
-          <li><a href="subjects/introductory-psychology/">Introductory Psychology</a></li>
-          <li><a href="subjects/introductory-sociology/">Introductory Sociology</a></li>
-          <li><a href="subjects/principles-of-macroeconomics/">Principles of Macroeconomics</a></li>
-          <li><a href="subjects/principles-of-microeconomics/">Principles of Microeconomics</a></li>
-          <li><a href="subjects/social-sciences-and-history/">Social Sciences and History</a></li>
-          <li><a href="subjects/western-civilization-i/">Western Civilization I</a></li>
-          <li><a href="subjects/western-civilization-ii/">Western Civilization II</a></li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Composition and Literature</summary>
-        <ul class="course-list">
-          <li><a href="subjects/american-literature.html">American Literature</a></li>
-          <li><a href="subjects/analyzing-and-interpreting-literature.html">Analyzing and Interpreting Literature</a></li>
-          <li><a href="subjects/college-composition.html">College Composition</a></li>
-          <li><a href="subjects/english-literature.html">English Literature</a></li>
-          <li><a href="subjects/humanities.html">Humanities</a></li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Science and Math</summary>
-        <ul class="course-list">
-          <li><a href="subjects/biology.html">Biology</a></li>
-          <li><a href="subjects/calculus.html">Calculus</a></li>
-          <li><a href="subjects/chemistry.html">Chemistry</a></li>
-          <li><a href="subjects/college-algebra.html">College Algebra</a></li>
-          <li><a href="subjects/college-mathematics.html">College Mathematics</a></li>
-          <li><a href="subjects/natural-sciences.html">Natural Sciences</a></li>
-          <li><a href="subjects/precalculus.html">Precalculus</a></li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Business</summary>
-        <ul class="course-list">
-          <li><a href="subjects/financial-accounting.html">Financial Accounting</a></li>
-          <li><a href="subjects/information-systems.html">Information Systems</a></li>
-          <li><a href="subjects/introductory-business-law.html">Introductory Business Law</a></li>
-          <li><a href="subjects/principles-of-management.html">Principles of Management</a></li>
-          <li><a href="subjects/principles-of-marketing.html">Principles of Marketing</a></li>
-        </ul>
-      </details>
-    </div>
-  </section>
-
-  <!-- Value props -->
-  <section>
-    <div class="wrap">
-      <div class="section-title">
-        <h2>Clear. Smart. Motivating.</h2>
-        <p>Built for busy students. Trusted by parents and educators.</p>
-      </div>
-      <div class="cards-3">
-        <div class="card">
-          <h3>Clarity that sticks</h3>
-          <p>Plain language and simple visuals—always know your next step.</p>
-          <p class="muted">In-app: Key Themes, Summaries, guided study paths.</p>
-        </div>
-        <div class="card">
-          <h3>Review that works</h3>
-          <p>Every miss is tracked globally and by topic for targeted practice.</p>
-          <p class="muted">Missed Questions store + Topic Review = focused improvement.</p>
-        </div>
-        <div class="card">
-          <h3>Progress you can see</h3>
-          <p>Pretest + Final Exam roll into dashboards that show real improvement.</p>
-          <p class="muted">Progress & Score History keep motivation high.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Audience quick links -->
+  <!-- Audience quick links (fixed alignment) -->
   <section aria-labelledby="audience-title">
     <div class="wrap">
       <div class="section-title">
         <h2 id="audience-title">I’m here as a…</h2>
         <p>Get the right info in seconds.</p>
       </div>
-      <div class="cards-5">
+      <div class="cards-6">
         <div class="aud-card"><a href="students.html">Student</a></div>
         <div class="aud-card"><a href="parents.html">Parent</a></div>
         <div class="aud-card"><a href="educators.html">Educator</a></div>
         <div class="aud-card"><a href="press.html">Media / Press</a></div>
         <div class="aud-card"><a href="investors.html">Investors</a></div>
-      </div>
-      <div class="cards-5" style="margin-top:12px">
-        <div class="aud-card" style="grid-column:1/-1;max-width:240px;margin:0 auto;">
-          <a href="influencers.html">Influencers</a>
-        </div>
+        <div class="aud-card"><a href="influencers.html">Influencers</a></div>
       </div>
     </div>
   </section>
@@ -482,7 +370,7 @@
   </footer>
 
   <script>
-    // Simple accessible mobile menu
+    // Mobile menu
     const btn = document.getElementById('menuBtn');
     const overlay = document.getElementById('mobileMenu');
     const closeBtn = document.getElementById('menuClose');
@@ -499,7 +387,6 @@
       btn.setAttribute('aria-expanded','false');
       btn.focus();
     }
-
     btn.addEventListener('click', openMenu);
     closeBtn.addEventListener('click', closeMenu);
     overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeMenu(); });
