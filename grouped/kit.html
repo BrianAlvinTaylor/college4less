@@ -13,7 +13,6 @@
       --grouped-mid: #6f4df6;
       --grouped-bright: #7b5cff;
       --grouped-soft: #eee9ff;
-      --grouped-soft-2: #f7f4ff;
       --grouped-ink: #171421;
       --grouped-muted: #655f78;
       --grouped-white: #ffffff;
@@ -27,7 +26,6 @@
       --radius-xl: 34px;
       --radius-lg: 24px;
       --radius-md: 18px;
-      --radius-sm: 14px;
     }
 
     * {
@@ -265,7 +263,7 @@
 
     .action-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 10px;
     }
 
@@ -298,6 +296,17 @@
       line-height: 1.45;
       font-size: 0.92rem;
       overflow-wrap: anywhere;
+    }
+
+    .print-warning {
+      background: #fff9df;
+      border: 1px solid rgba(160, 120, 0, 0.24);
+      color: #5c4b11;
+      border-radius: var(--radius-md);
+      padding: 14px;
+      line-height: 1.45;
+      font-size: 0.92rem;
+      font-weight: 750;
     }
 
     .preview-shell {
@@ -428,77 +437,6 @@
       font-weight: 950;
     }
 
-    .mini-trifold {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      min-height: 168px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(36,17,95,0.12);
-    }
-
-    .mini-tri-panel {
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      min-width: 0;
-    }
-
-    .mini-tri-panel.side {
-      color: white;
-      background:
-        radial-gradient(circle at top, rgba(255,255,255,0.22), transparent 38%),
-        linear-gradient(150deg, var(--theme-primary), var(--grouped-bright));
-    }
-
-    .mini-tri-panel.center {
-      background: white;
-    }
-
-    .mini-kicker {
-      font-size: 0.58rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 950;
-      opacity: 0.78;
-      margin-bottom: 8px;
-    }
-
-    .mini-title {
-      font-size: clamp(1rem, 2vw, 1.45rem);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-      font-weight: 950;
-      overflow-wrap: break-word;
-    }
-
-    .qr-preview {
-      width: 74px;
-      height: 74px;
-      margin: 8px auto;
-      border-radius: 12px;
-      padding: 5px;
-      border: 1px solid rgba(36,17,95,0.14);
-      background: white;
-    }
-
-    .qr-preview img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-    }
-
-    .mini-meta {
-      font-size: 0.66rem;
-      line-height: 1.25;
-      color: var(--grouped-muted);
-      overflow-wrap: anywhere;
-      font-weight: 800;
-    }
-
     .preview-list {
       display: grid;
       gap: 10px;
@@ -546,104 +484,6 @@
       white-space: nowrap;
     }
 
-    .mission-stack {
-      position: relative;
-      min-height: 188px;
-      border-radius: 20px;
-      background:
-        radial-gradient(circle at top left, rgba(111,77,246,0.16), transparent 34%),
-        #ffffff;
-      border: 1px solid rgba(36,17,95,0.10);
-      overflow: hidden;
-      padding: 18px;
-    }
-
-    .mission-mini-card {
-      position: absolute;
-      width: min(250px, calc(100% - 36px));
-      min-height: 112px;
-      border-radius: 18px;
-      background: white;
-      border: 1.5px solid rgba(36,17,95,0.16);
-      box-shadow: 0 14px 28px rgba(36,17,95,0.12);
-      padding: 15px;
-    }
-
-    .mission-mini-card:nth-child(1) {
-      transform: rotate(-4deg);
-      left: 22px;
-      top: 38px;
-    }
-
-    .mission-mini-card:nth-child(2) {
-      transform: rotate(3deg);
-      left: 46px;
-      top: 24px;
-    }
-
-    .mission-mini-card:nth-child(3) {
-      transform: rotate(-1deg);
-      left: 70px;
-      top: 52px;
-    }
-
-    .mission-mini-card small {
-      color: var(--theme-primary);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 950;
-    }
-
-    .mission-mini-card p {
-      margin: 8px 0 0;
-      font-weight: 900;
-      line-height: 1.08;
-      letter-spacing: -0.025em;
-      color: var(--grouped-ink);
-    }
-
-    .scan-preview-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .scan-preview-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 58px;
-      gap: 10px;
-      align-items: center;
-      min-height: 88px;
-      padding: 12px;
-      border-radius: 18px;
-      border: 1px solid rgba(36,17,95,0.12);
-      background: white;
-    }
-
-    .scan-preview-card strong {
-      color: var(--grouped-deep);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-    }
-
-    .scan-preview-card span {
-      display: block;
-      margin-top: 4px;
-      color: var(--grouped-muted);
-      font-size: 0.76rem;
-      overflow-wrap: anywhere;
-    }
-
-    .scan-preview-card img {
-      width: 58px;
-      height: 58px;
-      border-radius: 8px;
-      border: 1px solid rgba(36,17,95,0.12);
-      padding: 3px;
-      background: white;
-    }
-
     .print-pages {
       display: none;
     }
@@ -655,8 +495,8 @@
       color: var(--grouped-ink);
       position: relative;
       overflow: hidden;
-      page-break-after: always;
       break-after: page;
+      page-break-after: always;
     }
 
     .page-inner {
@@ -669,7 +509,7 @@
 
     .page-title {
       margin: 0;
-      font-size: 0.84in;
+      font-size: 0.78in;
       line-height: 0.9;
       letter-spacing: -0.07em;
       color: var(--theme-primary);
@@ -807,16 +647,16 @@
     }
 
     .tri-kicker {
-      font-size: 0.15in;
+      font-size: 0.145in;
       font-weight: 950;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
-      opacity: 0.82;
+      opacity: 0.84;
       margin-bottom: 0.18in;
     }
 
     .tri-big {
-      font-size: 0.52in;
+      font-size: 0.50in;
       line-height: 0.92;
       letter-spacing: -0.07em;
       font-weight: 950;
@@ -880,7 +720,7 @@
       width: 7.66in;
       height: 10.16in;
       border: 2px solid rgba(36,17,95,0.14);
-      border-radius: 0.28in;
+      border-radius: 0.26in;
       padding: 0.42in;
       display: flex;
       flex-direction: column;
@@ -894,7 +734,7 @@
     .flat-sign h2 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: 0.62in;
+      font-size: 0.58in;
       line-height: 0.92;
       letter-spacing: -0.065em;
     }
@@ -907,51 +747,113 @@
       margin: 0.20in auto 0;
     }
 
+    .bifold-sheet {
+      width: 7.66in;
+      height: 10.16in;
+      border: 2px solid rgba(36,17,95,0.14);
+      border-radius: 0.26in;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      background: white;
+      position: relative;
+    }
+
+    .bifold-fold-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      border-top: 1px dashed rgba(0,0,0,0.28);
+      z-index: 5;
+    }
+
+    .bifold-half {
+      padding: 0.34in;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 1.55in;
+      gap: 0.22in;
+      align-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(111,77,246,0.12), transparent 35%),
+        white;
+    }
+
+    .bifold-half:first-child {
+      transform: rotate(180deg);
+      border-bottom: 1px solid rgba(36,17,95,0.12);
+    }
+
+    .bifold-half h2 {
+      margin: 0;
+      color: var(--theme-primary);
+      font-size: 0.42in;
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+    }
+
+    .bifold-half p {
+      margin: 0.12in 0 0;
+      color: #5f5a72;
+      font-size: 0.14in;
+      line-height: 1.28;
+    }
+
+    .bifold-qr {
+      width: 1.45in;
+      height: 1.45in;
+      border: 2px solid rgba(36,17,95,0.16);
+      border-radius: 0.12in;
+      padding: 0.08in;
+      background: white;
+    }
+
+    .bifold-qr img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
     .business-card-page .page-inner {
       width: 8.5in;
       height: 11in;
-      padding: 0.50in 0.60in;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 0.5in 0.75in;
       overflow: hidden;
     }
 
     .business-card-grid {
-      width: 7.3in;
-      height: 10.0in;
+      width: 7in;
+      height: 10in;
       display: grid;
       grid-template-columns: 3.5in 3.5in;
       grid-template-rows: repeat(5, 2in);
-      column-gap: 0.30in;
-      row-gap: 0;
-      justify-content: center;
-      align-content: center;
+      gap: 0;
       margin: 0 auto;
     }
 
     .business-card {
       width: 3.5in;
       height: 2in;
-      border: 1px solid rgba(36,17,95,0.28);
+      border: 1px solid rgba(36,17,95,0.32);
       background: white;
       position: relative;
       overflow: hidden;
-      break-inside: avoid;
       border-radius: 0;
+      break-inside: avoid;
     }
 
     .business-card::after {
       content: "";
       position: absolute;
       inset: 0.075in;
-      border: 1px dashed rgba(36,17,95,0.10);
+      border: 1px dashed rgba(36,17,95,0.12);
       pointer-events: none;
     }
 
     .scan-business-card {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 1.08in;
+      grid-template-columns: minmax(0, 1fr) 1.04in;
       gap: 0.16in;
       align-items: center;
       padding: 0.18in 0.18in 0.18in 0.22in;
@@ -972,7 +874,7 @@
     .business-label {
       display: block;
       color: var(--theme-primary);
-      font-size: 0.092in;
+      font-size: 0.088in;
       font-weight: 950;
       letter-spacing: 0.09em;
       text-transform: uppercase;
@@ -982,7 +884,7 @@
     .scan-business-card h3 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: 0.27in;
+      font-size: 0.26in;
       line-height: 0.9;
       letter-spacing: -0.045em;
     }
@@ -990,14 +892,14 @@
     .scan-business-card p {
       margin: 0.10in 0 0;
       color: #514b64;
-      font-size: 0.112in;
+      font-size: 0.108in;
       line-height: 1.25;
       overflow-wrap: anywhere;
     }
 
     .business-qr {
-      width: 0.98in;
-      height: 0.98in;
+      width: 0.96in;
+      height: 0.96in;
       border: 1px solid rgba(36,17,95,0.18);
       border-radius: 0.06in;
       padding: 0.055in;
@@ -1016,7 +918,7 @@
       left: 0.22in;
       bottom: 0.13in;
       color: var(--grouped-muted);
-      font-size: 0.083in;
+      font-size: 0.078in;
       font-weight: 850;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -1032,7 +934,7 @@
     .mission-business-card p {
       margin: 0;
       color: var(--grouped-ink);
-      font-size: 0.18in;
+      font-size: 0.17in;
       line-height: 1.08;
       letter-spacing: -0.025em;
       font-weight: 900;
@@ -1041,7 +943,7 @@
 
     .mission-business-card span {
       color: var(--theme-primary);
-      font-size: 0.10in;
+      font-size: 0.095in;
       font-weight: 950;
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -1084,23 +986,13 @@
       overflow-wrap: anywhere;
     }
 
-    .sheet-note {
-      position: absolute;
-      left: 0.60in;
-      right: 0.60in;
-      bottom: 0.14in;
-      color: #777189;
-      font-size: 0.085in;
-      text-align: center;
-    }
-
     .cut-note {
       position: absolute;
       left: 0.42in;
       right: 0.42in;
       bottom: 0.22in;
       color: #777189;
-      font-size: 0.11in;
+      font-size: 0.10in;
       text-align: center;
     }
 
@@ -1148,30 +1040,12 @@
         font-size: clamp(2.45rem, 13vw, 4.1rem);
       }
 
-      .two-col,
-      .action-row {
+      .two-col {
         grid-template-columns: 1fr;
       }
 
       .quantity-row {
         grid-template-columns: 1fr 82px;
-      }
-
-      .mini-trifold {
-        min-height: 145px;
-      }
-
-      .mini-tri-panel {
-        padding: 10px 7px;
-      }
-
-      .qr-preview {
-        width: 58px;
-        height: 58px;
-      }
-
-      .scan-preview-grid {
-        grid-template-columns: 1fr;
       }
 
       .asset-row {
@@ -1184,7 +1058,7 @@
     }
 
     @page {
-      size: letter;
+      size: letter portrait;
       margin: 0;
     }
 
@@ -1210,7 +1084,6 @@
       .topbar,
       .hero,
       .builder-layout,
-      .screen-preview-grid,
       .preview-shell,
       .panel {
         display: none !important;
@@ -1230,6 +1103,14 @@
       .print-page {
         box-shadow: none;
         margin: 0;
+      }
+
+      body.print-portrait .trifold-page {
+        display: none !important;
+      }
+
+      body.print-trifold .print-page:not(.trifold-page) {
+        display: none !important;
       }
     }
   </style>
@@ -1251,7 +1132,7 @@
       <h1>Build a printable photo kit for your grad party.</h1>
       <p>
         Create polished Grouped print pieces for a private graduation photo drop.
-        The web preview stays clean. The print output stays true-to-size.
+        Print portrait pieces and landscape tri-folds separately for correct sizing.
       </p>
     </section>
 
@@ -1330,7 +1211,7 @@
 
               <label class="quantity-row">
                 <span>Bi-fold table signs</span>
-                <input id="biFoldCount" type="number" min="0" max="8" value="0" />
+                <input id="biFoldCount" type="number" min="0" max="8" value="1" />
               </label>
 
               <label class="quantity-row">
@@ -1345,7 +1226,7 @@
 
               <label class="quantity-row">
                 <span>Mission cards</span>
-                <input id="missionCardCount" type="number" min="6" max="48" value="24" />
+                <input id="missionCardCount" type="number" min="0" max="48" value="24" />
               </label>
             </div>
 
@@ -1371,9 +1252,17 @@
               Update Kit
             </button>
 
-            <button class="btn btn-secondary" id="printButton" type="button">
-              Print / Save PDF
+            <button class="btn btn-secondary" id="printPortraitButton" type="button">
+              Print Portrait Pieces
             </button>
+
+            <button class="btn btn-secondary" id="printTrifoldButton" type="button">
+              Print Tri-Fold Only
+            </button>
+          </div>
+
+          <div class="print-warning">
+            For correct size: US Letter, 100% scale, headers/footers off. Turn print backgrounds on for color pieces.
           </div>
 
           <div class="note">
@@ -1388,7 +1277,7 @@
           <div class="preview-hero-kicker">Your Grouped Host Kit</div>
           <h2 id="screenHeroTitle">Ava’s Grad Photo Drop</h2>
           <p>
-            A premium printable kit for getting every guest into the same private Grouped photo space.
+            Correct print sizing: portrait pieces print together, tri-fold prints separately in landscape.
           </p>
 
           <div class="kit-stats" id="kitStats"></div>
@@ -1493,44 +1382,51 @@
       const guests = numberValue(inputs.guestCount, 50);
 
       let tri = 1;
+      let bi = 1;
       let wall = 0;
       let scan = 10;
       let missions = 12;
 
       if (guests <= 15) {
         tri = 1;
+        bi = 1;
         wall = 0;
         scan = 10;
         missions = 12;
       } else if (guests <= 30) {
         tri = 1;
+        bi = 1;
         wall = 1;
         scan = 20;
         missions = 18;
       } else if (guests <= 50) {
         tri = 2;
+        bi = 1;
         wall = 1;
         scan = 30;
         missions = 24;
       } else if (guests <= 75) {
         tri = 3;
+        bi = 2;
         wall = 2;
         scan = 50;
         missions = 30;
       } else if (guests <= 100) {
         tri = 4;
+        bi = 2;
         wall = 2;
         scan = 75;
         missions = 36;
       } else {
         tri = 5;
+        bi = 3;
         wall = 3;
         scan = 100;
         missions = 48;
       }
 
       inputs.triFoldCount.value = tri;
-      inputs.biFoldCount.value = 0;
+      inputs.biFoldCount.value = bi;
       inputs.wallSignCount.value = wall;
       inputs.scanCardCount.value = scan;
       inputs.missionCardCount.value = missions;
@@ -1549,7 +1445,7 @@
         graduateName,
         joinURL: buildJoinURL(groupName, joinCode),
         triFoldCount: Math.max(0, numberValue(inputs.triFoldCount, 2)),
-        biFoldCount: Math.max(0, numberValue(inputs.biFoldCount, 0)),
+        biFoldCount: Math.max(0, numberValue(inputs.biFoldCount, 1)),
         wallSignCount: Math.max(0, numberValue(inputs.wallSignCount, 1)),
         scanCardCount: Math.max(0, numberValue(inputs.scanCardCount, 30)),
         missionCardCount: Math.max(0, numberValue(inputs.missionCardCount, 24)),
@@ -1562,6 +1458,7 @@
 
       $("kitStats").innerHTML = `
         <span class="stat-pill">${data.triFoldCount} tri-fold</span>
+        <span class="stat-pill">${data.biFoldCount} bi-fold</span>
         <span class="stat-pill">${data.wallSignCount} wall sign</span>
         <span class="stat-pill">${data.scanCardCount} scan cards</span>
         <span class="stat-pill">${data.missionCardCount} missions</span>
@@ -1571,118 +1468,41 @@
         <article class="screen-card screen-card-wide">
           <div class="screen-card-top">
             <div>
-              <h3>Tri-fold centerpiece</h3>
-              <small>Prints horizontally on letter paper.</small>
+              <h3>Print setup</h3>
+              <small>Use these two print buttons so the sizes stay correct.</small>
             </div>
-            <span class="tag">${data.triFoldCount}x</span>
-          </div>
-
-          <div class="mini-trifold">
-            <div class="mini-tri-panel side">
-              <div class="mini-kicker">${data.graduateName}'s Grad Photo Drop</div>
-              <div class="mini-title">Every angle.<br>One story.</div>
-            </div>
-
-            <div class="mini-tri-panel center">
-              <div class="mini-kicker" style="color: var(--theme-primary); opacity: 1;">Scan to join</div>
-              <div class="qr-preview">
-                <img alt="Grouped join QR code" src="${qrURL(data.joinURL, 180)}" />
-              </div>
-              <div class="mini-meta">${data.groupName}<br>${data.joinCode}</div>
-            </div>
-
-            <div class="mini-tri-panel side">
-              <div class="mini-kicker">Help complete the story</div>
-              <div class="mini-title">The moments<br>matter.</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="screen-card">
-          <div class="screen-card-top">
-            <div>
-              <h3>Printable pieces</h3>
-              <small>Correct print sizing: signs, tri-fold, and business cards.</small>
-            </div>
-            <span class="tag">Kit</span>
+            <span class="tag">Important</span>
           </div>
 
           <div class="preview-list">
             <div class="asset-row">
-              <div class="asset-icon">1</div>
-              <div><strong>Instruction page</strong><span>Letter portrait.</span></div>
-              <div class="asset-count">1</div>
+              <div class="asset-icon">P</div>
+              <div><strong>Portrait pieces</strong><span>Instructions, wall sign, bi-fold sign, scan cards, mission cards, follow-up page.</span></div>
+              <div class="asset-count">Letter</div>
             </div>
 
             <div class="asset-row">
-              <div class="asset-icon">3</div>
-              <div><strong>Tri-fold centerpiece</strong><span>Letter landscape.</span></div>
+              <div class="asset-icon">L</div>
+              <div><strong>Tri-fold only</strong><span>Print separately with landscape orientation selected.</span></div>
               <div class="asset-count">${data.triFoldCount}</div>
             </div>
 
             <div class="asset-row">
               <div class="asset-icon">QR</div>
-              <div><strong>Guest scan cards</strong><span>3.5in × 2in, 10 per sheet.</span></div>
+              <div><strong>Guest scan cards</strong><span>Exact 3.5in × 2in business-card grid, 10 per sheet.</span></div>
               <div class="asset-count">${data.scanCardCount}</div>
             </div>
 
             <div class="asset-row">
               <div class="asset-icon">✦</div>
-              <div><strong>Mission cards</strong><span>3.5in × 2in, 10 per sheet.</span></div>
+              <div><strong>Mission cards</strong><span>Exact 3.5in × 2in business-card grid, 10 per sheet.</span></div>
               <div class="asset-count">${data.missionCardCount}</div>
             </div>
-          </div>
-        </article>
 
-        <article class="screen-card">
-          <div class="screen-card-top">
-            <div>
-              <h3>Mission cards</h3>
-              <small>${data.printMode === "premium" ? "Premium low-ink backs enabled." : "Fronts only."}</small>
-            </div>
-            <span class="tag">${data.missionCardCount}</span>
-          </div>
-
-          <div class="mission-stack">
-            <div class="mission-mini-card">
-              <small>Grad Mission</small>
-              <p>Capture a photo the host may miss.</p>
-            </div>
-            <div class="mission-mini-card">
-              <small>Grad Mission</small>
-              <p>Take a photo with the graduate.</p>
-            </div>
-            <div class="mission-mini-card">
-              <small>Grouped</small>
-              <p>Every angle. One story.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="screen-card screen-card-wide">
-          <div class="screen-card-top">
-            <div>
-              <h3>Guest scan cards</h3>
-              <small>True business-card sizing for cutting.</small>
-            </div>
-            <span class="tag">${data.scanCardCount}x</span>
-          </div>
-
-          <div class="scan-preview-grid">
-            <div class="scan-preview-card">
-              <div>
-                <strong>Scan to join.</strong>
-                <span>${data.groupName}<br>${data.joinCode}</span>
-              </div>
-              <img alt="Grouped join QR code" src="${qrURL(data.joinURL, 140)}" />
-            </div>
-
-            <div class="scan-preview-card">
-              <div>
-                <strong>Drop your photos.</strong>
-                <span>Private Grouped photo space.</span>
-              </div>
-              <img alt="Grouped join QR code" src="${qrURL(data.joinURL, 140)}" />
+            <div class="asset-row">
+              <div class="asset-icon">↕</div>
+              <div><strong>Bi-fold table sign</strong><span>Included by default. Fold on the center dashed line.</span></div>
+              <div class="asset-count">${data.biFoldCount}</div>
             </div>
           </div>
         </article>
@@ -1693,35 +1513,35 @@
       return `<section class="print-page ${extraClass}"><div class="page-inner">${content}</div></section>`;
     }
 
-    function instructionPage(data) {
+    function instructionPage() {
       return page(`
         <span class="mini-label">Grouped Host Kit</span>
-        <h2 class="page-title">How to print your Graduation Host Kit.</h2>
+        <h2 class="page-title">Print setup for correct sizing.</h2>
         <div class="accent-line"></div>
         <p class="page-subtitle">
-          Print from the browser with paper size set to Letter. Use actual size / 100% scale when available.
-          The tri-fold prints landscape. Guest scan cards and mission cards print as 3.5in × 2in business cards.
+          Print from the browser with paper size set to US Letter. Use 100% scale.
+          Turn off browser headers and footers. Turn on print backgrounds for purple pieces.
         </p>
 
         <div class="instruction-list">
           <div class="instruction-item">
             <div class="instruction-number">1</div>
-            <span><strong>Print at actual size.</strong> Use Letter paper. Turn off “fit to page” when your printer dialog offers exact scale.</span>
+            <span><strong>Portrait pieces first.</strong> Use the Print Portrait Pieces button for instructions, wall signs, bi-fold signs, scan cards, missions, and follow-up text.</span>
           </div>
 
           <div class="instruction-item">
             <div class="instruction-number">2</div>
-            <span><strong>Tri-fold prints horizontally.</strong> The tri-fold page is built as Letter landscape. Fold on the dashed lines.</span>
+            <span><strong>Tri-fold separately.</strong> Use the Print Tri-Fold Only button, then select Landscape in the print dialog.</span>
           </div>
 
           <div class="instruction-item">
             <div class="instruction-number">3</div>
-            <span><strong>Cards are business-card size.</strong> Guest scan cards and mission cards are 3.5in × 2in, arranged 10 per sheet.</span>
+            <span><strong>Cards are exact size.</strong> Guest scan cards and mission cards are 3.5in × 2in, arranged 10 per Letter sheet.</span>
           </div>
 
           <div class="instruction-item">
             <div class="instruction-number">4</div>
-            <span><strong>Optional backs.</strong> For double-sided mission cards, print one mission-front page first, refeed the same sheet, then print the matching back page. Test one sheet first.</span>
+            <span><strong>Bi-fold table sign is included.</strong> Fold on the dashed center line. Each side faces outward after folding.</span>
           </div>
 
           <div class="instruction-item">
@@ -1769,7 +1589,7 @@
             </div>
           </div>
         </div>
-        <div class="cut-note">Tri-fold centerpiece ${index + 1}. Letter landscape. Fold on the dashed lines.</div>
+        <div class="cut-note">Tri-fold centerpiece ${index + 1}. Print this page separately in Landscape.</div>
       `, "trifold-page");
     }
 
@@ -1779,7 +1599,7 @@
           <span class="mini-label">Graduation Photo Drop</span>
           <h2>Join ${data.graduateName}'s private photo group.</h2>
           <p>Every guest sees a different part of the day. Add your photos to Grouped.</p>
-          <div class="qr-box" style="width: 2.5in; height: 2.5in;">
+          <div class="qr-box" style="width: 2.45in; height: 2.45in;">
             <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
           </div>
           <div class="join-meta" style="font-size: 0.19in;">
@@ -1793,36 +1613,50 @@
 
     function biFoldPage(data, index) {
       return page(`
-        <div class="flat-sign">
-          <span class="mini-label">Bi-fold table sign</span>
-          <h2>Scan to join the photo drop.</h2>
-          <p>${data.groupName} · ${data.joinCode}</p>
-          <div class="qr-box" style="width: 2.6in; height: 2.6in;">
-            <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
+        <div class="bifold-sheet">
+          <div class="bifold-fold-line"></div>
+
+          <div class="bifold-half">
+            <div>
+              <span class="mini-label">Grouped Photo Drop</span>
+              <h2>Scan to join the private photo group.</h2>
+              <p><strong>Group:</strong> ${data.groupName}<br><strong>Code:</strong> ${data.joinCode}</p>
+            </div>
+            <div class="bifold-qr">
+              <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
+            </div>
           </div>
-          <p style="font-size: 0.16in;">Fold this page in half and place it on a table.</p>
+
+          <div class="bifold-half">
+            <div>
+              <span class="mini-label">Grouped Photo Drop</span>
+              <h2>Scan to join the private photo group.</h2>
+              <p><strong>Group:</strong> ${data.groupName}<br><strong>Code:</strong> ${data.joinCode}</p>
+            </div>
+            <div class="bifold-qr">
+              <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
+            </div>
+          </div>
         </div>
-        <div class="cut-note">Bi-fold table sign ${index + 1}. Letter portrait.</div>
+        <div class="cut-note">Bi-fold table sign ${index + 1}. Fold on the dashed center line.</div>
       `);
     }
 
-    function businessCardSheet(cards, note = "") {
+    function businessCardSheet(cards) {
       return page(`
         <div class="business-card-grid">
           ${cards.join("")}
         </div>
-        <div class="sheet-note">${note}</div>
       `, "business-card-page");
     }
 
     function scanCardsPages(data) {
-      const count = data.scanCardCount;
       const pages = [];
       const perPage = 10;
 
-      for (let start = 0; start < count; start += perPage) {
+      for (let start = 0; start < data.scanCardCount; start += perPage) {
         const cards = [];
-        const pageCount = Math.min(perPage, count - start);
+        const pageCount = Math.min(perPage, data.scanCardCount - start);
 
         for (let i = 0; i < pageCount; i++) {
           cards.push(`
@@ -1840,18 +1674,14 @@
           `);
         }
 
-        pages.push(businessCardSheet(
-          cards,
-          "Guest scan cards · 3.5in × 2in · 10 per Letter sheet"
-        ));
+        pages.push(businessCardSheet(cards));
       }
 
       return pages.join("");
     }
 
     function missionFrontPages(data) {
-      const count = data.missionCardCount;
-      const selected = missionBank.slice(0, count);
+      const selected = missionBank.slice(0, data.missionCardCount);
       const pages = [];
       const perPage = 10;
 
@@ -1867,10 +1697,7 @@
           </div>
         `);
 
-        pages.push(businessCardSheet(
-          cards,
-          "Mission card fronts · 3.5in × 2in · 10 per Letter sheet"
-        ));
+        pages.push(businessCardSheet(cards));
       }
 
       return pages.join("");
@@ -1881,12 +1708,11 @@
         return "";
       }
 
-      const count = data.missionCardCount;
       const pages = [];
       const perPage = 10;
 
-      for (let start = 0; start < count; start += perPage) {
-        const pageCount = Math.min(perPage, count - start);
+      for (let start = 0; start < data.missionCardCount; start += perPage) {
+        const pageCount = Math.min(perPage, data.missionCardCount - start);
         const cards = [];
 
         for (let i = 0; i < pageCount; i++) {
@@ -1901,10 +1727,7 @@
           `);
         }
 
-        pages.push(businessCardSheet(
-          cards,
-          "Optional mission card backs · 3.5in × 2in · refeed matching front sheet"
-        ));
+        pages.push(businessCardSheet(cards));
       }
 
       return pages.join("");
@@ -1960,9 +1783,20 @@
       renderPrintPages(data);
     }
 
+    function printMode(mode) {
+      document.body.classList.remove("print-portrait", "print-trifold");
+      document.body.classList.add(mode);
+      window.print();
+
+      window.setTimeout(() => {
+        document.body.classList.remove("print-portrait", "print-trifold");
+      }, 800);
+    }
+
     $("recommendButton").addEventListener("click", useRecommendation);
     $("generateButton").addEventListener("click", renderKit);
-    $("printButton").addEventListener("click", () => window.print());
+    $("printPortraitButton").addEventListener("click", () => printMode("print-portrait"));
+    $("printTrifoldButton").addEventListener("click", () => printMode("print-trifold"));
 
     Object.values(inputs).forEach((input) => {
       input.addEventListener("change", renderKit);
