@@ -296,7 +296,8 @@
 
     .preview-panel {
       padding: 18px;
-      overflow: hidden;
+      overflow-x: auto;
+      overflow-y: visible;
     }
 
     .preview-toolbar {
@@ -329,15 +330,13 @@
       display: grid;
       gap: 18px;
       justify-items: center;
-      max-width: 100%;
-      overflow: hidden;
+      max-width: none;
+      overflow: visible;
     }
 
     .print-page {
       width: 8.5in;
-      max-width: 100%;
-      aspect-ratio: 8.5 / 11;
-      min-height: auto;
+      min-height: 11in;
       background: white;
       color: var(--grouped-ink);
       margin: 0 auto;
@@ -348,26 +347,24 @@
     }
 
     .page-inner {
-      padding: 4.95%;
-      width: 100%;
-      height: 100%;
+      padding: 0.42in;
+      min-height: 11in;
       position: relative;
     }
 
     .page-title {
       margin: 0;
-      font-size: clamp(2.4rem, 7.6vw, 0.98in);
+      font-size: 0.98in;
       line-height: 0.9;
       letter-spacing: -0.07em;
       color: var(--theme-primary);
-      overflow-wrap: break-word;
     }
 
     .page-subtitle {
       margin: 0.18in 0 0;
       color: #5f5a72;
       line-height: 1.45;
-      font-size: clamp(0.88rem, 1.5vw, 0.18in);
+      font-size: 0.18in;
       max-width: 6.8in;
     }
 
@@ -381,7 +378,7 @@
       font-weight: 950;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: clamp(0.58rem, 1vw, 0.11in);
+      font-size: 0.11in;
       margin-bottom: 0.22in;
     }
 
@@ -390,7 +387,6 @@
       background: var(--theme-accent);
       border-radius: 999px;
       width: 2.2in;
-      max-width: 60%;
       margin: 0.24in 0;
     }
 
@@ -402,7 +398,7 @@
 
     .instruction-item {
       display: grid;
-      grid-template-columns: 0.4in minmax(0, 1fr);
+      grid-template-columns: 0.4in 1fr;
       gap: 0.16in;
       align-items: start;
       border: 1px solid rgba(36,17,95,0.11);
@@ -419,7 +415,6 @@
       display: grid;
       place-items: center;
       font-weight: 950;
-      font-size: 0.14in;
     }
 
     .instruction-item strong {
@@ -431,21 +426,21 @@
     .instruction-item span {
       color: #5f5a72;
       line-height: 1.35;
-      font-size: clamp(0.72rem, 1.2vw, 0.15in);
+      font-size: 0.15in;
     }
 
     .trifold-page {
       width: 11in;
-      max-width: 100%;
-      aspect-ratio: 11 / 8.5;
+      min-height: 8.5in;
     }
 
     .trifold-page .page-inner {
-      padding: 3.2%;
+      padding: 0.35in;
+      min-height: 8.5in;
     }
 
     .trifold {
-      height: 100%;
+      height: 7.8in;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       border: 2px solid rgba(36,17,95,0.16);
@@ -463,11 +458,16 @@
       z-index: 4;
     }
 
-    .fold-one { left: 33.333%; }
-    .fold-two { left: 66.666%; }
+    .fold-one {
+      left: 33.333%;
+    }
+
+    .fold-two {
+      left: 66.666%;
+    }
 
     .tri-panel {
-      padding: clamp(12px, 3vw, 0.32in);
+      padding: 0.32in;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -490,35 +490,33 @@
     }
 
     .tri-kicker {
-      font-size: clamp(0.55rem, 1.15vw, 0.15in);
+      font-size: 0.15in;
       font-weight: 950;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       opacity: 0.82;
       margin-bottom: 0.18in;
-      overflow-wrap: break-word;
     }
 
     .tri-big {
-      font-size: clamp(1.25rem, 3.7vw, 0.52in);
+      font-size: 0.52in;
       line-height: 0.92;
       letter-spacing: -0.07em;
       font-weight: 950;
       margin: 0;
-      overflow-wrap: break-word;
     }
 
     .tri-copy {
       margin: 0.2in auto 0;
       max-width: 2.3in;
       line-height: 1.35;
-      font-size: clamp(0.68rem, 1.15vw, 0.16in);
+      font-size: 0.16in;
       opacity: 0.86;
     }
 
     .qr-box {
-      width: min(2.15in, 70%);
-      aspect-ratio: 1 / 1;
+      width: 2.15in;
+      height: 2.15in;
       margin: 0.2in auto;
       background: white;
       border: 2px solid rgba(36,17,95,0.18);
@@ -539,9 +537,8 @@
       display: grid;
       gap: 0.08in;
       margin-top: 0.1in;
-      font-size: clamp(0.68rem, 1.1vw, 0.15in);
+      font-size: 0.15in;
       color: #4d4860;
-      overflow-wrap: anywhere;
     }
 
     .join-meta strong {
@@ -557,13 +554,13 @@
       justify-content: space-between;
       color: rgba(255,255,255,0.72);
       font-weight: 850;
-      font-size: clamp(0.52rem, 0.9vw, 0.12in);
+      font-size: 0.12in;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
     .flat-sign {
-      min-height: 100%;
+      min-height: 9.9in;
       border: 2px solid rgba(36,17,95,0.14);
       border-radius: 0.28in;
       padding: 0.42in;
@@ -579,15 +576,14 @@
     .flat-sign h2 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: clamp(2.2rem, 6vw, 0.78in);
+      font-size: 0.78in;
       line-height: 0.9;
       letter-spacing: -0.075em;
-      overflow-wrap: break-word;
     }
 
     .flat-sign p {
       color: #5f5a72;
-      font-size: clamp(0.9rem, 1.6vw, 0.2in);
+      font-size: 0.2in;
       line-height: 1.4;
       max-width: 6in;
       margin: 0.22in auto 0;
@@ -637,18 +633,17 @@
       font-weight: 950;
       letter-spacing: 0.09em;
       text-transform: uppercase;
-      font-size: clamp(0.5rem, 0.85vw, 0.095in);
+      font-size: 0.095in;
       margin-bottom: 0.12in;
     }
 
     .mission-card p {
-      font-size: clamp(0.78rem, 1.7vw, 0.21in);
+      font-size: 0.21in;
       line-height: 1.13;
       letter-spacing: -0.025em;
       color: var(--grouped-ink);
       font-weight: 850;
       margin: 0;
-      overflow-wrap: break-word;
     }
 
     .mission-card span {
@@ -656,13 +651,13 @@
       color: var(--theme-primary);
       font-weight: 950;
       margin-top: 0.14in;
-      font-size: clamp(0.62rem, 1vw, 0.13in);
+      font-size: 0.13in;
     }
 
     .scan-card {
       min-height: 1.7in;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 0.95in;
+      grid-template-columns: 1fr 0.95in;
       gap: 0.1in;
       align-items: center;
     }
@@ -670,7 +665,7 @@
     .scan-card h3 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: clamp(0.9rem, 1.8vw, 0.23in);
+      font-size: 0.23in;
       line-height: 0.98;
       letter-spacing: -0.04em;
     }
@@ -679,8 +674,7 @@
       margin: 0.08in 0 0;
       color: #5f5a72;
       line-height: 1.25;
-      font-size: clamp(0.55rem, 0.9vw, 0.115in);
-      overflow-wrap: anywhere;
+      font-size: 0.115in;
     }
 
     .mini-qr {
@@ -709,7 +703,7 @@
     .card-back h3 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: clamp(1.1rem, 2.2vw, 0.28in);
+      font-size: 0.28in;
       line-height: 0.95;
       letter-spacing: -0.05em;
     }
@@ -717,9 +711,8 @@
     .card-back p {
       margin: 0.12in 0 0;
       color: #5f5a72;
-      font-size: clamp(0.62rem, 1vw, 0.13in);
+      font-size: 0.13in;
       line-height: 1.35;
-      overflow-wrap: anywhere;
     }
 
     .cut-note {
@@ -728,7 +721,7 @@
       right: 0.42in;
       bottom: 0.22in;
       color: #777189;
-      font-size: clamp(0.55rem, 0.9vw, 0.11in);
+      font-size: 0.11in;
       text-align: center;
     }
 
@@ -739,9 +732,8 @@
       padding: 0.24in;
       background: #faf9ff;
       color: #4d4860;
-      font-size: clamp(0.9rem, 1.5vw, 0.19in);
+      font-size: 0.19in;
       line-height: 1.45;
-      overflow-wrap: anywhere;
     }
 
     .after-text-box strong {
@@ -757,16 +749,8 @@
         grid-template-columns: 1fr;
       }
 
-      .print-page {
-        width: min(8.5in, 100%);
-      }
-
-      .trifold-page {
-        width: min(11in, 100%);
-      }
-
-      .trifold {
-        min-height: 420px;
+      .preview-panel {
+        overflow-x: auto;
       }
     }
 
@@ -809,18 +793,6 @@
 
       .print-btn {
         width: 100%;
-      }
-
-      .cards-grid {
-        gap: 0.08in;
-      }
-
-      .tri-panel {
-        padding: 8px;
-      }
-
-      .grouped-footer {
-        display: none;
       }
     }
 
@@ -886,7 +858,6 @@
         max-width: none;
         height: 11in;
         min-height: 11in;
-        aspect-ratio: auto;
         page-break-after: always;
       }
 
@@ -900,7 +871,6 @@
         max-width: none;
         height: 8.5in;
         min-height: 8.5in;
-        aspect-ratio: auto;
         page: landscapePage;
       }
 
@@ -911,7 +881,6 @@
 
       .trifold {
         height: 7.8in;
-        min-height: 0;
       }
 
       .hidden-print-piece {
@@ -1314,10 +1283,10 @@
           <span class="mini-label">Graduation Photo Drop</span>
           <h2>Join ${data.graduateName}'s private photo group.</h2>
           <p>Every guest sees a different part of the day. Add your photos to Grouped.</p>
-          <div class="qr-box" style="width: min(2.6in, 58%);">
+          <div class="qr-box" style="width: 2.6in; height: 2.6in;">
             <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
           </div>
-          <div class="join-meta" style="font-size: clamp(0.78rem, 1.5vw, 0.2in);">
+          <div class="join-meta" style="font-size: 0.2in;">
             <span><strong>Group:</strong> ${data.groupName}</span>
             <span><strong>Code:</strong> ${data.joinCode}</span>
           </div>
@@ -1332,10 +1301,10 @@
           <span class="mini-label">Bi-fold table sign</span>
           <h2>Scan to join the photo drop.</h2>
           <p>${data.groupName} · ${data.joinCode}</p>
-          <div class="qr-box" style="width: min(2.7in, 60%);">
+          <div class="qr-box" style="width: 2.7in; height: 2.7in;">
             <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
           </div>
-          <p style="font-size: clamp(0.78rem, 1.3vw, 0.16in);">Fold this page in half and place it on a table.</p>
+          <p style="font-size: 0.16in;">Fold this page in half and place it on a table.</p>
         </div>
         <div class="cut-note">Bi-fold table sign ${index + 1}</div>
       `);
@@ -1367,7 +1336,7 @@
 
         pages.push(page(`
           <span class="mini-label">Guest Scan Cards</span>
-          <h2 class="page-title" style="font-size: clamp(1.8rem, 5vw, 0.6in);">Guest scan cards</h2>
+          <h2 class="page-title" style="font-size: 0.6in;">Guest scan cards</h2>
           <p class="page-subtitle">Cut these out and place them near the centerpiece or give them to guests.</p>
           <div class="cards-grid">${cards.join("")}</div>
           <div class="cut-note">Cut along the card edges.</div>
@@ -1395,7 +1364,7 @@
 
         pages.push(page(`
           <span class="mini-label">Mission Card Fronts</span>
-          <h2 class="page-title" style="font-size: clamp(1.8rem, 4.8vw, 0.52in);">Mission fronts</h2>
+          <h2 class="page-title" style="font-size: 0.52in;">Mission fronts</h2>
           <p class="page-subtitle">Print these first. These also work as single-sided cards.</p>
           <div class="cards-grid">${cards.join("")}</div>
           <div class="cut-note">Mission fronts · print first · cut after optional backs are printed.</div>
@@ -1430,7 +1399,7 @@
 
         pages.push(page(`
           <span class="mini-label">Optional Mission Card Backs</span>
-          <h2 class="page-title" style="font-size: clamp(1.7rem, 4.6vw, 0.48in);">Mission backs</h2>
+          <h2 class="page-title" style="font-size: 0.48in;">Mission backs</h2>
           <p class="page-subtitle">Optional. Refeed the matching mission-front page and print this on the back. Test one page first.</p>
           <div class="cards-grid">${cards.join("")}</div>
           <div class="cut-note">Optional backs · low ink · refeed matching front page.</div>
