@@ -650,23 +650,25 @@
 
     .print-page {
       width: 8.5in;
-      min-height: 11in;
+      height: 11in;
       background: white;
       color: var(--grouped-ink);
       position: relative;
       overflow: hidden;
       page-break-after: always;
+      break-after: page;
     }
 
     .page-inner {
       padding: 0.42in;
-      min-height: 11in;
+      width: 8.5in;
+      height: 11in;
       position: relative;
     }
 
     .page-title {
       margin: 0;
-      font-size: 0.92in;
+      font-size: 0.82in;
       line-height: 0.9;
       letter-spacing: -0.07em;
       color: var(--theme-primary);
@@ -743,12 +745,14 @@
 
     .trifold-page {
       width: 11in;
-      min-height: 8.5in;
+      height: 8.5in;
+      page: landscapePage;
     }
 
     .trifold-page .page-inner {
+      width: 11in;
+      height: 8.5in;
       padding: 0.35in;
-      min-height: 8.5in;
     }
 
     .trifold {
@@ -871,10 +875,10 @@
     }
 
     .flat-sign {
-      min-height: 9.9in;
+      height: 10.16in;
       border: 2px solid rgba(36,17,95,0.14);
       border-radius: 0.28in;
-      padding: 0.42in;
+      padding: 0.36in;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -887,23 +891,23 @@
     .flat-sign h2 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: 0.78in;
-      line-height: 0.9;
-      letter-spacing: -0.075em;
+      font-size: 0.62in;
+      line-height: 0.92;
+      letter-spacing: -0.07em;
     }
 
     .flat-sign p {
       color: #5f5a72;
-      font-size: 0.2in;
-      line-height: 1.4;
+      font-size: 0.18in;
+      line-height: 1.35;
       max-width: 6in;
-      margin: 0.22in auto 0;
+      margin: 0.18in auto 0;
     }
 
     .business-card-page .page-inner {
-      padding: 0.42in 0.60in;
+      padding: 0.28in 0.50in;
+      width: 8.5in;
       height: 11in;
-      min-height: 11in;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -912,8 +916,8 @@
     .business-card-grid {
       display: grid;
       grid-template-columns: 3.5in 3.5in;
-      grid-auto-rows: 2in;
-      column-gap: 0.30in;
+      grid-template-rows: repeat(5, 2in);
+      column-gap: 0.50in;
       row-gap: 0.10in;
       justify-content: center;
       align-content: center;
@@ -927,7 +931,7 @@
       position: relative;
       overflow: hidden;
       break-inside: avoid;
-      border-radius: 0.06in;
+      border-radius: 0.055in;
     }
 
     .business-card::after {
@@ -940,8 +944,8 @@
 
     .scan-business-card {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 1.02in;
-      gap: 0.14in;
+      grid-template-columns: minmax(0, 1fr) 1.05in;
+      gap: 0.13in;
       align-items: center;
       padding: 0.18in 0.18in 0.18in 0.22in;
     }
@@ -971,7 +975,7 @@
     .scan-business-card h3 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: 0.27in;
+      font-size: 0.285in;
       line-height: 0.9;
       letter-spacing: -0.045em;
     }
@@ -985,8 +989,8 @@
     }
 
     .business-qr {
-      width: 0.92in;
-      height: 0.92in;
+      width: 0.98in;
+      height: 0.98in;
       border: 1px solid rgba(36,17,95,0.18);
       border-radius: 0.08in;
       padding: 0.055in;
@@ -1021,7 +1025,7 @@
     .mission-business-card p {
       margin: 0;
       color: var(--grouped-ink);
-      font-size: 0.195in;
+      font-size: 0.18in;
       line-height: 1.08;
       letter-spacing: -0.025em;
       font-weight: 900;
@@ -1075,11 +1079,11 @@
 
     .sheet-note {
       position: absolute;
-      left: 0.60in;
-      right: 0.60in;
-      bottom: 0.20in;
+      left: 0.50in;
+      right: 0.50in;
+      bottom: 0.12in;
       color: #777189;
-      font-size: 0.09in;
+      font-size: 0.085in;
       text-align: center;
     }
 
@@ -1087,9 +1091,9 @@
       position: absolute;
       left: 0.42in;
       right: 0.42in;
-      bottom: 0.22in;
+      bottom: 0.18in;
       color: #777189;
-      font-size: 0.11in;
+      font-size: 0.105in;
       text-align: center;
     }
 
@@ -1174,7 +1178,12 @@
 
     @media print {
       @page {
-        size: letter;
+        size: letter portrait;
+        margin: 0;
+      }
+
+      @page landscapePage {
+        size: letter landscape;
         margin: 0;
       }
 
@@ -1187,6 +1196,8 @@
 
       body {
         background: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
 
       .topbar,
@@ -1213,51 +1224,37 @@
         box-shadow: none;
         margin: 0;
         width: 8.5in;
-        max-width: none;
         height: 11in;
         min-height: 11in;
+        max-width: none;
         page-break-after: always;
+        break-after: page;
       }
 
       .page-inner {
-        padding: 0.42in;
+        width: 8.5in;
         height: 11in;
+        padding: 0.42in;
       }
 
       .trifold-page {
         width: 11in;
-        max-width: none;
         height: 8.5in;
         min-height: 8.5in;
         page: landscapePage;
       }
 
       .trifold-page .page-inner {
-        padding: 0.35in;
+        width: 11in;
         height: 8.5in;
-      }
-
-      .trifold {
-        height: 7.8in;
+        padding: 0.35in;
       }
 
       .business-card-page .page-inner {
-        padding: 0.42in 0.60in;
+        padding: 0.28in 0.50in;
+        width: 8.5in;
         height: 11in;
-        min-height: 11in;
       }
-
-      .business-card-grid {
-        grid-template-columns: 3.5in 3.5in;
-        grid-auto-rows: 2in;
-        column-gap: 0.30in;
-        row-gap: 0.10in;
-      }
-    }
-
-    @page landscapePage {
-      size: landscape;
-      margin: 0;
     }
   </style>
 </head>
@@ -1643,7 +1640,7 @@
 
             <div class="asset-row">
               <div class="asset-icon">3</div>
-              <div><strong>Tri-fold centerpiece</strong><span>Table display with QR panel.</span></div>
+              <div><strong>Tri-fold centerpiece</strong><span>Landscape table display with QR panel.</span></div>
               <div class="asset-count">${data.triFoldCount}</div>
             </div>
 
@@ -1733,27 +1730,27 @@
         <div class="instruction-list">
           <div class="instruction-item">
             <div class="instruction-number">1</div>
-            <span><strong>Print the display pieces.</strong> Print the tri-fold centerpiece, wall/frame signs, scan cards, and host text pages single-sided.</span>
+            <span><strong>Print the tri-fold horizontally.</strong> In the print dialog, make sure the tri-fold page is landscape. Save as PDF first if the browser print preview needs confirmation.</span>
           </div>
 
           <div class="instruction-item">
             <div class="instruction-number">2</div>
-            <span><strong>Print mission fronts first.</strong> Mission fronts are business-card size and work by themselves. Cut them out and place them near the QR display.</span>
+            <span><strong>Print the poster sign vertically.</strong> The wall/frame sign is sized to fit one portrait letter page.</span>
           </div>
 
           <div class="instruction-item">
             <div class="instruction-number">3</div>
-            <span><strong>Optional backs.</strong> For double-sided mission cards, print one mission-front page first, place that same sheet back into your printer tray, then print the matching back page. Test one sheet first because every printer feeds differently.</span>
+            <span><strong>Cut cards on the edges.</strong> Guest scan cards and mission cards are 3.5in by 2in business-card size, arranged 10 per sheet.</span>
           </div>
 
           <div class="instruction-item">
             <div class="instruction-number">4</div>
-            <span><strong>At the party.</strong> Put the centerpiece where guests naturally stop: gift table, food table, photo table, or entry table. Ask two or three close guests to upload early.</span>
+            <span><strong>Optional backs.</strong> For double-sided mission cards, print mission fronts first, then refeed the same sheet and print the matching back page. Test one page first.</span>
           </div>
 
           <div class="instruction-item">
             <div class="instruction-number">5</div>
-            <span><strong>After the event.</strong> Send the follow-up text so guests who forgot to upload can still add their photos.</span>
+            <span><strong>At the party.</strong> Put the centerpiece where guests naturally stop: gift table, food table, photo table, or entry table. Ask two or three close guests to upload early.</span>
           </div>
         </div>
       `);
@@ -1796,7 +1793,7 @@
             </div>
           </div>
         </div>
-        <div class="cut-note">Tri-fold centerpiece ${index + 1}. Fold on the dashed lines.</div>
+        <div class="cut-note">Tri-fold centerpiece ${index + 1}. Print landscape. Fold on the dashed lines.</div>
       `, "trifold-page");
     }
 
@@ -1806,15 +1803,15 @@
           <span class="mini-label">Graduation Photo Drop</span>
           <h2>Join ${data.graduateName}'s private photo group.</h2>
           <p>Every guest sees a different part of the day. Add your photos to Grouped.</p>
-          <div class="qr-box" style="width: 2.6in; height: 2.6in;">
+          <div class="qr-box" style="width: 2.45in; height: 2.45in;">
             <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
           </div>
-          <div class="join-meta" style="font-size: 0.2in;">
+          <div class="join-meta" style="font-size: 0.18in;">
             <span><strong>Group:</strong> ${data.groupName}</span>
             <span><strong>Code:</strong> ${data.joinCode}</span>
           </div>
         </div>
-        <div class="cut-note">Wall/frame sign ${index + 1}</div>
+        <div class="cut-note">Wall/frame sign ${index + 1}. Portrait letter page.</div>
       `);
     }
 
@@ -1824,7 +1821,7 @@
           <span class="mini-label">Bi-fold table sign</span>
           <h2>Scan to join the photo drop.</h2>
           <p>${data.groupName} · ${data.joinCode}</p>
-          <div class="qr-box" style="width: 2.7in; height: 2.7in;">
+          <div class="qr-box" style="width: 2.45in; height: 2.45in;">
             <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
           </div>
           <p style="font-size: 0.16in;">Fold this page in half and place it on a table.</p>
@@ -1860,7 +1857,7 @@
                 <p><strong>${data.groupName}</strong><br>Code: ${data.joinCode}</p>
               </div>
               <div class="business-qr">
-                <img alt="Grouped join QR code" src="${qrURL(data.joinURL, 220)}" />
+                <img alt="Grouped join QR code" src="${qrURL(data.joinURL, 240)}" />
               </div>
               <div class="business-foot">Private photo group</div>
             </div>
@@ -1869,7 +1866,7 @@
 
         pages.push(businessCardSheet(
           cards,
-          "Guest scan cards · 3.5in × 2in · cut along card edges"
+          "Guest scan cards · 3.5in × 2in · 10 per sheet · cut along card edges"
         ));
       }
 
@@ -1896,7 +1893,7 @@
 
         pages.push(businessCardSheet(
           cards,
-          "Mission card fronts · 3.5in × 2in · print first"
+          "Mission card fronts · 3.5in × 2in · 10 per sheet · print first"
         ));
       }
 
@@ -1930,7 +1927,7 @@
 
         pages.push(businessCardSheet(
           cards,
-          "Optional mission card backs · low ink · refeed matching front page"
+          "Optional mission card backs · 3.5in × 2in · refeed matching front page"
         ));
       }
 
