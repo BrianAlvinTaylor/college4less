@@ -900,33 +900,55 @@
       margin: 0.22in auto 0;
     }
 
-    .cards-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.14in;
-      margin-top: 0.25in;
+    .business-card-page .page-inner {
+      padding: 0.42in 0.60in;
+      height: 11in;
+      min-height: 11in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .mission-card,
-    .scan-card,
-    .card-back {
-      border: 1.5px solid rgba(36,17,95,0.18);
-      border-radius: 0.18in;
-      min-height: 1.58in;
-      padding: 0.16in;
+    .business-card-grid {
+      display: grid;
+      grid-template-columns: 3.5in 3.5in;
+      grid-auto-rows: 2in;
+      column-gap: 0.30in;
+      row-gap: 0.10in;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .business-card {
+      width: 3.5in;
+      height: 2in;
+      border: 1px solid rgba(36,17,95,0.22);
+      background: white;
       position: relative;
       overflow: hidden;
-      background: white;
       break-inside: avoid;
+      border-radius: 0.06in;
     }
 
-    .mission-card {
-      min-height: 2.25in;
+    .business-card::after {
+      content: "";
+      position: absolute;
+      inset: 0.075in;
+      border: 1px dashed rgba(36,17,95,0.10);
+      pointer-events: none;
     }
 
-    .mission-card:before,
-    .scan-card:before,
-    .card-back:before {
+    .scan-business-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 1.02in;
+      gap: 0.14in;
+      align-items: center;
+      padding: 0.18in 0.18in 0.18in 0.22in;
+    }
+
+    .scan-business-card::before,
+    .mission-business-card::before,
+    .mission-business-back::before {
       content: "";
       position: absolute;
       left: 0;
@@ -936,94 +958,129 @@
       background: var(--theme-accent);
     }
 
-    .mission-card small,
-    .scan-card small,
-    .card-back small {
+    .business-label {
       display: block;
       color: var(--theme-primary);
+      font-size: 0.095in;
       font-weight: 950;
       letter-spacing: 0.09em;
       text-transform: uppercase;
-      font-size: 0.095in;
-      margin-bottom: 0.12in;
+      margin-bottom: 0.08in;
     }
 
-    .mission-card p {
-      font-size: 0.21in;
-      line-height: 1.13;
-      letter-spacing: -0.025em;
-      color: var(--grouped-ink);
-      font-weight: 850;
-      margin: 0;
-    }
-
-    .mission-card span {
-      display: block;
-      color: var(--theme-primary);
-      font-weight: 950;
-      margin-top: 0.14in;
-      font-size: 0.13in;
-    }
-
-    .scan-card {
-      min-height: 1.7in;
-      display: grid;
-      grid-template-columns: 1fr 0.95in;
-      gap: 0.1in;
-      align-items: center;
-    }
-
-    .scan-card h3 {
+    .scan-business-card h3 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: 0.23in;
-      line-height: 0.98;
-      letter-spacing: -0.04em;
+      font-size: 0.27in;
+      line-height: 0.9;
+      letter-spacing: -0.045em;
     }
 
-    .scan-card p {
-      margin: 0.08in 0 0;
-      color: #5f5a72;
-      line-height: 1.25;
+    .scan-business-card p {
+      margin: 0.10in 0 0;
+      color: #514b64;
       font-size: 0.115in;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
     }
 
-    .mini-qr {
+    .business-qr {
       width: 0.92in;
       height: 0.92in;
-      border: 1px solid rgba(36,17,95,0.16);
-      padding: 0.05in;
+      border: 1px solid rgba(36,17,95,0.18);
       border-radius: 0.08in;
+      padding: 0.055in;
       background: white;
     }
 
-    .mini-qr img {
+    .business-qr img {
       width: 100%;
       height: 100%;
       display: block;
+      object-fit: contain;
     }
 
-    .card-back {
-      min-height: 2.25in;
+    .business-foot {
+      position: absolute;
+      left: 0.22in;
+      bottom: 0.13in;
+      color: var(--grouped-muted);
+      font-size: 0.083in;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .mission-business-card {
+      padding: 0.18in 0.20in 0.16in 0.24in;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      text-align: center;
+      justify-content: space-between;
     }
 
-    .card-back h3 {
+    .mission-business-card p {
+      margin: 0;
+      color: var(--grouped-ink);
+      font-size: 0.195in;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      font-weight: 900;
+      overflow-wrap: break-word;
+    }
+
+    .mission-business-card span {
+      color: var(--theme-primary);
+      font-size: 0.105in;
+      font-weight: 950;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .mission-business-back {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 0.18in 0.24in;
+    }
+
+    .mission-back-mark {
+      width: 0.36in;
+      height: 0.36in;
+      border-radius: 0.11in;
+      margin: 0 auto 0.12in;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--theme-primary), var(--grouped-bright));
+      font-weight: 950;
+      font-size: 0.18in;
+      letter-spacing: -0.04em;
+    }
+
+    .mission-business-back h3 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: 0.28in;
-      line-height: 0.95;
-      letter-spacing: -0.05em;
+      font-size: 0.26in;
+      line-height: 0.9;
+      letter-spacing: -0.055em;
     }
 
-    .card-back p {
-      margin: 0.12in 0 0;
-      color: #5f5a72;
-      font-size: 0.13in;
-      line-height: 1.35;
+    .mission-business-back p {
+      margin: 0.11in 0 0;
+      color: #514b64;
+      font-size: 0.105in;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
+    .sheet-note {
+      position: absolute;
+      left: 0.60in;
+      right: 0.60in;
+      bottom: 0.20in;
+      color: #777189;
+      font-size: 0.09in;
+      text-align: center;
     }
 
     .cut-note {
@@ -1182,6 +1239,19 @@
 
       .trifold {
         height: 7.8in;
+      }
+
+      .business-card-page .page-inner {
+        padding: 0.42in 0.60in;
+        height: 11in;
+        min-height: 11in;
+      }
+
+      .business-card-grid {
+        grid-template-columns: 3.5in 3.5in;
+        grid-auto-rows: 2in;
+        column-gap: 0.30in;
+        row-gap: 0.10in;
       }
     }
 
@@ -1579,13 +1649,13 @@
 
             <div class="asset-row">
               <div class="asset-icon">QR</div>
-              <div><strong>Guest scan cards</strong><span>Small cards guests can grab.</span></div>
+              <div><strong>Guest scan cards</strong><span>Business-card size, 10 per sheet.</span></div>
               <div class="asset-count">${data.scanCardCount}</div>
             </div>
 
             <div class="asset-row">
               <div class="asset-icon">✦</div>
-              <div><strong>Mission cards</strong><span>Prompts that create better photo coverage.</span></div>
+              <div><strong>Mission cards</strong><span>Business-card size, 10 per sheet.</span></div>
               <div class="asset-count">${data.missionCardCount}</div>
             </div>
           </div>
@@ -1620,7 +1690,7 @@
           <div class="screen-card-top">
             <div>
               <h3>Guest scan cards</h3>
-              <small>Small QR cards for tables, entry points, or the gift area.</small>
+              <small>True business-card sizing for easy cutting.</small>
             </div>
             <span class="tag">${data.scanCardCount}x</span>
           </div>
@@ -1657,7 +1727,7 @@
         <div class="accent-line"></div>
         <p class="page-subtitle">
           This kit is designed for normal home printers. Print the display pieces once.
-          Mission card backs are optional and low-ink.
+          Guest scan cards and mission cards print as business-card-sized cut sheets.
         </p>
 
         <div class="instruction-list">
@@ -1668,7 +1738,7 @@
 
           <div class="instruction-item">
             <div class="instruction-number">2</div>
-            <span><strong>Print mission fronts first.</strong> Mission fronts work by themselves. Cut them out and place them near the QR display.</span>
+            <span><strong>Print mission fronts first.</strong> Mission fronts are business-card size and work by themselves. Cut them out and place them near the QR display.</span>
           </div>
 
           <div class="instruction-item">
@@ -1763,10 +1833,19 @@
       `);
     }
 
+    function businessCardSheet(cards, note = "") {
+      return page(`
+        <div class="business-card-grid">
+          ${cards.join("")}
+        </div>
+        <div class="sheet-note">${note}</div>
+      `, "business-card-page");
+    }
+
     function scanCardsPages(data) {
       const count = data.scanCardCount;
       const pages = [];
-      const perPage = 8;
+      const perPage = 10;
 
       for (let start = 0; start < count; start += perPage) {
         const cards = [];
@@ -1774,26 +1853,24 @@
 
         for (let i = 0; i < pageCount; i++) {
           cards.push(`
-            <div class="scan-card">
+            <div class="business-card scan-business-card">
               <div>
-                <small>Photo Drop</small>
+                <small class="business-label">Grouped Photo Drop</small>
                 <h3>Scan to join.</h3>
                 <p><strong>${data.groupName}</strong><br>Code: ${data.joinCode}</p>
               </div>
-              <div class="mini-qr">
-                <img alt="Grouped join QR code" src="${qrURL(data.joinURL, 180)}" />
+              <div class="business-qr">
+                <img alt="Grouped join QR code" src="${qrURL(data.joinURL, 220)}" />
               </div>
+              <div class="business-foot">Private photo group</div>
             </div>
           `);
         }
 
-        pages.push(page(`
-          <span class="mini-label">Guest Scan Cards</span>
-          <h2 class="page-title" style="font-size: 0.6in;">Guest scan cards</h2>
-          <p class="page-subtitle">Cut these out and place them near the centerpiece or give them to guests.</p>
-          <div class="cards-grid">${cards.join("")}</div>
-          <div class="cut-note">Cut along the card edges.</div>
-        `));
+        pages.push(businessCardSheet(
+          cards,
+          "Guest scan cards · 3.5in × 2in · cut along card edges"
+        ));
       }
 
       return pages.join("");
@@ -1803,25 +1880,24 @@
       const count = data.missionCardCount;
       const selected = missionBank.slice(0, count);
       const pages = [];
-      const perPage = 6;
+      const perPage = 10;
 
       for (let start = 0; start < selected.length; start += perPage) {
         const missions = selected.slice(start, start + perPage);
         const cards = missions.map((mission) => `
-          <div class="mission-card">
-            <small>Grad Mission</small>
-            <p>${mission}</p>
-            <span>Drop it in Grouped.</span>
+          <div class="business-card mission-business-card">
+            <div>
+              <small class="business-label">Photo Mission</small>
+              <p>${mission}</p>
+            </div>
+            <span>Drop it in Grouped</span>
           </div>
         `);
 
-        pages.push(page(`
-          <span class="mini-label">Mission Card Fronts</span>
-          <h2 class="page-title" style="font-size: 0.52in;">Mission fronts</h2>
-          <p class="page-subtitle">Print these first. These also work as single-sided cards.</p>
-          <div class="cards-grid">${cards.join("")}</div>
-          <div class="cut-note">Mission fronts · print first · cut after optional backs are printed.</div>
-        `));
+        pages.push(businessCardSheet(
+          cards,
+          "Mission card fronts · 3.5in × 2in · print first"
+        ));
       }
 
       return pages.join("");
@@ -1834,7 +1910,7 @@
 
       const count = data.missionCardCount;
       const pages = [];
-      const perPage = 6;
+      const perPage = 10;
 
       for (let start = 0; start < count; start += perPage) {
         const pageCount = Math.min(perPage, count - start);
@@ -1842,21 +1918,20 @@
 
         for (let i = 0; i < pageCount; i++) {
           cards.push(`
-            <div class="card-back">
-              <small>Grouped</small>
-              <h3>Every angle.<br>One story.</h3>
-              <p>${data.groupName}<br>${data.joinCode}</p>
+            <div class="business-card mission-business-back">
+              <div>
+                <div class="mission-back-mark">G</div>
+                <h3>Every angle.<br>One story.</h3>
+                <p>${data.groupName}<br>Code: ${data.joinCode}</p>
+              </div>
             </div>
           `);
         }
 
-        pages.push(page(`
-          <span class="mini-label">Optional Mission Card Backs</span>
-          <h2 class="page-title" style="font-size: 0.48in;">Mission backs</h2>
-          <p class="page-subtitle">Optional. Refeed the matching mission-front page and print this on the back. Test one page first.</p>
-          <div class="cards-grid">${cards.join("")}</div>
-          <div class="cut-note">Optional backs · low ink · refeed matching front page.</div>
-        `));
+        pages.push(businessCardSheet(
+          cards,
+          "Optional mission card backs · low ink · refeed matching front page"
+        ));
       }
 
       return pages.join("");
