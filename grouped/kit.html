@@ -11,21 +11,23 @@
     :root {
       --grouped-deep: #24115f;
       --grouped-mid: #6f4df6;
+      --grouped-bright: #7b5cff;
       --grouped-soft: #eee9ff;
+      --grouped-soft-2: #f7f4ff;
       --grouped-ink: #171421;
       --grouped-muted: #655f78;
       --grouped-white: #ffffff;
 
       --theme-primary: #24115f;
-      --theme-accent: #d9c36a;
+      --theme-accent: #6f4df6;
 
-      --page-bg: #f5f2ff;
-      --card-border: rgba(36, 17, 95, 0.14);
-      --shadow: 0 24px 70px rgba(22, 10, 70, 0.18);
+      --shadow-soft: 0 22px 70px rgba(22, 10, 70, 0.20);
+      --shadow-card: 0 18px 44px rgba(36, 17, 95, 0.14);
 
-      --radius-xl: 30px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
     }
 
     * {
@@ -44,8 +46,9 @@
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
       color: var(--grouped-ink);
       background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.52), transparent 28%),
-        linear-gradient(160deg, #24115f 0%, #6f4df6 46%, #eee9ff 100%);
+        radial-gradient(circle at top left, rgba(255,255,255,0.40), transparent 30%),
+        radial-gradient(circle at 88% 8%, rgba(255,255,255,0.22), transparent 24%),
+        linear-gradient(155deg, #24115f 0%, #5130d8 42%, #eee9ff 100%);
       min-height: 100vh;
     }
 
@@ -60,88 +63,88 @@
       font: inherit;
     }
 
+    button {
+      cursor: pointer;
+    }
+
     .site {
       width: min(1180px, calc(100% - 32px));
-      max-width: 100%;
       margin: 0 auto;
-      padding: 28px 0 60px;
+      padding: 28px 0 64px;
     }
 
     .topbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 16px;
-      margin-bottom: 28px;
       color: white;
-      min-width: 0;
+      margin-bottom: 30px;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 12px;
-      font-weight: 850;
-      letter-spacing: -0.03em;
       font-size: 1.2rem;
-      min-width: 0;
+      font-weight: 900;
+      letter-spacing: -0.035em;
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
-      min-width: 42px;
-      border-radius: 13px;
-      background: linear-gradient(145deg, #ffffff, #dcd2ff);
-      color: var(--grouped-deep);
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      border-radius: 14px;
       display: grid;
       place-items: center;
+      color: var(--grouped-deep);
+      background: linear-gradient(145deg, #ffffff, #ded5ff);
+      box-shadow: 0 12px 34px rgba(0,0,0,0.20);
       font-weight: 950;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
     }
 
     .back-link {
-      border: 1px solid rgba(255,255,255,0.26);
-      background: rgba(255,255,255,0.12);
       color: white;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(16px);
       border-radius: 999px;
       padding: 10px 14px;
-      font-weight: 800;
+      font-weight: 850;
       white-space: nowrap;
     }
 
     .hero {
       color: white;
       margin-bottom: 26px;
-      min-width: 0;
     }
 
     .eyebrow {
       display: inline-flex;
-      padding: 8px 12px;
+      align-items: center;
       border-radius: 999px;
-      background: rgba(255,255,255,0.13);
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.14);
       border: 1px solid rgba(255,255,255,0.24);
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.085em;
+      text-transform: uppercase;
       margin-bottom: 14px;
-      max-width: 100%;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.7rem, 6vw, 5.4rem);
+      max-width: 920px;
+      font-size: clamp(2.65rem, 6vw, 5.55rem);
       line-height: 0.9;
-      letter-spacing: -0.075em;
-      max-width: 900px;
-      overflow-wrap: break-word;
+      letter-spacing: -0.078em;
     }
 
     .hero p {
       margin: 18px 0 0;
-      max-width: 720px;
+      max-width: 760px;
       color: rgba(255,255,255,0.86);
       line-height: 1.55;
       font-size: 1.08rem;
@@ -149,41 +152,39 @@
 
     .builder-layout {
       display: grid;
-      grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
+      grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
       gap: 22px;
       align-items: start;
-      min-width: 0;
-    }
-
-    .builder-layout > section {
-      min-width: 0;
     }
 
     .panel {
       background: rgba(255,255,255,0.94);
-      border: 1px solid rgba(255,255,255,0.48);
+      border: 1px solid rgba(255,255,255,0.52);
       border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-soft);
       overflow: hidden;
       min-width: 0;
     }
 
     .panel-header {
-      background: linear-gradient(135deg, #22105e, #7b5cff);
-      color: white;
       padding: 22px;
+      color: white;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.20), transparent 38%),
+        linear-gradient(135deg, var(--grouped-deep), var(--grouped-bright));
     }
 
     .panel-header h2 {
       margin: 0;
-      font-size: 1.8rem;
-      letter-spacing: -0.045em;
+      font-size: 1.82rem;
+      line-height: 1;
+      letter-spacing: -0.05em;
     }
 
     .panel-header p {
-      margin: 8px 0 0;
-      color: rgba(255,255,255,0.76);
-      line-height: 1.45;
+      margin: 9px 0 0;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.42;
     }
 
     .form {
@@ -198,37 +199,43 @@
     }
 
     .group-title {
-      font-size: 0.8rem;
-      font-weight: 950;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       color: var(--grouped-deep);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
     }
 
     label {
       display: grid;
       gap: 6px;
       color: var(--grouped-muted);
-      font-weight: 750;
+      font-weight: 800;
       font-size: 0.92rem;
     }
 
     input,
     select {
       width: 100%;
-      min-height: 44px;
-      border-radius: 14px;
+      min-width: 0;
+      min-height: 45px;
       border: 1px solid rgba(36,17,95,0.15);
-      padding: 10px 12px;
+      border-radius: 15px;
       background: white;
       color: var(--grouped-ink);
+      padding: 10px 12px;
       outline: none;
-      min-width: 0;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: rgba(111,77,246,0.55);
+      box-shadow: 0 0 0 4px rgba(111,77,246,0.12);
     }
 
     input[type="color"] {
-      padding: 4px;
       height: 48px;
+      padding: 4px;
     }
 
     .two-col {
@@ -244,14 +251,14 @@
 
     .quantity-row {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 96px;
+      grid-template-columns: minmax(0, 1fr) 90px;
       gap: 10px;
       align-items: center;
     }
 
     .quantity-row span {
       color: var(--grouped-muted);
-      font-weight: 800;
+      font-weight: 850;
       font-size: 0.92rem;
       overflow-wrap: break-word;
     }
@@ -264,17 +271,16 @@
 
     .btn {
       border: 0;
-      min-height: 50px;
+      min-height: 52px;
       border-radius: 999px;
       padding: 0 16px;
       font-weight: 950;
-      cursor: pointer;
     }
 
     .btn-primary {
-      background: var(--grouped-deep);
+      background: linear-gradient(135deg, var(--grouped-deep), var(--grouped-bright));
       color: white;
-      box-shadow: 0 14px 32px rgba(36,17,95,0.24);
+      box-shadow: 0 15px 34px rgba(36,17,95,0.25);
     }
 
     .btn-secondary {
@@ -294,44 +300,352 @@
       overflow-wrap: anywhere;
     }
 
-    .preview-panel {
-      padding: 18px;
-      overflow-x: auto;
-      overflow-y: visible;
-    }
-
-    .preview-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 14px;
-      color: white;
+    .preview-shell {
+      display: grid;
+      gap: 16px;
       min-width: 0;
     }
 
-    .preview-toolbar strong {
-      font-size: 1.1rem;
+    .preview-hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: clamp(22px, 4vw, 34px);
+      box-shadow: var(--shadow-soft);
+      background:
+        radial-gradient(circle at 86% 10%, rgba(255,255,255,0.24), transparent 30%),
+        linear-gradient(135deg, rgba(36,17,95,0.98), rgba(111,77,246,0.95));
+    }
+
+    .preview-hero::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -120px;
+      bottom: -140px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.10);
+    }
+
+    .preview-hero-kicker {
+      position: relative;
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+    }
+
+    .preview-hero h2 {
+      position: relative;
+      margin: 18px 0 0;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+      max-width: 660px;
+    }
+
+    .preview-hero p {
+      position: relative;
+      margin: 14px 0 0;
+      color: rgba(255,255,255,0.80);
+      max-width: 620px;
+      line-height: 1.5;
+    }
+
+    .kit-stats {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .stat-pill {
+      border-radius: 999px;
+      padding: 10px 13px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.22);
+      font-weight: 900;
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.90);
+    }
+
+    .screen-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .screen-card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(255,255,255,0.56);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 16px;
+      min-width: 0;
+    }
+
+    .screen-card-wide {
+      grid-column: 1 / -1;
+    }
+
+    .screen-card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .screen-card h3 {
+      margin: 0;
+      color: var(--grouped-deep);
+      font-size: 1.05rem;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .screen-card small {
+      color: var(--grouped-muted);
+      font-weight: 850;
+      line-height: 1.3;
+    }
+
+    .tag {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: var(--grouped-soft);
+      color: var(--grouped-deep);
+      font-size: 0.76rem;
+      font-weight: 950;
+    }
+
+    .mini-trifold {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      min-height: 168px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(36,17,95,0.12);
+    }
+
+    .mini-tri-panel {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      min-width: 0;
+    }
+
+    .mini-tri-panel.side {
+      color: white;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.22), transparent 38%),
+        linear-gradient(150deg, var(--theme-primary), var(--grouped-bright));
+    }
+
+    .mini-tri-panel.center {
+      background: white;
+    }
+
+    .mini-kicker {
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 950;
+      opacity: 0.78;
+      margin-bottom: 8px;
+    }
+
+    .mini-title {
+      font-size: clamp(1rem, 2vw, 1.45rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-weight: 950;
+      overflow-wrap: break-word;
+    }
+
+    .qr-preview {
+      width: 74px;
+      height: 74px;
+      margin: 8px auto;
+      border-radius: 12px;
+      padding: 5px;
+      border: 1px solid rgba(36,17,95,0.14);
+      background: white;
+    }
+
+    .qr-preview img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .mini-meta {
+      font-size: 0.66rem;
+      line-height: 1.25;
+      color: var(--grouped-muted);
+      overflow-wrap: anywhere;
+      font-weight: 800;
+    }
+
+    .preview-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .asset-row {
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid rgba(36,17,95,0.09);
+    }
+
+    .asset-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--theme-primary), var(--grouped-bright));
+      font-weight: 950;
+    }
+
+    .asset-row strong {
+      display: block;
+      color: var(--grouped-deep);
       letter-spacing: -0.02em;
     }
 
-    .print-btn {
-      background: white;
+    .asset-row span {
+      display: block;
+      color: var(--grouped-muted);
+      font-size: 0.88rem;
+      line-height: 1.25;
+      margin-top: 2px;
+    }
+
+    .asset-count {
       color: var(--grouped-deep);
-      border: 0;
-      border-radius: 999px;
-      padding: 12px 16px;
       font-weight: 950;
-      cursor: pointer;
       white-space: nowrap;
     }
 
-    .pages {
+    .mission-stack {
+      position: relative;
+      min-height: 188px;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at top left, rgba(111,77,246,0.16), transparent 34%),
+        #ffffff;
+      border: 1px solid rgba(36,17,95,0.10);
+      overflow: hidden;
+      padding: 18px;
+    }
+
+    .mission-mini-card {
+      position: absolute;
+      width: min(250px, calc(100% - 36px));
+      min-height: 112px;
+      border-radius: 18px;
+      background: white;
+      border: 1.5px solid rgba(36,17,95,0.16);
+      box-shadow: 0 14px 28px rgba(36,17,95,0.12);
+      padding: 15px;
+    }
+
+    .mission-mini-card:nth-child(1) {
+      transform: rotate(-4deg);
+      left: 22px;
+      top: 38px;
+    }
+
+    .mission-mini-card:nth-child(2) {
+      transform: rotate(3deg);
+      left: 46px;
+      top: 24px;
+    }
+
+    .mission-mini-card:nth-child(3) {
+      transform: rotate(-1deg);
+      left: 70px;
+      top: 52px;
+    }
+
+    .mission-mini-card small {
+      color: var(--theme-primary);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 950;
+    }
+
+    .mission-mini-card p {
+      margin: 8px 0 0;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: var(--grouped-ink);
+    }
+
+    .scan-preview-grid {
       display: grid;
-      gap: 18px;
-      justify-items: center;
-      max-width: none;
-      overflow: visible;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .scan-preview-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 58px;
+      gap: 10px;
+      align-items: center;
+      min-height: 88px;
+      padding: 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(36,17,95,0.12);
+      background: white;
+    }
+
+    .scan-preview-card strong {
+      color: var(--grouped-deep);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .scan-preview-card span {
+      display: block;
+      margin-top: 4px;
+      color: var(--grouped-muted);
+      font-size: 0.76rem;
+      overflow-wrap: anywhere;
+    }
+
+    .scan-preview-card img {
+      width: 58px;
+      height: 58px;
+      border-radius: 8px;
+      border: 1px solid rgba(36,17,95,0.12);
+      padding: 3px;
+      background: white;
+    }
+
+    .print-pages {
+      display: none;
     }
 
     .print-page {
@@ -339,8 +653,6 @@
       min-height: 11in;
       background: white;
       color: var(--grouped-ink);
-      margin: 0 auto;
-      box-shadow: 0 14px 44px rgba(0,0,0,0.22);
       position: relative;
       overflow: hidden;
       page-break-after: always;
@@ -354,7 +666,7 @@
 
     .page-title {
       margin: 0;
-      font-size: 0.98in;
+      font-size: 0.92in;
       line-height: 0.9;
       letter-spacing: -0.07em;
       color: var(--theme-primary);
@@ -473,7 +785,6 @@
       justify-content: center;
       text-align: center;
       position: relative;
-      min-width: 0;
     }
 
     .tri-left,
@@ -485,7 +796,7 @@
     }
 
     .tri-center {
-      background: #ffffff;
+      background: white;
       color: var(--grouped-ink);
     }
 
@@ -570,7 +881,7 @@
       text-align: center;
       background:
         radial-gradient(circle at top left, rgba(111,77,246,0.14), transparent 32%),
-        #ffffff;
+        white;
     }
 
     .flat-sign h2 {
@@ -740,17 +1051,13 @@
       color: var(--theme-primary);
     }
 
-    .hidden-print-piece {
-      display: none;
-    }
-
     @media (max-width: 980px) {
       .builder-layout {
         grid-template-columns: 1fr;
       }
 
-      .preview-panel {
-        overflow-x: auto;
+      .screen-preview-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -782,17 +1089,29 @@
         grid-template-columns: 1fr 82px;
       }
 
-      .preview-panel {
-        padding: 10px;
+      .mini-trifold {
+        min-height: 145px;
       }
 
-      .preview-toolbar {
-        flex-direction: column;
-        align-items: stretch;
+      .mini-tri-panel {
+        padding: 10px 7px;
       }
 
-      .print-btn {
-        width: 100%;
+      .qr-preview {
+        width: 58px;
+        height: 58px;
+      }
+
+      .scan-preview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .asset-row {
+        grid-template-columns: 42px minmax(0, 1fr);
+      }
+
+      .asset-count {
+        grid-column: 2;
       }
     }
 
@@ -813,42 +1132,24 @@
         background: white !important;
       }
 
-      .site,
-      .preview-panel {
+      .topbar,
+      .hero,
+      .builder-layout,
+      .screen-preview-grid,
+      .preview-shell,
+      .panel {
+        display: none !important;
+      }
+
+      .site {
         width: 100%;
         max-width: none;
         padding: 0;
         margin: 0;
       }
 
-      .topbar,
-      .hero,
-      .builder-layout > aside.panel,
-      .preview-toolbar {
-        display: none !important;
-      }
-
-      .builder-layout {
-        display: block;
-      }
-
-      .builder-layout > section {
-        display: block;
-      }
-
-      .preview-panel.panel {
+      .print-pages {
         display: block !important;
-        background: white !important;
-        border: 0 !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        border-radius: 0 !important;
-        overflow: visible !important;
-      }
-
-      .pages {
-        display: block;
-        overflow: visible;
       }
 
       .print-page {
@@ -882,10 +1183,6 @@
       .trifold {
         height: 7.8in;
       }
-
-      .hidden-print-piece {
-        display: block;
-      }
     }
 
     @page landscapePage {
@@ -910,8 +1207,8 @@
       <div class="eyebrow">Graduation Host Kit Builder</div>
       <h1>Build a printable photo kit for your grad party.</h1>
       <p>
-        Enter your Grouped group name and join code. This builder creates QR-based
-        printable pieces for guests to join the private photo group.
+        Create polished Grouped print pieces for a private graduation photo drop.
+        The web preview stays clean. The print output stays true-to-size.
       </p>
     </section>
 
@@ -919,7 +1216,7 @@
       <aside class="panel">
         <div class="panel-header">
           <h2>Kit details</h2>
-          <p>Start with the group you already created in the Grouped app.</p>
+          <p>Start with the group already created in the Grouped app.</p>
         </div>
 
         <form class="form" id="kitForm">
@@ -960,8 +1257,8 @@
             <label>
               Style
               <select id="themeStyle">
-                <option value="classic">Grouped Classic</option>
-                <option value="school" selected>School Colors</option>
+                <option value="classic" selected>Grouped Classic</option>
+                <option value="school">School Colors</option>
                 <option value="bw">Black & White</option>
               </select>
             </label>
@@ -974,7 +1271,7 @@
 
               <label>
                 Accent
-                <input id="accentColor" type="color" value="#d9c36a" />
+                <input id="accentColor" type="color" value="#6f4df6" />
               </label>
             </div>
           </div>
@@ -1043,17 +1340,22 @@
         </form>
       </aside>
 
-      <section>
-        <div class="preview-toolbar">
-          <strong>Printable preview</strong>
-          <button class="print-btn" type="button" id="printButtonTop">Print / Save PDF</button>
+      <section class="preview-shell">
+        <div class="preview-hero">
+          <div class="preview-hero-kicker">Your Grouped Host Kit</div>
+          <h2 id="screenHeroTitle">Ava’s Grad Photo Drop</h2>
+          <p>
+            A premium printable kit for getting every guest into the same private Grouped photo space.
+          </p>
+
+          <div class="kit-stats" id="kitStats"></div>
         </div>
 
-        <div class="preview-panel panel">
-          <div class="pages" id="printPages"></div>
-        </div>
+        <div class="screen-preview-grid" id="screenPreview"></div>
       </section>
     </section>
+
+    <section class="print-pages" id="printPages"></section>
   </main>
 
   <script>
@@ -1191,6 +1493,157 @@
       inputs.missionCardCount.value = missions;
 
       renderKit();
+    }
+
+    function collectData() {
+      const groupName = safeText(inputs.groupName.value, "Ava’s Grad Party");
+      const joinCode = safeText(inputs.joinCode.value, "AVA2026");
+      const graduateName = safeText(inputs.graduateName.value, "Ava");
+
+      return {
+        groupName,
+        joinCode,
+        graduateName,
+        joinURL: buildJoinURL(groupName, joinCode),
+        triFoldCount: numberValue(inputs.triFoldCount, 2),
+        biFoldCount: numberValue(inputs.biFoldCount, 0),
+        wallSignCount: numberValue(inputs.wallSignCount, 1),
+        scanCardCount: numberValue(inputs.scanCardCount, 30),
+        missionCardCount: numberValue(inputs.missionCardCount, 24),
+        printMode: inputs.printMode.value
+      };
+    }
+
+    function renderScreenPreview(data) {
+      $("screenHeroTitle").textContent = `${data.graduateName}’s Grad Photo Drop`;
+
+      $("kitStats").innerHTML = `
+        <span class="stat-pill">${data.triFoldCount} tri-fold</span>
+        <span class="stat-pill">${data.wallSignCount} wall sign</span>
+        <span class="stat-pill">${data.scanCardCount} scan cards</span>
+        <span class="stat-pill">${data.missionCardCount} missions</span>
+      `;
+
+      $("screenPreview").innerHTML = `
+        <article class="screen-card screen-card-wide">
+          <div class="screen-card-top">
+            <div>
+              <h3>Tri-fold centerpiece</h3>
+              <small>Premium table display. Prints landscape.</small>
+            </div>
+            <span class="tag">${data.triFoldCount}x</span>
+          </div>
+
+          <div class="mini-trifold">
+            <div class="mini-tri-panel side">
+              <div class="mini-kicker">${data.graduateName}'s Grad Photo Drop</div>
+              <div class="mini-title">Every angle.<br>One story.</div>
+            </div>
+
+            <div class="mini-tri-panel center">
+              <div class="mini-kicker" style="color: var(--theme-primary); opacity: 1;">Scan to join</div>
+              <div class="qr-preview">
+                <img alt="Grouped join QR code" src="${qrURL(data.joinURL, 180)}" />
+              </div>
+              <div class="mini-meta">${data.groupName}<br>${data.joinCode}</div>
+            </div>
+
+            <div class="mini-tri-panel side">
+              <div class="mini-kicker">Help complete the story</div>
+              <div class="mini-title">The moments<br>matter.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="screen-card">
+          <div class="screen-card-top">
+            <div>
+              <h3>Printable pieces</h3>
+              <small>Generated from your guest count.</small>
+            </div>
+            <span class="tag">Kit</span>
+          </div>
+
+          <div class="preview-list">
+            <div class="asset-row">
+              <div class="asset-icon">1</div>
+              <div><strong>Instruction page</strong><span>Simple print and setup guide.</span></div>
+              <div class="asset-count">1</div>
+            </div>
+
+            <div class="asset-row">
+              <div class="asset-icon">3</div>
+              <div><strong>Tri-fold centerpiece</strong><span>Table display with QR panel.</span></div>
+              <div class="asset-count">${data.triFoldCount}</div>
+            </div>
+
+            <div class="asset-row">
+              <div class="asset-icon">QR</div>
+              <div><strong>Guest scan cards</strong><span>Small cards guests can grab.</span></div>
+              <div class="asset-count">${data.scanCardCount}</div>
+            </div>
+
+            <div class="asset-row">
+              <div class="asset-icon">✦</div>
+              <div><strong>Mission cards</strong><span>Prompts that create better photo coverage.</span></div>
+              <div class="asset-count">${data.missionCardCount}</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="screen-card">
+          <div class="screen-card-top">
+            <div>
+              <h3>Mission cards</h3>
+              <small>${data.printMode === "premium" ? "Premium low-ink backs enabled." : "Fronts only."}</small>
+            </div>
+            <span class="tag">${data.missionCardCount}</span>
+          </div>
+
+          <div class="mission-stack">
+            <div class="mission-mini-card">
+              <small>Grad Mission</small>
+              <p>Capture a photo the host may miss.</p>
+            </div>
+            <div class="mission-mini-card">
+              <small>Grad Mission</small>
+              <p>Take a photo with the graduate.</p>
+            </div>
+            <div class="mission-mini-card">
+              <small>Grouped</small>
+              <p>Every angle. One story.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="screen-card screen-card-wide">
+          <div class="screen-card-top">
+            <div>
+              <h3>Guest scan cards</h3>
+              <small>Small QR cards for tables, entry points, or the gift area.</small>
+            </div>
+            <span class="tag">${data.scanCardCount}x</span>
+          </div>
+
+          <div class="scan-preview-grid">
+            <div class="scan-preview-card">
+              <div>
+                <strong>Scan to join.</strong>
+                <span>${data.groupName}<br>${data.joinCode}</span>
+              </div>
+              <img alt="Grouped join QR code" src="${qrURL(data.joinURL, 140)}" />
+            </div>
+
+            <div class="scan-preview-card">
+              <div>
+                <strong>Drop your photos.</strong>
+                <span>Private Grouped photo space.</span>
+              </div>
+              <img alt="Grouped join QR code" src="${qrURL(data.joinURL, 140)}" />
+            </div>
+          </div>
+        </article>
+      `;
     }
 
     function page(content, extraClass = "") {
@@ -1427,29 +1880,7 @@
       `);
     }
 
-    function collectData() {
-      const groupName = safeText(inputs.groupName.value, "Ava’s Grad Party");
-      const joinCode = safeText(inputs.joinCode.value, "AVA2026");
-      const graduateName = safeText(inputs.graduateName.value, "Ava");
-
-      return {
-        groupName,
-        joinCode,
-        graduateName,
-        joinURL: buildJoinURL(groupName, joinCode),
-        triFoldCount: numberValue(inputs.triFoldCount, 2),
-        biFoldCount: numberValue(inputs.biFoldCount, 0),
-        wallSignCount: numberValue(inputs.wallSignCount, 1),
-        scanCardCount: numberValue(inputs.scanCardCount, 30),
-        missionCardCount: numberValue(inputs.missionCardCount, 24),
-        printMode: inputs.printMode.value
-      };
-    }
-
-    function renderKit() {
-      applyTheme();
-
-      const data = collectData();
+    function renderPrintPages(data) {
       const pages = [];
 
       pages.push(instructionPage(data));
@@ -1474,10 +1905,16 @@
       $("printPages").innerHTML = pages.join("");
     }
 
+    function renderKit() {
+      applyTheme();
+      const data = collectData();
+      renderScreenPreview(data);
+      renderPrintPages(data);
+    }
+
     $("recommendButton").addEventListener("click", useRecommendation);
     $("generateButton").addEventListener("click", renderKit);
     $("printButton").addEventListener("click", () => window.print());
-    $("printButtonTop").addEventListener("click", () => window.print());
 
     Object.values(inputs).forEach((input) => {
       input.addEventListener("change", renderKit);
