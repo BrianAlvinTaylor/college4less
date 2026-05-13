@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Grouped Graduation Host Kit Builder</title>
+  <meta name="description" content="Build a printable graduation host kit for a private Grouped photo drop." />
+
+  <style>
+    :root {
+      --grouped-deep: #24115f;
+      --grouped-mid: #6f4df6;
+      --grouped-soft: #eee9ff;
+      --grouped-ink: #171421;
+      --grouped-muted: #655f78;
+      --grouped-white: #ffffff;
+
+      --theme-primary: #24115f;
+      --theme-accent: #d9c36a;
+
+      --page-bg: #f5f2ff;
+      --card-border: rgba(36, 17, 95, 0.14);
+      --shadow: 0 24px 70px rgba(22, 10, 70, 0.18);
+
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      color: var(--grouped-ink);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.52), transparent 28%),
+        linear-gradient(160deg, #24115f 0%, #6f4df6 46%, #eee9ff 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .site {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 60px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      color: white;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      font-size: 1.2rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: linear-gradient(145deg, #ffffff, #dcd2ff);
+      color: var(--grouped-deep);
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .back-link {
+      border: 1px solid rgba(255,255,255,0.26);
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 800;
+    }
+
+    .hero {
+      color: white;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.24);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.7rem, 6vw, 5.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.075em;
+      max-width: 900px;
+    }
+
+    .hero p {
+      margin: 18px 0 0;
+      max-width: 720px;
+      color: rgba(255,255,255,0.86);
+      line-height: 1.55;
+      font-size: 1.08rem;
+    }
+
+    .builder-layout {
+      display: grid;
+      grid-template-columns: 430px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(255,255,255,0.48);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-header {
+      background: linear-gradient(135deg, #22105e, #7b5cff);
+      color: white;
+      padding: 22px;
+    }
+
+    .panel-header h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: -0.045em;
+    }
+
+    .panel-header p {
+      margin: 8px 0 0;
+      color: rgba(255,255,255,0.76);
+      line-height: 1.45;
+    }
+
+    .form {
+      padding: 20px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .group {
+      display: grid;
+      gap: 10px;
+    }
+
+    .group-title {
+      font-size: 0.8rem;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grouped-deep);
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--grouped-muted);
+      font-weight: 750;
+      font-size: 0.92rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(36,17,95,0.15);
+      padding: 10px 12px;
+      background: white;
+      color: var(--grouped-ink);
+      outline: none;
+    }
+
+    input[type="color"] {
+      padding: 4px;
+      height: 48px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .quantity-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quantity-row {
+      display: grid;
+      grid-template-columns: 1fr 96px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .quantity-row span {
+      color: var(--grouped-muted);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btn {
+      border: 0;
+      min-height: 50px;
+      border-radius: 999px;
+      padding: 0 16px;
+      font-weight: 950;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--grouped-deep);
+      color: white;
+      box-shadow: 0 14px 32px rgba(36,17,95,0.24);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--grouped-deep);
+      border: 1px solid rgba(36,17,95,0.16);
+    }
+
+    .note {
+      background: var(--grouped-soft);
+      color: var(--grouped-muted);
+      border: 1px solid rgba(36,17,95,0.08);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      line-height: 1.45;
+      font-size: 0.92rem;
+    }
+
+    .preview-panel {
+      padding: 18px;
+    }
+
+    .preview-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+      color: white;
+    }
+
+    .preview-toolbar strong {
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .print-btn {
+      background: white;
+      color: var(--grouped-deep);
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight: 950;
+      cursor: pointer;
+    }
+
+    .pages {
+      display: grid;
+      gap: 18px;
+    }
+
+    .print-page {
+      width: 8.5in;
+      min-height: 11in;
+      background: white;
+      color: var(--grouped-ink);
+      margin: 0 auto;
+      box-shadow: 0 14px 44px rgba(0,0,0,0.22);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .page-inner {
+      padding: 0.42in;
+      min-height: 11in;
+      position: relative;
+    }
+
+    .page-title {
+      margin: 0;
+      font-size: 0.98in;
+      line-height: 0.9;
+      letter-spacing: -0.07em;
+      color: var(--theme-primary);
+    }
+
+    .page-subtitle {
+      margin: 0.18in 0 0;
+      color: #5f5a72;
+      line-height: 1.45;
+      font-size: 0.18in;
+      max-width: 6.8in;
+    }
+
+    .mini-label {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.08in 0.14in;
+      background: var(--theme-primary);
+      color: white;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.11in;
+      margin-bottom: 0.22in;
+    }
+
+    .accent-line {
+      height: 0.08in;
+      background: var(--theme-accent);
+      border-radius: 999px;
+      width: 2.2in;
+      margin: 0.24in 0;
+    }
+
+    .instruction-list {
+      display: grid;
+      gap: 0.16in;
+      margin-top: 0.3in;
+    }
+
+    .instruction-item {
+      display: grid;
+      grid-template-columns: 0.4in 1fr;
+      gap: 0.16in;
+      align-items: start;
+      border: 1px solid rgba(36,17,95,0.11);
+      border-radius: 0.18in;
+      padding: 0.16in;
+    }
+
+    .instruction-number {
+      width: 0.34in;
+      height: 0.34in;
+      border-radius: 50%;
+      background: var(--theme-primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+    }
+
+    .instruction-item strong {
+      display: block;
+      color: var(--theme-primary);
+      margin-bottom: 0.04in;
+    }
+
+    .instruction-item span {
+      color: #5f5a72;
+      line-height: 1.35;
+      font-size: 0.15in;
+    }
+
+    .trifold-page {
+      width: 11in;
+      min-height: 8.5in;
+    }
+
+    .trifold-page .page-inner {
+      padding: 0.35in;
+      min-height: 8.5in;
+    }
+
+    .trifold {
+      height: 7.8in;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border: 2px solid rgba(36,17,95,0.16);
+      border-radius: 0.22in;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .fold-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      border-left: 1px dashed rgba(0,0,0,0.25);
+      z-index: 4;
+    }
+
+    .fold-one {
+      left: 33.333%;
+    }
+
+    .fold-two {
+      left: 66.666%;
+    }
+
+    .tri-panel {
+      padding: 0.32in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .tri-left,
+    .tri-right {
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.28), transparent 35%),
+        linear-gradient(155deg, var(--theme-primary), var(--grouped-mid));
+      color: white;
+    }
+
+    .tri-center {
+      background: #ffffff;
+      color: var(--grouped-ink);
+    }
+
+    .tri-kicker {
+      font-size: 0.15in;
+      font-weight: 950;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.82;
+      margin-bottom: 0.18in;
+    }
+
+    .tri-big {
+      font-size: 0.52in;
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+      font-weight: 950;
+      margin: 0;
+    }
+
+    .tri-copy {
+      margin: 0.2in auto 0;
+      max-width: 2.3in;
+      line-height: 1.35;
+      font-size: 0.16in;
+      opacity: 0.86;
+    }
+
+    .qr-box {
+      width: 2.15in;
+      height: 2.15in;
+      margin: 0.2in auto;
+      background: white;
+      border: 2px solid rgba(36,17,95,0.18);
+      border-radius: 0.16in;
+      padding: 0.12in;
+      display: grid;
+      place-items: center;
+    }
+
+    .qr-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .join-meta {
+      display: grid;
+      gap: 0.08in;
+      margin-top: 0.1in;
+      font-size: 0.15in;
+      color: #4d4860;
+    }
+
+    .join-meta strong {
+      color: var(--theme-primary);
+    }
+
+    .grouped-footer {
+      position: absolute;
+      left: 0.35in;
+      right: 0.35in;
+      bottom: 0.25in;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(255,255,255,0.72);
+      font-weight: 850;
+      font-size: 0.12in;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .flat-sign {
+      min-height: 9.9in;
+      border: 2px solid rgba(36,17,95,0.14);
+      border-radius: 0.28in;
+      padding: 0.42in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at top left, rgba(111,77,246,0.14), transparent 32%),
+        #ffffff;
+    }
+
+    .flat-sign h2 {
+      margin: 0;
+      color: var(--theme-primary);
+      font-size: 0.78in;
+      line-height: 0.9;
+      letter-spacing: -0.075em;
+    }
+
+    .flat-sign p {
+      color: #5f5a72;
+      font-size: 0.2in;
+      line-height: 1.4;
+      max-width: 6in;
+      margin: 0.22in auto 0;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.14in;
+      margin-top: 0.25in;
+    }
+
+    .mission-card,
+    .scan-card,
+    .card-back {
+      border: 1.5px solid rgba(36,17,95,0.18);
+      border-radius: 0.18in;
+      min-height: 1.58in;
+      padding: 0.16in;
+      position: relative;
+      overflow: hidden;
+      background: white;
+      break-inside: avoid;
+    }
+
+    .mission-card {
+      min-height: 2.25in;
+    }
+
+    .mission-card:before,
+    .scan-card:before,
+    .card-back:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0.08in;
+      background: var(--theme-accent);
+    }
+
+    .mission-card small,
+    .scan-card small,
+    .card-back small {
+      display: block;
+      color: var(--theme-primary);
+      font-weight: 950;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      font-size: 0.095in;
+      margin-bottom: 0.12in;
+    }
+
+    .mission-card p {
+      font-size: 0.21in;
+      line-height: 1.13;
+      letter-spacing: -0.025em;
+      color: var(--grouped-ink);
+      font-weight: 850;
+      margin: 0;
+    }
+
+    .mission-card span {
+      display: block;
+      color: var(--theme-primary);
+      font-weight: 950;
+      margin-top: 0.14in;
+      font-size: 0.13in;
+    }
+
+    .scan-card {
+      min-height: 1.7in;
+      display: grid;
+      grid-template-columns: 1fr 0.95in;
+      gap: 0.1in;
+      align-items: center;
+    }
+
+    .scan-card h3 {
+      margin: 0;
+      color: var(--theme-primary);
+      font-size: 0.23in;
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .scan-card p {
+      margin: 0.08in 0 0;
+      color: #5f5a72;
+      line-height: 1.25;
+      font-size: 0.115in;
+    }
+
+    .mini-qr {
+      width: 0.92in;
+      height: 0.92in;
+      border: 1px solid rgba(36,17,95,0.16);
+      padding: 0.05in;
+      border-radius: 0.08in;
+      background: white;
+    }
+
+    .mini-qr img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .card-back {
+      min-height: 2.25in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .card-back h3 {
+      margin: 0;
+      color: var(--theme-primary);
+      font-size: 0.28in;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    .card-back p {
+      margin: 0.12in 0 0;
+      color: #5f5a72;
+      font-size: 0.13in;
+      line-height: 1.35;
+    }
+
+    .cut-note {
+      position: absolute;
+      left: 0.42in;
+      right: 0.42in;
+      bottom: 0.22in;
+      color: #777189;
+      font-size: 0.11in;
+      text-align: center;
+    }
+
+    .after-text-box {
+      margin-top: 0.32in;
+      border: 2px solid rgba(36,17,95,0.14);
+      border-radius: 0.22in;
+      padding: 0.24in;
+      background: #faf9ff;
+      color: #4d4860;
+      font-size: 0.19in;
+      line-height: 1.45;
+    }
+
+    .after-text-box strong {
+      color: var(--theme-primary);
+    }
+
+    .hidden-print-piece {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+      .builder-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .print-page {
+        width: 100%;
+        min-height: auto;
+      }
+
+      .trifold-page {
+        width: 100%;
+      }
+
+      .page-inner,
+      .trifold-page .page-inner {
+        min-height: auto;
+      }
+
+      .trifold {
+        height: auto;
+        min-height: 620px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: letter;
+        margin: 0;
+      }
+
+      body {
+        background: white !important;
+      }
+
+      .site,
+      .preview-panel {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      .topbar,
+      .hero,
+      .panel,
+      .preview-toolbar {
+        display: none !important;
+      }
+
+      .builder-layout {
+        display: block;
+      }
+
+      .pages {
+        display: block;
+      }
+
+      .print-page {
+        box-shadow: none;
+        margin: 0;
+        width: 8.5in;
+        min-height: 11in;
+        page-break-after: always;
+      }
+
+      .trifold-page {
+        width: 11in;
+        min-height: 8.5in;
+        page: landscapePage;
+      }
+
+      @page landscapePage {
+        size: landscape;
+        margin: 0;
+      }
+
+      .hidden-print-piece {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="site">
+    <header class="topbar">
+      <a class="brand" href="./">
+        <span class="brand-mark">G</span>
+        <span>Grouped</span>
+      </a>
+
+      <a class="back-link" href="./">Back to Host Kit</a>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Graduation Host Kit Builder</div>
+      <h1>Build a printable photo kit for your grad party.</h1>
+      <p>
+        Enter your Grouped group name and join code. This builder creates QR-based
+        printable pieces for guests to join the private photo group.
+      </p>
+    </section>
+
+    <section class="builder-layout">
+      <aside class="panel">
+        <div class="panel-header">
+          <h2>Kit details</h2>
+          <p>Start with the group you already created in the Grouped app.</p>
+        </div>
+
+        <form class="form" id="kitForm">
+          <div class="group">
+            <div class="group-title">Event</div>
+
+            <label>
+              Group name
+              <input id="groupName" value="Ava’s Grad Party" />
+            </label>
+
+            <label>
+              Join code
+              <input id="joinCode" value="AVA2026" />
+            </label>
+
+            <label>
+              Graduate name
+              <input id="graduateName" value="Ava" />
+            </label>
+
+            <label>
+              Estimated guests
+              <select id="guestCount">
+                <option value="15">Under 15</option>
+                <option value="30">15–30</option>
+                <option value="50" selected>30–50</option>
+                <option value="75">50–75</option>
+                <option value="100">75–100</option>
+                <option value="125">100+</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="group">
+            <div class="group-title">Theme</div>
+
+            <label>
+              Style
+              <select id="themeStyle">
+                <option value="classic">Grouped Classic</option>
+                <option value="school" selected>School Colors</option>
+                <option value="bw">Black & White</option>
+              </select>
+            </label>
+
+            <div class="two-col">
+              <label>
+                Primary
+                <input id="primaryColor" type="color" value="#24115f" />
+              </label>
+
+              <label>
+                Accent
+                <input id="accentColor" type="color" value="#d9c36a" />
+              </label>
+            </div>
+          </div>
+
+          <div class="group">
+            <div class="group-title">Recommended pieces</div>
+
+            <div class="quantity-grid">
+              <label class="quantity-row">
+                <span>Tri-fold centerpieces</span>
+                <input id="triFoldCount" type="number" min="0" max="8" value="2" />
+              </label>
+
+              <label class="quantity-row">
+                <span>Bi-fold table signs</span>
+                <input id="biFoldCount" type="number" min="0" max="8" value="0" />
+              </label>
+
+              <label class="quantity-row">
+                <span>Wall/frame signs</span>
+                <input id="wallSignCount" type="number" min="0" max="8" value="1" />
+              </label>
+
+              <label class="quantity-row">
+                <span>Guest scan cards</span>
+                <input id="scanCardCount" type="number" min="0" max="120" value="30" />
+              </label>
+
+              <label class="quantity-row">
+                <span>Mission cards</span>
+                <input id="missionCardCount" type="number" min="6" max="48" value="24" />
+              </label>
+            </div>
+
+            <button class="btn btn-secondary" id="recommendButton" type="button">
+              Use guest-count recommendation
+            </button>
+          </div>
+
+          <div class="group">
+            <div class="group-title">Print mode</div>
+
+            <label>
+              Mission card backs
+              <select id="printMode">
+                <option value="simple">Simple: mission fronts only</option>
+                <option value="premium" selected>Premium: include low-ink backs</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="action-row">
+            <button class="btn btn-primary" id="generateButton" type="button">
+              Update Kit
+            </button>
+
+            <button class="btn btn-secondary" id="printButton" type="button">
+              Print / Save PDF
+            </button>
+          </div>
+
+          <div class="note">
+            QR codes point to <strong>grouped/join.html</strong>, and that page opens the app using
+            <strong>grouped://join?groupName=...&joinCode=...</strong>.
+          </div>
+        </form>
+      </aside>
+
+      <section>
+        <div class="preview-toolbar">
+          <strong>Printable preview</strong>
+          <button class="print-btn" type="button" id="printButtonTop">Print / Save PDF</button>
+        </div>
+
+        <div class="preview-panel panel">
+          <div class="pages" id="printPages"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const missionBank = [
+      "Take a photo with the graduate and someone who helped them get here.",
+      "Capture the graduate laughing.",
+      "Get a photo of the graduate with their parents.",
+      "Get a photo of the graduate with grandparents.",
+      "Take a photo of the graduate with siblings or cousins.",
+      "Capture the graduate with their closest friends.",
+      "Take a photo of the graduate with someone giving advice for the next chapter.",
+      "Capture the decorations before the party gets busy.",
+      "Take a photo of the cake, dessert table, or food setup.",
+      "Get the official cap-and-gown photo.",
+      "Take a photo of the graduate holding something that represents what is next.",
+      "Capture a hug.",
+      "Get the “we’re proud of you” group photo.",
+      "Take a photo with family from out of town.",
+      "Capture the graduate opening a card or gift.",
+      "Take a candid photo the graduate does not know is being taken.",
+      "Get a photo of the graduate with a favorite teacher, coach, mentor, or supporter.",
+      "Capture the memory table, awards, diploma, or school display.",
+      "Take the “before everyone leaves” group photo.",
+      "Capture the moment that feels most like the graduate.",
+      "Take a photo of the graduate with the person who planned the party.",
+      "Capture guests signing a card or leaving a message.",
+      "Get a photo of the graduate with friends from school.",
+      "Take a photo that shows what this day meant."
+    ];
+
+    const $ = (id) => document.getElementById(id);
+
+    const inputs = {
+      groupName: $("groupName"),
+      joinCode: $("joinCode"),
+      graduateName: $("graduateName"),
+      guestCount: $("guestCount"),
+      themeStyle: $("themeStyle"),
+      primaryColor: $("primaryColor"),
+      accentColor: $("accentColor"),
+      triFoldCount: $("triFoldCount"),
+      biFoldCount: $("biFoldCount"),
+      wallSignCount: $("wallSignCount"),
+      scanCardCount: $("scanCardCount"),
+      missionCardCount: $("missionCardCount"),
+      printMode: $("printMode")
+    };
+
+    function safeText(value, fallback) {
+      const clean = String(value || "").trim();
+      return clean || fallback;
+    }
+
+    function numberValue(input, fallback) {
+      const value = parseInt(input.value, 10);
+      return Number.isFinite(value) ? value : fallback;
+    }
+
+    function buildJoinURL(groupName, joinCode) {
+      const base = new URL("./join.html", window.location.href);
+      base.searchParams.set("groupName", groupName);
+      base.searchParams.set("joinCode", joinCode);
+      return base.href;
+    }
+
+    function qrURL(data, size = 420) {
+      return "https://api.qrserver.com/v1/create-qr-code/?size=" +
+        size + "x" + size + "&data=" + encodeURIComponent(data);
+    }
+
+    function applyTheme() {
+      const style = inputs.themeStyle.value;
+
+      let primary = inputs.primaryColor.value;
+      let accent = inputs.accentColor.value;
+
+      if (style === "classic") {
+        primary = "#24115f";
+        accent = "#6f4df6";
+      }
+
+      if (style === "bw") {
+        primary = "#171421";
+        accent = "#777777";
+      }
+
+      document.documentElement.style.setProperty("--theme-primary", primary);
+      document.documentElement.style.setProperty("--theme-accent", accent);
+    }
+
+    function useRecommendation() {
+      const guests = numberValue(inputs.guestCount, 50);
+
+      let tri = 1;
+      let wall = 0;
+      let scan = 10;
+      let missions = 12;
+
+      if (guests <= 15) {
+        tri = 1;
+        wall = 0;
+        scan = 10;
+        missions = 12;
+      } else if (guests <= 30) {
+        tri = 1;
+        wall = 1;
+        scan = 20;
+        missions = 18;
+      } else if (guests <= 50) {
+        tri = 2;
+        wall = 1;
+        scan = 30;
+        missions = 24;
+      } else if (guests <= 75) {
+        tri = 3;
+        wall = 2;
+        scan = 50;
+        missions = 30;
+      } else if (guests <= 100) {
+        tri = 4;
+        wall = 2;
+        scan = 75;
+        missions = 36;
+      } else {
+        tri = 5;
+        wall = 3;
+        scan = 100;
+        missions = 48;
+      }
+
+      inputs.triFoldCount.value = tri;
+      inputs.biFoldCount.value = 0;
+      inputs.wallSignCount.value = wall;
+      inputs.scanCardCount.value = scan;
+      inputs.missionCardCount.value = missions;
+
+      renderKit();
+    }
+
+    function page(content, extraClass = "") {
+      return `<section class="print-page ${extraClass}"><div class="page-inner">${content}</div></section>`;
+    }
+
+    function instructionPage(data) {
+      return page(`
+        <span class="mini-label">Grouped Host Kit</span>
+        <h2 class="page-title">How to print your Graduation Host Kit.</h2>
+        <div class="accent-line"></div>
+        <p class="page-subtitle">
+          This kit is designed for normal home printers. Print the display pieces once.
+          Mission card backs are optional and low-ink.
+        </p>
+
+        <div class="instruction-list">
+          <div class="instruction-item">
+            <div class="instruction-number">1</div>
+            <span><strong>Print the display pieces.</strong> Print the tri-fold centerpiece, wall/frame signs, scan cards, and host text pages single-sided.</span>
+          </div>
+
+          <div class="instruction-item">
+            <div class="instruction-number">2</div>
+            <span><strong>Print mission fronts first.</strong> Mission fronts work by themselves. Cut them out and place them near the QR display.</span>
+          </div>
+
+          <div class="instruction-item">
+            <div class="instruction-number">3</div>
+            <span><strong>Optional backs.</strong> For double-sided mission cards, print one mission-front page first, place that same sheet back into your printer tray, then print the matching back page. Test one sheet first because every printer feeds differently.</span>
+          </div>
+
+          <div class="instruction-item">
+            <div class="instruction-number">4</div>
+            <span><strong>At the party.</strong> Put the centerpiece where guests naturally stop: gift table, food table, photo table, or entry table. Ask two or three close guests to upload early.</span>
+          </div>
+
+          <div class="instruction-item">
+            <div class="instruction-number">5</div>
+            <span><strong>After the event.</strong> Send the follow-up text so guests who forgot to upload can still add their photos.</span>
+          </div>
+        </div>
+      `);
+    }
+
+    function triFoldPage(data, index) {
+      return page(`
+        <div class="trifold">
+          <div class="fold-line fold-one"></div>
+          <div class="fold-line fold-two"></div>
+
+          <div class="tri-panel tri-left">
+            <div class="tri-kicker">${data.graduateName}'s Grad Photo Drop</div>
+            <h2 class="tri-big">Every angle.<br>One story.</h2>
+            <p class="tri-copy">A private place for everyone’s photos from today.</p>
+            <div class="grouped-footer">
+              <span>Grouped</span>
+              <span>Photo Drop</span>
+            </div>
+          </div>
+
+          <div class="tri-panel tri-center">
+            <div class="tri-kicker" style="color: var(--theme-primary); opacity: 1;">Scan to join</div>
+            <div class="qr-box">
+              <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
+            </div>
+            <div class="join-meta">
+              <span><strong>Group:</strong> ${data.groupName}</span>
+              <span><strong>Code:</strong> ${data.joinCode}</span>
+            </div>
+          </div>
+
+          <div class="tri-panel tri-right">
+            <div class="tri-kicker">Help complete the story</div>
+            <h2 class="tri-big">The moments<br>you capture<br>matter.</h2>
+            <p class="tri-copy">Your photo could be someone’s favorite memory.</p>
+            <div class="grouped-footer">
+              <span>Private</span>
+              <span>Grouped</span>
+            </div>
+          </div>
+        </div>
+        <div class="cut-note">Tri-fold centerpiece ${index + 1}. Fold on the dashed lines.</div>
+      `, "trifold-page");
+    }
+
+    function wallSignPage(data, index) {
+      return page(`
+        <div class="flat-sign">
+          <span class="mini-label">Graduation Photo Drop</span>
+          <h2>Join ${data.graduateName}'s private photo group.</h2>
+          <p>Every guest sees a different part of the day. Add your photos to Grouped.</p>
+          <div class="qr-box" style="width: 2.6in; height: 2.6in;">
+            <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
+          </div>
+          <div class="join-meta" style="font-size: 0.2in;">
+            <span><strong>Group:</strong> ${data.groupName}</span>
+            <span><strong>Code:</strong> ${data.joinCode}</span>
+          </div>
+        </div>
+        <div class="cut-note">Wall/frame sign ${index + 1}</div>
+      `);
+    }
+
+    function biFoldPage(data, index) {
+      return page(`
+        <div class="flat-sign">
+          <span class="mini-label">Bi-fold table sign</span>
+          <h2>Scan to join the photo drop.</h2>
+          <p>${data.groupName} · ${data.joinCode}</p>
+          <div class="qr-box" style="width: 2.7in; height: 2.7in;">
+            <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
+          </div>
+          <p style="font-size: 0.16in;">Fold this page in half and place it on a table.</p>
+        </div>
+        <div class="cut-note">Bi-fold table sign ${index + 1}</div>
+      `);
+    }
+
+    function scanCardsPages(data) {
+      const count = data.scanCardCount;
+      const pages = [];
+      const perPage = 8;
+
+      for (let start = 0; start < count; start += perPage) {
+        const cards = [];
+        const pageCount = Math.min(perPage, count - start);
+
+        for (let i = 0; i < pageCount; i++) {
+          cards.push(`
+            <div class="scan-card">
+              <div>
+                <small>Photo Drop</small>
+                <h3>Scan to join.</h3>
+                <p><strong>${data.groupName}</strong><br>Code: ${data.joinCode}</p>
+              </div>
+              <div class="mini-qr">
+                <img alt="Grouped join QR code" src="${qrURL(data.joinURL, 180)}" />
+              </div>
+            </div>
+          `);
+        }
+
+        pages.push(page(`
+          <span class="mini-label">Guest Scan Cards</span>
+          <h2 class="page-title" style="font-size: 0.6in;">Guest scan cards</h2>
+          <p class="page-subtitle">Cut these out and place them near the centerpiece or give them to guests.</p>
+          <div class="cards-grid">${cards.join("")}</div>
+          <div class="cut-note">Cut along the card edges.</div>
+        `));
+      }
+
+      return pages.join("");
+    }
+
+    function missionFrontPages(data) {
+      const count = data.missionCardCount;
+      const selected = missionBank.slice(0, count);
+      const pages = [];
+      const perPage = 6;
+
+      for (let start = 0; start < selected.length; start += perPage) {
+        const missions = selected.slice(start, start + perPage);
+        const cards = missions.map((mission) => `
+          <div class="mission-card">
+            <small>Grad Mission</small>
+            <p>${mission}</p>
+            <span>Drop it in Grouped.</span>
+          </div>
+        `);
+
+        pages.push(page(`
+          <span class="mini-label">Mission Card Fronts</span>
+          <h2 class="page-title" style="font-size: 0.52in;">Mission fronts</h2>
+          <p class="page-subtitle">Print these first. These also work as single-sided cards.</p>
+          <div class="cards-grid">${cards.join("")}</div>
+          <div class="cut-note">Mission fronts · print first · cut after optional backs are printed.</div>
+        `));
+      }
+
+      return pages.join("");
+    }
+
+    function missionBackPages(data) {
+      if (data.printMode !== "premium") {
+        return "";
+      }
+
+      const count = data.missionCardCount;
+      const pages = [];
+      const perPage = 6;
+
+      for (let start = 0; start < count; start += perPage) {
+        const pageCount = Math.min(perPage, count - start);
+        const cards = [];
+
+        for (let i = 0; i < pageCount; i++) {
+          cards.push(`
+            <div class="card-back">
+              <small>Grouped</small>
+              <h3>Every angle.<br>One story.</h3>
+              <p>${data.groupName}<br>${data.joinCode}</p>
+            </div>
+          `);
+        }
+
+        pages.push(page(`
+          <span class="mini-label">Optional Mission Card Backs</span>
+          <h2 class="page-title" style="font-size: 0.48in;">Mission backs</h2>
+          <p class="page-subtitle">Optional. Refeed the matching mission-front page and print this on the back. Test one page first.</p>
+          <div class="cards-grid">${cards.join("")}</div>
+          <div class="cut-note">Optional backs · low ink · refeed matching front page.</div>
+        `));
+      }
+
+      return pages.join("");
+    }
+
+    function afterEventPage(data) {
+      return page(`
+        <span class="mini-label">Host Follow-Up Text</span>
+        <h2 class="page-title">Send this after the party.</h2>
+        <div class="accent-line"></div>
+        <p class="page-subtitle">
+          Send this text the next day so guests who forgot to upload can still add their photos.
+        </p>
+
+        <div class="after-text-box">
+          Photos from ${data.graduateName}'s grad party are in Grouped. Add yours before they get lost in your camera roll.<br><br>
+          <strong>Group:</strong> ${data.groupName}<br>
+          <strong>Code:</strong> ${data.joinCode}<br>
+          <strong>Join:</strong> ${data.joinURL}
+        </div>
+      `);
+    }
+
+    function collectData() {
+      const groupName = safeText(inputs.groupName.value, "Ava’s Grad Party");
+      const joinCode = safeText(inputs.joinCode.value, "AVA2026");
+      const graduateName = safeText(inputs.graduateName.value, "Ava");
+
+      return {
+        groupName,
+        joinCode,
+        graduateName,
+        joinURL: buildJoinURL(groupName, joinCode),
+        triFoldCount: numberValue(inputs.triFoldCount, 2),
+        biFoldCount: numberValue(inputs.biFoldCount, 0),
+        wallSignCount: numberValue(inputs.wallSignCount, 1),
+        scanCardCount: numberValue(inputs.scanCardCount, 30),
+        missionCardCount: numberValue(inputs.missionCardCount, 24),
+        printMode: inputs.printMode.value
+      };
+    }
+
+    function renderKit() {
+      applyTheme();
+
+      const data = collectData();
+      const pages = [];
+
+      pages.push(instructionPage(data));
+
+      for (let i = 0; i < data.triFoldCount; i++) {
+        pages.push(triFoldPage(data, i));
+      }
+
+      for (let i = 0; i < data.biFoldCount; i++) {
+        pages.push(biFoldPage(data, i));
+      }
+
+      for (let i = 0; i < data.wallSignCount; i++) {
+        pages.push(wallSignPage(data, i));
+      }
+
+      pages.push(scanCardsPages(data));
+      pages.push(missionFrontPages(data));
+      pages.push(missionBackPages(data));
+      pages.push(afterEventPage(data));
+
+      $("printPages").innerHTML = pages.join("");
+    }
+
+    $("recommendButton").addEventListener("click", useRecommendation);
+    $("generateButton").addEventListener("click", renderKit);
+    $("printButton").addEventListener("click", () => window.print());
+    $("printButtonTop").addEventListener("click", () => window.print());
+
+    Object.values(inputs).forEach((input) => {
+      input.addEventListener("change", renderKit);
+      input.addEventListener("input", () => {
+        if (input.type === "color") renderKit();
+      });
+    });
+
+    renderKit();
+  </script>
+</body>
+</html>
