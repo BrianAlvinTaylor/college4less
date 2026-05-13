@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Join Grouped Photo Drop</title>
+  <meta name="description" content="Join a private Grouped photo drop with your group name and join code." />
+
+  <style>
+    :root {
+      --grouped-deep: #24115f;
+      --grouped-mid: #6f4df6;
+      --grouped-soft: #eee9ff;
+      --grouped-ink: #171421;
+      --grouped-muted: #655f78;
+      --grouped-white: #ffffff;
+      --danger: #b42318;
+      --shadow: 0 24px 70px rgba(22, 10, 70, 0.24);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      color: var(--grouped-ink);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.38), transparent 28%),
+        linear-gradient(160deg, #24115f 0%, #6f4df6 48%, #eee9ff 100%);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(720px, 100%);
+    }
+
+    .brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      font-size: 1.2rem;
+      margin-bottom: 22px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: linear-gradient(145deg, #ffffff, #dcd2ff);
+      color: var(--grouped-deep);
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(255,255,255,0.44);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #22105e, #7b5cff);
+      color: white;
+      padding: clamp(26px, 5vw, 46px);
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.12);
+      font-weight: 850;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 8vw, 5.3rem);
+      line-height: 0.9;
+      letter-spacing: -0.075em;
+    }
+
+    .hero p {
+      margin: 18px auto 0;
+      max-width: 520px;
+      color: rgba(255,255,255,0.86);
+      line-height: 1.55;
+      font-size: 1.06rem;
+    }
+
+    .content {
+      padding: clamp(22px, 5vw, 40px);
+    }
+
+    .join-box {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .field {
+      background: white;
+      border: 1px solid rgba(36,17,95,0.10);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(36,17,95,0.07);
+    }
+
+    .label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 900;
+      color: var(--grouped-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .value {
+      display: block;
+      font-size: clamp(1.25rem, 4vw, 1.75rem);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      color: var(--grouped-deep);
+      overflow-wrap: anywhere;
+    }
+
+    .button-stack {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      width: 100%;
+      min-height: 56px;
+      border-radius: 999px;
+      border: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 900;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .primary-btn {
+      background: var(--grouped-deep);
+      color: white;
+      box-shadow: 0 14px 32px rgba(36,17,95,0.26);
+    }
+
+    .secondary-btn {
+      background: white;
+      color: var(--grouped-deep);
+      border: 1px solid rgba(36,17,95,0.14);
+    }
+
+    .helper {
+      margin: 18px 0 0;
+      color: var(--grouped-muted);
+      line-height: 1.55;
+      font-size: 0.96rem;
+      text-align: center;
+    }
+
+    .manual {
+      margin-top: 18px;
+      background: var(--grouped-soft);
+      border: 1px solid rgba(36,17,95,0.08);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      color: var(--grouped-muted);
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .manual strong {
+      color: var(--grouped-deep);
+    }
+
+    .error {
+      display: none;
+      margin-top: 18px;
+      background: #fff3f0;
+      color: var(--danger);
+      border: 1px solid rgba(180,35,24,0.18);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      color: rgba(255,255,255,0.76);
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 14px;
+      }
+
+      .content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="shell">
+    <a class="brand" href="./">
+      <span class="brand-mark">G</span>
+      <span>Grouped</span>
+    </a>
+
+    <section class="card">
+      <div class="hero">
+        <div class="eyebrow">Private Photo Drop</div>
+        <h1>Join the group.</h1>
+        <p>
+          Open Grouped to join this private photo group using the group name and join code below.
+        </p>
+      </div>
+
+      <div class="content">
+        <div id="missingError" class="error">
+          This join link is missing a group name or join code. Ask the host for the correct Grouped link.
+        </div>
+
+        <div class="join-box" id="joinDetails">
+          <div class="field">
+            <span class="label">Group Name</span>
+            <span class="value" id="groupNameValue">Loading…</span>
+          </div>
+
+          <div class="field">
+            <span class="label">Join Code</span>
+            <span class="value" id="joinCodeValue">Loading…</span>
+          </div>
+        </div>
+
+        <div class="button-stack">
+          <button class="primary-btn" id="openGroupedButton" type="button">
+            Open in Grouped
+          </button>
+
+          <a class="secondary-btn" id="downloadButton" href="#" target="_blank" rel="noopener">
+            Download Grouped
+          </a>
+        </div>
+
+        <p class="helper">
+          If Grouped is installed, the button opens the app and pre-fills the join screen.
+        </p>
+
+        <div class="manual">
+          <strong>Manual join:</strong>
+          Open Grouped, tap Join Group, then enter the group name and join code shown above.
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Grouped · Private photo groups for real events
+    </footer>
+  </main>
+
+  <script>
+    /*
+      IMPORTANT:
+      Replace this with the final live App Store URL for Grouped.
+      Until then, this button will not send guests to the real App Store listing.
+    */
+    const APP_STORE_URL = "https://apps.apple.com/";
+
+    const params = new URLSearchParams(window.location.search);
+
+    const groupName = (params.get("groupName") || "").trim();
+    const joinCode = (params.get("joinCode") || "").trim();
+
+    const groupNameValue = document.getElementById("groupNameValue");
+    const joinCodeValue = document.getElementById("joinCodeValue");
+    const missingError = document.getElementById("missingError");
+    const joinDetails = document.getElementById("joinDetails");
+    const openGroupedButton = document.getElementById("openGroupedButton");
+    const downloadButton = document.getElementById("downloadButton");
+
+    downloadButton.href = APP_STORE_URL;
+
+    function buildGroupedJoinURL(groupNameValue, joinCodeValue) {
+      const encodedGroupName = encodeURIComponent(groupNameValue);
+      const encodedJoinCode = encodeURIComponent(joinCodeValue);
+
+      /*
+        This matches the confirmed app format:
+        grouped://join?groupName=...&joinCode=...
+      */
+      return `grouped://join?groupName=${encodedGroupName}&joinCode=${encodedJoinCode}`;
+    }
+
+    if (!groupName || !joinCode) {
+      missingError.style.display = "block";
+      joinDetails.style.display = "none";
+      openGroupedButton.disabled = true;
+      openGroupedButton.style.opacity = "0.55";
+      openGroupedButton.style.cursor = "not-allowed";
+    } else {
+      groupNameValue.textContent = groupName;
+      joinCodeValue.textContent = joinCode;
+
+      const groupedJoinURL = buildGroupedJoinURL(groupName, joinCode);
+
+      openGroupedButton.addEventListener("click", function () {
+        window.location.href = groupedJoinURL;
+      });
+    }
+  </script>
+</body>
+</html>
