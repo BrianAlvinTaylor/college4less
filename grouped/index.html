@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grouped Host Kit</title>
+  <meta name="description" content="Build printable QR signs, table displays, and photo mission cards for your private Grouped photo group." />
+
+  <style>
+    :root {
+      --grouped-deep: #24115f;
+      --grouped-mid: #6f4df6;
+      --grouped-soft: #eee9ff;
+      --grouped-ink: #171421;
+      --grouped-muted: #655f78;
+      --grouped-white: #ffffff;
+      --grouped-card: rgba(255, 255, 255, 0.92);
+      --grouped-border: rgba(255, 255, 255, 0.22);
+      --shadow: 0 24px 70px rgba(22, 10, 70, 0.24);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      color: var(--grouped-ink);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.38), transparent 28%),
+        linear-gradient(160deg, #24115f 0%, #6f4df6 45%, #eee9ff 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 48px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.25rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: linear-gradient(145deg, #ffffff, #dcd2ff);
+      color: var(--grouped-deep);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .nav-pill {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(14px);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      color: white;
+      padding: 18px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.24);
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.1rem, 7vw, 6.4rem);
+      line-height: 0.88;
+      letter-spacing: -0.08em;
+      max-width: 760px;
+    }
+
+    .hero-copy p {
+      margin: 24px 0 0;
+      max-width: 610px;
+      font-size: clamp(1.05rem, 2vw, 1.32rem);
+      line-height: 1.55;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 850;
+      font-size: 1rem;
+    }
+
+    .primary-btn {
+      background: white;
+      color: var(--grouped-deep);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.20);
+    }
+
+    .secondary-btn {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.32);
+      background: rgba(255,255,255,0.10);
+    }
+
+    .mockup {
+      background: rgba(255,255,255,0.16);
+      border: 1px solid var(--grouped-border);
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+    }
+
+    .mockup-inner {
+      background: var(--grouped-card);
+      border-radius: 26px;
+      overflow: hidden;
+      min-height: 540px;
+    }
+
+    .mockup-top {
+      background: linear-gradient(135deg, #22105e, #7b5cff);
+      color: white;
+      padding: 24px;
+    }
+
+    .mockup-top small {
+      display: block;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.78;
+      margin-bottom: 14px;
+    }
+
+    .mockup-top h2 {
+      margin: 0;
+      font-size: 2.25rem;
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .mockup-body {
+      padding: 22px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .kit-card {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 19px;
+      background: white;
+      border: 1px solid rgba(36,17,95,0.08);
+      box-shadow: 0 10px 30px rgba(36,17,95,0.07);
+    }
+
+    .kit-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: var(--grouped-soft);
+      color: var(--grouped-deep);
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      font-weight: 900;
+    }
+
+    .kit-card h3 {
+      margin: 0 0 4px;
+      font-size: 1.02rem;
+      letter-spacing: -0.02em;
+    }
+
+    .kit-card p {
+      margin: 0;
+      color: var(--grouped-muted);
+      line-height: 1.35;
+      font-size: 0.92rem;
+    }
+
+    .section {
+      margin-top: 34px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.48);
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: 0 18px 60px rgba(36,17,95,0.14);
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.06em;
+      line-height: 0.98;
+      color: var(--grouped-deep);
+    }
+
+    .section-intro {
+      margin: 14px 0 0;
+      max-width: 730px;
+      font-size: 1.08rem;
+      line-height: 1.55;
+      color: var(--grouped-muted);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid rgba(36,17,95,0.09);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      min-height: 180px;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--grouped-deep);
+      color: white;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      letter-spacing: -0.025em;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--grouped-muted);
+      line-height: 1.45;
+      font-size: 0.95rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .feature {
+      background: white;
+      border: 1px solid rgba(36,17,95,0.09);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--grouped-deep);
+    }
+
+    .feature span {
+      color: var(--grouped-muted);
+      line-height: 1.45;
+      font-size: 0.95rem;
+    }
+
+    .coming-soon {
+      margin-top: 34px;
+      background: #171421;
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 42px);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 22px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .coming-soon:before {
+      content: "";
+      position: absolute;
+      inset: -80px -160px auto auto;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(111,77,246,0.7), transparent 68%);
+      pointer-events: none;
+    }
+
+    .coming-soon h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      position: relative;
+    }
+
+    .coming-soon p {
+      margin: 12px 0 0;
+      color: rgba(255,255,255,0.76);
+      max-width: 680px;
+      line-height: 1.55;
+      position: relative;
+    }
+
+    .soon-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight: 900;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    footer {
+      color: rgba(255,255,255,0.76);
+      text-align: center;
+      margin-top: 28px;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .steps,
+      .feature-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .coming-soon {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 22px, 1120px);
+        padding-top: 18px;
+      }
+
+      header {
+        margin-bottom: 28px;
+      }
+
+      .nav-pill {
+        display: none;
+      }
+
+      .steps,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mockup-inner {
+        min-height: auto;
+      }
+
+      .kit-card {
+        grid-template-columns: 46px 1fr;
+      }
+
+      .kit-icon {
+        width: 46px;
+        height: 46px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header>
+      <a class="brand" href="./">
+        <span class="brand-mark">G</span>
+        <span>Grouped</span>
+      </a>
+
+      <span class="nav-pill">Host Kit Preview</span>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Private photo drops for real events</div>
+
+        <h1>Build a printable Host Kit for your Grouped photo drop.</h1>
+
+        <p>
+          Create QR signs, table displays, scan cards, and photo mission cards
+          so guests know exactly where to share their pictures.
+        </p>
+
+        <div class="cta-row">
+          <a class="primary-btn" href="./kit.html">Build My Graduation Kit</a>
+          <a class="secondary-btn" href="./join.html">Test Join Page</a>
+        </div>
+      </div>
+
+      <div class="mockup" aria-label="Grouped Host Kit preview">
+        <div class="mockup-inner">
+          <div class="mockup-top">
+            <small>Graduation Host Kit</small>
+            <h2>Ava’s Grad Photo Drop</h2>
+          </div>
+
+          <div class="mockup-body">
+            <div class="kit-card">
+              <div class="kit-icon">3</div>
+              <div>
+                <h3>Tri-fold table centerpiece</h3>
+                <p>A premium table display with a QR-safe center panel.</p>
+              </div>
+            </div>
+
+            <div class="kit-card">
+              <div class="kit-icon">QR</div>
+              <div>
+                <h3>Guest scan cards</h3>
+                <p>Small cards guests can grab, scan, and use to join.</p>
+              </div>
+            </div>
+
+            <div class="kit-card">
+              <div class="kit-icon">✦</div>
+              <div>
+                <h3>Photo mission cards</h3>
+                <p>Simple prompts that help guests capture moments the host may miss.</p>
+              </div>
+            </div>
+
+            <div class="kit-card">
+              <div class="kit-icon">1</div>
+              <div>
+                <h3>One clear instruction page</h3>
+                <p>Print guidance, placement tips, and manual card-back printing help.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How it works</h2>
+      <p class="section-intro">
+        The host creates a Grouped group first, then uses this page to create
+        printable materials that point guests into that same private group.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Create your group</h3>
+          <p>Use the Grouped app to create your event group and join code.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Enter the details</h3>
+          <p>Add the group name, join code, guest count, and event colors.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Print the kit</h3>
+          <p>Download signs, scan cards, mission cards, and host instructions.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Collect the photos</h3>
+          <p>Guests scan, open Grouped, join the group, and drop their pictures.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Designed for real printers and real parties.</h2>
+      <p class="section-intro">
+        The kit is planned for normal home printing, with simple single-sided pages
+        and optional low-ink backs for mission cards.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <strong>Guest-count recommendations</strong>
+          <span>The builder recommends how many table displays, signs, scan cards, and mission cards to print.</span>
+        </div>
+
+        <div class="feature">
+          <strong>Theme controls</strong>
+          <span>Use Grouped purple, black and white, or school colors while keeping QR codes easy to scan.</span>
+        </div>
+
+        <div class="feature">
+          <strong>Flexible displays</strong>
+          <span>Choose tri-fold centerpiece, bi-fold table sign, wall/frame sign, or a mix of all three.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="coming-soon">
+      <div>
+        <h2>Graduation kit first. More event kits next.</h2>
+        <p>
+          We are starting with graduation parties because they are personal,
+          photo-heavy, and perfect for collecting memories from every guest.
+        </p>
+      </div>
+
+      <span class="soon-pill">MVP Build</span>
+    </section>
+
+    <footer>
+      Grouped Host Kit · Private photo groups for real events
+    </footer>
+  </main>
+</body>
+</html>
