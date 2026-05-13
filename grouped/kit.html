@@ -32,6 +32,13 @@
       box-sizing: border-box;
     }
 
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
@@ -55,6 +62,7 @@
 
     .site {
       width: min(1180px, calc(100% - 32px));
+      max-width: 100%;
       margin: 0 auto;
       padding: 28px 0 60px;
     }
@@ -66,6 +74,7 @@
       gap: 16px;
       margin-bottom: 28px;
       color: white;
+      min-width: 0;
     }
 
     .brand {
@@ -75,11 +84,13 @@
       font-weight: 850;
       letter-spacing: -0.03em;
       font-size: 1.2rem;
+      min-width: 0;
     }
 
     .brand-mark {
       width: 42px;
       height: 42px;
+      min-width: 42px;
       border-radius: 13px;
       background: linear-gradient(145deg, #ffffff, #dcd2ff);
       color: var(--grouped-deep);
@@ -96,11 +107,13 @@
       border-radius: 999px;
       padding: 10px 14px;
       font-weight: 800;
+      white-space: nowrap;
     }
 
     .hero {
       color: white;
       margin-bottom: 26px;
+      min-width: 0;
     }
 
     .eyebrow {
@@ -114,6 +127,7 @@
       text-transform: uppercase;
       font-size: 0.78rem;
       margin-bottom: 14px;
+      max-width: 100%;
     }
 
     h1 {
@@ -122,6 +136,7 @@
       line-height: 0.9;
       letter-spacing: -0.075em;
       max-width: 900px;
+      overflow-wrap: break-word;
     }
 
     .hero p {
@@ -134,9 +149,14 @@
 
     .builder-layout {
       display: grid;
-      grid-template-columns: 430px 1fr;
+      grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
       gap: 22px;
       align-items: start;
+      min-width: 0;
+    }
+
+    .builder-layout > section {
+      min-width: 0;
     }
 
     .panel {
@@ -145,6 +165,7 @@
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
       overflow: hidden;
+      min-width: 0;
     }
 
     .panel-header {
@@ -202,6 +223,7 @@
       background: white;
       color: var(--grouped-ink);
       outline: none;
+      min-width: 0;
     }
 
     input[type="color"] {
@@ -222,7 +244,7 @@
 
     .quantity-row {
       display: grid;
-      grid-template-columns: 1fr 96px;
+      grid-template-columns: minmax(0, 1fr) 96px;
       gap: 10px;
       align-items: center;
     }
@@ -231,6 +253,7 @@
       color: var(--grouped-muted);
       font-weight: 800;
       font-size: 0.92rem;
+      overflow-wrap: break-word;
     }
 
     .action-row {
@@ -268,10 +291,12 @@
       padding: 14px;
       line-height: 1.45;
       font-size: 0.92rem;
+      overflow-wrap: anywhere;
     }
 
     .preview-panel {
       padding: 18px;
+      overflow: hidden;
     }
 
     .preview-toolbar {
@@ -281,6 +306,7 @@
       gap: 14px;
       margin-bottom: 14px;
       color: white;
+      min-width: 0;
     }
 
     .preview-toolbar strong {
@@ -296,16 +322,22 @@
       padding: 12px 16px;
       font-weight: 950;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .pages {
       display: grid;
       gap: 18px;
+      justify-items: center;
+      max-width: 100%;
+      overflow: hidden;
     }
 
     .print-page {
       width: 8.5in;
-      min-height: 11in;
+      max-width: 100%;
+      aspect-ratio: 8.5 / 11;
+      min-height: auto;
       background: white;
       color: var(--grouped-ink);
       margin: 0 auto;
@@ -316,24 +348,26 @@
     }
 
     .page-inner {
-      padding: 0.42in;
-      min-height: 11in;
+      padding: 4.95%;
+      width: 100%;
+      height: 100%;
       position: relative;
     }
 
     .page-title {
       margin: 0;
-      font-size: 0.98in;
+      font-size: clamp(2.4rem, 7.6vw, 0.98in);
       line-height: 0.9;
       letter-spacing: -0.07em;
       color: var(--theme-primary);
+      overflow-wrap: break-word;
     }
 
     .page-subtitle {
       margin: 0.18in 0 0;
       color: #5f5a72;
       line-height: 1.45;
-      font-size: 0.18in;
+      font-size: clamp(0.88rem, 1.5vw, 0.18in);
       max-width: 6.8in;
     }
 
@@ -347,7 +381,7 @@
       font-weight: 950;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 0.11in;
+      font-size: clamp(0.58rem, 1vw, 0.11in);
       margin-bottom: 0.22in;
     }
 
@@ -356,6 +390,7 @@
       background: var(--theme-accent);
       border-radius: 999px;
       width: 2.2in;
+      max-width: 60%;
       margin: 0.24in 0;
     }
 
@@ -367,7 +402,7 @@
 
     .instruction-item {
       display: grid;
-      grid-template-columns: 0.4in 1fr;
+      grid-template-columns: 0.4in minmax(0, 1fr);
       gap: 0.16in;
       align-items: start;
       border: 1px solid rgba(36,17,95,0.11);
@@ -384,6 +419,7 @@
       display: grid;
       place-items: center;
       font-weight: 950;
+      font-size: 0.14in;
     }
 
     .instruction-item strong {
@@ -395,21 +431,21 @@
     .instruction-item span {
       color: #5f5a72;
       line-height: 1.35;
-      font-size: 0.15in;
+      font-size: clamp(0.72rem, 1.2vw, 0.15in);
     }
 
     .trifold-page {
       width: 11in;
-      min-height: 8.5in;
+      max-width: 100%;
+      aspect-ratio: 11 / 8.5;
     }
 
     .trifold-page .page-inner {
-      padding: 0.35in;
-      min-height: 8.5in;
+      padding: 3.2%;
     }
 
     .trifold {
-      height: 7.8in;
+      height: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       border: 2px solid rgba(36,17,95,0.16);
@@ -427,21 +463,17 @@
       z-index: 4;
     }
 
-    .fold-one {
-      left: 33.333%;
-    }
-
-    .fold-two {
-      left: 66.666%;
-    }
+    .fold-one { left: 33.333%; }
+    .fold-two { left: 66.666%; }
 
     .tri-panel {
-      padding: 0.32in;
+      padding: clamp(12px, 3vw, 0.32in);
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
       position: relative;
+      min-width: 0;
     }
 
     .tri-left,
@@ -458,33 +490,35 @@
     }
 
     .tri-kicker {
-      font-size: 0.15in;
+      font-size: clamp(0.55rem, 1.15vw, 0.15in);
       font-weight: 950;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       opacity: 0.82;
       margin-bottom: 0.18in;
+      overflow-wrap: break-word;
     }
 
     .tri-big {
-      font-size: 0.52in;
+      font-size: clamp(1.25rem, 3.7vw, 0.52in);
       line-height: 0.92;
       letter-spacing: -0.07em;
       font-weight: 950;
       margin: 0;
+      overflow-wrap: break-word;
     }
 
     .tri-copy {
       margin: 0.2in auto 0;
       max-width: 2.3in;
       line-height: 1.35;
-      font-size: 0.16in;
+      font-size: clamp(0.68rem, 1.15vw, 0.16in);
       opacity: 0.86;
     }
 
     .qr-box {
-      width: 2.15in;
-      height: 2.15in;
+      width: min(2.15in, 70%);
+      aspect-ratio: 1 / 1;
       margin: 0.2in auto;
       background: white;
       border: 2px solid rgba(36,17,95,0.18);
@@ -505,8 +539,9 @@
       display: grid;
       gap: 0.08in;
       margin-top: 0.1in;
-      font-size: 0.15in;
+      font-size: clamp(0.68rem, 1.1vw, 0.15in);
       color: #4d4860;
+      overflow-wrap: anywhere;
     }
 
     .join-meta strong {
@@ -522,13 +557,13 @@
       justify-content: space-between;
       color: rgba(255,255,255,0.72);
       font-weight: 850;
-      font-size: 0.12in;
+      font-size: clamp(0.52rem, 0.9vw, 0.12in);
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
     .flat-sign {
-      min-height: 9.9in;
+      min-height: 100%;
       border: 2px solid rgba(36,17,95,0.14);
       border-radius: 0.28in;
       padding: 0.42in;
@@ -544,14 +579,15 @@
     .flat-sign h2 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: 0.78in;
+      font-size: clamp(2.2rem, 6vw, 0.78in);
       line-height: 0.9;
       letter-spacing: -0.075em;
+      overflow-wrap: break-word;
     }
 
     .flat-sign p {
       color: #5f5a72;
-      font-size: 0.2in;
+      font-size: clamp(0.9rem, 1.6vw, 0.2in);
       line-height: 1.4;
       max-width: 6in;
       margin: 0.22in auto 0;
@@ -601,17 +637,18 @@
       font-weight: 950;
       letter-spacing: 0.09em;
       text-transform: uppercase;
-      font-size: 0.095in;
+      font-size: clamp(0.5rem, 0.85vw, 0.095in);
       margin-bottom: 0.12in;
     }
 
     .mission-card p {
-      font-size: 0.21in;
+      font-size: clamp(0.78rem, 1.7vw, 0.21in);
       line-height: 1.13;
       letter-spacing: -0.025em;
       color: var(--grouped-ink);
       font-weight: 850;
       margin: 0;
+      overflow-wrap: break-word;
     }
 
     .mission-card span {
@@ -619,13 +656,13 @@
       color: var(--theme-primary);
       font-weight: 950;
       margin-top: 0.14in;
-      font-size: 0.13in;
+      font-size: clamp(0.62rem, 1vw, 0.13in);
     }
 
     .scan-card {
       min-height: 1.7in;
       display: grid;
-      grid-template-columns: 1fr 0.95in;
+      grid-template-columns: minmax(0, 1fr) 0.95in;
       gap: 0.1in;
       align-items: center;
     }
@@ -633,7 +670,7 @@
     .scan-card h3 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: 0.23in;
+      font-size: clamp(0.9rem, 1.8vw, 0.23in);
       line-height: 0.98;
       letter-spacing: -0.04em;
     }
@@ -642,7 +679,8 @@
       margin: 0.08in 0 0;
       color: #5f5a72;
       line-height: 1.25;
-      font-size: 0.115in;
+      font-size: clamp(0.55rem, 0.9vw, 0.115in);
+      overflow-wrap: anywhere;
     }
 
     .mini-qr {
@@ -671,7 +709,7 @@
     .card-back h3 {
       margin: 0;
       color: var(--theme-primary);
-      font-size: 0.28in;
+      font-size: clamp(1.1rem, 2.2vw, 0.28in);
       line-height: 0.95;
       letter-spacing: -0.05em;
     }
@@ -679,8 +717,9 @@
     .card-back p {
       margin: 0.12in 0 0;
       color: #5f5a72;
-      font-size: 0.13in;
+      font-size: clamp(0.62rem, 1vw, 0.13in);
       line-height: 1.35;
+      overflow-wrap: anywhere;
     }
 
     .cut-note {
@@ -689,7 +728,7 @@
       right: 0.42in;
       bottom: 0.22in;
       color: #777189;
-      font-size: 0.11in;
+      font-size: clamp(0.55rem, 0.9vw, 0.11in);
       text-align: center;
     }
 
@@ -700,8 +739,9 @@
       padding: 0.24in;
       background: #faf9ff;
       color: #4d4860;
-      font-size: 0.19in;
+      font-size: clamp(0.9rem, 1.5vw, 0.19in);
       line-height: 1.45;
+      overflow-wrap: anywhere;
     }
 
     .after-text-box strong {
@@ -718,22 +758,69 @@
       }
 
       .print-page {
-        width: 100%;
-        min-height: auto;
+        width: min(8.5in, 100%);
       }
 
       .trifold-page {
-        width: 100%;
-      }
-
-      .page-inner,
-      .trifold-page .page-inner {
-        min-height: auto;
+        width: min(11in, 100%);
       }
 
       .trifold {
-        height: auto;
-        min-height: 620px;
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .site {
+        width: min(100% - 22px, 1180px);
+        padding-top: 18px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+      }
+
+      .back-link {
+        font-size: 0.82rem;
+        padding: 9px 11px;
+      }
+
+      h1 {
+        font-size: clamp(2.45rem, 13vw, 4.1rem);
+      }
+
+      .two-col,
+      .action-row {
+        grid-template-columns: 1fr;
+      }
+
+      .quantity-row {
+        grid-template-columns: 1fr 82px;
+      }
+
+      .preview-panel {
+        padding: 10px;
+      }
+
+      .preview-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .print-btn {
+        width: 100%;
+      }
+
+      .cards-grid {
+        gap: 0.08in;
+      }
+
+      .tri-panel {
+        padding: 8px;
+      }
+
+      .grouped-footer {
+        display: none;
       }
     }
 
@@ -743,6 +830,13 @@
         margin: 0;
       }
 
+      html,
+      body {
+        width: auto;
+        max-width: none;
+        overflow: visible;
+      }
+
       body {
         background: white !important;
       }
@@ -750,13 +844,14 @@
       .site,
       .preview-panel {
         width: 100%;
+        max-width: none;
         padding: 0;
         margin: 0;
       }
 
       .topbar,
       .hero,
-      .panel,
+      .builder-layout > aside.panel,
       .preview-toolbar {
         display: none !important;
       }
@@ -765,32 +860,68 @@
         display: block;
       }
 
+      .builder-layout > section {
+        display: block;
+      }
+
+      .preview-panel.panel {
+        display: block !important;
+        background: white !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        overflow: visible !important;
+      }
+
       .pages {
         display: block;
+        overflow: visible;
       }
 
       .print-page {
         box-shadow: none;
         margin: 0;
         width: 8.5in;
+        max-width: none;
+        height: 11in;
         min-height: 11in;
+        aspect-ratio: auto;
         page-break-after: always;
+      }
+
+      .page-inner {
+        padding: 0.42in;
+        height: 11in;
       }
 
       .trifold-page {
         width: 11in;
+        max-width: none;
+        height: 8.5in;
         min-height: 8.5in;
+        aspect-ratio: auto;
         page: landscapePage;
       }
 
-      @page landscapePage {
-        size: landscape;
-        margin: 0;
+      .trifold-page .page-inner {
+        padding: 0.35in;
+        height: 8.5in;
+      }
+
+      .trifold {
+        height: 7.8in;
+        min-height: 0;
       }
 
       .hidden-print-piece {
         display: block;
       }
+    }
+
+    @page landscapePage {
+      size: landscape;
+      margin: 0;
     }
   </style>
 </head>
@@ -1183,10 +1314,10 @@
           <span class="mini-label">Graduation Photo Drop</span>
           <h2>Join ${data.graduateName}'s private photo group.</h2>
           <p>Every guest sees a different part of the day. Add your photos to Grouped.</p>
-          <div class="qr-box" style="width: 2.6in; height: 2.6in;">
+          <div class="qr-box" style="width: min(2.6in, 58%);">
             <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
           </div>
-          <div class="join-meta" style="font-size: 0.2in;">
+          <div class="join-meta" style="font-size: clamp(0.78rem, 1.5vw, 0.2in);">
             <span><strong>Group:</strong> ${data.groupName}</span>
             <span><strong>Code:</strong> ${data.joinCode}</span>
           </div>
@@ -1201,10 +1332,10 @@
           <span class="mini-label">Bi-fold table sign</span>
           <h2>Scan to join the photo drop.</h2>
           <p>${data.groupName} · ${data.joinCode}</p>
-          <div class="qr-box" style="width: 2.7in; height: 2.7in;">
+          <div class="qr-box" style="width: min(2.7in, 60%);">
             <img alt="Grouped join QR code" src="${qrURL(data.joinURL)}" />
           </div>
-          <p style="font-size: 0.16in;">Fold this page in half and place it on a table.</p>
+          <p style="font-size: clamp(0.78rem, 1.3vw, 0.16in);">Fold this page in half and place it on a table.</p>
         </div>
         <div class="cut-note">Bi-fold table sign ${index + 1}</div>
       `);
@@ -1236,7 +1367,7 @@
 
         pages.push(page(`
           <span class="mini-label">Guest Scan Cards</span>
-          <h2 class="page-title" style="font-size: 0.6in;">Guest scan cards</h2>
+          <h2 class="page-title" style="font-size: clamp(1.8rem, 5vw, 0.6in);">Guest scan cards</h2>
           <p class="page-subtitle">Cut these out and place them near the centerpiece or give them to guests.</p>
           <div class="cards-grid">${cards.join("")}</div>
           <div class="cut-note">Cut along the card edges.</div>
@@ -1264,7 +1395,7 @@
 
         pages.push(page(`
           <span class="mini-label">Mission Card Fronts</span>
-          <h2 class="page-title" style="font-size: 0.52in;">Mission fronts</h2>
+          <h2 class="page-title" style="font-size: clamp(1.8rem, 4.8vw, 0.52in);">Mission fronts</h2>
           <p class="page-subtitle">Print these first. These also work as single-sided cards.</p>
           <div class="cards-grid">${cards.join("")}</div>
           <div class="cut-note">Mission fronts · print first · cut after optional backs are printed.</div>
@@ -1299,7 +1430,7 @@
 
         pages.push(page(`
           <span class="mini-label">Optional Mission Card Backs</span>
-          <h2 class="page-title" style="font-size: 0.48in;">Mission backs</h2>
+          <h2 class="page-title" style="font-size: clamp(1.7rem, 4.6vw, 0.48in);">Mission backs</h2>
           <p class="page-subtitle">Optional. Refeed the matching mission-front page and print this on the back. Test one page first.</p>
           <div class="cards-grid">${cards.join("")}</div>
           <div class="cut-note">Optional backs · low ink · refeed matching front page.</div>
